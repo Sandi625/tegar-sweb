@@ -287,7 +287,7 @@ nav.active {
 
 .header {
   height: 100vh;
-  background: url("../Images/blogBG.png");
+  background: url("../Images/bromojaran.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -395,6 +395,7 @@ nav.active {
   gap: 40px;
   justify-content: center;
   max-width: 1300px; /* dari 1200 → 1300 */
+
 }
 
 .blog {
@@ -438,6 +439,28 @@ nav.active {
   line-height: 1.6;
   color: #333;
 }
+
+ .text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* tampilkan hanya 3 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .text.show {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+
+  .readMoreBtn {
+    background: none;
+    border: none;
+    color: #3498db;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    margin-top: 5px;
+  }
 
 
 
@@ -676,14 +699,19 @@ footer {
   }
 }
 
+
+
 @media screen and (max-width: 1140px) {
   .blogsContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, 350px);
-    grid-gap: 50px;
+    column-gap: 50px;  /* jarak antar kolom (horizontal) */
+    row-gap: 20px;     /* jarak antar baris (vertikal) */
     align-items: stretch;
     justify-content: center;
   }
+
+
 
   .blog {
     width: 100%;
@@ -709,6 +737,9 @@ footer {
   }
 }
 
+
 .swal2-confirm{
   background-color: #142361 !important;
 }
+
+

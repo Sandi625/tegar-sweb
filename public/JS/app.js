@@ -76,3 +76,11 @@ window.onscroll = function () {
     navbar.classList.remove("active");
   }
 };
+
+
+function redirectToWhatsApp() {
+    // Ganti nomor di bawah dengan nomor WhatsApp Anda (format internasional, tanpa +)
+    const phoneNumber = "6281330920809";
+    const message = encodeURIComponent("Hello, I'd like to ask!");
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+}

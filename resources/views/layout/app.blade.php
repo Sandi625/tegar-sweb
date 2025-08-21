@@ -26,8 +26,11 @@
     </div>
 </nav>
 
+    @yield('content')
 
-    <a href="#header">
+
+
+    {{-- <a href="#header">
       <div class="toTop">
         <img src="https://img.icons8.com/metro/26/eb9431/left-up2.png" />
       </div>
@@ -81,7 +84,7 @@
 
     <div class="progress"></div>
 
-    <section class="blog">
+    {{-- <section class="blog">
       <div class="blogWrapper">
         <p class="para one" id="para">
           There aren’t many cities in the world that quite span the size of
@@ -356,7 +359,7 @@
           <li>Conclusion</li>
         </ol>
       </div>
-    </section>
+    </section> --}} --}}
 
     <a href="{{ route('blog.page') }}" class="backButton">
       <abbr title="Back">

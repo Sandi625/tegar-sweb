@@ -54,3 +54,8 @@ Route::get('/blog/kandy', function () {
 Route::get('/blog/tokyo', function () {
     return view('BlogPages.tokyo');
 })->name('blog.tokyo');
+
+
+Route::get('/custom-trip', function () {
+    return view('BlogPages.custom'); // menampilkan custom.blade.php
+})->name('custom.trip');

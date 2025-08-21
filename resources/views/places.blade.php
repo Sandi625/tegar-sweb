@@ -38,7 +38,7 @@
         <li class="link">
             <b><a href="{{ route('places.page') }}" style="color: #f2870c;">Places</a></b>
         </li>
-        <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li>
+        <li class="link"><a href="{{ route('blog.page') }}">Tour Package</a></li>
         <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
     </ul>
     <div class="hamburger">

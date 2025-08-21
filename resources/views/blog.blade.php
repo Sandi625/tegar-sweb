@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon" />
-    <title>Blog | Tegar</title>
+    <title>Tour Package | Tegar</title>
     <link rel="stylesheet" href="{{ asset('css/blog.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
 </head>
@@ -39,7 +39,7 @@
             <li class="link">
                 <b><a href="{{ route('places.page') }}">Places</a></b>
             </li>
-            <li class="link"><a href="{{ route('blog.page') }}"style="color: #f2870c;">Blog</a></li>
+            <li class="link"><a href="{{ route('blog.page') }}"style="color: #f2870c;">Tour Package</a></li>
             <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
         </ul>
         <div class="hamburger">
@@ -67,7 +67,7 @@
         </div>
         <a href="#blog" class="scrollContainer"><button class="scrollButton">
                 <img src="https://img.icons8.com/ios-filled/50/e48111/book.png" />
-                <p>Read</p>
+                <p>Hit Me</p>
             </button></a>
         <div class="custom-shape-divider-bottom-1631284471">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
@@ -89,7 +89,7 @@
                         <h2>
                             6 Days in Tokyo Itinerary: Complete Guide for First-Timers
                         </h2>
-                        <p>
+                        <p class="text">
                             There aren’t many cities in the world that quite span the size
                             of Tokyo. Due to its sheer scale, uncovering Japan’s largest
                             city may seem like a daunting task – but it doesn’t have to be
@@ -98,11 +98,12 @@
                             stunning vistas and remarkable history, spending six days in Tokyo
                             should be at the top of your itinerary for a visit to Japan
                         </p>
+                        <button class="readMoreBtn">Read more</button>
                     </div>
 
                     <div class="buttons">
                         <a href="{{ route('blog.tokyo') }}">
-                            <button class="viewButton">Read</button>
+                            <button class="viewButton">Details Trip</button>
                         </a>
                         <p class="date">22 Mar 2021</p>
                     </div>
@@ -110,6 +111,7 @@
                 </div>
             </div>
 
+            <!-- Contoh blog lain -->
             <div class="blog">
                 <img src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
                     alt="" class="image" />
@@ -118,133 +120,156 @@
                         <h2>
                             Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
                         </h2>
-                        <p>
+                        <p class="text">
                             Kandy is the hill country capital and gateway to the tea region
                             of Sri Lanka. This former Kingdom is a colourful, bustling city
                             of markets, temples, spice gardens, a picturesque lake and
                             surrounded by scenic natural beauty – offering a range of
                             cultural and dynamic experiences for all types of travellers.
                         </p>
+                        <button class="readMoreBtn">Read more</button>
                     </div>
 
                     <div class="buttons">
                         <a href="{{ route('blog.kandy') }}">
-                            <button class="viewButton">Read</button>
+                            <button class="viewButton">Details Trip</button>
                         </a>
                         <p class="date">23 Aug 2021</p>
                     </div>
-
                 </div>
             </div>
-
-            <div class="blog">
-                <img src="https://images.unsplash.com/photo-1535747790212-30c585ab4867?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1011&q=80"
+               <div class="blog">
+                <img src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
                     alt="" class="image" />
                 <div class="content">
                     <div class="details">
                         <h2>
-                            HOW TO VISIT LAGO DI BRAIES – ITALY’S ALLURING EMERALD-GREEN
-                            LAKE
+                            Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
                         </h2>
-                        <p>
-                            With picture-postcard perfection, high alpine meadows and
-                            dramatic rocky hikes, there’s a multitude of experiences in the
-                            Braies Valley. Lago di Braies is just the tip of the gorgeous
-                            lake-centred iceberg.
+                        <p class="text">
+                            Kandy is the hill country capital and gateway to the tea region
+                            of Sri Lanka. This former Kingdom is a colourful, bustling city
+                            of markets, temples, spice gardens, a picturesque lake and
+                            surrounded by scenic natural beauty – offering a range of
+                            cultural and dynamic experiences for all types of travellers.
                         </p>
+                        <button class="readMoreBtn">Read more</button>
                     </div>
+
                     <div class="buttons">
                         <a href="{{ route('blog.kandy') }}">
-                            <button class="viewButton">Read</button>
+                            <button class="viewButton">Details Trip</button>
                         </a>
                         <p class="date">23 Aug 2021</p>
                     </div>
-
                 </div>
             </div>
-
-            <div class="blog">
-                <img src="https://images.unsplash.com/photo-1598790969148-62630087609e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=925&q=80"
+               <div class="blog">
+                <img src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
                     alt="" class="image" />
                 <div class="content">
                     <div class="details">
                         <h2>
-                            Top 5 places to visit when you are in the great city of Hamburg,
-                            Germany
+                            Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
                         </h2>
-                        <p>
-                            The Gateway to the World: this is Hamburg's label which, for
-                            some, might be a rather bold claim, but as a major port city,
-                            Hamburg's maritime background contributed to the creation of the
-                            city's strong identity. Hamburg is Germany's second-largest city
-                            and one of the country's wealthiest cities.
+                        <p class="text">
+                            Kandy is the hill country capital and gateway to the tea region
+                            of Sri Lanka. This former Kingdom is a colourful, bustling city
+                            of markets, temples, spice gardens, a picturesque lake and
+                            surrounded by scenic natural beauty – offering a range of
+                            cultural and dynamic experiences for all types of travellers.
                         </p>
+                        <button class="readMoreBtn">Read more</button>
                     </div>
 
                     <div class="buttons">
-                        <a href="{{ route('blog.hamburg') }}">
-                            <button class="viewButton">Read</button>
+                        <a href="{{ route('blog.kandy') }}">
+                            <button class="viewButton">Details Trip</button>
                         </a>
-                        <p class="date">12 Sep 2020</p>
+                        <p class="date">23 Aug 2021</p>
                     </div>
-
                 </div>
             </div>
-              <div class="blog">
-                <img src="https://images.unsplash.com/photo-1598790969148-62630087609e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=925&q=80"
+               <div class="blog">
+                <img src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
                     alt="" class="image" />
                 <div class="content">
                     <div class="details">
                         <h2>
-                            Top 5 places to visit when you are in the great city of Hamburg,
-                            Germany
+                            Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
                         </h2>
-                        <p>
-                            The Gateway to the World: this is Hamburg's label which, for
-                            some, might be a rather bold claim, but as a major port city,
-                            Hamburg's maritime background contributed to the creation of the
-                            city's strong identity. Hamburg is Germany's second-largest city
-                            and one of the country's wealthiest cities.
+                        <p class="text">
+                            Kandy is the hill country capital and gateway to the tea region
+                            of Sri Lanka. This former Kingdom is a colourful, bustling city
+                            of markets, temples, spice gardens, a picturesque lake and
+                            surrounded by scenic natural beauty – offering a range of
+                            cultural and dynamic experiences for all types of travellers.
                         </p>
+                        <button class="readMoreBtn">Read more</button>
                     </div>
 
                     <div class="buttons">
-                        <a href="{{ route('blog.hamburg') }}">
-                            <button class="viewButton">Read</button>
+                        <a href="{{ route('blog.kandy') }}">
+                            <button class="viewButton">Details Trip</button>
                         </a>
-                        <p class="date">12 Sep 2020</p>
+                        <p class="date">23 Aug 2021</p>
                     </div>
-
                 </div>
             </div>
-              <div class="blog">
-                <img src="https://images.unsplash.com/photo-1598790969148-62630087609e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=925&q=80"
+               <div class="blog">
+                <img src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
                     alt="" class="image" />
                 <div class="content">
                     <div class="details">
                         <h2>
-                            Top 5 places to visit when you are in the great city of Hamburg,
-                            Germany
+                            Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
                         </h2>
-                        <p>
-                            The Gateway to the World: this is Hamburg's label which, for
-                            some, might be a rather bold claim, but as a major port city,
-                            Hamburg's maritime background contributed to the creation of the
-                            city's strong identity. Hamburg is Germany's second-largest city
-                            and one of the country's wealthiest cities.
+                        <p class="text">
+                            Kandy is the hill country capital and gateway to the tea region
+                            of Sri Lanka. This former Kingdom is a colourful, bustling city
+                            of markets, temples, spice gardens, a picturesque lake and
+                            surrounded by scenic natural beauty – offering a range of
+                            cultural and dynamic experiences for all types of travellers.
                         </p>
+                        <button class="readMoreBtn">Read more</button>
                     </div>
 
                     <div class="buttons">
-                        <a href="{{ route('blog.hamburg') }}">
-                            <button class="viewButton">Read</button>
+                        <a href="{{ route('blog.kandy') }}">
+                            <button class="viewButton">Details Trip</button>
                         </a>
-                        <p class="date">12 Sep 2020</p>
+                        <p class="date">23 Aug 2021</p>
+                    </div>
+                </div>
+            </div>
+               <div class="blog">
+                <img src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
+                    alt="" class="image" />
+                <div class="content">
+                    <div class="details">
+                        <h2>
+                            Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
+                        </h2>
+                        <p class="text">
+                            Kandy is the hill country capital and gateway to the tea region
+                            of Sri Lanka. This former Kingdom is a colourful, bustling city
+                            of markets, temples, spice gardens, a picturesque lake and
+                            surrounded by scenic natural beauty – offering a range of
+                            cultural and dynamic experiences for all types of travellers.
+                        </p>
+                        <button class="readMoreBtn">Read more</button>
                     </div>
 
+                    <div class="buttons">
+                        <a href="{{ route('blog.kandy') }}">
+                            <button class="viewButton">Details Trip</button>
+                        </a>
+                        <p class="date">23 Aug 2021</p>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="custom-shape-divider-bottom-1631607238">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
                 preserveAspectRatio="none">

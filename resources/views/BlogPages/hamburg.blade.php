@@ -15,7 +15,7 @@
         <li class="link"><a href="{{ route('home.page') }}">Home</a></li>
         <li class="link"><a href="{{ route('places.page') }}">Places</a></li>
         <li class="link">
-            <b><a href="{{ route('blog.page') }}" style="color: #f2870c">Blog</a></b>
+            <b><a href="{{ route('blog.page') }}" style="color: #f2870c">Tour Package</a></b>
         </li>
         <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
     </ul>

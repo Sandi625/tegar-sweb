@@ -57,7 +57,7 @@
                 <b><a href="{{ route('home.page') }}" style="color: #f2870c">Home</a></b>
             </li>
             <li class="link"><a href="{{ route('places.page') }}">Places</a></li>
-            <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li>
+            <li class="link"><a href="{{ route('blog.page') }}">Tour Package</a></li>
             <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
         </ul>
 
@@ -67,6 +67,13 @@
             <div></div>
         </div>
     </nav>
+
+
+
+    <div class="whatsapp-logo" onclick="redirectToWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
     <section class="headerContainer">
         <div class="headerWrapper">
             <div class="headerInfo">
@@ -257,41 +264,41 @@
 
     <section class="blogs">
         <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
-            Latest <span class="buttonHighlight">Blogs</span>
+            Bromo - Ijen <span class="buttonHighlight">Tour Packages</span>
         </h1>
-     <div class="blogsContainer">
-    <div class="blogsContent">
-        <div class="blog">
-            <img
-                src="https://images.unsplash.com/photo-1604928141064-207cea6f571f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80" />
-            <h3 class="blogTitle">
-                6 Days in Tokyo Itinerary: Complete Guide for First-Timers
-            </h3>
-            <a href="{{ route('blog.tokyo') }}"><button class="readBlog">Read</button></a>
-        </div>
+        <div class="blogsContainer">
+            <div class="blogsContent">
+                <div class="blog">
+                    <img
+                        src="https://images.unsplash.com/photo-1604928141064-207cea6f571f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80" />
+                    <h3 class="blogTitle">
+                        6 Days in Tokyo Itinerary: Complete Guide for First-Timers
+                    </h3>
+                    <a href="{{ route('blog.tokyo') }}"><button class="readBlog">Read</button></a>
+                </div>
 
-        <div class="blog">
-            <img
-                src="https://images.unsplash.com/photo-1535747790212-30c585ab4867?ixlib=rb-1.2.1&auto=format&fit=crop&w=1011&q=80" />
-            <h3 class="blogTitle">
-                HOW TO VISIT LAGO DI BRAIES – ITALY’S ALLURING EMERALD-GREEN LAKE
-            </h3>
-            <a href="{{ route('blog.italy') }}"><button class="readBlog">Read</button></a>
-        </div>
+                <div class="blog">
+                    <img
+                        src="https://images.unsplash.com/photo-1535747790212-30c585ab4867?ixlib=rb-1.2.1&auto=format&fit=crop&w=1011&q=80" />
+                    <h3 class="blogTitle">
+                        HOW TO VISIT LAGO DI BRAIES – ITALY’S ALLURING EMERALD-GREEN LAKE
+                    </h3>
+                    <a href="{{ route('blog.italy') }}"><button class="readBlog">Read</button></a>
+                </div>
 
-        <div class="blog">
-            <img
-                src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" />
-            <h3 class="blogTitle">
-                Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
-            </h3>
-            <a href="{{ route('blog.kandy') }}"><button class="readBlog">Read</button></a>
-        </div>
-    </div>
+                <div class="blog">
+                    <img
+                        src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" />
+                    <h3 class="blogTitle">
+                        Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
+                    </h3>
+                    <a href="{{ route('blog.kandy') }}"><button class="readBlog">Read</button></a>
+                </div>
+            </div>
 
-    <a href="{{ route('blog.page') }}">
+            {{-- <a href="{{ route('blog.page') }}">
         <button data-aos="fade-up" data-aos-duration="2000" class="allBlogs">
-            Read More
+            View All Tour Package's
         </button>
     </a>
 </div>
@@ -302,6 +309,7 @@
                 <h1 class="funFactTitle">
                     <span class="highlightText">Fun Fact</span> Of the Day
                 </h1>
+
                 <p class="fact">
                     Besides the U.S., every developed country in the world extends at
                     least one legally required paid vacation day or holiday to its
@@ -323,10 +331,272 @@
                     d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
                     class="shape-fill"></path>
             </svg>
-        </div>
+        </div> --}}
     </section>
 
+    <section class="blogs">
+        <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
+            Bromo - Ijen - Tumpak Sewu <span class="buttonHighlight">Tour Packages</span>
+        </h1>
+        <div class="blogsContainer">
+            <div class="blogsContent">
+                <div class="blog">
+                    <img
+                        src="https://images.unsplash.com/photo-1604928141064-207cea6f571f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80" />
+                    <h3 class="blogTitle">
+                        6 Days in Tokyo Itinerary: Complete Guide for First-Timers
+                    </h3>
+                    <a href="{{ route('blog.tokyo') }}"><button class="readBlog">Read</button></a>
+                </div>
+
+                <div class="blog">
+                    <img
+                        src="https://images.unsplash.com/photo-1535747790212-30c585ab4867?ixlib=rb-1.2.1&auto=format&fit=crop&w=1011&q=80" />
+                    <h3 class="blogTitle">
+                        HOW TO VISIT LAGO DI BRAIES – ITALY’S ALLURING EMERALD-GREEN LAKE
+                    </h3>
+                    <a href="{{ route('blog.italy') }}"><button class="readBlog">Read</button></a>
+                </div>
+
+                <div class="blog">
+                    <img
+                        src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" />
+                    <h3 class="blogTitle">
+                        Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
+                    </h3>
+                    <a href="{{ route('blog.kandy') }}"><button class="readBlog">Read</button></a>
+                </div>
+            </div>
+
+            {{-- <a href="{{ route('blog.page') }}">
+        <button data-aos="fade-up" data-aos-duration="2000" class="allBlogs">
+            View All Tour Package's
+        </button>
+    </a>
+</div>
+
+
+        <div class="funFact" data-aos="fade-up" data-aos-duration="2000">
+            <div class="factContent">
+                <h1 class="funFactTitle">
+                    <span class="highlightText">Fun Fact</span> Of the Day
+                </h1>
+
+                <p class="fact">
+                    Besides the U.S., every developed country in the world extends at
+                    least one legally required paid vacation day or holiday to its
+                    employees.
+                </p>
+
+                <p class="fact">
+                    The most generous country? Austria, which has
+                    <span class="highlightTextSec">a legal minimum of 22 paid vacation days per year</span>, on top of
+                    13 paid holidays!
+                </p>
+            </div>
+        </div>
+
+        <div class="custom-shape-divider-bottom-1631607238">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div> --}}
+    </section>
+
+    <section class="blogs">
+        <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
+            Midnight ijen crater <span class="buttonHighlight">Tour Packages</span>
+        </h1>
+        <div class="blogsContainer">
+            <div class="blogsContent">
+                <div class="blog">
+                    <img
+                        src="https://images.unsplash.com/photo-1604928141064-207cea6f571f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80" />
+                    <h3 class="blogTitle">
+                        6 Days in Tokyo Itinerary: Complete Guide for First-Timers
+                    </h3>
+                    <a href="{{ route('blog.tokyo') }}"><button class="readBlog">Read</button></a>
+                </div>
+
+                <div class="blog">
+                    <img
+                        src="https://images.unsplash.com/photo-1535747790212-30c585ab4867?ixlib=rb-1.2.1&auto=format&fit=crop&w=1011&q=80" />
+                    <h3 class="blogTitle">
+                        HOW TO VISIT LAGO DI BRAIES – ITALY’S ALLURING EMERALD-GREEN LAKE
+                    </h3>
+                    <a href="{{ route('blog.italy') }}"><button class="readBlog">Read</button></a>
+                </div>
+
+                <div class="blog">
+                    <img
+                        src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" />
+                    <h3 class="blogTitle">
+                        Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
+                    </h3>
+                    <a href="{{ route('blog.kandy') }}"><button class="readBlog">Read</button></a>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="funFact" data-aos="fade-up" data-aos-duration="2000">
+            <div class="factContent">
+                <h1 class="funFactTitle">
+                    {{-- <span class="highlightText">View All</span> Package's --}}
+                </h1>
+
+                {{-- <p class="fact">
+            Besides the U.S., every developed country in the world extends at
+            least one legally required paid vacation day or holiday to its
+            employees.
+        </p>
+
+        <p class="fact">
+            The most generous country? Austria, which has
+            <span class="highlightTextSec">a legal minimum of 22 paid vacation days per year</span>, on top of
+            13 paid holidays!
+        </p> --}}
+
+                <!-- Tombol dengan route Laravel -->
+                <div class="funFactButton">
+                    <a href="{{ route('blog.page') }}" class="btn">View All Package</a>
+                </div>
+            </div>
+        </div>
+
+
+
+{{--
+        <div class="custom-shape-divider-bottom-1631607238">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div> --}}
+    </section>
+
+
+     {{-- <section class="blogs">
+        <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
+            Midnight ijen crater <span class="buttonHighlight">Tour Packages</span>
+        </h1>
+        <div class="blogsContainer">
+            <div class="blogsContent">
+                <div class="blog">
+                    <img
+                        src="https://images.unsplash.com/photo-1604928141064-207cea6f571f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80" />
+                    <h3 class="blogTitle">
+                        6 Days in Tokyo Itinerary: Complete Guide for First-Timers
+                    </h3>
+                    <a href="{{ route('custom.trip') }}"><button class="readBlog">Read</button></a>
+                </div>
+
+                <div class="blog">
+                    <img
+                        src="https://images.unsplash.com/photo-1535747790212-30c585ab4867?ixlib=rb-1.2.1&auto=format&fit=crop&w=1011&q=80" />
+                    <h3 class="blogTitle">
+                        HOW TO VISIT LAGO DI BRAIES – ITALY’S ALLURING EMERALD-GREEN LAKE
+                    </h3>
+                    <a href="{{ route('custom.trip') }}"><button class="readBlog">Read</button></a>
+                </div>
+
+                <div class="blog">
+                    <img
+                        src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" />
+                    <h3 class="blogTitle">
+                        Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
+                    </h3>
+                    <a href="{{ route('custom.trip') }}"><button class="readBlog">Read</button></a>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="funFact" data-aos="fade-up" data-aos-duration="2000">
+            <div class="factContent">
+                <h1 class="funFactTitle">
+                </h1>
+
+
+
+                <!-- Tombol dengan route Laravel -->
+                <div class="funFactButton">
+                    <a href="{{ route('blog.page') }}" class="btn">View All Package</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="custom-shape-divider-bottom-1631607238">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </section> --}}
+
+    <section class="customTourForm" style="max-width:600px;margin:50px auto;padding:20px;border:1px solid #ccc;border-radius:8px;">
+    <h2 style="text-align:center;margin-bottom:20px;">Customize Your Tour Package</h2>
+
+    <form id="tourForm">
+        <div style="margin-bottom:15px;">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
+        </div>
+
+        <div style="margin-bottom:15px;">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
+        </div>
+
+        <div style="margin-bottom:15px;">
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
+        </div>
+
+        <div style="margin-bottom:15px;">
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
+        </div>
+
+        <div style="margin-bottom:15px;">
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" name="notes" rows="4" style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;"></textarea>
+        </div>
+
+        <button type="submit" style="width:100%;padding:12px;background-color:#f2870c;color:white;border:none;border-radius:6px;font-size:16px;cursor:pointer;">
+            Send via WhatsApp
+        </button>
+    </form>
+
+</section>
+
+
+
+
+<!-- Shape Divider di luar section -->
+<div class="custom-shape-divider-bottom-1631607238">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+    </svg>
+</div>
     <footer>
+
         <div class="footerDetails">
             <div class="footerDescription">
                 <h1 class="footerTitle">Tegar</h1>
@@ -395,6 +665,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
         integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     <script src="{{ asset('JS/app.js') }}"></script>
 
 </body>
