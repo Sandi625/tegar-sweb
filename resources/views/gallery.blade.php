@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,height=device-height,  initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/galerry.css">
+<link rel="stylesheet" href="{{ asset('css/galerry.css') }}">
     <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon" />
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
-    <title>Gallery | Roadie</title>
+    <title>Gallery | Tegar</title>
 </head>
 <body>
 
@@ -32,20 +32,22 @@
 	</div>
 </div>
 
-    <nav>
-        <a href="./index.html" class="brand-logo">Roadie</a>
-            <ul class="links">
-                <li class="link"><a href="./index.html">Home</a></li>
-                <li class="link"><a href="./places.html">Places</a></li>
-                <li class="link"><a href="./blog.html">Blog</a></li>
-                <li class="link"><b> <a href="#"  style="color: #f2870c;">Gallery</a> </b></li>
-            </ul>
-            <div class="hamburger">
+     <nav>
+    <a href="{{ route('home.page') }}" class="brand-logo">Tegar</a>
+    <ul class="links">
+        <li class="link"><a href="{{ route('home.page') }}">Home</a></li>
+        <li class="link">
+            <b><a href="{{ route('places.page') }}">Places</a></b>
+        </li>
+        <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li>
+        <li class="link"><a href="{{ route('gallery.page') }}" style="color: #f2870c;">Gallery</a></li>
+    </ul>
+    <div class="hamburger">
         <div></div>
         <div></div>
         <div></div>
-      </div>
-    </nav>
+    </div>
+</nav>
 
         <section class="header">
         <div class="header-content">
@@ -54,8 +56,8 @@
 
 </p>
         </div>
-               <a href="#gallery" class="scrollContainer"><button class="scrollButton"><img src="https://img.icons8.com/material-sharp/24/e48111/camera--v2.png"/> <p>View Photos</p> </button></a> 
-    
+               <a href="#gallery" class="scrollContainer"><button class="scrollButton"><img src="https://img.icons8.com/material-sharp/24/e48111/camera--v2.png"/> <p>View Photos</p> </button></a>
+
     <div class="custom-shape-divider-bottom-1631284277">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
@@ -64,14 +66,14 @@
 </section>
 
 
-<div id="gallery" class="container-fluid">  
+<div id="gallery" class="container-fluid">
   <div class="image">
     <img src="https://images.unsplash.com/photo-1538970272646-f61fabb3a8a2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=641&q=80" class="img-responsive">
     <div class="details">
       Times Square, New York, United States
     </div>
   </div>
-  
+
   <div class="image">
     <img src="https://images.unsplash.com/photo-1593844517100-5aced8697e58?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" class="img-responsive">
     <div class="details">
@@ -208,7 +210,7 @@
   <img src="https://img.icons8.com/ios-filled/50/e48111/close-window.png" class="close"/>
 </div>
 <div class="content">
-      
+
     </div>
   </div>
 </div>
@@ -216,7 +218,7 @@
 <footer>
         <div class="footerDetails">
             <div class="footerDescription">
-                <h1 class="footerTitle">Roadie</h1>
+                <h1 class="footerTitle">Tegar</h1>
                 <p class="footerPara">Discover New Destinations. See breath-taking places and experience them from you device online.
                     <br>
                     Our travel writing captures the one thing we always strive to create – incredible travel experiences. From learning about the historical and political context of a destination to finding some really great hikes, each new place has something to discover.
@@ -266,6 +268,6 @@
  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
 
-<script src="./JS/gallery.js"></script>
+<script src="{{ asset('JS/gallery.js') }}"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Places | Roadie</title>
+    <title>Places | Tegar</title>
     <link rel="stylesheet" href="./CSS/places.css">
     <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
@@ -31,20 +31,23 @@
 	</div>
 </div>
 
-    <nav>
-        <a href="./index.html" class="brand-logo">Roadie</a>
-            <ul class="links">
-                <li class="link"><a href="./index.html">Home</a></li>
-                <li class="link"><b><a href="./places.html" style="color: #f2870c;">Places</a></b></li>
-                <li class="link"><a href="./blog.html">Blog</a></li>
-                <li class="link"><a href="./gallery.html">Gallery</a></li>
-            </ul>
-            <div class="hamburger">
+   <nav>
+    <a href="{{ route('home.page') }}" class="brand-logo">Tegar</a>
+    <ul class="links">
+        <li class="link"><a href="{{ route('home.page') }}">Home</a></li>
+        <li class="link">
+            <b><a href="{{ route('places.page') }}" style="color: #f2870c;">Places</a></b>
+        </li>
+        <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li>
+        <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
+    </ul>
+    <div class="hamburger">
         <div></div>
         <div></div>
         <div></div>
-      </div>
-    </nav>
+    </div>
+</nav>
+
 
     <!-- <div class="pageName-container">
         <p class="page">./PLACES</p>
@@ -359,7 +362,7 @@ place has something to discover.</p>
     <footer>
         <div class="footerDetails">
             <div class="footerDescription">
-                <h1 class="footerTitle">Roadie</h1>
+                <h1 class="footerTitle">Tegar</h1>
                 <p class="footerPara">Discover New Destinations. See breath-taking places and experience them from you device online.
                     <br>
                     Our travel writing captures the one thing we always strive to create – incredible travel experiences. From learning about the historical and political context of a destination to finding some really great hikes, each new place has something to discover.

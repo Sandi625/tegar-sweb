@@ -383,32 +383,63 @@ nav.active {
   width: 25px;
 }
 
-.blogsContainer {
-  margin-top: 100px;
-  height: min-content;
-  padding-bottom: 250px;
-}
-
 .blogs {
   position: relative;
 }
+.blogsContainer {
+  margin: 100px auto 0 auto;
+  height: auto;
+  padding-bottom: 250px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* dari 350 → 400 */
+  gap: 40px;
+  justify-content: center;
+  max-width: 1300px; /* dari 1200 → 1300 */
+}
 
 .blog {
-  width: 70%;
-  margin: 100px 100px;
-  margin-bottom: 0px;
+  width: 100%;
+  max-width: 400px;   /* dari 350 → 400 */
   background-color: #f9fcff;
-  -webkit-box-shadow: 5px 5px 19px 1px rgba(20, 35, 97, 0.28);
   box-shadow: 5px 5px 19px 1px rgba(20, 35, 97, 0.28);
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
-  flex-direction: row;
-  transition: 0.5s ease all;
+  flex-direction: column;
+  transition: 0.4s ease all;
+  overflow: hidden;
 }
 
+
+
 .blog:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
+
+.blog img {
+  width: 100%;                 /* gambar penuh di atas */
+  height: 250px;               /* tinggi tetap */
+  object-fit: cover;           /* crop biar rapih */
+}
+
+.blog .content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.blog h2 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  color: #142361;
+}
+
+.blog p {
+  line-height: 1.6;
+  color: #333;
+}
+
+
 
 @keyframes svg {
   0% {

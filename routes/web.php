@@ -21,3 +21,36 @@ Route::get('/blog', function () {
 Route::get('/gallery', function () {
     return view('gallery'); // resources/views/page/gallery.blade.php
 })->name('gallery.page');
+
+
+Route::get('/blog/tokyo', function () {
+    return view('BlogPages.tokyo');
+})->name('blog.tokyo');
+
+Route::get('/blog/italy', function () {
+    return view('BlogPages.italy');
+})->name('blog.italy');
+
+Route::get('/blog/kandy', function () {
+    return view('BlogPages.kandy');
+})->name('blog.kandy');
+
+
+
+
+Route::get('/blog/hamburg', function () {
+    return view('BlogPages.hamburg');
+})->name('blog.hamburg');
+
+Route::get('/blog/kandy', function () {
+    return view('BlogPages.kandy');
+})->name('blog.kandy');
+
+// Blog Kandy
+Route::get('/blog/kandy', function () {
+    return view('BlogPages.kandy');
+})->name('blog.kandy');
+
+Route::get('/blog/tokyo', function () {
+    return view('BlogPages.tokyo');
+})->name('blog.tokyo');

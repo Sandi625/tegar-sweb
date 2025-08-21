@@ -4,27 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="{{ asset('style.css') }}">
     <link rel="shortcut icon" href="../Images/favicon.png" type="image/x-icon" />
-    <title>Hamburg Blog | Roadie</title>
+    <title>Hamburg Blog | Tegar</title>
   </head>
   <body>
-    <nav>
-      <a href="../index.html" class="brand-logo">Roadie</a>
-      <ul class="links">
-        <li class="link"><a href="../index.html">Home</a></li>
-        <li class="link"><a href="../places.html">Places</a></li>
+  <nav>
+    <a href="{{ route('home.page') }}" class="brand-logo">Tegar</a>
+    <ul class="links">
+        <li class="link"><a href="{{ route('home.page') }}">Home</a></li>
+        <li class="link"><a href="{{ route('places.page') }}">Places</a></li>
         <li class="link">
-          <b><a href="../blog.html" style="color: #f2870c">Blog</a></b>
+            <b><a href="{{ route('blog.page') }}" style="color: #f2870c">Blog</a></b>
         </li>
-        <li class="link"><a href="../gallery.html">Gallery</a></li>
-      </ul>
-      <div class="hamburger">
+        <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
+    </ul>
+    <div class="hamburger">
         <div></div>
         <div></div>
         <div></div>
-      </div>
-    </nav>
+    </div>
+</nav>
 
     <a href="#header">
       <div class="toTop">
@@ -283,7 +283,7 @@
       </div>
     </section>
 
-    <a href="../blog.html" class="backButton">
+    <a href="{{ route('blog.page') }}" class="backButton">
       <abbr title="Back">
         <img
           class="buttonn"
@@ -291,6 +291,6 @@
         />
       </abbr>
     </a>
-    <script src="app.js"></script>
+<script src="{{ asset('app.js') }}"></script>
   </body>
 </html>

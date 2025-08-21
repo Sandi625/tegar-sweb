@@ -51,7 +51,7 @@
         </div>
     </div>
     <nav>
-        <a href="./index.html" class="brand-logo">Roadie</a>
+        <a href="{{ route('home.page') }}" class="brand-logo">Travel</a>
         <ul class="links">
             <li class="link">
                 <b><a href="{{ route('home.page') }}" style="color: #f2870c">Home</a></b>
@@ -259,42 +259,43 @@
         <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
             Latest <span class="buttonHighlight">Blogs</span>
         </h1>
-        <div class="blogsContainer">
-            <div class="blogsContent">
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1604928141064-207cea6f571f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1100&q=80" />
-                    <h3 class="blogTitle">
-                        6 Days in Tokyo Itinerary: Complete Guide for First-Timers
-                    </h3>
-                    <a href="./BlogPages/tokyo.html"><button class="readBlog">Read</button></a>
-                </div>
-
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1535747790212-30c585ab4867?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1011&q=80" />
-                    <h3 class="blogTitle">
-                        HOW TO VISIT LAGO DI BRAIES – ITALY’S ALLURING EMERALD-GREEN LAKE
-                    </h3>
-                    <a href="./BlogPages/italy.html"><button class="readBlog">Read</button></a>
-                </div>
-
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" />
-                    <h3 class="blogTitle">
-                        Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
-                    </h3>
-                    <a href="./BlogPages/kandy.html"><button class="readBlog">Read</button></a>
-                </div>
-            </div>
-            <a href="{{ route('blog.page') }}">
-                <button data-aos="fade-up" data-aos-duration="2000" class="allBlogs">
-                    Read More
-                </button>
-            </a>
-
+     <div class="blogsContainer">
+    <div class="blogsContent">
+        <div class="blog">
+            <img
+                src="https://images.unsplash.com/photo-1604928141064-207cea6f571f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80" />
+            <h3 class="blogTitle">
+                6 Days in Tokyo Itinerary: Complete Guide for First-Timers
+            </h3>
+            <a href="{{ route('blog.tokyo') }}"><button class="readBlog">Read</button></a>
         </div>
+
+        <div class="blog">
+            <img
+                src="https://images.unsplash.com/photo-1535747790212-30c585ab4867?ixlib=rb-1.2.1&auto=format&fit=crop&w=1011&q=80" />
+            <h3 class="blogTitle">
+                HOW TO VISIT LAGO DI BRAIES – ITALY’S ALLURING EMERALD-GREEN LAKE
+            </h3>
+            <a href="{{ route('blog.italy') }}"><button class="readBlog">Read</button></a>
+        </div>
+
+        <div class="blog">
+            <img
+                src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" />
+            <h3 class="blogTitle">
+                Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
+            </h3>
+            <a href="{{ route('blog.kandy') }}"><button class="readBlog">Read</button></a>
+        </div>
+    </div>
+
+    <a href="{{ route('blog.page') }}">
+        <button data-aos="fade-up" data-aos-duration="2000" class="allBlogs">
+            Read More
+        </button>
+    </a>
+</div>
+
 
         <div class="funFact" data-aos="fade-up" data-aos-duration="2000">
             <div class="factContent">
