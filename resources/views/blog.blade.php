@@ -102,7 +102,7 @@
                     </div>
 
                     <div class="buttons">
-                        <a href="{{ route('blog.tokyo') }}">
+                        <a href="{{ route('bromoijen.bali') }}">
                             <button class="viewButton">Details Trip</button>
                         </a>
                         <p class="date">22 Mar 2021</p>
@@ -131,7 +131,7 @@
                     </div>
 
                     <div class="buttons">
-                        <a href="{{ route('blog.kandy') }}">
+                        <a href="{{ route('bromoijen.bali') }}">
                             <button class="viewButton">Details Trip</button>
                         </a>
                         <p class="date">23 Aug 2021</p>
@@ -157,7 +157,7 @@
                     </div>
 
                     <div class="buttons">
-                        <a href="{{ route('blog.kandy') }}">
+                        <a href="{{ route('bromoijen.bali') }}">
                             <button class="viewButton">Details Trip</button>
                         </a>
                         <p class="date">23 Aug 2021</p>

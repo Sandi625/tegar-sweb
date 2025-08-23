@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/pesanfinsihbali', function () {
+    return view('BlogPages.bromoijen.pesanfinishbali');
+})->name('pesanfinsihbali.page');
+
 // Homepage
 Route::get('/', function () {
     return view('index'); // resources/views/index.blade.php
@@ -23,17 +27,19 @@ Route::get('/gallery', function () {
 })->name('gallery.page');
 
 
-Route::get('/blog/tokyo', function () {
-    return view('BlogPages.tokyo');
-})->name('blog.tokyo');
+Route::get('/bromoijen/bali', function () {
+    return view('BlogPages.bromoijen.finshbali');
+})->name('bromoijen.bali');
 
 Route::get('/blog/italy', function () {
     return view('BlogPages.italy');
 })->name('blog.italy');
 
-Route::get('/blog/kandy', function () {
-    return view('BlogPages.kandy');
-})->name('blog.kandy');
+//
+
+Route::get('/bromoijen/surabaya', function () {
+    return view('BlogPages.bromoijen.kandy');
+})->name('bromoijen.surabaya');
 
 
 
@@ -47,15 +53,30 @@ Route::get('/blog/kandy', function () {
 })->name('blog.kandy');
 
 // Blog Kandy
-Route::get('/blog/kandy', function () {
-    return view('BlogPages.kandy');
-})->name('blog.kandy');
+// Route::get('/blog/kandy', function () {
+//     return view('BlogPages.kandy');
+// })->name('blog.kandy');
 
-Route::get('/blog/tokyo', function () {
-    return view('BlogPages.tokyo');
-})->name('blog.tokyo');
+Route::get('/bromoijen/bali', function () {
+    return view('BlogPages.bromoijen.finshbali');
+})->name('bromoijen.bali');
 
 
 Route::get('/custom-trip', function () {
     return view('BlogPages.custom'); // menampilkan custom.blade.php
 })->name('custom.trip');
+
+
+Route::get('/bromoijen1', function () {
+    return view('BlogPages.bromoijen.bromoijenoption');
+})->name('bromoijen1.page');
+
+
+Route::get('/pesan-finish-surabaya', function () {
+    return view('BlogPages.bromoijen.pesanfinishsurabaya'); // nama file blade tanpa .blade.php
+})->name('pesanfinsihsurabaya.page');
+
+
+
+
+

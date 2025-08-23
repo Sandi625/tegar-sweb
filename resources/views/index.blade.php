@@ -31,6 +31,8 @@
 
 
 <body>
+    <div id="leafContainer"></div>
+
     <div class="loaderr">
         <div class="loader-inner">
             <div class="loader-line-wrap">
@@ -267,34 +269,38 @@
             Bromo - Ijen <span class="buttonHighlight">Tour Packages</span>
         </h1>
         <div class="blogsContainer">
-            <div class="blogsContent">
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1604928141064-207cea6f571f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80" />
-                    <h3 class="blogTitle">
-                        6 Days in Tokyo Itinerary: Complete Guide for First-Timers
-                    </h3>
-                    <a href="{{ route('blog.tokyo') }}"><button class="readBlog">Read</button></a>
-                </div>
+          <div class="blogsContent">
+    <div class="blog">
+        <img src="{{ asset('Images/7.jpg') }}" alt="Bromo Ijen Tour" />
+        <h3 class="blogTitle">
+            Bromo Ijen Tour (4D 3N)
+        </h3>
+        <a href="{{ route('bromoijen1.page') }}">
+            <button class="readBlog">Read</button>
+        </a>
+    </div>
 
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1535747790212-30c585ab4867?ixlib=rb-1.2.1&auto=format&fit=crop&w=1011&q=80" />
-                    <h3 class="blogTitle">
-                        HOW TO VISIT LAGO DI BRAIES – ITALY’S ALLURING EMERALD-GREEN LAKE
-                    </h3>
-                    <a href="{{ route('blog.italy') }}"><button class="readBlog">Read</button></a>
-                </div>
+    <div class="blog">
+        <img src="{{ asset('Images/11.jpg') }}" alt="Lago di Braies" />
+        <h3 class="blogTitle">
+            Bromo Ijen Tour from Surabaya (4D 3N)
+        </h3>
+        <a href="{{ route('blog.italy') }}">
+            <button class="readBlog">Read</button>
+        </a>
+    </div>
 
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" />
-                    <h3 class="blogTitle">
-                        Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
-                    </h3>
-                    <a href="{{ route('blog.kandy') }}"><button class="readBlog">Read</button></a>
-                </div>
-            </div>
+    <div class="blog">
+        <img src="{{ asset('Images/bromo3.jpg') }}" alt="Kandy Sri Lanka" />
+        <h3 class="blogTitle">
+            Bromo Ijen Tour from Surabaya (4D 3N)
+        </h3>
+        <a href="{{ route('bromoijen.bali') }}">
+            <button class="readBlog">Read</button>
+        </a>
+    </div>
+</div>
+
 
             {{-- <a href="{{ route('blog.page') }}">
         <button data-aos="fade-up" data-aos-duration="2000" class="allBlogs">
@@ -346,7 +352,7 @@
                     <h3 class="blogTitle">
                         6 Days in Tokyo Itinerary: Complete Guide for First-Timers
                     </h3>
-                    <a href="{{ route('blog.tokyo') }}"><button class="readBlog">Read</button></a>
+                    <a href="{{ route('bromoijen.bali') }}"><button class="readBlog">Read</button></a>
                 </div>
 
                 <div class="blog">
@@ -364,7 +370,7 @@
                     <h3 class="blogTitle">
                         Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
                     </h3>
-                    <a href="{{ route('blog.kandy') }}"><button class="readBlog">Read</button></a>
+                    <a href="{{ route('bromoijen.bali') }}"><button class="readBlog">Read</button></a>
                 </div>
             </div>
 
@@ -418,7 +424,7 @@
                     <h3 class="blogTitle">
                         6 Days in Tokyo Itinerary: Complete Guide for First-Timers
                     </h3>
-                    <a href="{{ route('blog.tokyo') }}"><button class="readBlog">Read</button></a>
+                    <a href="{{ route('bromoijen.bali') }}"><button class="readBlog">Read</button></a>
                 </div>
 
                 <div class="blog">
@@ -436,7 +442,7 @@
                     <h3 class="blogTitle">
                         Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
                     </h3>
-                    <a href="{{ route('blog.kandy') }}"><button class="readBlog">Read</button></a>
+                    <a href="{{ route('bromoijen.bali') }}"><button class="readBlog">Read</button></a>
                 </div>
             </div>
 
@@ -585,6 +591,114 @@
     </form>
 
 </section>
+
+<section class="reviews">
+  <h1 class="reviewsTitle" data-aos="fade-up" data-aos-duration="2000">
+    What People <span class="highlight">Say</span>
+  </h1>
+
+  <div class="marquee">
+    <div class="marquee-inner">
+      <!-- Review Cards (set 1) -->
+      <div class="reviewCard">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="reviewImg">
+        <h3 class="reviewName">Sarah Johnson</h3>
+        <p class="reviewText">“The Ijen Crater tour was absolutely breathtaking! The team was professional and made sure everything went smoothly.”</p>
+        <div class="reviewRating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="reviewCard">
+        <img src="https://randomuser.me/api/portraits/men/36.jpg" class="reviewImg">
+        <h3 class="reviewName">Michael Lee</h3>
+        <p class="reviewText">“Amazing experience! Blue fire is something I will never forget. Highly recommended tour service.”</p>
+        <div class="reviewRating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="reviewCard">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" class="reviewImg">
+        <h3 class="reviewName">Emily Davis</h3>
+        <p class="reviewText">“Everything was well-organized from Bali pickup to the hike itself. Tour guide was friendly and helpful.”</p>
+        <div class="reviewRating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="reviewCard">
+        <img src="https://randomuser.me/api/portraits/men/22.jpg" class="reviewImg">
+        <h3 class="reviewName">David Kim</h3>
+        <p class="reviewText">“One of the best tours I’ve ever joined! Worth every penny. I’ll recommend this to all my friends.”</p>
+        <div class="reviewRating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="reviewCard">
+        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="reviewImg">
+        <h3 class="reviewName">Sophia Martinez</h3>
+        <p class="reviewText">“The guides were super friendly and the hike was magical. Thank you for the unforgettable experience.”</p>
+        <div class="reviewRating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <!-- Copy kedua supaya looping mulus -->
+      <div class="reviewCard">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="reviewImg">
+        <h3 class="reviewName">Sarah Johnson</h3>
+        <p class="reviewText">“The Ijen Crater tour was absolutely breathtaking! The team was professional and made sure everything went smoothly.”</p>
+        <div class="reviewRating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="reviewCard">
+        <img src="https://randomuser.me/api/portraits/men/36.jpg" class="reviewImg">
+        <h3 class="reviewName">Michael Lee</h3>
+        <p class="reviewText">“Amazing experience! Blue fire is something I will never forget. Highly recommended tour service.”</p>
+        <div class="reviewRating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="reviewCard">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" class="reviewImg">
+        <h3 class="reviewName">Emily Davis</h3>
+        <p class="reviewText">“Everything was well-organized from Bali pickup to the hike itself. Tour guide was friendly and helpful.”</p>
+        <div class="reviewRating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="reviewCard">
+        <img src="https://randomuser.me/api/portraits/men/22.jpg" class="reviewImg">
+        <h3 class="reviewName">David Kim</h3>
+        <p class="reviewText">“One of the best tours I’ve ever joined! Worth every penny. I’ll recommend this to all my friends.”</p>
+        <div class="reviewRating">⭐⭐⭐⭐⭐</div>
+      </div>
+
+      <div class="reviewCard">
+        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="reviewImg">
+        <h3 class="reviewName">Sophia Martinez</h3>
+        <p class="reviewText">“The guides were super friendly and the hike was magical. Thank you for the unforgettable experience.”</p>
+        <div class="reviewRating">⭐⭐⭐⭐⭐</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="googleMap" style="padding: 50px 0; background: var(--bg-color);">
+    <div class="container" style="max-width: 1200px; margin: auto; text-align: center;">
+        <h2 style="font-size: 28px; margin-bottom: 20px; color: var(--text-color);">
+            Find Us on Google Maps
+        </h2>
+        <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d709.5816697941696!2d114.2573701416686!3d-8.205609772008037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd14f6d1d6614bb%3A0xf9c55b4687931297!2sPT.%20IJEN%20CRATER%20TOUR%20INDONESIA!5e0!3m2!1sen!2sid!4v1724565411781!5m2!1sen!2sid"
+                width="100%"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
 
 
 

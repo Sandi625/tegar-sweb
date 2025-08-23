@@ -405,9 +405,11 @@ hr {
     rgba(252, 176, 69, 1) 100%
   );
   z-index: 99;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
 }
+
 
 .toTop {
   width: 50px;
@@ -510,3 +512,332 @@ hr {
     align-items: flex-start;
   }
 }
+
+
+/* MAPS SECTION */
+.maps {
+  width: 100%;
+  height: 500px; /* supaya progress bar bisa ngehitung */
+  margin-top: 50px;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-box-shadow: 5px 5px 24px 1px rgba(20, 35, 97, 0.3);
+  box-shadow: 5px 5px 24px 1px rgba(20, 35, 97, 0.3);
+}
+
+.maps iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+footer {
+  background: #142361;
+  color: white;
+  padding-top: 50px; /* tambahan biar footer punya tinggi jelas */
+}
+
+.footerDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footerDescription {
+  border-right: 2px solid rgba(255, 255, 255, 0.281);
+  margin: 50px;
+  margin-right: 0;
+  padding-right: 50px;
+  width: 55%;
+  height: min-content;
+}
+
+.footerContact {
+  margin: 50px;
+  width: 45%;
+  text-align: center;
+}
+
+.contactOptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.footerPara,
+.contactPara {
+  color: #a4b9e7;
+}
+
+.footerCopyright {
+  background: #ca7717;
+  height: 60px; /* kasih tinggi fix biar progress bar aware */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.footerCopyright p span {
+  color: #142361;
+  font-weight: 500;
+}
+
+.contactOption img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 985px) {
+  .footerDetails {
+    flex-direction: column;
+  }
+
+  .footerDescription {
+    border: none;
+    border-bottom: 2px solid #a4b9e785;
+    width: 90%;
+    padding: 0 0 50px 0;
+    margin: auto;
+  }
+
+  .footerContact {
+    margin: auto;
+    margin-bottom: 50px;
+    width: 80%;
+  }
+}
+
+
+
+
+.anotherTour {
+  padding: 50px 0;
+  background: var(--bg-color);
+}
+
+.anotherTour .container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center; /* hanya judul */
+}
+
+.anotherTour h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.anotherTour .tourCard {
+  border-radius: 12px;
+  padding: 40px 50px; /* card lebih besar */
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  display: inline-block;
+  min-width: 400px; /* card lebih lebar */
+  max-width: 600px; /* card tidak terlalu besar */
+  text-align: left; /* rata kiri isi card */
+}
+
+.anotherTour .tourCard h3 {
+  font-size: 24px; /* sedikit lebih besar */
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.anotherTour .tourCard ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.anotherTour .tourCard li {
+  margin: 16px 0;
+}
+
+.anotherTour .tourCard li a {
+  text-decoration: none;
+  font-size: 20px; /* link lebih besar */
+  color: #0077cc;
+  display: block;
+  padding-left: 0; /* rata kiri penuh */
+  transition: color 0.3s ease;
+}
+
+.anotherTour .tourCard li a:hover {
+  color: #005fa3;
+}
+
+
+.bookingSection {
+  padding: 50px 0;
+  background-color: #f5f5f5;
+}
+
+.bookingSection .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.bookingCard {
+  background-color: #0077cc;
+  border-radius: 16px;
+  padding: 40px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  color: white;
+  flex-wrap: wrap;
+  cursor: pointer; /* supaya terlihat bisa diklik */
+  transition: transform 0.3s ease; /* animasi ringan saat hover card */
+}
+
+.bookingCard:hover {
+  transform: translateY(-3px); /* efek ringan saat hover */
+}
+
+.bookingTitle {
+  font-size: 28px;
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+.bookingBtn {
+  background-color: white;
+  color: #0077cc;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  flex: 0 0 auto;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  width: auto; /* default */
+}
+
+/* class untuk tombol memanjang setengah card */
+.bookingBtn.expand {
+  width: 85%; /* tombol memanjang setengah lebar card */
+  background-color: #005fa3;
+  color: white;
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+  .bookingCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  .bookingBtn {
+    width: 100%;
+  }
+}
+
+
+.bookingFormSection {
+  padding: 50px 20px;
+  background: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+}
+
+.bookingFormSection h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #0077cc;
+}
+
+.bookingFormSection p {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #555;
+  font-size: 16px;
+}
+
+form#bookingForm {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form#bookingForm input,
+form#bookingForm select,
+form#bookingForm textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+form#bookingForm input:focus,
+form#bookingForm select:focus,
+form#bookingForm textarea:focus {
+  outline: none;
+  border-color: #0077cc;
+  box-shadow: 0 0 8px rgba(0,119,204,0.2);
+}
+
+/* Tombol umum */
+form#bookingForm button {
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+/* Tombol Email */
+form#bookingForm button.emailBtn {
+  background-color: #0077cc;
+}
+form#bookingForm button.emailBtn:hover {
+  background-color: #005fa3;
+  transform: translateY(-2px);
+}
+
+/* Tombol WhatsApp */
+form#bookingForm button.whatsappBtn {
+  background-color: #25D366; /* hijau WhatsApp */
+}
+form#bookingForm button.whatsappBtn:hover {
+  background-color: #1ebe57;
+  transform: translateY(-2px);
+}
+
+/* Jarak antar tombol */
+form#bookingForm button + button {
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  form#bookingForm {
+    padding: 20px;
+  }
+  .bookingFormSection h2 {
+    font-size: 28px;
+  }
+}
+
+
+

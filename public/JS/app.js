@@ -84,3 +84,61 @@ function redirectToWhatsApp() {
     const message = encodeURIComponent("Hello, I'd like to ask!");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
 }
+
+
+document.getElementById("tourForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Ambil nilai input
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let destination = document.getElementById("destination").value;
+    let date = document.getElementById("date").value;
+    let notes = document.getElementById("notes").value;
+
+    // Format pesan
+    let message = `*New Tour Request*%0A
+Name: ${name}%0A
+Email: ${email}%0A
+Destination: ${destination}%0A
+Preferred Date: ${date}%0A
+Notes: ${notes}`;
+
+    // Nomor WhatsApp (gunakan kode negara 62 untuk Indonesia)
+    let phone = "6281330920809";
+
+    // Buat URL WhatsApp
+    let url = `https://wa.me/${phone}?text=${message}`;
+
+    // Arahkan ke WhatsApp
+    window.open(url, "_blank");
+});
+
+
+
+const leafContainer = document.getElementById('leafContainer');
+
+document.addEventListener('mousemove', (e) => {
+  // buat daun baru
+  const leaf = document.createElement('div');
+  leaf.classList.add('leaf');
+
+  // posisi awal sesuai mouse
+  leaf.style.left = e.clientX + 'px';
+  leaf.style.top = e.clientY + 'px';
+
+  // random ukuran daun
+  const size = Math.random() * 20 + 20;
+  leaf.style.width = size + 'px';
+  leaf.style.height = size + 'px';
+
+  // random kecepatan animasi
+  leaf.style.animationDuration = (Math.random() * 2 + 3) + 's';
+
+  leafContainer.appendChild(leaf);
+
+  // hapus daun setelah animasi selesai
+  leaf.addEventListener('animationend', () => {
+    leaf.remove();
+  });
+});
