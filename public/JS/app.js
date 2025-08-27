@@ -86,59 +86,92 @@ function redirectToWhatsApp() {
 }
 
 
-document.getElementById("tourForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+function getFormData() {
+  return {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    destination: document.getElementById("destination").value,
+    date: document.getElementById("date").value,
+    notes: document.getElementById("notes").value
+  };
+}
 
-    // Ambil nilai input
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let destination = document.getElementById("destination").value;
-    let date = document.getElementById("date").value;
-    let notes = document.getElementById("notes").value;
+function sendWhatsApp() {
+  let data = getFormData();
 
-    // Format pesan
-    let message = `*New Tour Request*%0A
-Name: ${name}%0A
-Email: ${email}%0A
-Destination: ${destination}%0A
-Preferred Date: ${date}%0A
-Notes: ${notes}`;
+  let message = `*New Tour Request*%0A
+Name: ${data.name}%0A
+Email: ${data.email}%0A
+Destination: ${data.destination}%0A
+Preferred Date: ${data.date}%0A
+Notes: ${data.notes}`;
 
-    // Nomor WhatsApp (gunakan kode negara 62 untuk Indonesia)
-    let phone = "6281330920809";
+  // Nomor WhatsApp tujuan
+  let phone = "6281330920809";
 
-    // Buat URL WhatsApp
-    let url = `https://wa.me/${phone}?text=${message}`;
+  let url = `https://wa.me/${phone}?text=${message}`;
+  window.open(url, "_blank");
+}
 
-    // Arahkan ke WhatsApp
-    window.open(url, "_blank");
-});
+function sendEmail() {
+  let data = getFormData();
+
+  let subject = "New Tour Request";
+  let body = `New Tour Request:
+
+Name: ${data.name}
+Email: ${data.email}
+Destination: ${data.destination}
+Preferred Date: ${data.date}
+Notes: ${data.notes}`;
+
+  // Email tujuan
+  let mailto = `mailto:sandipermadi625@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+}
 
 
 
-const leafContainer = document.getElementById('leafContainer');
+// const leafContainer = document.getElementById('leafContainer');
 
-document.addEventListener('mousemove', (e) => {
-  // buat daun baru
-  const leaf = document.createElement('div');
-  leaf.classList.add('leaf');
+// document.addEventListener('mousemove', (e) => {
+//   // buat daun baru
+//   const leaf = document.createElement('div');
+//   leaf.classList.add('leaf');
 
-  // posisi awal sesuai mouse
-  leaf.style.left = e.clientX + 'px';
-  leaf.style.top = e.clientY + 'px';
+//   // posisi awal sesuai mouse
+//   leaf.style.left = e.clientX + 'px';
+//   leaf.style.top = e.clientY + 'px';
 
-  // random ukuran daun
-  const size = Math.random() * 20 + 20;
-  leaf.style.width = size + 'px';
-  leaf.style.height = size + 'px';
+//   // random ukuran daun
+//   const size = Math.random() * 20 + 20;
+//   leaf.style.width = size + 'px';
+//   leaf.style.height = size + 'px';
 
-  // random kecepatan animasi
-  leaf.style.animationDuration = (Math.random() * 2 + 3) + 's';
+//   // random kecepatan animasi
+//   leaf.style.animationDuration = (Math.random() * 2 + 3) + 's';
 
-  leafContainer.appendChild(leaf);
+//   leafContainer.appendChild(leaf);
 
-  // hapus daun setelah animasi selesai
-  leaf.addEventListener('animationend', () => {
-    leaf.remove();
-  });
-});
+//   // hapus daun setelah animasi selesai
+//   leaf.addEventListener('animationend', () => {
+//     leaf.remove();
+//   });
+// });
+
+
+// var swiper = new Swiper(".mySwiper", {
+//   loop: true,
+//   autoplay: {
+//     delay: 3000,
+//     disableOnInteraction: false,
+//   },
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });

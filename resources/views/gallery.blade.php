@@ -77,7 +77,7 @@
 
     <div id="gallery" class="container-fluid">
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1538970272646-f61fabb3a8a2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=641&q=80"
+            <img src="{{ asset('Images/bromo3.jpg') }}"
                 class="img-responsive">
             <div class="details">
                 Times Square, New York, United States
@@ -85,7 +85,7 @@
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1593844517100-5aced8697e58?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            <img src="{{ asset('Images/47.jpg') }}"
                 class="img-responsive">
             <div class="details">
                 The Himalayas

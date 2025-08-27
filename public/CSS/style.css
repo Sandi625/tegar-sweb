@@ -1618,3 +1618,15 @@ footer {
     opacity: 0;
   }
 }
+
+.blogDescription {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* tampil hanya 2 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: #444;
+}
+
+

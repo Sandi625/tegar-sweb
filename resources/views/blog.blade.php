@@ -82,13 +82,10 @@
     <section class="blogs">
         <div class="blogsContainer">
             <div class="blog" id="blog">
-                <img src="https://images.unsplash.com/photo-1532236395709-7d70320fec2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1078&q=80"
-                    alt="" class="image" />
+                <img src="{{ asset('Images/7.jpg') }}" alt="Bromo Ijen Tour" class="image" />
                 <div class="content">
                     <div class="details">
-                        <h2>
-                            6 Days in Tokyo Itinerary: Complete Guide for First-Timers
-                        </h2>
+                        <h2>Bromo ijen tour Start from Surabaya (finish at Bali)</h2>
                         <p class="text">
                             There aren’t many cities in the world that quite span the size
                             of Tokyo. Due to its sheer scale, uncovering Japan’s largest
@@ -105,7 +102,7 @@
                         <a href="{{ route('bromoijen.bali') }}">
                             <button class="viewButton">Details Trip</button>
                         </a>
-                        <p class="date">22 Mar 2021</p>
+                        <p class="price">$350</p>
                     </div>
 
                 </div>
@@ -113,13 +110,10 @@
 
             <!-- Contoh blog lain -->
             <div class="blog">
-                <img src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
-                    alt="" class="image" />
+                <img src="{{ asset('Images/11.jpg') }}" alt="Bromo Ijen Tour Surabaya" class="image" />
                 <div class="content">
                     <div class="details">
-                        <h2>
-                            Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
-                        </h2>
+                        <h2>Bromo ijen tour Start from Surabaya (finish at Surabaya)</h2>
                         <p class="text">
                             Kandy is the hill country capital and gateway to the tea region
                             of Sri Lanka. This former Kingdom is a colourful, bustling city
@@ -131,154 +125,17 @@
                     </div>
 
                     <div class="buttons">
-                        <a href="{{ route('bromoijen.bali') }}">
+                        <a href="{{ route('bromoijen.surabaya') }}">
                             <button class="viewButton">Details Trip</button>
                         </a>
-                        <p class="date">23 Aug 2021</p>
+                        <p class="price">$370</p>
                     </div>
                 </div>
             </div>
-               <div class="blog">
-                <img src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
-                    alt="" class="image" />
-                <div class="content">
-                    <div class="details">
-                        <h2>
-                            Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
-                        </h2>
-                        <p class="text">
-                            Kandy is the hill country capital and gateway to the tea region
-                            of Sri Lanka. This former Kingdom is a colourful, bustling city
-                            of markets, temples, spice gardens, a picturesque lake and
-                            surrounded by scenic natural beauty – offering a range of
-                            cultural and dynamic experiences for all types of travellers.
-                        </p>
-                        <button class="readMoreBtn">Read more</button>
-                    </div>
-
-                    <div class="buttons">
-                        <a href="{{ route('bromoijen.bali') }}">
-                            <button class="viewButton">Details Trip</button>
-                        </a>
-                        <p class="date">23 Aug 2021</p>
-                    </div>
-                </div>
-            </div>
-               <div class="blog">
-                <img src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
-                    alt="" class="image" />
-                <div class="content">
-                    <div class="details">
-                        <h2>
-                            Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
-                        </h2>
-                        <p class="text">
-                            Kandy is the hill country capital and gateway to the tea region
-                            of Sri Lanka. This former Kingdom is a colourful, bustling city
-                            of markets, temples, spice gardens, a picturesque lake and
-                            surrounded by scenic natural beauty – offering a range of
-                            cultural and dynamic experiences for all types of travellers.
-                        </p>
-                        <button class="readMoreBtn">Read more</button>
-                    </div>
-
-                    <div class="buttons">
-                        <a href="{{ route('blog.kandy') }}">
-                            <button class="viewButton">Details Trip</button>
-                        </a>
-                        <p class="date">23 Aug 2021</p>
-                    </div>
-                </div>
-            </div>
-               <div class="blog">
-                <img src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
-                    alt="" class="image" />
-                <div class="content">
-                    <div class="details">
-                        <h2>
-                            Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
-                        </h2>
-                        <p class="text">
-                            Kandy is the hill country capital and gateway to the tea region
-                            of Sri Lanka. This former Kingdom is a colourful, bustling city
-                            of markets, temples, spice gardens, a picturesque lake and
-                            surrounded by scenic natural beauty – offering a range of
-                            cultural and dynamic experiences for all types of travellers.
-                        </p>
-                        <button class="readMoreBtn">Read more</button>
-                    </div>
-
-                    <div class="buttons">
-                        <a href="{{ route('blog.kandy') }}">
-                            <button class="viewButton">Details Trip</button>
-                        </a>
-                        <p class="date">23 Aug 2021</p>
-                    </div>
-                </div>
-            </div>
-               <div class="blog">
-                <img src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
-                    alt="" class="image" />
-                <div class="content">
-                    <div class="details">
-                        <h2>
-                            Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
-                        </h2>
-                        <p class="text">
-                            Kandy is the hill country capital and gateway to the tea region
-                            of Sri Lanka. This former Kingdom is a colourful, bustling city
-                            of markets, temples, spice gardens, a picturesque lake and
-                            surrounded by scenic natural beauty – offering a range of
-                            cultural and dynamic experiences for all types of travellers.
-                        </p>
-                        <button class="readMoreBtn">Read more</button>
-                    </div>
-
-                    <div class="buttons">
-                        <a href="{{ route('blog.kandy') }}">
-                            <button class="viewButton">Details Trip</button>
-                        </a>
-                        <p class="date">23 Aug 2021</p>
-                    </div>
-                </div>
-            </div>
-               <div class="blog">
-                <img src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
-                    alt="" class="image" />
-                <div class="content">
-                    <div class="details">
-                        <h2>
-                            Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
-                        </h2>
-                        <p class="text">
-                            Kandy is the hill country capital and gateway to the tea region
-                            of Sri Lanka. This former Kingdom is a colourful, bustling city
-                            of markets, temples, spice gardens, a picturesque lake and
-                            surrounded by scenic natural beauty – offering a range of
-                            cultural and dynamic experiences for all types of travellers.
-                        </p>
-                        <button class="readMoreBtn">Read more</button>
-                    </div>
-
-                    <div class="buttons">
-                        <a href="{{ route('blog.kandy') }}">
-                            <button class="viewButton">Details Trip</button>
-                        </a>
-                        <p class="date">23 Aug 2021</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="custom-shape-divider-bottom-1631607238">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-                    class="shape-fill"></path>
-            </svg>
+            <!-- lanjut blog lain tinggal ganti src sesuai file di folder Images -->
         </div>
     </section>
+
 
     <footer>
         <div class="footerDetails">

@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('Images/favicon.png') }}" type="image/x-icon" />
@@ -31,7 +33,7 @@
 
 
 <body>
-    <div id="leafContainer"></div>
+{{-- <div id="leafContainer"></div> --}}
 
     <div class="loaderr">
         <div class="loader-inner">
@@ -108,25 +110,20 @@
                 </div>
             </div>
 
-            <div class="images">
-                <div class="image wide" style="background-image: url('/Images/pexels-alexandr-podvalny-3278215.jpg');">
-                </div>
+<div class="images">
+    <div class="image wide" style="background-image: url('{{ asset('Images/7.jpg') }}');"></div>
 
-                <div class="image" style="background-image: url('/Images/pexels-c-cagnin-2007401.jpg');">
-                </div>
+    <div class="image" style="background-image: url('{{ asset('Images/13.jpg') }}');"></div>
 
-                <div class="image tall" style="background-image: url('/Images/pexels-ian-beckley-2440079.jpg');">
-                </div>
+    <div class="image tall" style="background-image: url('{{ asset('Images/bluefire1.jpg') }}');"></div>
 
-                <div class="image" style="background-image: url('/Images/pexels-johannes-plenio-1119972.jpg');">
-                </div>
+    <div class="image" style="background-image: url('{{ asset('Images/51.jpg') }}');"></div>
 
-                <div class="image" style="background-image: url('/Images/pexels-mark-neal-2225439.jpg');">
-                </div>
+    <div class="image" style="background-image: url('{{ asset('Images/47.jpg') }}');"></div>
 
-                <div class="image wide" style="background-image: url('/Images/pexels-mali-maeder-1483024.jpg');">
-                </div>
-            </div>
+    <div class="image wide" style="background-image: url('{{ asset('Images/44.jpg') }}');"></div>
+</div>
+
         </div>
 
         <div class="custom-shape-divider-bottom-1630587725">
@@ -141,455 +138,245 @@
     </section>
 
 
-    <section class="trending" id="places">
-        <div class="trendingWrapper">
-            <img src="./Images/leaf.svg" class="trendingSVG1" />
-            <!-- <img src="./Images/tower.svg" class="trendingSVG2">  -->
-            <h1 class="trendingTitle" data-aos="fade-up" data-aos-duration="2000">
-                Discover <span class="buttonHighlight">Trending Attractions</span>
-            </h1>
-            <div class="menu-wrapper">
-                <div class="menu">
-                    <div class="item">
-                        <div class="item-content">
-                            <div class="item-image"
-                                style="
-                    background: url(https://images.unsplash.com/photo-1612862862126-865765df2ded?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);
-                    background-position: center;
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                  ">
-                                <div class="location">
-                                    <img src="./Images/location.png" />
-                                    <p class="place">The top of Sigiriya rock</p>
-                                </div>
-                            </div>
-                            <div class="placeTitle">Sigiriya <span></span></div>
-                            <div class="placeDescription">
-                                Sigiriya or Sinhagiri is an ancient rock fortress located in
-                                the northern Matale District near the town of Dambulla in the
-                                Central Province, Sri Lanka. The name refers to a site of
-                                historical and archaeological significance that is dominated
-                                by a massive column of rock around 180 metres high.
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="item">
-                        <div class="item-content">
-                            <div class="item-image"
-                                style="
-                    background: url(https://images.unsplash.com/photo-1542542540-6da0f4dd4b51?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);
-                    background-position: center;
-                    background-size: 100%;
-                    background-repeat: no-repeat;
-                  ">
-                                <div class="location">
-                                    <img src="./Images/location.png" />
-                                    <p class="place">Tokyo Tower</p>
-                                </div>
-                            </div>
-                            <div class="placeTitle">Tokyo <span></span></div>
-                            <div class="placeDescription">
-                                Tokyo, Japan’s busy capital, mixes the ultramodern and the
-                                traditional, from neon-lit skyscrapers to historic temples.
-                                The opulent Meiji Shinto Shrine is known for its towering gate
-                                and surrounding woods.
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="item">
-                        <div class="item-content">
-                            <div class="item-image"
-                                style="
-                    background: url(https://images.unsplash.com/photo-1524726240783-939bfdd633e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);
-                    background-position: center;
-                    background-size: 100%;
-                    background-repeat: no-repeat;
-                  ">
-                                <div class="location">
-                                    <img src="./Images/location.png" />
-                                    <p class="place">Ella waterfall</p>
-                                </div>
-                            </div>
-                            <div class="placeTitle">Ella <span></span></div>
-                            <div class="placeDescription">
-                                Ella is a small town in the Badulla District of Uva Province,
-                                Sri Lanka governed by an Urban Council. It is approximately
-                                200 kilometres east of Colombo and is situated at an elevation
-                                of 1,041 metres above sea level.
-                            </div>
-                        </div>
-                    </div>
+{{-- Tour Paket --}}
 
-                    <div class="item">
-                        <div class="item-image"
-                            style="
-                  background: url(https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80);
-                  background-position: center;
-                  background-size: 100%;
-                  background-repeat: no-repeat;
-                ">
-                            <div class="location">
-                                <img src="./Images/location.png" />
-                                <p class="place">San Francisco</p>
-                            </div>
-                        </div>
-                        <div class="placeTitle">Golden Gate Bridge <span></span></div>
-                        <div class="placeDescription">
-                            The Golden Gate Bridge is a suspension bridge spanning the
-                            Golden Gate, the one-mile-wide strait connecting San Francisco
-                            Bay and the Pacific Ocean. A marvel of modern engineering, the
-                            Golden Gate Bridge is 1.7 miles long and 90 feet wide.
-                        </div>
-                    </div>
-                </div>
+  <section class="blogs">
+    <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
+        Bromo - Ijen <span class="buttonHighlight">Tour Packages</span>
+    </h1>
+    <div class="blogsContainer">
+        <div class="blogsContent">
+
+            <div class="blog">
+                <img src="{{ asset('Images/7.jpg') }}" alt="Bromo Ijen Tour" />
+                <h3 class="blogTitle">
+                    Bromo Ijen Tour (4D 3N)
+                </h3>
+                {{-- <p class="blogDescription">
+                    Explore the magical sunrise of Mount Bromo and the stunning blue flames of Ijen Crater in this 4-day 3-night tour.
+                </p> --}}
+                <p class="blogPrice">
+                    Start from <span class="highlightText">$350 / person</span>
+                </p>
+                <a href="{{ route('bromoijen1.page') }}">
+                    <button class="readBlog">Details</button>
+                </a>
             </div>
-        </div>
 
-        <div class="custom-shape-divider-bottom-1630600827">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-                    opacity=".25" class="shape-fill"></path>
-                <path
-                    d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
-                    opacity=".5" class="shape-fill"></path>
-                <path
-                    d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
-                    class="shape-fill"></path>
-            </svg>
-        </div>
-    </section>
+            <div class="blog">
+                <img src="{{ asset('Images/11.jpg') }}" alt="Bromo Ijen Tour from Surabaya" />
+                <h3 class="blogTitle">
+                    Bromo Ijen Tour from Surabaya (4D 3N)
+                </h3>
+                {{-- <p class="blogDescription">
+                    Starting from Surabaya, enjoy a comfortable journey to Mount Bromo and Ijen, including transport and local guide.
+                </p> --}}
+                <p class="blogPrice">
+                    Start from <span class="highlightText">$370 / person</span>
+                </p>
+                <a href="{{ route('blog.italy') }}">
+                    <button class="readBlog">Details</button>
+                </a>
+            </div>
 
-    <section class="blogs">
-        <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
-            Bromo - Ijen <span class="buttonHighlight">Tour Packages</span>
-        </h1>
-        <div class="blogsContainer">
-          <div class="blogsContent">
-    <div class="blog">
-        <img src="{{ asset('Images/7.jpg') }}" alt="Bromo Ijen Tour" />
-        <h3 class="blogTitle">
-            Bromo Ijen Tour (4D 3N)
-        </h3>
-        <a href="{{ route('bromoijen1.page') }}">
-            <button class="readBlog">Read</button>
-        </a>
+            <div class="blog">
+                <img src="{{ asset('Images/bromo3.jpg') }}" alt="Bromo Ijen Tour from Bali" />
+                <h3 class="blogTitle">
+                    Bromo Ijen Tour from Bali (4D 3N)
+                </h3>
+                {{-- <p class="blogDescription">
+                    Begin your adventure from Bali, crossing to Java to witness Bromo’s sunrise and Ijen’s mesmerizing blue fire.
+                </p> --}}
+                <p class="blogPrice">
+                    Start from <span class="highlightText">$400 / person</span>
+                </p>
+                <a href="{{ route('bromoijen.bali') }}">
+                    <button class="readBlog">Details</button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+ <section class="blogs">
+    <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
+        Bromo - Ijen - Tumpak Sewu <span class="buttonHighlight">Tour Packages</span>
+    </h1>
+   <div class="blogsContainer">
+        <div class="blogsContent">
+
+            <div class="blog">
+                <img src="{{ asset('Images/7.jpg') }}" alt="Bromo Ijen Tour" />
+                <h3 class="blogTitle">
+                    Bromo Ijen Tour (4D 3N)
+                </h3>
+                {{-- <p class="blogDescription">
+                    Explore the magical sunrise of Mount Bromo and the stunning blue flames of Ijen Crater in this 4-day 3-night tour.
+                </p> --}}
+                <p class="blogPrice">
+                    Start from <span class="highlightText">$350 / person</span>
+                </p>
+                <a href="{{ route('bromoijen1.page') }}">
+                    <button class="readBlog">Details</button>
+                </a>
+            </div>
+
+            <div class="blog">
+                <img src="{{ asset('Images/11.jpg') }}" alt="Bromo Ijen Tour from Surabaya" />
+                <h3 class="blogTitle">
+                    Bromo Ijen Tour from Surabaya (4D 3N)
+                </h3>
+                {{-- <p class="blogDescription">
+                    Starting from Surabaya, enjoy a comfortable journey to Mount Bromo and Ijen, including transport and local guide.
+                </p> --}}
+                <p class="blogPrice">
+                    Start from <span class="highlightText">$370 / person</span>
+                </p>
+                <a href="{{ route('blog.italy') }}">
+                    <button class="readBlog">Details</button>
+                </a>
+            </div>
+
+            <div class="blog">
+                <img src="{{ asset('Images/bromo3.jpg') }}" alt="Bromo Ijen Tour from Bali" />
+                <h3 class="blogTitle">
+                    Bromo Ijen Tour from Bali (4D 3N)
+                </h3>
+                {{-- <p class="blogDescription">
+                    Begin your adventure from Bali, crossing to Java to witness Bromo’s sunrise and Ijen’s mesmerizing blue fire.
+                </p> --}}
+                <p class="blogPrice">
+                    Start from <span class="highlightText">$400 / person</span>
+                </p>
+                <a href="{{ route('bromoijen.bali') }}">
+                    <button class="readBlog">Details</button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="blogs">
+    <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
+        Midnight Ijen Crater <span class="buttonHighlight">Tour Packages</span>
+    </h1>
+   <div class="blogsContainer">
+        <div class="blogsContent">
+
+            <div class="blog">
+                <img src="{{ asset('Images/7.jpg') }}" alt="Bromo Ijen Tour" />
+                <h3 class="blogTitle">
+                    Bromo Ijen Tour (4D 3N)
+                </h3>
+                {{-- <p class="blogDescription">
+                    Explore the magical sunrise of Mount Bromo and the stunning blue flames of Ijen Crater in this 4-day 3-night tour.
+                </p> --}}
+                <p class="blogPrice">
+                    Start from <span class="highlightText">$350 / person</span>
+                </p>
+                <a href="{{ route('bromoijen1.page') }}">
+                    <button class="readBlog">Details</button>
+                </a>
+            </div>
+
+            <div class="blog">
+                <img src="{{ asset('Images/11.jpg') }}" alt="Bromo Ijen Tour from Surabaya" />
+                <h3 class="blogTitle">
+                    Bromo Ijen Tour from Surabaya (4D 3N)
+                </h3>
+                {{-- <p class="blogDescription">
+                    Starting from Surabaya, enjoy a comfortable journey to Mount Bromo and Ijen, including transport and local guide.
+                </p> --}}
+                <p class="blogPrice">
+                    Start from <span class="highlightText">$370 / person</span>
+                </p>
+                <a href="{{ route('blog.italy') }}">
+                    <button class="readBlog">Details</button>
+                </a>
+            </div>
+
+            <div class="blog">
+                <img src="{{ asset('Images/bromo3.jpg') }}" alt="Bromo Ijen Tour from Bali" />
+                <h3 class="blogTitle">
+                    Bromo Ijen Tour from Bali (4D 3N)
+                </h3>
+                {{-- <p class="blogDescription">
+                    Begin your adventure from Bali, crossing to Java to witness Bromo’s sunrise and Ijen’s mesmerizing blue fire.
+                </p> --}}
+                <p class="blogPrice">
+                    Start from <span class="highlightText">$400 / person</span>
+                </p>
+                <a href="{{ route('bromoijen.bali') }}">
+                    <button class="readBlog">Details</button>
+                </a>
+            </div>
+
+        </div>
     </div>
 
-    <div class="blog">
-        <img src="{{ asset('Images/11.jpg') }}" alt="Lago di Braies" />
-        <h3 class="blogTitle">
-            Bromo Ijen Tour from Surabaya (4D 3N)
-        </h3>
-        <a href="{{ route('blog.italy') }}">
-            <button class="readBlog">Read</button>
-        </a>
+    <div class="funFact" data-aos="fade-up" data-aos-duration="2000">
+        <div class="factContent">
+            <div class="funFactButton">
+                <a href="{{ route('blog.page') }}" class="btn">View All Package</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+ <section class="customTourForm" style="max-width:600px;margin:50px auto;padding:20px;border:1px solid #ccc;border-radius:8px;">
+  <h2 style="text-align:center;margin-bottom:20px;">Customize Your Tour Package</h2>
+
+  <form id="tourForm">
+    <div style="margin-bottom:15px;">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
     </div>
 
-    <div class="blog">
-        <img src="{{ asset('Images/bromo3.jpg') }}" alt="Kandy Sri Lanka" />
-        <h3 class="blogTitle">
-            Bromo Ijen Tour from Surabaya (4D 3N)
-        </h3>
-        <a href="{{ route('bromoijen.bali') }}">
-            <button class="readBlog">Read</button>
-        </a>
+    <div style="margin-bottom:15px;">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
     </div>
-</div>
 
+    <div style="margin-bottom:15px;">
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" name="destination" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
+    </div>
 
-            {{-- <a href="{{ route('blog.page') }}">
-        <button data-aos="fade-up" data-aos-duration="2000" class="allBlogs">
-            View All Tour Package's
-        </button>
-    </a>
-</div>
+    <div style="margin-bottom:15px;">
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" name="date" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
+    </div>
 
+    <div style="margin-bottom:15px;">
+      <label for="notes">Additional Notes:</label>
+      <textarea id="notes" name="notes" rows="4" style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;"></textarea>
+    </div>
 
-        <div class="funFact" data-aos="fade-up" data-aos-duration="2000">
-            <div class="factContent">
-                <h1 class="funFactTitle">
-                    <span class="highlightText">Fun Fact</span> Of the Day
-                </h1>
+    <!-- Tombol WA -->
+    <button type="button" onclick="sendWhatsApp()"
+      style="width:100%;padding:12px;background-color:#25d366;color:white;border:none;border-radius:6px;font-size:16px;cursor:pointer;margin-bottom:10px;">
+      Send via WhatsApp
+    </button>
 
-                <p class="fact">
-                    Besides the U.S., every developed country in the world extends at
-                    least one legally required paid vacation day or holiday to its
-                    employees.
-                </p>
-
-                <p class="fact">
-                    The most generous country? Austria, which has
-                    <span class="highlightTextSec">a legal minimum of 22 paid vacation days per year</span>, on top of
-                    13 paid holidays!
-                </p>
-            </div>
-        </div>
-
-        <div class="custom-shape-divider-bottom-1631607238">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-                    class="shape-fill"></path>
-            </svg>
-        </div> --}}
-    </section>
-
-    <section class="blogs">
-        <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
-            Bromo - Ijen - Tumpak Sewu <span class="buttonHighlight">Tour Packages</span>
-        </h1>
-        <div class="blogsContainer">
-            <div class="blogsContent">
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1604928141064-207cea6f571f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80" />
-                    <h3 class="blogTitle">
-                        6 Days in Tokyo Itinerary: Complete Guide for First-Timers
-                    </h3>
-                    <a href="{{ route('bromoijen.bali') }}"><button class="readBlog">Read</button></a>
-                </div>
-
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1535747790212-30c585ab4867?ixlib=rb-1.2.1&auto=format&fit=crop&w=1011&q=80" />
-                    <h3 class="blogTitle">
-                        HOW TO VISIT LAGO DI BRAIES – ITALY’S ALLURING EMERALD-GREEN LAKE
-                    </h3>
-                    <a href="{{ route('blog.italy') }}"><button class="readBlog">Read</button></a>
-                </div>
-
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" />
-                    <h3 class="blogTitle">
-                        Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
-                    </h3>
-                    <a href="{{ route('bromoijen.bali') }}"><button class="readBlog">Read</button></a>
-                </div>
-            </div>
-
-            {{-- <a href="{{ route('blog.page') }}">
-        <button data-aos="fade-up" data-aos-duration="2000" class="allBlogs">
-            View All Tour Package's
-        </button>
-    </a>
-</div>
-
-
-        <div class="funFact" data-aos="fade-up" data-aos-duration="2000">
-            <div class="factContent">
-                <h1 class="funFactTitle">
-                    <span class="highlightText">Fun Fact</span> Of the Day
-                </h1>
-
-                <p class="fact">
-                    Besides the U.S., every developed country in the world extends at
-                    least one legally required paid vacation day or holiday to its
-                    employees.
-                </p>
-
-                <p class="fact">
-                    The most generous country? Austria, which has
-                    <span class="highlightTextSec">a legal minimum of 22 paid vacation days per year</span>, on top of
-                    13 paid holidays!
-                </p>
-            </div>
-        </div>
-
-        <div class="custom-shape-divider-bottom-1631607238">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-                    class="shape-fill"></path>
-            </svg>
-        </div> --}}
-    </section>
-
-    <section class="blogs">
-        <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
-            Midnight ijen crater <span class="buttonHighlight">Tour Packages</span>
-        </h1>
-        <div class="blogsContainer">
-            <div class="blogsContent">
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1604928141064-207cea6f571f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80" />
-                    <h3 class="blogTitle">
-                        6 Days in Tokyo Itinerary: Complete Guide for First-Timers
-                    </h3>
-                    <a href="{{ route('bromoijen.bali') }}"><button class="readBlog">Read</button></a>
-                </div>
-
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1535747790212-30c585ab4867?ixlib=rb-1.2.1&auto=format&fit=crop&w=1011&q=80" />
-                    <h3 class="blogTitle">
-                        HOW TO VISIT LAGO DI BRAIES – ITALY’S ALLURING EMERALD-GREEN LAKE
-                    </h3>
-                    <a href="{{ route('blog.italy') }}"><button class="readBlog">Read</button></a>
-                </div>
-
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" />
-                    <h3 class="blogTitle">
-                        Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
-                    </h3>
-                    <a href="{{ route('bromoijen.bali') }}"><button class="readBlog">Read</button></a>
-                </div>
-            </div>
-
-
-
-        </div>
-
-
-        <div class="funFact" data-aos="fade-up" data-aos-duration="2000">
-            <div class="factContent">
-                <h1 class="funFactTitle">
-                    {{-- <span class="highlightText">View All</span> Package's --}}
-                </h1>
-
-                {{-- <p class="fact">
-            Besides the U.S., every developed country in the world extends at
-            least one legally required paid vacation day or holiday to its
-            employees.
-        </p>
-
-        <p class="fact">
-            The most generous country? Austria, which has
-            <span class="highlightTextSec">a legal minimum of 22 paid vacation days per year</span>, on top of
-            13 paid holidays!
-        </p> --}}
-
-                <!-- Tombol dengan route Laravel -->
-                <div class="funFactButton">
-                    <a href="{{ route('blog.page') }}" class="btn">View All Package</a>
-                </div>
-            </div>
-        </div>
-
-
-
-{{--
-        <div class="custom-shape-divider-bottom-1631607238">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-                    class="shape-fill"></path>
-            </svg>
-        </div> --}}
-    </section>
-
-
-     {{-- <section class="blogs">
-        <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
-            Midnight ijen crater <span class="buttonHighlight">Tour Packages</span>
-        </h1>
-        <div class="blogsContainer">
-            <div class="blogsContent">
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1604928141064-207cea6f571f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80" />
-                    <h3 class="blogTitle">
-                        6 Days in Tokyo Itinerary: Complete Guide for First-Timers
-                    </h3>
-                    <a href="{{ route('custom.trip') }}"><button class="readBlog">Read</button></a>
-                </div>
-
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1535747790212-30c585ab4867?ixlib=rb-1.2.1&auto=format&fit=crop&w=1011&q=80" />
-                    <h3 class="blogTitle">
-                        HOW TO VISIT LAGO DI BRAIES – ITALY’S ALLURING EMERALD-GREEN LAKE
-                    </h3>
-                    <a href="{{ route('custom.trip') }}"><button class="readBlog">Read</button></a>
-                </div>
-
-                <div class="blog">
-                    <img
-                        src="https://images.unsplash.com/photo-1626091022888-485eb96c494a?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" />
-                    <h3 class="blogTitle">
-                        Living 24 Hours in the city of Kandy, The Heart of Sri Lanka
-                    </h3>
-                    <a href="{{ route('custom.trip') }}"><button class="readBlog">Read</button></a>
-                </div>
-            </div>
-
-
-
-        </div>
-
-
-        <div class="funFact" data-aos="fade-up" data-aos-duration="2000">
-            <div class="factContent">
-                <h1 class="funFactTitle">
-                </h1>
-
-
-
-                <!-- Tombol dengan route Laravel -->
-                <div class="funFactButton">
-                    <a href="{{ route('blog.page') }}" class="btn">View All Package</a>
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <div class="custom-shape-divider-bottom-1631607238">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path
-                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-                    class="shape-fill"></path>
-            </svg>
-        </div>
-    </section> --}}
-
-    <section class="customTourForm" style="max-width:600px;margin:50px auto;padding:20px;border:1px solid #ccc;border-radius:8px;">
-    <h2 style="text-align:center;margin-bottom:20px;">Customize Your Tour Package</h2>
-
-    <form id="tourForm">
-        <div style="margin-bottom:15px;">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
-        </div>
-
-        <div style="margin-bottom:15px;">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
-        </div>
-
-        <div style="margin-bottom:15px;">
-            <label for="destination">Destination:</label>
-            <input type="text" id="destination" name="destination" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
-        </div>
-
-        <div style="margin-bottom:15px;">
-            <label for="date">Preferred Date:</label>
-            <input type="date" id="date" name="date" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
-        </div>
-
-        <div style="margin-bottom:15px;">
-            <label for="notes">Additional Notes:</label>
-            <textarea id="notes" name="notes" rows="4" style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;"></textarea>
-        </div>
-
-        <button type="submit" style="width:100%;padding:12px;background-color:#f2870c;color:white;border:none;border-radius:6px;font-size:16px;cursor:pointer;">
-            Send via WhatsApp
-        </button>
-    </form>
-
+    <!-- Tombol Email -->
+    <button type="button" onclick="sendEmail()"
+      style="width:100%;padding:12px;background-color:#f2870c;color:white;border:none;border-radius:6px;font-size:16px;cursor:pointer;">
+      Send via Email
+    </button>
+  </form>
 </section>
 
 <section class="reviews">
@@ -674,6 +461,136 @@
   </div>
 </section>
 
+<section class="trending" id="places">
+    <div class="trendingWrapper">
+        <img src="{{ asset('assets/leaf.svg') }}" class="trendingSVG1" />
+        <!-- <img src="{{ asset('assets/tower.svg') }}" class="trendingSVG2">  -->
+
+        <h1 class="trendingTitle" data-aos="fade-up" data-aos-duration="2000">
+            Discover <span class="buttonHighlight">Trending Attractions</span>
+        </h1>
+
+        <div class="menu-wrapper">
+            <div class="menu">
+
+                <!-- Bromo -->
+             <div class="item">
+    <div class="item-content">
+        <div class="item-image"
+            style="
+                background: url('{{ asset('Images/bromo3.jpg') }}');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            ">
+            <div class="location">
+                <img src="{{ asset('Images/bromo3.jpg') }}" />
+                <p class="place">Mount Bromo</p>
+            </div>
+        </div>
+        <div class="placeTitle">Mount Bromo <span></span></div>
+        <div class="placeDescription">
+            Mount Bromo is one of the most famous volcanoes in Indonesia, located in East Java.
+            Known for its breathtaking sunrise and unique volcanic landscape, it attracts travelers
+            from all over the world for an unforgettable adventure...
+        </div>
+    </div>
+</div>
+
+
+  <!-- Djawatan -->
+<div class="item">
+    <div class="item-content">
+        <div class="item-image"
+            style="
+                background: url('{{ asset('Images/47.jpg') }}');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            ">
+            <div class="location">
+                <img src="{{ asset('Images/47.jpg') }}" />
+                <p class="place">Djawatan</p>
+            </div>
+        </div>
+        <div class="placeTitle">Djawatan <span></span></div>
+        <div class="placeDescription">
+            Djawatan Forest, also known as the "Lord of The Rings Forest," offers a lush green atmosphere
+            with giant exotic trembesi trees, perfect for photography spots and nature tourism.
+        </div>
+    </div>
+</div>
+
+
+
+              <!-- Ijen -->
+<div class="item">
+    <div class="item-content">
+        <div class="item-image"
+            style="
+                background: url('{{ asset('Images/ijen1.jpg') }}');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            ">
+            <div class="location">
+                <img src="{{ asset('Images/ijen1.jpg') }}" />
+                <p class="place">Ijen</p>
+            </div>
+        </div>
+        <div class="placeTitle">Ijen <span></span></div>
+        <div class="placeDescription">
+            Ijen is a famous volcanic complex in East Java, Indonesia,
+            known for its striking turquoise crater lake and the
+            mesmerizing blue fire phenomenon...
+        </div>
+    </div>
+</div>
+
+
+               <!-- Red Island -->
+<div class="item">
+    <div class="item-image"
+        style="
+            background: url('{{ asset('Images/51.jpg') }}');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        ">
+        <div class="location">
+            <img src="{{ asset('Images/51.jpg') }}" />
+            <p class="place">Red Island</p>
+        </div>
+    </div>
+    <div class="placeTitle">Red Island Beach <span></span></div>
+    <div class="placeDescription">
+        Red Island (Pulau Merah) is a famous beach in Banyuwangi,
+        known for its stunning sunset views, small hill with red soil,
+        and excellent surfing waves...
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="custom-shape-divider-bottom-1630600827">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+            preserveAspectRatio="none">
+            <path
+                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                opacity=".25" class="shape-fill"></path>
+            <path
+                d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                opacity=".5" class="shape-fill"></path>
+            <path
+                d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+</section>
+
 <section class="googleMap" style="padding: 50px 0; background: var(--bg-color);">
     <div class="container" style="max-width: 1200px; margin: auto; text-align: center;">
         <h2 style="font-size: 28px; margin-bottom: 20px; color: var(--text-color);">
@@ -692,6 +609,8 @@
         </div>
     </div>
 </section>
+
+
 
 
 
@@ -768,8 +687,8 @@
         <div class="footerCopyright">
             <p>
                 This website is designed and developed by
-                <span>Chamindu Jayanath</span> for the competition
-                <span>Digitron '21</span>
+                <span>Tegar Firmansyah And Sandi Permadi</span>
+                <span></span>
             </p>
         </div>
     </footer>
@@ -780,6 +699,8 @@
         integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
     <script src="{{ asset('JS/app.js') }}"></script>
 

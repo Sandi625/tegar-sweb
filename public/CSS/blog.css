@@ -743,3 +743,9 @@ footer {
 }
 
 
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff5722; /* warna harga */
+  margin-top: 8px;
+}
