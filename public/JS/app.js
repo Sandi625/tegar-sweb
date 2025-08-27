@@ -160,18 +160,21 @@ Notes: ${data.notes}`;
 // });
 
 
-// var swiper = new Swiper(".mySwiper", {
-//   loop: true,
-//   autoplay: {
-//     delay: 3000,
-//     disableOnInteraction: false,
-//   },
-//   pagination: {
-//     el: ".swiper-pagination",
-//     clickable: true,
-//   },
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
-// });
+var swiper = new Swiper(".mySwiper", {
+  loop: true,
+  speed: 1000, // kecepatan transisi (ms)
+  autoplay: {
+    delay: 2500, // jeda antar slide (ms)
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+

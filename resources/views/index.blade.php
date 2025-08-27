@@ -78,64 +78,85 @@
         <i class="fab fa-whatsapp"></i>
     </div>
 
-    <section class="headerContainer">
-        <div class="headerWrapper">
-            <div class="headerInfo">
-                <h1 class="headerTitle">Discover New <span>Destinations</span></h1>
+ <section class="headerContainer">
+  <div class="headerWrapper">
+    <!-- Bagian Teks -->
+    <div class="headerInfo">
+      <h1 class="headerTitle">Discover New <span>Destinations</span></h1>
 
-                <div class="headerDescription">
-                    <b>Want memories for yourself, try TRAVELLING.</b><br>
-                    <b>A Big World is waiting for you!!</b><br>
-                    Discover, we bet you'll love it.
-                </div>
+      <div class="headerDescription">
+        <b>Want memories for yourself, try TRAVELLING.</b><br>
+        <b>A Big World is waiting for you!!</b><br>
+        Discover, we bet you'll love it.
+      </div>
 
-                <a href="#places">
-                    <button class="headerButton">
-                        Discover New
-                        <span class="buttonHighlight">
-                            <img src="/Images/icon.svg" alt="location icon" class="cocoIcon" />
-                            Locations
-                        </span>
-                    </button>
-                </a>
+      <a href="#places">
+        <button class="headerButton">
+          Discover New
+          <span class="buttonHighlight">
+            <img src="/Images/icon.svg" alt="location icon" class="cocoIcon" />
+            Locations
+          </span>
+        </button>
+      </a>
 
-                <div class="quote">
-                    <h4 class="quoteText">
-                        <i>
-                            “I am not the same, having seen the moon shine on the other side
-                            of the world”
-                        </i>
-                    </h4>
-                    <h4 class="author">– Mary Anne Radmacher</h4>
-                </div>
-            </div>
+      <div class="quote">
+        <h4 class="quoteText">
+          <i>
+            “I am not the same, having seen the moon shine on the other side
+            of the world”
+          </i>
+        </h4>
+        <h4 class="author">– Mary Anne Radmacher</h4>
+      </div>
+    </div>
 
-<div class="images">
-    <div class="image wide" style="background-image: url('{{ asset('Images/7.jpg') }}');"></div>
+    <!-- Grid Gambar -->
+    <div class="images">
+      <div class="image wide" style="background-image: url('{{ asset('Images/7.jpg') }}');"></div>
+      <div class="image" style="background-image: url('{{ asset('Images/13.jpg') }}');"></div>
+      <div class="image tall" style="background-image: url('{{ asset('Images/bluefire1.jpg') }}');"></div>
+      <div class="image" style="background-image: url('{{ asset('Images/51.jpg') }}');"></div>
+      <div class="image" style="background-image: url('{{ asset('Images/47.jpg') }}');"></div>
+      <div class="image wide" style="background-image: url('{{ asset('Images/44.jpg') }}');"></div>
+    </div>
 
-    <div class="image" style="background-image: url('{{ asset('Images/13.jpg') }}');"></div>
+    <!-- Slider (pakai gambar yang sama) -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image: url('{{ asset('Images/7.jpg') }}');"></div>
+        <div class="swiper-slide" style="background-image: url('{{ asset('Images/12.jpg') }}');"></div>
+        <div class="swiper-slide" style="background-image: url('{{ asset('Images/1.jpg') }}');"></div>
+        <div class="swiper-slide" style="background-image: url('{{ asset('Images/51.jpg') }}');"></div>
+        <div class="swiper-slide" style="background-image: url('{{ asset('Images/47.jpg') }}');"></div>
+        <div class="swiper-slide" style="background-image: url('{{ asset('Images/44.jpg') }}');"></div>
+      </div>
 
-    <div class="image tall" style="background-image: url('{{ asset('Images/bluefire1.jpg') }}');"></div>
+      <!-- navigation -->
+      {{-- <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div> --}}
 
-    <div class="image" style="background-image: url('{{ asset('Images/51.jpg') }}');"></div>
+      <!-- pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
 
-    <div class="image" style="background-image: url('{{ asset('Images/47.jpg') }}');"></div>
+  <!-- Shape bawah -->
+  <div class="custom-shape-divider-bottom-1630587725">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+      preserveAspectRatio="none">
+      <path
+        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,
+           82.39-16.72,168.19-17.73,250.45-.39C823.78,31,
+           906.67,72,985.66,92.83c70.05,18.48,
+           146.53,26.09,214.34,3V0H0V27.35A600.21,
+           600.21,0,0,0,321.39,56.44Z"
+        class="shape-fill"></path>
+    </svg>
+  </div>
+</section>
 
-    <div class="image wide" style="background-image: url('{{ asset('Images/44.jpg') }}');"></div>
-</div>
 
-        </div>
-
-        <div class="custom-shape-divider-bottom-1630587725">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,
-                   168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,
-                   18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,
-                   0,0,0,321.39,56.44Z" class="shape-fill"></path>
-            </svg>
-        </div>
-    </section>
 
 
 
@@ -699,8 +720,8 @@
         integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
     <script src="{{ asset('JS/app.js') }}"></script>
 

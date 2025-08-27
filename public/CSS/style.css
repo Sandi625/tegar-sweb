@@ -288,7 +288,6 @@ nav.active {
 	border-radius: 10px;
 	border: none;
 }
-
 .headerWrapper,
 .headerContainer {
 	height: min-content;
@@ -312,6 +311,7 @@ nav.active {
 	flex-direction: row;
 	justify-content: flex-end;
 	align-items: center;
+	flex-wrap: wrap; /* <-- biar item bisa turun ke baris berikutnya */
 }
 
 .headerInfo {
@@ -386,7 +386,7 @@ nav.active {
 	width: 70%;
 	color: #142361;
 	font-size: 1.2rem;
-	padding-bottom: 320px;
+	padding-bottom: 0px;
 }
 
 .author {
@@ -398,12 +398,13 @@ nav.active {
 	animation: headerAnime 3s ease-in-out infinite;
 	padding: 20px;
 	border-radius: 20px;
-	width: 60%;
+	width: 60%; /* <-- kembali 60% agar sejajar dgn headerInfo */
 	display: grid;
 	gap: 15px;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 180px 180px 180px;
 	grid-auto-flow: dense;
+	margin-bottom: 15px; /* jarak ke slider */
 }
 
 .image {
@@ -431,18 +432,71 @@ nav.active {
 }
 
 @keyframes headerAnime {
-	0% {
-		transform: translateY(0);
-	}
-
-	50% {
-		transform: translateY(-10px);
-	}
-
-	100% {
-		transform: translateY(0);
-	}
+	0% { transform: translateY(0); }
+	50% { transform: translateY(-10px); }
+	100% { transform: translateY(0); }
 }
+
+/* === Swiper Custom Style === */
+.mySwiper {
+  width: 100%;
+  height: 450px; /* bisa dikurangi dari 400px juga */
+  margin-top: 15px; /* gap lebih rapat dari images */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  display: block; /* default tampil */
+}
+
+/* Slide Style */
+.mySwiper .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+/* Pagination (bulatan kecil di bawah) */
+.mySwiper .swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.6;
+  transition: all 0.3s;
+}
+.mySwiper .swiper-pagination-bullet-active {
+  background: #0077cc; /* warna aktif */
+  opacity: 1;
+}
+
+/* Tombol Navigasi (panah kanan & kiri) */
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  color: #fff;
+  background: rgba(0,0,0,0.4);
+  padding: 20px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.mySwiper .swiper-button-next:hover,
+.mySwiper .swiper-button-prev:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+/* === Responsive Control === */
+/* Sembunyikan swiper di desktop (>= 992px) */
+@media screen and (min-width: 992px) {
+  .mySwiper {
+    display: none;
+  }
+}
+
+/* Sembunyikan grid gambar di mobile (< 992px) */
+@media screen and (max-width: 991px) {
+  .images {
+    display: none;
+  }
+}
+
+
+
+
 
 .trending {
 	background: #142361;
