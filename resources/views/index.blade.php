@@ -203,6 +203,7 @@
                 </a>
             </div>
 
+
             <div class="blog">
                 <img src="{{ asset('Images/bromo3.jpg') }}" alt="Bromo Ijen Tour from Bali" />
                 <h3 class="blogTitle">
@@ -354,11 +355,44 @@
 </section>
 
 
+<section class="blogs">
+    <h1 style="font-size:3rem; color:#142361; text-align:center; margin-top:50px;"
+        data-aos="fade-up" data-aos-duration="3000">
+        Customize <span class="buttonHighlight">Your Tour</span>
+    </h1>
+
+    <div style="display:flex; justify-content:center; width:100%;">
+        <div style="display:flex; justify-content:center; width:100%; max-width:1000px; flex-direction:column; align-items:center;">
+
+            <div id="customTourCard"
+                 style="width:100%; max-width:900px; padding:25px 20px; font-size:1.2rem; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition:all 0.3s;">
+
+                <img src="{{ asset('Images/7.jpg') }}" alt="Bromo Ijen Tour"
+                     id="customTourImg"
+                     style="width:100%; height:auto; border-radius:12px; object-fit:cover; transition: transform 0.3s;">
+
+               <h3 id="customTourTitle"
+    style="font-size:30px; margin-top:20px; color:#142361; text-align:center;">
+    Custom Your Tour
+</h3>
+
+
+                <button id="customTourButton" onclick="window.location.href='{{ route('custom.tour.form') }}'"
+                        style="width:100%; font-size:1.5rem; padding:14px 0; border-radius:8px; border:none; background-color:#f2870c; color:white; cursor:pointer; margin-top:15px; transition:all 0.3s;">
+                    Plan Now
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 
 
 
- <section class="customTourForm" style="max-width:600px;margin:50px auto;padding:20px;border:1px solid #ccc;border-radius:8px;">
+
+
+ {{-- <section class="customTourForm" style="max-width:600px;margin:50px auto;padding:20px;border:1px solid #ccc;border-radius:8px;">
   <h2 style="text-align:center;margin-bottom:20px;">Customize Your Tour Package</h2>
 
   <form id="tourForm">
@@ -399,7 +433,8 @@
       Send via Email
     </button>
   </form>
-</section>
+</section> --}}
+
 
 <section class="reviews">
   <h1 class="reviewsTitle" data-aos="fade-up" data-aos-duration="2000">
@@ -483,6 +518,9 @@
   </div>
 </section>
 
+
+
+
 <section class="trending" id="places">
     <div class="trendingWrapper">
         <img src="{{ asset('assets/leaf.svg') }}" class="trendingSVG1" />
@@ -513,6 +551,7 @@
                         </div>
                     </div>
                 </div>
+
 
                 <!-- Ijen -->
                 <div class="item">
@@ -578,6 +617,7 @@
         </div>
     </div>
 </section>
+
 
 
 

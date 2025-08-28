@@ -113,3 +113,79 @@ adjustCustomTripForm();
 window.addEventListener('resize', adjustCustomTripForm);
 
 
+function sendWhatsApp() {
+    var name = document.getElementById('tripName').value.trim();
+    var email = document.getElementById('tripEmail').value.trim();
+    var packageName = document.getElementById('tripPackage').value.trim();
+    var people = document.getElementById('tripPeople').value.trim();
+    var pickup = document.getElementById('pickupLocation').value.trim();
+    var pickupDate = document.getElementById('pickupDate').value;
+    var dropoff = document.getElementById('dropoffLocation').value.trim();
+    var dropoffDate = document.getElementById('dropoffDate').value;
+    var country = document.getElementById('tripCountry').value.trim();
+    var request = document.getElementById('tripRequest').value.trim() || '-';
+
+    // Validasi semua field wajib
+    if (!name || !email || !people || !pickup || !pickupDate || !dropoff || !dropoffDate || !country) {
+        alert("Please complete all required fields!");
+        return;
+    }
+
+    // Validasi tanggal
+    if (new Date(pickupDate) > new Date(dropoffDate)) {
+        alert("Pick-up date cannot be later than drop-off date!");
+        return;
+    }
+
+    var message = `NEW TOUR REQUEST
+Destination: ${packageName}
+NAME: ${name}
+EMAIL: ${email}
+Total participant: ${people}
+Pick up Location: ${pickup} (${pickupDate})
+Drop off Location: ${dropoff} (${dropoffDate})
+Country: ${country}
+Special request: ${request}`;
+
+    var encodedMessage = encodeURIComponent(message);
+    var phoneNumber = '6281330920809';
+
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+}
+
+function sendEmail() {
+    var name = document.getElementById('tripName').value.trim();
+    var email = document.getElementById('tripEmail').value.trim();
+    var packageName = document.getElementById('tripPackage').value.trim();
+    var people = document.getElementById('tripPeople').value.trim();
+    var pickup = document.getElementById('pickupLocation').value.trim();
+    var pickupDate = document.getElementById('pickupDate').value;
+    var dropoff = document.getElementById('dropoffLocation').value.trim();
+    var dropoffDate = document.getElementById('dropoffDate').value;
+    var country = document.getElementById('tripCountry').value.trim();
+    var request = document.getElementById('tripRequest').value.trim() || '-';
+
+    if (!name || !email || !people || !pickup || !pickupDate || !dropoff || !dropoffDate || !country) {
+        alert("Please complete all required fields!");
+        return;
+    }
+
+    if (new Date(pickupDate) > new Date(dropoffDate)) {
+        alert("Pick-up date cannot be later than drop-off date!");
+        return;
+    }
+
+    var subject = encodeURIComponent("NEW TOUR REQUEST");
+    var body = encodeURIComponent(
+`Destination: ${packageName}
+NAME: ${name}
+EMAIL: ${email}
+Total participant: ${people}
+Pick up Location: ${pickup} (${pickupDate})
+Drop off Location: ${dropoff} (${dropoffDate})
+Country: ${country}
+Special request: ${request}`);
+
+    var mailTo = "sandipermadi625@gmail.com";
+    window.location.href = `mailto:${mailTo}?subject=${subject}&body=${body}`;
+}

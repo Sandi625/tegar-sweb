@@ -178,3 +178,51 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 
+function responsiveCard() {
+    var card = document.getElementById('customTourCard');
+    var img = document.getElementById('customTourImg');
+    var title = document.getElementById('customTourTitle');
+
+    if (window.innerWidth <= 480) { // HP
+        card.style.maxWidth = "95%";
+        card.style.padding = "15px 10px";
+        img.style.height = "auto";
+        title.style.fontSize = "20px";
+    } else if (window.innerWidth <= 768) { // Tablet
+        card.style.maxWidth = "90%";
+        card.style.padding = "20px 15px";
+        img.style.height = "auto";
+        title.style.fontSize = "24px";
+    } else { // Desktop
+        card.style.maxWidth = "900px";
+        card.style.padding = "25px 20px";
+        img.style.height = "auto";
+        title.style.fontSize = "30px";
+    }
+}
+
+// Hover effect card
+var card = document.getElementById('customTourCard');
+card.onmouseover = function() {
+    card.style.transform = "scale(1.03)";
+    card.style.boxShadow = "0 8px 20px rgba(0,0,0,0.2)";
+};
+card.onmouseout = function() {
+    card.style.transform = "scale(1)";
+    card.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
+};
+
+// Hover effect button
+var btn = document.getElementById('customTourButton');
+btn.onmouseover = function() {
+    btn.style.backgroundColor = "#e07b00";
+    btn.style.transform = "scale(1.05)";
+};
+btn.onmouseout = function() {
+    btn.style.backgroundColor = "#f2870c";
+    btn.style.transform = "scale(1)";
+}
+
+// Jalankan saat load & resize
+responsiveCard();
+window.addEventListener('resize', responsiveCard);

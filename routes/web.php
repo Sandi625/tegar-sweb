@@ -102,3 +102,7 @@ Route::get('/tumpaksewu', function () {
 Route::get('/bali', function () {
     return view('Blogisi.bali');
 })->name('bali.page');
+
+Route::get('/custom-tour', function () {
+    return view('customTourForm');
+})->name('custom.tour.form');
