@@ -729,6 +729,11 @@ nav.active {
 	transition: all 0.5s ease;
 }
 
+.blog img {
+	width: 300px;
+	border-radius: 10px;
+}
+
 .blog:hover {
 	transform: scale(1.05);
 	-webkit-box-shadow: 5px 5px 24px 1px rgba(20, 35, 97, 0.534);
@@ -736,10 +741,7 @@ nav.active {
 	background: #f4f8ff;
 }
 
-.blog img {
-	width: 300px;
-	border-radius: 10px;
-}
+
 
 .readBlog {
 	display: none;
@@ -1684,3 +1686,28 @@ footer {
 }
 
 
+.button-wrapper {
+    display: flex;
+    justify-content: center; /* tombol ada di tengah */
+    margin-top: 8px;  /* sebelumnya 15px, biar lebih ke atas */
+}
+
+
+.viewButton {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    top: -15px;  /* tombol agak naik ke atas */
+}
+
+
+    .viewButton:hover {
+        background-color: darkorange; /* warna saat hover */
+        transform: scale(1.05);       /* sedikit membesar */
+    }

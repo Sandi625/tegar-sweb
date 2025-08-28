@@ -54,23 +54,24 @@
             </div>
         </div>
     </div>
-    <nav>
-        <a href="{{ route('home.page') }}" class="brand-logo">Travel</a>
-        <ul class="links">
-            <li class="link">
-                <b><a href="{{ route('home.page') }}" style="color: #f2870c">Home</a></b>
-            </li>
-            <li class="link"><a href="{{ route('places.page') }}">Places</a></li>
-            <li class="link"><a href="{{ route('blog.page') }}">Tour Package</a></li>
-            <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
-        </ul>
+   <nav>
+    <a href="{{ route('home.page') }}" class="brand-logo">Travel</a>
+    <ul class="links">
+        <li class="link">
+            <b><a href="{{ route('home.page') }}"style="color: #f2870c">Home</a></b>
+        </li>
+        {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
+        <li class="link"><a href="{{ route('allpackage.page') }}">Tour Package</a></li>
+        <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li> <!-- Tambahan -->
+        <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
+    </ul>
 
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </nav>
+    <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</nav>
 
 
 
@@ -346,7 +347,7 @@
     <div class="funFact" data-aos="fade-up" data-aos-duration="2000">
         <div class="factContent">
             <div class="funFactButton">
-                <a href="{{ route('blog.page') }}" class="btn">View All Package</a>
+                <a href="{{ route('allpackage.page') }}" class="btn">View All Package</a>
             </div>
         </div>
     </div>
@@ -485,132 +486,102 @@
 <section class="trending" id="places">
     <div class="trendingWrapper">
         <img src="{{ asset('assets/leaf.svg') }}" class="trendingSVG1" />
-        <!-- <img src="{{ asset('assets/tower.svg') }}" class="trendingSVG2">  -->
 
         <h1 class="trendingTitle" data-aos="fade-up" data-aos-duration="2000">
-            Discover <span class="buttonHighlight">Trending Attractions</span>
+            Read The <span class="buttonHighlight">Blogs</span>
         </h1>
 
         <div class="menu-wrapper">
             <div class="menu">
 
                 <!-- Bromo -->
-             <div class="item">
-    <div class="item-content">
-        <div class="item-image"
-            style="
-                background: url('{{ asset('Images/bromo3.jpg') }}');
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-            ">
-            <div class="location">
-                <img src="{{ asset('Images/bromo3.jpg') }}" />
-                <p class="place">Mount Bromo</p>
-            </div>
-        </div>
-        <div class="placeTitle">Mount Bromo <span></span></div>
-        <div class="placeDescription">
-            Mount Bromo is one of the most famous volcanoes in Indonesia, located in East Java.
-            Known for its breathtaking sunrise and unique volcanic landscape, it attracts travelers
-            from all over the world for an unforgettable adventure...
-        </div>
-    </div>
-</div>
+                <div class="item">
+                    <div class="item-content">
+                        <div class="item-image"
+                            style="background: url('{{ asset('Images/bromo3.jpg') }}'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+                            <a href="{{ route('bromo.page') }}" class="location">
+                                <img src="{{ asset('Images/bromo3.jpg') }}" />
+                                <p class="place">Mount Bromo</p>
+                            </a>
+                        </div>
+                        <div class="placeTitle">Mount Bromo <span></span></div>
+                        <div class="placeDescription">
+                            Mount Bromo is one of the most famous volcanoes in Indonesia...
+                        </div>
+                        <div class="button-wrapper">
+                            <button onclick="window.location.href='{{ route('bromo.page') }}'" class="viewButton">View Blog</button>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Ijen -->
+                <div class="item">
+                    <div class="item-content">
+                        <div class="item-image"
+                            style="background: url('{{ asset('Images/ijen1.jpg') }}'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+                            <a href="{{ route('ijen.page') }}" class="location">
+                                <img src="{{ asset('Images/ijen1.jpg') }}" />
+                                <p class="place">Ijen</p>
+                            </a>
+                        </div>
+                        <div class="placeTitle">Ijen <span></span></div>
+                        <div class="placeDescription">
+                            Ijen is a famous volcanic complex in East Java, Indonesia...
+                        </div>
+                        <div class="button-wrapper">
+                            <button onclick="window.location.href='{{ route('ijen.page') }}'" class="viewButton">View Blog</button>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- Djawatan -->
-<div class="item">
-    <div class="item-content">
-        <div class="item-image"
-            style="
-                background: url('{{ asset('Images/47.jpg') }}');
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-            ">
-            <div class="location">
-                <img src="{{ asset('Images/47.jpg') }}" />
-                <p class="place">Djawatan</p>
-            </div>
-        </div>
-        <div class="placeTitle">Djawatan <span></span></div>
-        <div class="placeDescription">
-            Djawatan Forest, also known as the "Lord of The Rings Forest," offers a lush green atmosphere
-            with giant exotic trembesi trees, perfect for photography spots and nature tourism.
-        </div>
-    </div>
-</div>
+                <!-- Tumpak Sewu -->
+                <div class="item">
+                    <div class="item-content">
+                        <div class="item-image"
+                            style="background: url('{{ asset('Images/tumpak-sewu.jpg') }}'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+                            <a href="{{ route('tumpaksewu.page') }}" class="location">
+                                <img src="{{ asset('Images/tumpak-sewu.jpg') }}" />
+                                <p class="place">Tumpak Sewu</p>
+                            </a>
+                        </div>
+                        <div class="placeTitle">Tumpak Sewu <span></span></div>
+                        <div class="placeDescription">
+                            Tumpak Sewu is often called the Niagara of Java, a stunning waterfall in East Java...
+                        </div>
+                        <div class="button-wrapper">
+                            <button onclick="window.location.href='{{ route('tumpaksewu.page') }}'" class="viewButton">View Blog</button>
+                        </div>
+                    </div>
+                </div>
 
-
-
-              <!-- Ijen -->
-<div class="item">
-    <div class="item-content">
-        <div class="item-image"
-            style="
-                background: url('{{ asset('Images/ijen1.jpg') }}');
-                background-position: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-            ">
-            <div class="location">
-                <img src="{{ asset('Images/ijen1.jpg') }}" />
-                <p class="place">Ijen</p>
-            </div>
-        </div>
-        <div class="placeTitle">Ijen <span></span></div>
-        <div class="placeDescription">
-            Ijen is a famous volcanic complex in East Java, Indonesia,
-            known for its striking turquoise crater lake and the
-            mesmerizing blue fire phenomenon...
-        </div>
-    </div>
-</div>
-
-
-               <!-- Red Island -->
-<div class="item">
-    <div class="item-image"
-        style="
-            background: url('{{ asset('Images/51.jpg') }}');
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-        ">
-        <div class="location">
-            <img src="{{ asset('Images/51.jpg') }}" />
-            <p class="place">Red Island</p>
-        </div>
-    </div>
-    <div class="placeTitle">Red Island Beach <span></span></div>
-    <div class="placeDescription">
-        Red Island (Pulau Merah) is a famous beach in Banyuwangi,
-        known for its stunning sunset views, small hill with red soil,
-        and excellent surfing waves...
-    </div>
-</div>
-
+                <!-- Bali -->
+                <div class="item">
+                    <div class="item-content">
+                        <div class="item-image"
+                            style="background: url('{{ asset('Images/bali2.jpg') }}'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+                            <a href="{{ route('bali.page') }}" class="location">
+                                <img src="{{ asset('Images/bali2.jpg') }}" />
+                                <p class="place">Bali</p>
+                            </a>
+                        </div>
+                        <div class="placeTitle">Bali <span></span></div>
+                        <div class="placeDescription">
+                            Bali, the Island of Gods, famous for its beaches, temples, and cultural richness...
+                        </div>
+                        <div class="button-wrapper">
+                            <button onclick="window.location.href='{{ route('bali.page') }}'" class="viewButton">View Blog</button>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
-    </div>
-
-    <div class="custom-shape-divider-bottom-1630600827">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-            preserveAspectRatio="none">
-            <path
-                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-                opacity=".25" class="shape-fill"></path>
-            <path
-                d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
-                opacity=".5" class="shape-fill"></path>
-            <path
-                d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
-                class="shape-fill"></path>
-        </svg>
     </div>
 </section>
+
+
+
+
 
 <section class="googleMap" style="padding: 50px 0; background: var(--bg-color);">
     <div class="container" style="max-width: 1200px; margin: auto; text-align: center;">

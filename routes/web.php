@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/allpackage', function () {
+    return view('blog'); // resources/views/page/blog.blade.php
+})->name('allpackage.page');
+
 Route::get('/pesanfinsihbali', function () {
     return view('BlogPages.bromoijen.pesanfinishbali');
 })->name('pesanfinsihbali.page');
@@ -17,9 +21,7 @@ Route::get('/places', function () {
 })->name('places.page');
 
 // Blog
-Route::get('/blog', function () {
-    return view('blog'); // resources/views/page/blog.blade.php
-})->name('blog.page');
+
 
 // Gallery
 Route::get('/gallery', function () {
@@ -80,3 +82,23 @@ Route::get('/pesan-finish-surabaya', function () {
 
 
 
+Route::get('/blog', function () {
+    return view('BlogPages.blogoption'); // arahkan ke file blog.blade.php
+})->name('blog.page');
+
+
+Route::get('/ijen', function () {
+    return view('Blogisi.ijen');
+})->name('ijen.page');
+
+Route::get('/bromo', function () {
+    return view('Blogisi.bromo');
+})->name('bromo.page');
+
+Route::get('/tumpaksewu', function () {
+    return view('Blogisi.tumpaksewu');
+})->name('tumpaksewu.page');
+
+Route::get('/bali', function () {
+    return view('Blogisi.bali');
+})->name('bali.page');

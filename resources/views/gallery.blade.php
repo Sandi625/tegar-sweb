@@ -34,22 +34,24 @@
         </div>
     </div>
 
-    <nav>
-        <a href="{{ route('home.page') }}" class="brand-logo">Tegar</a>
-        <ul class="links">
-            <li class="link"><a href="{{ route('home.page') }}">Home</a></li>
-            <li class="link">
-                <b><a href="{{ route('places.page') }}">Places</a></b>
-            </li>
-            <li class="link"><a href="{{ route('blog.page') }}">Tour Package</a></li>
-            <li class="link"><a href="{{ route('gallery.page') }}" style="color: #f2870c;">Gallery</a></li>
-        </ul>
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </nav>
+   <nav>
+    <a href="{{ route('home.page') }}" class="brand-logo">Travel</a>
+    <ul class="links">
+        <li class="link">
+            <b><a href="{{ route('home.page') }}">Home</a></b>
+        </li>
+        {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
+        <li class="link"><a href="{{ route('allpackage.page') }}">Tour Package</a></li>
+        <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li> <!-- Tambahan -->
+        <li class="link"><a href="{{ route('gallery.page') }}"style="color: #f2870c">Gallery</a></li>
+    </ul>
+
+    <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</nav>
 
     <section class="header">
         <div class="header-content">

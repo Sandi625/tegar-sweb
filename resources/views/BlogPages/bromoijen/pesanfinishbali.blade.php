@@ -10,15 +10,17 @@
   </head>
   <body>
   <nav>
-    <a href="{{ route('home.page') }}" class="brand-logo">Tegar</a>
+    <a href="{{ route('home.page') }}" class="brand-logo">Travel</a>
     <ul class="links">
-        <li class="link"><a href="{{ route('home.page') }}">Home</a></li>
-        <li class="link"><a href="{{ route('places.page') }}">Places</a></li>
         <li class="link">
-            <b><a href="{{ route('blog.page') }}" style="color: #f2870c">Tour Package</a></b>
+            <b><a href="{{ route('home.page') }}">Home</a></b>
         </li>
+        {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
+        <li class="link"><a href="{{ route('allpackage.page') }}"style="color: #f2870c">Tour Package</a></li>
+        <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li> <!-- Tambahan -->
         <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
     </ul>
+
     <div class="hamburger">
         <div></div>
         <div></div>
@@ -150,7 +152,7 @@
 
 
 
-    <a href="{{ route('blog.page') }}" class="backButton">
+    <a href="{{ route(name: 'allpackage.page') }}" class="backButton">
       <abbr title="Back">
         <img
           class="buttonn"
