@@ -870,66 +870,147 @@ nav.active {
   text-align: center;
   margin-top: 40px;
 }
-
-
+/* footer */
 footer {
-	background: #142361;
-	color: white;
+  background: #142361;
+  color: white;
+  padding: 0;   /* reset biar copyright full */
 }
 
 .footerDetails {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 50px 50px 0px; /* jangan sampai padding bawah terlalu besar */
 }
 
+
 .footerDescription {
-	border-right: 2px solid rgba(255, 255, 255, 0.281);
-	margin: 50px;
-	margin-right: 0;
-	padding-right: 50px;
-	width: 55%;
-	height: min-content;
+  border-right: 2px solid rgba(255, 255, 255, 0.281);
+  padding-right: 20px;
 }
 
 .footerContact {
-	margin: 50px;
-	width: 45%;
-	text-align: center;
+  border-right: 2px solid rgba(255, 255, 255, 0.281);
+  padding: 0 20px;
+  text-align: center;
 }
 
-.contactOptions {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	margin-top: 30px;
+.footerPayment {
+  padding-left: 20px;
+  text-align: center;
+}
+
+.contactOptions,
+.paymentOptions,
+.availableOptions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .footerPara,
 .contactPara {
-	color: #a4b9e7;
+  color: #a4b9e7;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .footerCopyright {
-	background: #ca7717;
-	height: 50px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
+  background: #ca7717;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  grid-column: 1 / -1;
+  margin: 0 -50px;     /* tarik keluar sejauh padding footerDetails */
+  padding: 15px 0;     /* atas-bawah aja */
+  width: calc(100% + 100px); /* kompensasi biar full */
+  box-sizing: border-box;
 }
+
+
+
+
 
 .footerCopyright p span {
-	color: #142361;
-	font-weight: 500;
+  color: #142361;
+  font-weight: 500;
 }
 
-.contactOption img {
-	width: 30px;
-	height: 30px;
-	cursor: pointer;
+/* ukuran logo untuk payment */
+.paymentOptions img {
+  width: 140px;        /* default desktop */
+  height: auto;
+  background: white;
+  padding: 5px 30px;
+  border-radius: 8px;
+  object-fit: contain;
 }
+
+/* ukuran logo untuk available */
+.availableOptions img {
+  width: 100px;        /* default desktop */
+  height: auto;
+  background: white;
+  padding: 5px 20px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* responsive: tablet */
+@media (max-width: 900px) {
+  .paymentOptions img {
+    width: 110px;      /* lebih kecil */
+    padding: 5px 20px; /* kurangi padding */
+  }
+
+  .availableOptions img {
+    width: 80px;
+    padding: 5px 15px;
+  }
+}
+
+/* responsive: HP */
+@media (max-width: 600px) {
+  .paymentOptions img {
+    width: 90px;       /* kecil lagi */
+    padding: 5px 15px;
+  }
+
+  .availableOptions img {
+    width: 70px;
+    padding: 5px 10px;
+  }
+}
+
+
+
+
+/* responsive */
+@media (max-width: 900px) {
+  .footerDetails {
+    grid-template-columns: 1fr; /* jadi 1 kolom */
+    text-align: center;
+  }
+
+  .footerDescription,
+  .footerContact,
+  .footerPayment {
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.281);
+    padding: 20px 0;
+  }
+
+  .footerPayment {
+    border-bottom: none; /* hilangkan garis bawah di kolom terakhir */
+  }
+}
+
 
 @media screen and (max-width: 1400px) {
 	.trendingWrapper {
@@ -1152,10 +1233,11 @@ footer {
 		top: 20px;
 		left: -20px;
 	}
+    /* atur padding */
 
 	.trendingWrapper {
 		height: min-content;
-		padding-bottom: 180px;
+		padding-bottom: 50px;
 	}
 
 	.trending {

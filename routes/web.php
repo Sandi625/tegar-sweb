@@ -106,3 +106,31 @@ Route::get('/bali', function () {
 Route::get('/custom-tour', function () {
     return view('customTourForm');
 })->name('custom.tour.form');
+
+
+Route::get('/midnight-ijen/option', function () {
+    return view('BlogPages.midnightijen.option');
+})->name('midnightijen.option');
+
+
+// route untuk finishbali.blade
+Route::get('/ijenfinishbali', function () {
+    return view('BlogPages.midnightijen.finishbali');
+})->name('finishbali.page');
+
+Route::get('/ijenfinisbanyuwangi', function () {
+    return view('BlogPages.midnightijen.finishbanyuwangi');
+})->name('finishbanyuwangi.page');
+
+
+
+Route::get('/pesanfinishbali', function () {
+    return view('BlogPages.midnightijen.pesanfinishbali');
+})->name('pesan1mb.page');
+
+
+
+
+Route::get('/pesanfinishbanyuwangi', function () {
+    return view('BlogPages.midnightijen.pesanfinishbanyuwangi');
+})->name('pesan2mb.page');

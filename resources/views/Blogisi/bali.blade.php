@@ -15,7 +15,7 @@
       <ul class="links">
         <li class="link"><b><a href="{{ route('home.page') }}">Home</a></b></li>
         {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
-        <li class="link"><a href="{{ route('blog.page') }}">Tour Package</a></li>
+        <li class="link"><a href="{{ route('allpackage.page') }}">Tour Package</a></li>
         <li class="link"><a href="{{ route('blog.page') }}" style="color: #f2870c">Blog</a></li>
         <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
       </ul>
@@ -37,7 +37,7 @@
       class="headerContainer"
       id="header"
       style="
-        background: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80);
+        background: url('{{ asset('Images/bali2.jpg') }}');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -98,7 +98,7 @@
 
         <div class="imageContainer">
           <img
-            src="https://images.unsplash.com/photo-1558244388-90f9c2f8ec8d?auto=format&fit=crop&w=1200&q=80"
+            src="{{ asset('Images/bali2.jpg') }}"
             alt="Uluwatu Temple"
           />
           <div class="imgDescription">
@@ -134,7 +134,7 @@
 
         <div class="imageContainer">
           <img
-            src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1200&q=80"
+            src="{{ asset('Images/1.jpg') }}"
             alt="Ubud Rice Terrace"
           />
           <div class="imgDescription">

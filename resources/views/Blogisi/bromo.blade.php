@@ -16,7 +16,7 @@
             <b><a href="{{ route('home.page') }}">Home</a></b>
         </li>
         {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
-        <li class="link"><a href="{{ route('blog.page') }}">Tour Package</a></li>
+        <li class="link"><a href="{{ route('allpackage.page') }}">Tour Package</a></li>
         <li class="link"><a href="{{ route('blog.page') }}" style="color: #f2870c">Blog</a></li> <!-- Tambahan -->
         <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
     </ul>
@@ -38,7 +38,7 @@
   class="headerContainer"
   id="header"
   style="
-    background: url(https://images.unsplash.com/photo-1598790969148-62630087609e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=925&q=80);
+    background: url('{{ asset('Images/bromo3.jpg') }}');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -112,7 +112,7 @@
 
     <div class="imageContainer">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/9/94/Mount_Bromo_sunrise.jpg"
+        src="{{ asset('Images/bromo3.jpg') }}"
         alt="Sunrise at Mount Bromo"
       />
       <div class="imgDescription">
@@ -134,7 +134,7 @@
 
     <div class="imageContainer">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Bromo_sand_sea.jpg"
+        src="{{ asset('Images/9.jpg') }}"
         alt="Sea of Sand Bromo"
       />
       <div class="imgDescription">
@@ -156,7 +156,7 @@
 
     <div class="imageContainer">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Bromo_crater.jpg"
+        src="{{ asset('Images/9.jpg') }}"
         alt="Bromo Crater"
       />
       <div class="imgDescription">
@@ -178,7 +178,7 @@
 
     <div class="imageContainer">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/5/50/Bromo_sand.jpg"
+        src="{{ asset('Images/9.jpg') }}"
         alt="Whispering Sands Bromo"
       />
       <div class="imgDescription">
@@ -200,7 +200,7 @@
 
     <div class="imageContainer">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/1/14/Teletubbies_Hill_Bromo.jpg"
+        src="{{ asset('Images/9.jpg') }}"
         alt="Teletubbies Hill Bromo"
       />
       <div class="imgDescription">

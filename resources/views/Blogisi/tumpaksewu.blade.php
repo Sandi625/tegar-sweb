@@ -16,7 +16,7 @@
             <b><a href="{{ route('home.page') }}">Home</a></b>
         </li>
         {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
-        <li class="link"><a href="{{ route('blog.page') }}">Tour Package</a></li>
+        <li class="link"><a href="{{ route('allpackage.page') }}">Tour Package</a></li>
         <li class="link"><a href="{{ route('blog.page') }}" style="color: #f2870c">Blog</a></li> <!-- Tambahan -->
         <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
     </ul>
@@ -38,7 +38,7 @@
   class="headerContainer"
   id="header"
   style="
-    background: url(https://upload.wikimedia.org/wikipedia/commons/5/5f/Tumpak_Sewu_Waterfall.jpg);
+    background: url('{{ asset('Images/tumpak-sewu.jpg') }}');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -112,7 +112,7 @@
 
     <div class="imageContainer">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Tumpak_Sewu_Waterfall.jpg"
+        src="{{ asset('Images/tumpak-sewu.jpg') }}"
         alt="Tumpak Sewu Waterfall"
       />
       <div class="imgDescription">
@@ -134,7 +134,7 @@
 
     <div class="imageContainer">
       <img
-        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/7d/5b/4f/view-from-the-bottom.jpg"
+        src="{{ asset('Images/2.jpg') }}"
         alt="Tumpak Sewu Trekking"
       />
       <div class="imgDescription">
@@ -155,7 +155,7 @@
 
     <div class="imageContainer">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Goa_Tetes_Lumajang.jpg"
+        src="{{ asset('Images/4.jpg') }}"
         alt="Goa Tetes"
       />
       <div class="imgDescription">
@@ -177,7 +177,7 @@
 
     <div class="imageContainer">
       <img
-        src="https://www.nativeindonesia.com/wp-content/uploads/2020/06/Air-Terjun-Tumpak-Sewu.jpg"
+        src="{{ asset('Images/6.jpg') }}"
         alt="Panorama Point Tumpak Sewu"
       />
       <div class="imgDescription">
@@ -199,7 +199,7 @@
 
     <div class="imageContainer">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Tumpak_Sewu_Scenery.jpg"
+        src="{{ asset('Images/8.jpg') }}"
         alt="Nature at Tumpak Sewu"
       />
       <div class="imgDescription">

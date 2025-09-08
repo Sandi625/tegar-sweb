@@ -32,24 +32,24 @@
         </div>
     </div>
 
-  <nav>
-    <a href="{{ route('home.page') }}" class="brand-logo">Travel</a>
-    <ul class="links">
-        <li class="link">
-            <b><a href="{{ route('home.page') }}">Home</a></b>
-        </li>
-        {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
-        <li class="link"><a href="{{ route('allpackage.page') }}"style="color: #f2870c">Tour Package</a></li>
-        <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li> <!-- Tambahan -->
-        <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
-    </ul>
+    <nav>
+        <a href="{{ route('home.page') }}" class="brand-logo">Travel</a>
+        <ul class="links">
+            <li class="link">
+                <b><a href="{{ route('home.page') }}">Home</a></b>
+            </li>
+            {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
+            <li class="link"><a href="{{ route('allpackage.page') }}"style="color: #f2870c">Tour Package</a></li>
+            <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li> <!-- Tambahan -->
+            <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
+        </ul>
 
-    <div class="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</nav>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
 
     <!-- <div class="pageName-container">
         <p class="page">./PLACES</p>
@@ -81,127 +81,187 @@
         </div>
     </section>
 
-    <section class="blogs">
-        <div class="blogsContainer">
-            <div class="blog" id="blog">
-                <img src="{{ asset('Images/7.jpg') }}" alt="Bromo Ijen Tour" class="image" />
-                <div class="content">
-                    <div class="details">
-                        <h2>Bromo ijen tour Start from Surabaya (finish at Bali)</h2>
-                        <p class="text">
-                            There aren’t many cities in the world that quite span the size
-                            of Tokyo. Due to its sheer scale, uncovering Japan’s largest
-                            city may seem like a daunting task – but it doesn’t have to be
-                            with my detailed Tokyo itinerary to help you out! With its
-                            vibrant and bustling city streets, tranquil green parks,
-                            stunning vistas and remarkable history, spending six days in Tokyo
-                            should be at the top of your itinerary for a visit to Japan
-                        </p>
-                        <button class="readMoreBtn">Read more</button>
-                    </div>
-
-                    <div class="buttons">
-                        <a href="{{ route('bromoijen.bali') }}">
-                            <button class="viewButton">Details Trip</button>
-                        </a>
-                        <p class="price">$350</p>
-                    </div>
-
+  <section class="blogs">
+    <div class="blogsContainer">
+        <div class="blog" id="blog">
+            <img src="{{ asset('Images/7.jpg') }}" alt="Bromo Ijen Tour" class="image" />
+            <div class="content">
+                <div class="details">
+                    <h2>Bromo ijen tour Start from Surabaya (finish at Bali)</h2>
+                    <p class="text">
+                        Paket tour ini menggabungkan dua destinasi terbaik di Jawa Timur yaitu Gunung Bromo dan Kawah Ijen.
+                        Start dari Surabaya, Anda akan menyaksikan sunrise spektakuler di Bromo, dilanjutkan dengan perjalanan
+                        menuju Banyuwangi untuk trekking Kawah Ijen melihat Blue Fire dan panorama danau belerang. Tour berakhir
+                        di Bali sehingga praktis untuk melanjutkan liburan Anda.
+                    </p>
+                    <button class="readMoreBtn">Read more</button>
                 </div>
-            </div>
 
-            <!-- Contoh blog lain -->
-            <div class="blog">
-                <img src="{{ asset('Images/11.jpg') }}" alt="Bromo Ijen Tour Surabaya" class="image" />
-                <div class="content">
-                    <div class="details">
-                        <h2>Bromo ijen tour Start from Surabaya (finish at Surabaya)</h2>
-                        <p class="text">
-                            Kandy is the hill country capital and gateway to the tea region
-                            of Sri Lanka. This former Kingdom is a colourful, bustling city
-                            of markets, temples, spice gardens, a picturesque lake and
-                            surrounded by scenic natural beauty – offering a range of
-                            cultural and dynamic experiences for all types of travellers.
-                        </p>
-                        <button class="readMoreBtn">Read more</button>
-                    </div>
-
-                    <div class="buttons">
-                        <a href="{{ route('bromoijen.surabaya') }}">
-                            <button class="viewButton">Details Trip</button>
-                        </a>
-                        <p class="price">$370</p>
-                    </div>
-                </div>
-            </div>
-            <!-- lanjut blog lain tinggal ganti src sesuai file di folder Images -->
-        </div>
-    </section>
-
-
-    <footer>
-        <div class="footerDetails">
-            <div class="footerDescription">
-                <h1 class="footerTitle">Tegar</h1>
-                <p class="footerPara">
-                    Discover New Destinations. See breath-taking places and experience
-                    them from you device online.
-                    <br />
-                    Our travel writing captures the one thing we always strive to create
-                    – incredible travel experiences. From learning about the historical
-                    and political context of a destination to finding some really great
-                    hikes, each new place has something to discover.
-                    <br />
-                    We have a passion for storytelling, a knack for putting itineraries
-                    together and a strong desire to have fun. Here are all our
-                    adventures, our travel tips and our guides.
-                </p>
-            </div>
-
-            <div class="footerContact">
-                <h1 class="contactTitle">Contact Me</h1>
-                <p class="contactPara">
-                    If you want to make any inquiries about the website, you can contact
-                    me through below options
-                </p>
-                <div class="contactOptions">
-                    <a href="https://github.com/chamindujs" target="_blank" class="contactOption">
-                        <abbr title="GitHub">
-                            <img src="https://img.icons8.com/ios-glyphs/60/ca7717/github.png" />
-                        </abbr>
+                <div class="buttons">
+                    <a href="{{ route('bromoijen.bali') }}">
+                        <button class="viewButton">Details Trip</button>
                     </a>
-                    <a href="https://wa.link/1yweij" target="_blank" class="contactOption">
-                        <abbr title="WhatsApp">
-                            <img src="https://img.icons8.com/material-outlined/48/ca7717/whatsapp--v1.png" />
-                        </abbr>
-                    </a>
-                    <div class="contactOption call">
-                        <abbr title="Call">
-                            <img src="https://img.icons8.com/ios/48/ca7717/phone.png" />
-                        </abbr>
-                    </div>
-                    <a href="mailto:chamindujs@gmail.com" target="_blank" class="contactOption">
-                        <abbr title="Gmail">
-                            <img src="https://img.icons8.com/ios/50/ca7717/gmail-new.png" />
-                        </abbr>
-                    </a>
-                    <div href="" class="contactOption discord">
-                        <abbr title="Discord">
-                            <img src="https://img.icons8.com/ios/50/ca7717/discord-logo--v1.png" />
-                        </abbr>
-                    </div>
+                    <p class="price">$350</p>
                 </div>
             </div>
         </div>
 
-        <div class="footerCopyright">
-            <p>
-                This website is designed and developed by
-                <span>Chamindu Jayanath</span> for the competition
-                <span>Digitron '21</span>
-            </p>
+        <!-- Blog 2 -->
+        <div class="blog">
+            <img src="{{ asset('Images/11.jpg') }}" alt="Bromo Ijen Tour Surabaya" class="image" />
+            <div class="content">
+                <div class="details">
+                    <h2>Bromo ijen tour Start from Surabaya (finish at Surabaya)</h2>
+                    <p class="text">
+                        Perjalanan ini cocok bagi wisatawan yang ingin menikmati dua ikon Jawa Timur tanpa harus ke Bali.
+                        Start dari Surabaya, Anda akan menjelajahi Gunung Bromo dengan sunrise-nya yang terkenal,
+                        kemudian trekking Kawah Ijen untuk melihat Blue Fire dan aktivitas penambang belerang.
+                        Tour selesai dengan kembali lagi ke Surabaya.
+                    </p>
+                    <button class="readMoreBtn">Read more</button>
+                </div>
+
+                <div class="buttons">
+                    <a href="{{ route('bromoijen.surabaya') }}">
+                        <button class="viewButton">Details Trip</button>
+                    </a>
+                    <p class="price">$370</p>
+                </div>
+            </div>
         </div>
-    </footer>
+
+        <!-- Blog 3 -->
+        <div class="blog">
+            <img src="{{ asset('Images/ijen2.jpg') }}" alt="Midnight Ijen Tour from Bali" class="image" />
+            <div class="content">
+                <div class="details">
+                    <h2>Mid night ijen from bali Bali-ijen-bali✅✅</h2>
+                    <p class="text">
+                        Midnight Ijen dari Bali dimulai dengan penjemputan malam hari dan perjalanan ke Banyuwangi,
+                        menyeberang ferry menuju Jawa. Anda akan trekking Kawah Ijen pada dini hari untuk menyaksikan
+                        fenomena Blue Fire yang langka dan menikmati sunrise dari bibir kawah, lalu kembali ke Bali
+                        pada pagi harinya.
+                    </p>
+                    <button class="readMoreBtn">Read more</button>
+                </div>
+
+                <div class="buttons">
+                    <a href="{{ route('finishbali.page') }}">
+                        <button class="viewButton">Details Trip</button>
+                    </a>
+                    <p class="price">$370</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog 4 -->
+        <div class="blog">
+            <img src="{{ asset('Images/ijen4.jpg') }}" alt="Midnight Ijen Tour from Banyuwangi" class="image" />
+            <div class="content">
+                <div class="details">
+                    <h2>Mid night ijen from banyuwangi ✅✅</h2>
+                    <p class="text">
+                        Tour ini berangkat dari Banyuwangi sekitar pukul 00.30 malam. Anda akan trekking menuju Kawah Ijen
+                        untuk melihat Blue Fire pada dini hari dan menikmati sunrise spektakuler dari bibir kawah.
+                        Setelah turun kembali ke basecamp, Anda akan kembali lagi ke hotel di Banyuwangi pada pagi harinya.
+                    </p>
+                    <button class="readMoreBtn">Read more</button>
+                </div>
+
+                <div class="buttons">
+                    <a href="{{ route('finishbanyuwangi.page') }}">
+                        <button class="viewButton">Details Trip</button>
+                    </a>
+                    <p class="price">$370</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- lanjut blog lain tinggal ganti src sesuai file di folder Images -->
+    </div>
+</section>
+
+
+
+  <footer>
+  <div class="footerDetails">
+    <!-- Kolom 1 -->
+    <div class="footerDescription">
+      <h1 class="footerTitle">Tegar</h1>
+      <p class="footerPara">
+        Discover New Destinations. See breath-taking places and experience
+        them from your device online.
+        <br /><br />
+        Our travel writing captures the one thing we always strive to create
+        – incredible travel experiences. From learning about the historical
+        and political context of a destination to finding some really great
+        hikes, each new place has something to discover.
+        <br /><br />
+        We have a passion for storytelling, a knack for putting itineraries
+        together and a strong desire to have fun.
+      </p>
+    </div>
+
+    <!-- Kolom 2 -->
+    <div class="footerContact">
+      <h1 class="contactTitle">Contact Me</h1>
+      <p class="contactPara">
+        If you want to make any inquiries about the website, you can contact
+        me through below options
+      </p>
+      <div class="contactOptions">
+        <a href="https://github.com/chamindujs" target="_blank" class="contactOption">
+          <abbr title="GitHub">
+            <img src="https://img.icons8.com/ios-glyphs/60/ca7717/github.png" />
+          </abbr>
+        </a>
+        <a href="https://wa.link/1yweij" target="_blank" class="contactOption">
+          <abbr title="WhatsApp">
+            <img src="https://img.icons8.com/material-outlined/48/ca7717/whatsapp--v1.png" />
+          </abbr>
+        </a>
+        <div class="contactOption call">
+          <abbr title="Call">
+            <img src="https://img.icons8.com/ios/48/ca7717/phone.png" />
+          </abbr>
+        </div>
+        <a href="mailto:chamindujs@gmail.com" target="_blank" class="contactOption">
+          <abbr title="Gmail">
+            <img src="https://img.icons8.com/ios/50/ca7717/gmail-new.png" />
+          </abbr>
+        </a>
+        <div class="contactOption discord">
+          <abbr title="Discord">
+            <img src="https://img.icons8.com/ios/50/ca7717/discord-logo--v1.png" />
+          </abbr>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kolom 3 -->
+  <div class="footerPayment">
+  <h1 class="paymentTitle">Payment Method</h1>
+  <div class="paymentOptions">
+    <img src="/Images/paypal.png" alt="PayPal" />
+    <img src="/Images/wise.png" alt="Wise" />
+    <img src="/Images/bri.png" alt="BRI" />
+  </div>
+
+  <h1 class="paymentTitle">Available At</h1>
+  <div class="availableOptions">
+    <img src="/Images/airbnb.png" alt="Airbnb" />
+    <img src="/Images/getyourguide.png" alt="GetYourGuide" />
+  </div>
+</div>
+
+
+  <div class="footerCopyright">
+    <p>
+      This website is designed and developed by
+      <span>Tegar Firmansyah And Sandi Permadi</span>
+    </p>
+  </div>
+</footer>
 
     <script src="{{ asset('JS/blog.js') }}"></script>
     <script src="https://kit.fontawesome.com/775344b04d.js" crossorigin="anonymous"></script>

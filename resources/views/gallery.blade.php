@@ -34,24 +34,24 @@
         </div>
     </div>
 
-   <nav>
-    <a href="{{ route('home.page') }}" class="brand-logo">Travel</a>
-    <ul class="links">
-        <li class="link">
-            <b><a href="{{ route('home.page') }}">Home</a></b>
-        </li>
-        {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
-        <li class="link"><a href="{{ route('allpackage.page') }}">Tour Package</a></li>
-        <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li> <!-- Tambahan -->
-        <li class="link"><a href="{{ route('gallery.page') }}"style="color: #f2870c">Gallery</a></li>
-    </ul>
+    <nav>
+        <a href="{{ route('home.page') }}" class="brand-logo">Travel</a>
+        <ul class="links">
+            <li class="link">
+                <b><a href="{{ route('home.page') }}">Home</a></b>
+            </li>
+            {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
+            <li class="link"><a href="{{ route('allpackage.page') }}">Tour Package</a></li>
+            <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li> <!-- Tambahan -->
+            <li class="link"><a href="{{ route('gallery.page') }}"style="color: #f2870c">Gallery</a></li>
+        </ul>
 
-    <div class="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</nav>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
 
     <section class="header">
         <div class="header-content">
@@ -79,156 +79,148 @@
 
     <div id="gallery" class="container-fluid">
         <div class="image">
-            <img src="{{ asset('Images/bromo3.jpg') }}"
-                class="img-responsive">
+            <img src="{{ asset('Images/bromo3.jpg') }}" class="img-responsive">
             <div class="details">
-                Times Square, New York, United States
+                Mount Bromo
             </div>
         </div>
 
         <div class="image">
-            <img src="{{ asset('Images/47.jpg') }}"
-                class="img-responsive">
+            <img src="{{ asset('Images/47.jpg') }}" class="img-responsive">
             <div class="details">
-                The Himalayas
+                Djawatan Forest
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1568805746839-47f0dd6ad183?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                class="img-responsive">
+            <img src="{{ asset('Images/1.jpg') }}" class="img-responsive">
             <div class="details">
-                Machu Picchu, Aguas Calientes, Peru
+                Ijen Sunrise View
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1531572753322-ad063cecc140?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                class="img-responsive">
+            <img src="{{ asset('Images/8.jpg') }}" class="img-responsive">
             <div class="details">
-                Vatican City
+                Tumpak sewu
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1551634979-2b11f8c946fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                class="img-responsive">
+            <img src="{{ asset('Images/7.jpg') }}" class="img-responsive">
             <div class="details">
-                Louvre, Paris, France
+                Mount Bromo
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1500313830540-7b6650a74fd0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                class="img-responsive">
+            <img src="{{ asset('Images/11.jpg') }}" class="img-responsive">
             <div class="details">
-                Eiffel Tower, Paris, France
+                horse riding in Bromo
+
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1598135753163-6167c1a1ad65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                class="img-responsive">
+            <img src="{{ asset('Images/51.jpg') }}" class="img-responsive">
             <div class="details">
-                Kauai, Hawaii, USA
+                Red Island
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                class="img-responsive">
+            <img src="{{ asset('Images/44.jpg') }}" class="img-responsive">
             <div class="details">
-                Meguro River, Matsuno, Japan
+            The Baluran savanna
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1507513319174-e556268bb244?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                class="img-responsive">
+            <img src="{{ asset('Images/5.jpg') }}" class="img-responsive">
             <div class="details">
-                Mount Fanjing, Tongren, Guizhou, China
+                Tumpak Sewu Waterfall
             </div>
         </div>
 
-        <div class="image">
-            <img src="https://images.unsplash.com/photo-1549851991-5b5c9c586f84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
-                class="img-responsive">
+        {{-- <div class="image">
+            <img src="{{ asset('Images/ijen1.jpg') }}" class="img-responsive">
             <div class="details">
                 Sydney Opera House
             </div>
-        </div>
+        </div> --}}
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            <img src="{{ asset('Images/bali2.jpg') }}"
                 class="img-responsive">
             <div class="details">
-                Shibuya, Japan
+               Bali
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            <img src="{{ asset('Images/tumpak-sewu.jpg') }}"
                 class="img-responsive">
             <div class="details">
-                Wai Tan, Shanghai, China
+               Tumpak Sewu
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1528702748617-c64d49f918af?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+            <img src="{{ asset('Images/bluefire1.jpg') }}"
                 class="img-responsive">
             <div class="details">
-                Dubai, United Arab Emirates
+                Blue fire Ijen
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1533395427226-788cee25cc7b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+            <img src="{{ asset('Images/6.jpg') }}"
                 class="img-responsive">
             <div class="details">
-                Burj Khalifa, Dubai, United Arab Emirates
+                Tumpak sewu
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1616321741705-e9a4073af35c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=642&q=80"
+            <img src="{{ asset('Images/bromo1.jpg') }}"
                 class="img-responsive">
             <div class="details">
-                Groningen, Netherlands
+                Mount Bromo Sunrise View
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            <img src="{{ asset('Images/12.jpg') }}"
                 class="img-responsive">
             <div class="details">
-                Mount Fuji
+              Ijen
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1526644253653-a411eaafdfe6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            <img src="{{ asset('Images/1ijen.jpg') }}"
                 class="img-responsive">
             <div class="details">
-                Abisko National Park, Sweden
+              Ijen
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1544015759-237f87d55ef3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            <img src="{{ asset('Images/1qq.jpg') }}"
                 class="img-responsive">
             <div class="details">
-                Sri Lanka - Tea plantation
+                Ijen
             </div>
         </div>
 
         <div class="image">
-            <img src="https://images.unsplash.com/photo-1509326066092-14b2e882fe86?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            <img src="{{ asset('Images/ijen1.jpg') }}"
                 class="img-responsive">
             <div class="details">
-                Iceland
+               Ijen
             </div>
         </div>
+
         <div class="custom-shape-divider-bottom-1631607238">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
                 preserveAspectRatio="none">
@@ -248,61 +240,85 @@
     </div>
     </div>
 
-    <footer>
-        <div class="footerDetails">
-            <div class="footerDescription">
-                <h1 class="footerTitle">Tegar</h1>
-                <p class="footerPara">Discover New Destinations. See breath-taking places and experience them from you
-                    device online.
-                    <br>
-                    Our travel writing captures the one thing we always strive to create – incredible travel
-                    experiences. From learning about the historical and political context of a destination to finding
-                    some really great hikes, each new place has something to discover.
-                    <br>
-                    We have a passion for storytelling, a knack for putting itineraries together and a strong desire to
-                    have fun. Here are all our adventures, our travel tips and our guides.
-                </p>
-            </div>
+ <footer>
+  <div class="footerDetails">
+    <!-- Kolom 1 -->
+    <div class="footerDescription">
+      <h1 class="footerTitle">Tegar</h1>
+      <p class="footerPara">
+        Discover New Destinations. See breath-taking places and experience
+        them from your device online.
+        <br /><br />
+        Our travel writing captures the one thing we always strive to create
+        – incredible travel experiences. From learning about the historical
+        and political context of a destination to finding some really great
+        hikes, each new place has something to discover.
+        <br /><br />
+        We have a passion for storytelling, a knack for putting itineraries
+        together and a strong desire to have fun.
+      </p>
+    </div>
 
-            <div class="footerContact">
-                <h1 class="contactTitle">Contact Me</h1>
-                <p class="contactPara">If you want to make any inquiries about the website, you can contact me through
-                    below options</p>
-                <div class="contactOptions">
-                    <a href="https://github.com/chamindujs" target="_blank" class="contactOption">
-                        <abbr title="GitHub">
-                            <img src="https://img.icons8.com/ios-glyphs/60/ca7717/github.png" />
-                        </abbr>
-                    </a>
-                    <a href="https://wa.link/1yweij" target="_blank" class="contactOption">
-                        <abbr title="WhatsApp">
-                            <img src="https://img.icons8.com/material-outlined/48/ca7717/whatsapp--v1.png" />
-                        </abbr>
-                    </a>
-                    <div class="contactOption call">
-                        <abbr title="Call">
-                            <img src="https://img.icons8.com/ios/48/ca7717/phone.png" />
-                        </abbr>
-                    </div>
-                    <a href="mailto:chamindujs@gmail.com" target="_blank" class="contactOption ">
-                        <abbr title="Gmail">
-                            <img src="https://img.icons8.com/ios/50/ca7717/gmail-new.png" />
-                        </abbr>
-                    </a>
-                    <div href="" class="contactOption discord">
-                        <abbr title="Discord">
-                            <img src="https://img.icons8.com/ios/50/ca7717/discord-logo--v1.png" />
-                        </abbr>
-                    </div>
-                </div>
-            </div>
+    <!-- Kolom 2 -->
+    <div class="footerContact">
+      <h1 class="contactTitle">Contact Me</h1>
+      <p class="contactPara">
+        If you want to make any inquiries about the website, you can contact
+        me through below options
+      </p>
+      <div class="contactOptions">
+        <a href="https://github.com/chamindujs" target="_blank" class="contactOption">
+          <abbr title="GitHub">
+            <img src="https://img.icons8.com/ios-glyphs/60/ca7717/github.png" />
+          </abbr>
+        </a>
+        <a href="https://wa.link/1yweij" target="_blank" class="contactOption">
+          <abbr title="WhatsApp">
+            <img src="https://img.icons8.com/material-outlined/48/ca7717/whatsapp--v1.png" />
+          </abbr>
+        </a>
+        <div class="contactOption call">
+          <abbr title="Call">
+            <img src="https://img.icons8.com/ios/48/ca7717/phone.png" />
+          </abbr>
         </div>
+        <a href="mailto:chamindujs@gmail.com" target="_blank" class="contactOption">
+          <abbr title="Gmail">
+            <img src="https://img.icons8.com/ios/50/ca7717/gmail-new.png" />
+          </abbr>
+        </a>
+        <div class="contactOption discord">
+          <abbr title="Discord">
+            <img src="https://img.icons8.com/ios/50/ca7717/discord-logo--v1.png" />
+          </abbr>
+        </div>
+      </div>
+    </div>
 
-        <div class="footerCopyright">
-            <p>This website is designed and developed by <span>Chamindu Jayanath</span> for the competition
-                <span>Digitron '21</span> </p>
-        </div>
-    </footer>
+    <!-- Kolom 3 -->
+  <div class="footerPayment">
+  <h1 class="paymentTitle">Payment Method</h1>
+  <div class="paymentOptions">
+    <img src="/Images/paypal.png" alt="PayPal" />
+    <img src="/Images/wise.png" alt="Wise" />
+    <img src="/Images/bri.png" alt="BRI" />
+  </div>
+
+  <h1 class="paymentTitle">Available At</h1>
+  <div class="availableOptions">
+    <img src="/Images/airbnb.png" alt="Airbnb" />
+    <img src="/Images/getyourguide.png" alt="GetYourGuide" />
+  </div>
+</div>
+
+
+  <div class="footerCopyright">
+    <p>
+      This website is designed and developed by
+      <span>Tegar Firmansyah And Sandi Permadi</span>
+    </p>
+  </div>
+</footer>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
