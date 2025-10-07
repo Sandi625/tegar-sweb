@@ -74,6 +74,12 @@ Route::get('/bromoijen1', function () {
 })->name('bromoijen1.page');
 
 
+Route::get('/bromoijen2', function () {
+    return view('BlogPages.bromoijen.bromoijenoption2');
+})->name('bromoijen2.page');
+
+
+
 Route::get('/pesan-finish-surabaya', function () {
     return view('BlogPages.bromoijen.pesanfinishsurabaya'); // nama file blade tanpa .blade.php
 })->name('pesanfinsihsurabaya.page');
@@ -134,3 +140,80 @@ Route::get('/pesanfinishbali', function () {
 Route::get('/pesanfinishbanyuwangi', function () {
     return view('BlogPages.midnightijen.pesanfinishbanyuwangi');
 })->name('pesan2mb.page');
+
+
+
+
+
+Route::get('/frombali1', function () {
+    return view('BlogPages.bromoijen.bromoijenbali1');
+})->name('pesanfrombali1.page');
+
+Route::get('/pesanbali1', function () {
+    return view('BlogPages.bromoijen.pesanbali1');
+})->name('pesanbali1.page');
+
+
+
+
+
+Route::get('/frombali2', function () {
+    return view('BlogPages.bromoijen.bromoijenbali2');
+})->name('pesanfrombali2.page');
+
+Route::get('/pesanbali2', function () {
+    return view('BlogPages.bromoijen.pesanbali2');
+})->name('pesanbali2.page');
+
+
+
+
+
+Route::get('/tumpaksewuoption', function () {
+    return view('BlogPages.tumpaksewu.option1');
+})->name('tumpakoption1.page');
+
+
+Route::get('/tumpaksewu1', function () {
+    return view('BlogPages.tumpaksewu.tumpaksewu1');
+})->name('tumpak1.page');
+
+
+Route::get('/tumpakpesan1', function () {
+    return view('BlogPages.tumpaksewu.pesan1');
+})->name('tumpakpesan1b.page');
+
+
+Route::get('/tumpaksewu2', function () {
+    return view('BlogPages.tumpaksewu.tumpaksewu2');
+})->name('tumpak2.page');
+
+
+Route::get('/tumpakpesan2', function () {
+    return view('BlogPages.tumpaksewu.pesan2');
+})->name('tumpakpesan1.page');
+
+
+Route::get('/tumpaksewuoption2', function () {
+    return view('BlogPages.tumpaksewu.option2');
+})->name('tumpakoption2.page');
+
+
+
+Route::get('/tumpak3', function () {
+    return view('BlogPages.tumpaksewu.tumpaksewu3');
+})->name('tumpak3.page');
+
+Route::get('/tumpakpesan3', function () {
+    return view('BlogPages.tumpaksewu.pesan3');
+})->name('tumpakpesan3.page');
+
+
+Route::get('/tumpak4', function () {
+    return view('BlogPages.tumpaksewu.tumpaksewu4');
+})->name('tumpak4.page');
+
+Route::get('/tumpakpesan4', function () {
+    return view('BlogPages.tumpaksewu.pesan4');
+})->name('tumpakpesan4.page');
+

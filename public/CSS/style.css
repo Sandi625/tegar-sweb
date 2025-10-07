@@ -288,6 +288,19 @@ nav.active {
 	border-radius: 10px;
 	border: none;
 }
+.headerContainer {
+  height: min-content;
+  padding: 100px 0;
+  position: relative;
+  background-image: url('../images/ijenburem.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+
 .headerWrapper,
 .headerContainer {
 	height: min-content;
@@ -295,23 +308,27 @@ nav.active {
 	position: relative;
 }
 
+/* Pastikan .headerContainer hanya atur konten wrapper, bukan aboutInfo */
 .headerContainer {
-	background-image: url('../images/ijenburem.png');
-	background-size: minmax(cover, 250%);
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	display: flex;
-	justify-content: center;
+  background-image: url('../images/ijenburem.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  position: relative;
+  display: block; /* ubah ke block, biar tidak mempengaruhi about */
 }
 
+/* Bungkus teks + grid + swiper */
 .headerWrapper {
-	width: 80%;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	align-items: center;
-	flex-wrap: wrap; /* <-- biar item bisa turun ke baris berikutnya */
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap; /* biar turun saat layar kecil */
 }
 
 .headerInfo {
@@ -493,6 +510,85 @@ nav.active {
     display: none;
   }
 }
+
+/* Container About */
+.aboutInfo {
+  flex-basis: 100%;
+  order: 3;
+  max-width: 2100px;     /* ✅ lebih lebar lagi */
+  margin: 120px auto;    /* ✅ jarak atas bawah lebih besar */
+  padding: 0 60px;       /* ✅ padding kiri-kanan lebih luas */
+  text-align: center;
+  color: #333;
+}
+
+/* Title */
+.aboutTitle {
+  font-size: 3.8rem;     /* ✅ lebih besar */
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.aboutTitle span {
+  color: #ff6600;
+}
+
+/* Description */
+.aboutDescription {
+  font-size: 1.4rem;     /* ✅ lebih besar */
+  line-height: 2;        /* ✅ lebih longgar */
+  color: #444;
+  margin-bottom: 60px;
+  text-align: justify;
+}
+
+/* Button */
+.aboutButton {
+  background: #ff6600;
+  color: #fff;
+  padding: 20px 50px;    /* ✅ tombol lebih besar */
+  border: none;
+  border-radius: 40px;
+  font-size: 1.3rem;     /* ✅ font tombol lebih besar */
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+.aboutButton:hover {
+  background: #e65c00;
+  transform: translateY(-4px);
+}
+
+/* 🔹 Responsive Mobile */
+@media (max-width: 768px) {
+  .aboutTitle {
+    font-size: 2.5rem;   /* tetap proporsional di HP */
+  }
+
+  .aboutDescription {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    text-align: left;
+  }
+
+  .aboutButton {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+  }
+}
+
+.aboutTitle::before {
+  content: url('https://img.icons8.com/ios-filled/50/ff6600/route.png');
+  display: inline-block;
+  width: 50px;   /* ✅ ikon lebih besar */
+  height: 50px;
+  margin-right: 10px;
+}
+
 
 
 

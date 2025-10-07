@@ -113,7 +113,7 @@
 
 <!-- Blog 2 -->
 <div class="blog">
-    <img src="{{ asset('Images/11.jpg') }}" alt="Bromo Ijen Tour Surabaya" class="image" />
+    <img src="{{ asset('Images/1ijen.jpg') }}" alt="Bromo Ijen Tour Surabaya" class="image" />
     <div class="content">
         <div class="details">
             <h2>

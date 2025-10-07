@@ -113,3 +113,20 @@ adjustCustomTripForm();
 window.addEventListener('resize', adjustCustomTripForm);
 
 
+
+
+   document.getElementById("openPopup").onclick = function(e) {
+    e.preventDefault();
+    document.getElementById("popup").style.display = "block";
+  };
+
+  document.getElementById("closePopup").onclick = function() {
+    document.getElementById("popup").style.display = "none";
+  };
+
+  window.onclick = function(event) {
+    const popup = document.getElementById("popup");
+    if (event.target === popup) {
+      popup.style.display = "none";
+    }
+  };

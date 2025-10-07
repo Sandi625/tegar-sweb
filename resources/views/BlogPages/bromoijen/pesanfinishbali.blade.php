@@ -39,7 +39,7 @@
   class="headerContainer"
   id="header"
   style="
-    background: url('/Images/bromo3.jpg');
+    background: url('/Images/IMG_5987.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -47,32 +47,48 @@
   "
 >
   <div class="headerWrapper"></div>
-  <div class="content">
-    <div class="title">
-      <h1>Bromo ijen tour Start from Surabaya (finish at Bali)</h1>
-    </div>
-    <div class="otherDetails">
-      <p class="date">
-        <span
-          ><img
-            src="https://img.icons8.com/material-rounded/24/ffffff/calendar--v1.png"
-        /></span>
-        01 AUG 2021
-      </p>
-      <p class="readTime">
-        <span
-          ><img src="https://img.icons8.com/ios/50/ffffff/time--v1.png"
-        /></span>
-        08mins
-      </p>
-      <p class="author">
-        <span
-          ><img
-            src="https://img.icons8.com/ios-glyphs/30/ffffff/book.png" /></span
-        >BY Alyse
-      </p>
-    </div>
-  </div>
+ <div class="content">
+            <div class="title">
+                <h1 style="text-transform: uppercase;">
+                    Bromo ijen tour Start from Surabaya (finish at Bali)
+                </h1>
+            </div>
+            <div class="otherDetails">
+                <p class="readTime">
+                    <span>
+                        <img src="https://img.icons8.com/ios/50/ffffff/time--v1.png" />
+                    </span>
+                    3 Day 2 Night
+                </p>
+
+                <p class="readTime">
+                    <span>
+                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/user--v1.png" />
+                    </span>
+                    Private Trip
+                </p>
+
+
+            </div>
+
+            <div class="downloadBtn">
+                <a href="{{ asset('pdf/Itinerary 4D3N.pdf') }}" target="_blank" download>
+                    <button
+                        style="
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #ffffff;
+            color: #333;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+          ">
+                        📄 Download PDF Itinerary
+                    </button>
+                </a>
+            </div>
+        </div>
   <a href="#para">
     <img
       src="https://img.icons8.com/external-those-icons-fill-those-icons/24/ffffff/external-down-arrows-those-icons-fill-those-icons-7.png"

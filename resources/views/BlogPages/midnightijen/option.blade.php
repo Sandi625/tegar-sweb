@@ -87,7 +87,7 @@
 
             <!-- Blog 1 -->
             <div class="blog" id="blog">
-                <img src="{{ asset('Images/ijen2.jpg') }}" alt="Midnight Ijen Tour from Bali" class="image" />
+                <img src="{{ asset('Images/IMG_4763.jpg') }}" alt="Midnight Ijen Tour from Bali" class="image" />
                 <div class="content">
                     <div class="details">
                         <h2>
@@ -112,7 +112,7 @@
 
             <!-- Blog 2 -->
             <div class="blog">
-                <img src="{{ asset('Images/ijen4.jpg') }}" alt="Midnight Ijen Tour from Banyuwangi" class="image" />
+                <img src="{{ asset('Images/IMG_5116.jpg') }}" alt="Midnight Ijen Tour from Banyuwangi" class="image" />
                 <div class="content">
                     <div class="details">
                         <h2>

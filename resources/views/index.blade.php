@@ -142,6 +142,19 @@
             </div>
         </div>
 
+       <div class="aboutInfo">
+  <h2 class="aboutTitle">
+    <i class="fas fa-route aboutIcon"></i> <!-- 🔹 icon hiasan -->
+    About <span>Us</span>
+  </h2>
+  <p class="aboutDescription">
+ At Vamos Adventure, we believe that a journey is more than just a holiday it is an unforgettable adventure filled with discovery and wonder. With us, you can witness the breathtaking sunrise over Mount Bromo, explore the natural beauty of the Ijen Crater with its world-famous blue flames, be amazed by the majestic Tumpak Sewu Waterfall, and enjoy many other fascinating destinations we have to offer. But the experience doesn’t end there. Java is home to countless hidden treasures, and through our carefully designed tour packages, you will uncover destinations that are just as captivating. At Vamos Adventure, we not only provide a wide selection of ready made tour packages but also offer the flexibility to customize your journey according to your preferences and needs. Get ready for an extraordinary adventure where every step creates cherished moments and memories that will last a lifetime.  </p>
+  <a href="#contact">
+    <button class="aboutButton">Learn More</button>
+  </a>
+</div>
+
+
         <!-- Shape bawah -->
         <div class="custom-shape-divider-bottom-1630587725">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
@@ -154,6 +167,32 @@
             </svg>
         </div>
     </section>
+
+    {{-- <section class="aboutContainer" id="about">
+  <div class="aboutWrapper">
+    <!-- Bagian teks -->
+
+
+    <!-- Bagian gambar -->
+    <div class="aboutImage">
+      <img src="/Images/43qq.jpg" alt="About Vamos Adventure" />
+    </div>
+  </div>
+
+  <!-- Wave bawah -->
+  <div class="custom-shape-divider-bottom-about">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M985.66,92.83C906.67,72,823.78,31,
+        743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39,
+        -57.87,11.73-114,31.07-172,41.86A600.21,
+        600.21,0,0,1,0,27.35V120H1200V95.81
+        C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+        class="shape-fill"></path>
+    </svg>
+  </div>
+</section> --}}
+
 
 
 
@@ -172,11 +211,9 @@
                 <div class="blog">
                     <img src="{{ asset('Images/7.jpg') }}" alt="Bromo Ijen Tour" />
                     <h3 class="blogTitle">
-                        Bromo Ijen Tour (4D 3N)
+                        Bromo Ijen Tour From Surabaya (4D 3N)
                     </h3>
-                    {{-- <p class="blogDescription">
-                    Explore the magical sunrise of Mount Bromo and the stunning blue flames of Ijen Crater in this 4-day 3-night tour.
-                </p> --}}
+
                     <p class="blogPrice">
                         Start from <span class="highlightText">$350 / person</span>
                     </p>
@@ -186,37 +223,33 @@
                 </div>
 
                 <div class="blog">
-                    <img src="{{ asset('Images/11.jpg') }}" alt="Bromo Ijen Tour from Surabaya" />
+                    <img src="{{ asset('Images/IMG_4120.jpg') }}" alt="Bromo Ijen Tour from Surabaya" />
                     <h3 class="blogTitle">
-                        Bromo Ijen Tour from Surabaya (4D 3N)
+                        Bromo Ijen Tour from Bali (4D 3N)
                     </h3>
-                    {{-- <p class="blogDescription">
-                    Starting from Surabaya, enjoy a comfortable journey to Mount Bromo and Ijen, including transport and local guide.
-                </p> --}}
+
                     <p class="blogPrice">
                         Start from <span class="highlightText">$370 / person</span>
                     </p>
-                    <a href="{{ route('blog.italy') }}">
+                    <a href="{{ route('bromoijen2.page') }}">
                         <button class="readBlog">Details</button>
                     </a>
                 </div>
 
 
-                <div class="blog">
+                {{-- <div class="blog">
                     <img src="{{ asset('Images/bromo3.jpg') }}" alt="Bromo Ijen Tour from Bali" />
                     <h3 class="blogTitle">
                         Bromo Ijen Tour from Bali (4D 3N)
                     </h3>
-                    {{-- <p class="blogDescription">
-                    Begin your adventure from Bali, crossing to Java to witness Bromo’s sunrise and Ijen’s mesmerizing blue fire.
-                </p> --}}
+
                     <p class="blogPrice">
                         Start from <span class="highlightText">$400 / person</span>
                     </p>
                     <a href="{{ route('bromoijen.bali') }}">
                         <button class="readBlog">Details</button>
                     </a>
-                </div>
+                </div> --}}
 
             </div>
         </div>
@@ -226,58 +259,52 @@
 
     <section class="blogs">
         <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
-            Bromo - Ijen - Tumpak Sewu <span class="buttonHighlight">Tour Packages</span>
+            Tumpak Sewu - Bromo - Ijen <span class="buttonHighlight">Tour Packages</span>
         </h1>
         <div class="blogsContainer">
             <div class="blogsContent">
 
                 <div class="blog">
-                    <img src="{{ asset('Images/7.jpg') }}" alt="Bromo Ijen Tour" />
+                    <img src="{{ asset('Images/IMG_4145.jpg') }}" alt="Tumpak Sewu" />
                     <h3 class="blogTitle">
-                        Bromo Ijen Tour (4D 3N)
+                        Tumpaksewu-Bromo-Ijen Tour Tour From Surabaya (4D3N)
                     </h3>
-                    {{-- <p class="blogDescription">
-                    Explore the magical sunrise of Mount Bromo and the stunning blue flames of Ijen Crater in this 4-day 3-night tour.
-                </p> --}}
+
                     <p class="blogPrice">
                         Start from <span class="highlightText">$350 / person</span>
                     </p>
-                    <a href="{{ route('bromoijen1.page') }}">
+                    <a href="{{ route('tumpakoption1.page') }}">
                         <button class="readBlog">Details</button>
                     </a>
                 </div>
 
                 <div class="blog">
-                    <img src="{{ asset('Images/11.jpg') }}" alt="Bromo Ijen Tour from Surabaya" />
+                    <img src="{{ asset('Images/IMG_4687.jpg') }}" alt="Bromo Ijen Tour from Surabaya" />
                     <h3 class="blogTitle">
-                        Bromo Ijen Tour from Surabaya (4D 3N)
+                          Tumpaksewu-Bromo-Ijen Tour Tour From Bali (4D3N)
                     </h3>
-                    {{-- <p class="blogDescription">
-                    Starting from Surabaya, enjoy a comfortable journey to Mount Bromo and Ijen, including transport and local guide.
-                </p> --}}
+
                     <p class="blogPrice">
                         Start from <span class="highlightText">$370 / person</span>
                     </p>
-                    <a href="{{ route('blog.italy') }}">
+                    <a href="{{ route('tumpakoption2.page') }}">
                         <button class="readBlog">Details</button>
                     </a>
                 </div>
 
-                <div class="blog">
+                {{-- <div class="blog">
                     <img src="{{ asset('Images/bromo3.jpg') }}" alt="Bromo Ijen Tour from Bali" />
                     <h3 class="blogTitle">
                         Bromo Ijen Tour from Bali (4D 3N)
                     </h3>
-                    {{-- <p class="blogDescription">
-                    Begin your adventure from Bali, crossing to Java to witness Bromo’s sunrise and Ijen’s mesmerizing blue fire.
-                </p> --}}
+
                     <p class="blogPrice">
                         Start from <span class="highlightText">$400 / person</span>
                     </p>
                     <a href="{{ route('bromoijen.bali') }}">
                         <button class="readBlog">Details</button>
                     </a>
-                </div>
+                </div> --}}
 
             </div>
         </div>
@@ -292,7 +319,7 @@
         <div class="blogsContainer">
             <div class="blogsContent">
                 <div class="blog">
-                    <img src="{{ asset('Images/ijen2.jpg') }}" alt="Bromo Ijen Tour" />
+                    <img src="{{ asset('Images/i5.jpg') }}" alt="Bromo Ijen Tour" />
                     <h3 class="blogTitle">
                         Mid night ijen from bali
                     </h3>
@@ -306,7 +333,7 @@
                 </div>
 
 
-                <div class="blog">
+                {{-- <div class="blog">
                     <img src="{{ asset('Images/ijen4.jpg') }}" alt="Bromo Ijen Tour from Surabaya" />
                     <h3 class="blogTitle">
                         Bromo Ijen Tour from Surabaya (4D 3N)
@@ -331,7 +358,7 @@
                     <a href="{{ route('bromoijen.bali') }}">
                         <button class="readBlog">Details</button>
                     </a>
-                </div>
+                </div> --}}
 
             </div>
         </div>
@@ -359,12 +386,12 @@
                 <div id="customTourCard"
                     style="width:100%; max-width:500px; padding:15px 12px; font-size:0.95rem; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); transition:all 0.3s;">
 
-                    <img src="{{ asset('Images/7.jpg') }}" alt="Bromo Ijen Tour" id="customTourImg"
+                    <img src="{{ asset('Images/IMG_7671.jpg') }}" alt="Bromo Ijen Tour" id="customTourImg"
                         style="width:100%; height:auto; border-radius:8px; object-fit:cover; transition: transform 0.3s;">
 
                     <h3 id="customTourTitle"
                         style="font-size:20px; margin-top:12px; color:#142361; text-align:center;">
-                        Custom Your Tour
+                        Custom Your Tour Trip
                     </h3>
 
                     <button id="customTourButton" onclick="window.location.href='{{ route('custom.tour.form') }}'"
@@ -665,85 +692,94 @@
                 class="shape-fill"></path>
         </svg>
     </div>
-<footer>
-  <div class="footerDetails">
-    <!-- Kolom 1 -->
-    <div class="footerDescription">
-      <h1 class="footerTitle">Tegar</h1>
-      <p class="footerPara">
-        Discover New Destinations. See breath-taking places and experience
-        them from your device online.
-        <br /><br />
-        Our travel writing captures the one thing we always strive to create
-        – incredible travel experiences. From learning about the historical
-        and political context of a destination to finding some really great
-        hikes, each new place has something to discover.
-        <br /><br />
-        We have a passion for storytelling, a knack for putting itineraries
-        together and a strong desire to have fun.
-      </p>
-    </div>
+    <footer>
+        <div class="footerDetails">
+            <!-- Kolom 1 -->
+            <div class="footerDescription">
+                <h1 class="footerTitle">Tegar</h1>
+                <p class="footerPara">
+                    At Vamos Adventure, we believe that a journey is more than just a
+                    holiday—it is an unforgettable adventure filled with discovery and wonder.
+                    <br /><br />
+                    With us, you can witness the breathtaking sunrise over Mount Bromo, explore
+                    the natural beauty of the Ijen Crater with its world-famous blue flames, be
+                    amazed by the majestic Tumpak Sewu Waterfall, and enjoy many other fascinating
+                    destinations we have to offer.
+                    <br /><br />
+                    But the experience doesn’t end there. Java is home to countless hidden treasures,
+                    and through our carefully designed tour packages, you will uncover destinations
+                    that are just as captivating.
+                    <br /><br />
+                    At Vamos Adventure, we not only provide a wide selection of ready-made tour packages
+                    but also offer the flexibility to customize your journey according to your preferences
+                    and needs.
+                    <br /><br />
+                    Get ready for an extraordinary adventure where every step creates cherished
+                    moments and memories that will last a lifetime.
+                </p>
 
-    <!-- Kolom 2 -->
-    <div class="footerContact">
-      <h1 class="contactTitle">Contact Me</h1>
-      <p class="contactPara">
-        If you want to make any inquiries about the website, you can contact
-        me through below options
-      </p>
-      <div class="contactOptions">
-        <a href="https://github.com/chamindujs" target="_blank" class="contactOption">
-          <abbr title="GitHub">
-            <img src="https://img.icons8.com/ios-glyphs/60/ca7717/github.png" />
-          </abbr>
-        </a>
-        <a href="https://wa.link/1yweij" target="_blank" class="contactOption">
-          <abbr title="WhatsApp">
-            <img src="https://img.icons8.com/material-outlined/48/ca7717/whatsapp--v1.png" />
-          </abbr>
-        </a>
-        <div class="contactOption call">
-          <abbr title="Call">
-            <img src="https://img.icons8.com/ios/48/ca7717/phone.png" />
-          </abbr>
-        </div>
-        <a href="mailto:chamindujs@gmail.com" target="_blank" class="contactOption">
-          <abbr title="Gmail">
-            <img src="https://img.icons8.com/ios/50/ca7717/gmail-new.png" />
-          </abbr>
-        </a>
-        <div class="contactOption discord">
-          <abbr title="Discord">
-            <img src="https://img.icons8.com/ios/50/ca7717/discord-logo--v1.png" />
-          </abbr>
-        </div>
-      </div>
-    </div>
+            </div>
 
-    <!-- Kolom 3 -->
-  <div class="footerPayment">
-  <h1 class="paymentTitle">Payment Method</h1>
-  <div class="paymentOptions">
-    <img src="/Images/paypal.png" alt="PayPal" />
-    <img src="/Images/wise.png" alt="Wise" />
-    <img src="/Images/bri.png" alt="BRI" />
-  </div>
+            <!-- Kolom 2 -->
+            <div class="footerContact">
+                <h1 class="contactTitle">Contact Me</h1>
+                <p class="contactPara">
+                    If you want to make any inquiries about the website, you can contact
+                    me through below options
+                </p>
+                <div class="contactOptions">
+                    <a href="https://github.com/chamindujs" target="_blank" class="contactOption">
+                        <abbr title="GitHub">
+                            <img src="https://img.icons8.com/ios-glyphs/60/ca7717/github.png" />
+                        </abbr>
+                    </a>
+                    <a href="https://wa.link/1yweij" target="_blank" class="contactOption">
+                        <abbr title="WhatsApp">
+                            <img src="https://img.icons8.com/material-outlined/48/ca7717/whatsapp--v1.png" />
+                        </abbr>
+                    </a>
+                    <div class="contactOption call">
+                        <abbr title="Call">
+                            <img src="https://img.icons8.com/ios/48/ca7717/phone.png" />
+                        </abbr>
+                    </div>
+                    <a href="mailto:chamindujs@gmail.com" target="_blank" class="contactOption">
+                        <abbr title="Gmail">
+                            <img src="https://img.icons8.com/ios/50/ca7717/gmail-new.png" />
+                        </abbr>
+                    </a>
+                    <div class="contactOption discord">
+                        <abbr title="Discord">
+                            <img src="https://img.icons8.com/ios/50/ca7717/discord-logo--v1.png" />
+                        </abbr>
+                    </div>
+                </div>
+            </div>
 
-  <h1 class="paymentTitle">Available At</h1>
-  <div class="availableOptions">
-    <img src="/Images/airbnb.png" alt="Airbnb" />
-    <img src="/Images/getyourguide.png" alt="GetYourGuide" />
-  </div>
-</div>
+            <!-- Kolom 3 -->
+            <div class="footerPayment">
+                <h1 class="paymentTitle">Payment Method</h1>
+                <div class="paymentOptions">
+                    <img src="/Images/paypal.png" alt="PayPal" />
+                    <img src="/Images/wise.png" alt="Wise" />
+                    <img src="/Images/bri.png" alt="BRI" />
+                </div>
+
+                <h1 class="paymentTitle">Available At</h1>
+                <div class="availableOptions">
+                    <img src="/Images/airbnb.png" alt="Airbnb" />
+                    <img src="/Images/getyourguide.png" alt="GetYourGuide" />
+                </div>
+            </div>
 
 
-  <div class="footerCopyright">
-    <p>
-      This website is designed and developed by
-      <span>Tegar Firmansyah And Sandi Permadi</span>
-    </p>
-  </div>
-</footer>
+            <div class="footerCopyright">
+                <p>
+                    This website is designed and developed by
+                    <span>Tegar Firmansyah And Sandi Permadi</span>
+                </p>
+            </div>
+    </footer>
 
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

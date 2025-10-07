@@ -8,6 +8,11 @@
     <link rel="shortcut icon" href="../Images/favicon.png" type="image/x-icon" />
     <title>Ijen Bali | Tegar</title>
   </head>
+      <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <body>
   <nav>
     <a href="{{ route('home.page') }}" class="brand-logo">Travel</a>
@@ -35,7 +40,7 @@
       </div>
     </a>
 
-<section
+{{-- <section
   class="headerContainer"
   id="header"
   style="
@@ -99,7 +104,96 @@
       class="scrollButton"
     />
   </a>
+</section> --}}
+
+<section class="headerContainer" id="header">
+  <!-- Background Slider -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background:url('/Images/IMG_4763.jpg') center/cover no-repeat;"></div>
+      <div class="swiper-slide" style="background:url('/Images/IMG_3323.jpg') center/cover no-repeat;"></div>
+      <div class="swiper-slide" style="background:url('/Images/IMG_4120.jpg') center/cover no-repeat;"></div>
+    </div>
+  </div>
+
+  <!-- Konten di atas slider -->
+  <div class="headerWrapper"></div>
+  <div class="content">
+    <div class="title">
+      <h1 style="text-transform: uppercase;">
+   Midnight Ijen Tour Start from Bali (Finish at Bali)
+      </h1>
+    </div>
+    <div class="otherDetails">
+      <p class="readTime">
+        <span>
+          <img src="https://img.icons8.com/ios/50/ffffff/time--v1.png" />
+        </span>
+        3 Day 2 Night
+      </p>
+
+      <p class="readTime">
+        <span>
+          <img src="https://img.icons8.com/ios-glyphs/30/ffffff/user--v1.png" />
+        </span>
+        Private Trip
+      </p>
+    </div>
+
+    <div class="downloadBtn">
+      <a href="{{ asset('pdf/Itinerary 4D3N.pdf') }}" target="_blank" download>
+        <button
+          style="
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #ffffff;
+            color: #333;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+          ">
+          📄 Download PDF Itinerary
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <a href="#para">
+    <img src="https://img.icons8.com/external-those-icons-fill-those-icons/24/ffffff/external-down-arrows-those-icons-fill-those-icons-7.png"
+         class="scrollButton" />
+  </a>
 </section>
+
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true, // agar muter terus
+            autoplay: {
+                delay: 3000, // 3 detik
+                disableOnInteraction: false,
+            },
+            effect: "slide", // geser ke kanan
+        });
+    </script>
+
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100vh;
+            /* full layar */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* supaya konten tetap di atas */
+        }
+
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 
 
 
