@@ -30,8 +30,9 @@ Route::get('/gallery', function () {
 
 
 Route::get('/bromoijen/bali', function () {
-    return view('BlogPages.bromoijen.finshbali');
+    return view('BlogPages.bromoijen.bromoijen1');
 })->name('bromoijen.bali');
+
 
 Route::get('/blog/italy', function () {
     return view('BlogPages.italy');
@@ -40,7 +41,7 @@ Route::get('/blog/italy', function () {
 //
 
 Route::get('/bromoijen/surabaya', function () {
-    return view('BlogPages.bromoijen.kandy');
+    return view('BlogPages.bromoijen.bromoijen2');
 })->name('bromoijen.surabaya');
 
 
@@ -59,9 +60,9 @@ Route::get('/blog/kandy', function () {
 //     return view('BlogPages.kandy');
 // })->name('blog.kandy');
 
-Route::get('/bromoijen/bali', function () {
-    return view('BlogPages.bromoijen.finshbali');
-})->name('bromoijen.bali');
+// Route::get('/bromoijen/bali', function () {
+//     return view('BlogPages.bromoijen.finshbali');
+// })->name('bromoijen.bali');
 
 
 Route::get('/custom-trip', function () {

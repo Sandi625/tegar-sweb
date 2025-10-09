@@ -114,21 +114,21 @@
 
             <!-- Grid Gambar -->
             <div class="images">
-                <div class="image wide" style="background-image: url('{{ asset('Images/7.jpg') }}');"></div>
+                <div class="image wide" style="background-image: url('{{ asset('Images/IMG_6711.jpg') }}');"></div>
                 <div class="image" style="background-image: url('{{ asset('Images/13.jpg') }}');"></div>
-                <div class="image tall" style="background-image: url('{{ asset('Images/bluefire1.jpg') }}');"></div>
-                <div class="image" style="background-image: url('{{ asset('Images/51.jpg') }}');"></div>
+                <div class="image tall" style="background-image: url('{{ asset('Images/IMG_1976.jpg') }}');"></div>
+                <div class="image" style="background-image: url('{{ asset('Images/IMG_0095.jpg') }}');"></div>
                 <div class="image" style="background-image: url('{{ asset('Images/47.jpg') }}');"></div>
-                <div class="image wide" style="background-image: url('{{ asset('Images/44.jpg') }}');"></div>
+                <div class="image wide" style="background-image: url('{{ asset('Images/IMG_7671.jpg') }}');"></div>
             </div>
 
             <!-- Slider (pakai gambar yang sama) -->
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" style="background-image: url('{{ asset('Images/7.jpg') }}');"></div>
-                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/12.jpg') }}');"></div>
-                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/1.jpg') }}');"></div>
-                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/51.jpg') }}');"></div>
+                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/IMG_4123.jpg') }}');"></div>
+                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/IMG_8779.jpg') }}');"></div>
+                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/i5.jpg') }}');"></div>
                     <div class="swiper-slide" style="background-image: url('{{ asset('Images/47.jpg') }}');"></div>
                     <div class="swiper-slide" style="background-image: url('{{ asset('Images/44.jpg') }}');"></div>
                 </div>
@@ -321,7 +321,7 @@
                 <div class="blog">
                     <img src="{{ asset('Images/i5.jpg') }}" alt="Bromo Ijen Tour" />
                     <h3 class="blogTitle">
-                        Mid night ijen from bali
+                        Mid night ijen
                     </h3>
 
                     <p class="blogPrice">

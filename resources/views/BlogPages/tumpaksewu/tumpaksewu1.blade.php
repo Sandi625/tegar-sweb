@@ -212,21 +212,13 @@
 
                 <b>Day1: SURABAYA - ACOMMODATION IN TUMPAKSEWU
                     WATERFALL AREA </b><br />
-                Tumpaksewu-bromo & ijen tour akan dimulai dari area surabaya,
-                pemandu kita dan supir akan menjemput kamu di hotel, bandara atau
-                stasiun kereta lalu kita dari surabaya akan berkendara menuju ke
-                penginapan di kawasan Tumpaksewu sekitar 4-5 jam perjalanan
-                dengan beberapa pemberhentian. <br>
+               The Tumpak Sewu – Bromo & Ijen Tour will begin from the Surabaya area.
+Our guide and driver will pick you up from your hotel, airport, or train station, and we will then drive from Surabaya to your accommodation near Tumpak Sewu Waterfall, a journey that takes approximately 4–5 hours with several stops along the way. <br>
                 <b>PROGRAM OPSIONAL (No Additional Cost):</b>
-                Jika Anda bisa berangkat pada pagi hari & cuaca cukup bagus, Anda
-                berkesempatan mengunjungi Jodipan rainbow village in malang dalam
-                perjalanan dari Surabaya menuju hotel Anda di kawasan Tumpak
-                sewu. Silakan cek gambar Jodipan rainbow village di Internet.
-                Setibanya anda di penginapan, chek-in hotel dan acara bebas.
-                (kalian bisa mengeksplorasi disekitar hotel anda atau langsung ber
-                istirahat dan nikmati pengalaman menginap yang menyenangkan
-                sebelum anda melakukan tour Tumpaksewu)
-                (<a href="#" id="openPopup">Gambar Jodipan rainbow village. </a>)<br /><br />
+               If you can depart in the morning and the weather is nice, you’ll have the opportunity to visit Jodipan Rainbow Village in Malang on your way from Surabaya to your hotel near Tumpak Sewu. Feel free to look up pictures of Jodipan Rainbow Village on the internet.
+
+Upon arrival at your accommodation, check in and enjoy some free time. You may explore the area around your hotel or simply relax and enjoy a pleasant stay before beginning your Tumpak Sewu tour the next day.
+                (<a href="#" id="openPopup"> Jodipan rainbow village Image. </a>)<br /><br />
 
                 <!-- Modal / Popup Slider -->
                 <div id="popup" class="popup">
@@ -236,7 +228,7 @@
                         <!-- Slider Container -->
                         <div class="slider">
                             <div class="slides">
-                                <img src="{{ asset('Images/6.jpg') }}" alt="Jodipan rainbow village">
+                                <img src="{{ asset('Images/IMG_4205.jpg') }}" alt="Jodipan rainbow village">
                                 <img src="{{ asset('Images/mada1.jpg') }}" alt="Jodipan rainbow village">
                                 <img src="{{ asset('Images/mada2.jpg') }}" alt="Jodipan rainbow village">
                             </div>
@@ -375,94 +367,56 @@
 
                 <b>Day2: EXPLORE TUMPAKSEWU WATERFALL -
                     ACOMMODATION IN MOUNT BROMO AREA </b><br />
-                Tour tumpak sewu waterfall akan dimulai pada pukul 6 pagi.
-                Setibanya di Air Terjun Tumpak Sewu, pemandu kami akan menemani
-                Anda ke sudut pandang Panorama, menawarkan pemandangan
-                panorama air terjun yang membentang 180 derajat.
-                Setelah cukup menikmati pemandangan, kita akan turun ke dasar air
-                terjun, Turunnya bisa licin karena kondisi basah, tetapi tangga besi
-                dan tangga semen yang baru dibangun tersedia.
-                Selain itu, ada tali yang kokoh untuk dipegang saat melintasi jalan
-                setapak dengan air yang menetes ke bebatuan.
-                (Memakai Alas kaki yang memadai dan tas tahan air sangat
-                direkomendasikan.)
-                Kegiatan ini akan berlangsung sekitar 3 jam, tergantung pada tingkat
-                keterlibatan Anda dengan air terjun.
-                Setelah menjelajahi air terjun, kita akan kembali ke hotel untuk
-                sarapan terlebih dahulu sebelum melanjutkan ke tujuan kita berikutnya
-                ke akomodasi di area Gunung Bromo, yang akan membutuhkan 3 jam
-                berkendara dari Air Terjun Tumpak Sewu.
-                Setibanya anda di hotel, chek-in hotel dan acara bebas.
-                (kalian bisa mengeksplorasi disekitar hotel anda atau langsung ber
-                istirahat dan nikmati pengalaman menginap yang menyenangkan
-                sebelum anda melakukan tour gunung bromo.) <br /><br />
+                The Tumpak Sewu Waterfall Tour will begin at 6:00 AM.
+Upon arriving at the waterfall, our guide will take you to the Panorama Viewpoint, which offers a breathtaking 180-degree view of the magnificent cascade.
+
+After enjoying the view, we’ll descend to the base of the waterfall. The path can be slippery due to wet conditions, but newly built iron and concrete stairs are available, along with sturdy ropes to hold on to while crossing sections where water trickles over the rocks.
+(Wearing proper footwear and carrying a waterproof bag is highly recommended.)
+
+This activity will take around 3 hours, depending on how much time you spend exploring the waterfall.
+
+Afterward, we’ll return to the hotel for breakfast, before continuing our journey to the Bromo Mountain area, which takes about 3 hours by car from Tumpak Sewu.
+
+Upon arrival at your hotel, check in and enjoy some free time — you can explore the surroundings or simply relax and unwind to enjoy a pleasant night’s stay before your Mount Bromo tour the next day. <br /><br />
 
 
 
                 <b>Day3: MOUNT BROMO SUNRISE TOUR - ACOMMODATION IN
                     IJEN CRATER AREA </b><br />
-                Tour Sunrise Gunung Bromo akan dimulai sekitar pukul 03.00 dari
-                hotel anda, jeep akan membawa anda ke viewpoint paling terkenal di
-                kawasan Gunung Bromo. Itulah Penanjakan/Bukit King Kong, dari
-                bukit tersebut kamu bisa melihat matahari terbit terbaik di Jawa Timur
-                dengan latar belakang pegunungan dan gunung berapi.
-                (Opsional: bila anda datang ke Gunung Bromo di akhir pekan, tour
-                harus dimulai lebih awal atau mengambil opsi menikmati sunrise dari
-                kawah bromo untuk menghindari keramaian)
-                Setelah kalian cukup menikmati indahnya pemandangan gunung
-                bromo lalu kita kembali ke jeep dan akan melanjutkan petualangan
-                Anda hingga mencapai lautan pasir di kawasan Gunung Bromo.
-                Kita akan berhenti di area parkir kemudian anda akan melintasi lautan
-                pasir dengan menunggang kuda atau berjalan kaki hingga mencapai
-                tangga di lereng kawah Bromo yang akan mengantarkan anda
-                mencapai puncak Gunung Bromo.
-                Setelah menikmati aktivitas vulkanik di puncak Gunung Bromo anda
-                harus kembali ke jeep anda kemudian jeep akan mengantarkan anda
-                kembali ke hotel untuk sarapan pagi, mandi, packing dan
-                memasukkan tas ke dalam mobil kita.
-                setelah itu kita akan melanjutkan perjalanan menuju ke Hotel
-                selanjutnya di kawasan Kawah Ijen sekitar 6 jam. Pada jalur ini kita
-                akan melewati pemandangan pedesaan, kota kecil, persawahan,
-                perkebunan, dan pantai.
-                Untuk Makan siang kita bisa antar kalian menuju restoran lokal.
-                Pada sore hari, kami akan sampai di hotel anda di kawasan Kawah
-                Ijen yang hanya berjarak satu jam perjalanan dari Kawah Ijen. Anda
-                akan bermalam di sini sebelum menikmati trekking Kawah Ijen
-                keesokan paginya <br /><br />
+               The Mount Bromo Sunrise Tour will start around 3:00 AM from your hotel.
+A Jeep will take you to the most famous viewpoint in the Bromo area — Penanjakan Hill (also known as King Kong Hill). From this spot, you can witness the most stunning sunrise in East Java, with a breathtaking backdrop of mountains and active volcanoes.
+
+(Optional: If you visit Mount Bromo on a weekend, the tour may start earlier, or you can choose to enjoy the sunrise directly from the Bromo Crater to avoid the crowds.)
+
+After enjoying the incredible sunrise view, we’ll return to the Jeep and continue your adventure across the Sea of Sand surrounding Mount Bromo.
+We’ll stop at the parking area, and from there, you can either walk or ride a horse across the desert-like landscape until you reach the stairs leading up to the Bromo Crater summit.
+
+Once you’ve experienced the volcanic activity at the top of Mount Bromo, we’ll head back to the Jeep, which will take you back to the hotel for breakfast, a shower, and packing.
+
+After that, we’ll continue our journey to your next hotel in the Ijen Crater area, which takes about 6 hours. Along the way, you’ll pass through beautiful countryside, small towns, rice fields, plantations, and even coastal scenery.
+
+For lunch, we’ll stop at a local restaurant.
+By late afternoon, we’ll arrive at your hotel near Ijen Crater, located about one hour from the volcano.
+You’ll spend the night there, resting and preparing for your Ijen Crater trekking experience the following morning. <br /><br />
 
 
                   <b>Day4 : IJEN CRATER BLUE FIRE TOUR - BALI  </b><br />
-               Pada hari terakhir perjalanan, Tour Kawah Ijen akan dimulai sekitar
-pukul 00.30 WIB, mobil kita akan membawa kita menuju paltuding
-(start point),  perjalanan ini memakan waktu kurang lebih 1 jam dari
-hotel. Sesampainya di area parkir Kawah Ijen (1850m), dibutuhkan
-waktu sekitar 1,5 jam untuk mendaki Kawah Ijen. Sepanjang jalur
-pendakian , Anda akan menikmati pemandangan alam yang
-menakjubkan dengan udara segar . Setibanya anda di puncak Kawah
-Ijen dengan ketinggian sekitar 2386 masl.
-Lalu kita akan melanjutkan perjalanan untuk melihat fenomena alam
-api biru yang terkenal. Jadi, ini akan sangat menakjubkan.
-(membutuhkan waktu 30 menit dari puncak untuk ke titik api biru).
-Sekadar informasi: Titik api biru terletak di area pertambangan,
-sehingga ada penambang belerang yang akan melewatinya, jadi harap
-ikuti panduan kami demi keselamatan Anda.
-Untuk mencapai titik api biru tidaklah mudah, anda juga bisa
-mendapatkan asap belerang yang menuju ke arah kita, sangat buruk
-seperti bau telur busuk. Jadi, pastikan Anda siap menghadapi risiko
-apa pun.
-Setelah menikmati blue fire, kami akan mengajak anda untuk naik ke
-View Point yang terletak di puncak bibir kawah, sehingga anda harus
-berjalan kaki sekitar satu jam. Pemandangan di puncak bibir kawah
-begitu indah, sehingga akan terbayar dengan perjalanan Anda.
-Kawah Ijen memiliki salah satu danau belerang terbesar di Asia,
-warnanya juga biru kehijauan dengan keasaman tinggi (0,5 Ph.)
-Setelah menikmati pemandangan disini sekitar jam 6 pagi, kita akan
-kembali ke mobil dan kembali ke hotel untuk sarapan dan istirahat.
-Pada pukul 11:30, kami akan siap mengantar Anda menuju pelabuhan
-penyeberangan untuk naik kapal ferry. Ferry akan memakan waktu
-sekitar satu jam. Setibanya Anda di pelabuhan Bali, Anda akan
-bertemu dengan sopir kami yang siap mengantar Anda ke hotel di
-Bali. <br /><br />
+              On the final day of your journey, the Ijen Crater Tour will begin around 12:30 AM.
+Our car will take you to Paltuding, the starting point of the trek, which is about one hour from your hotel. Upon arriving at the Ijen parking area (1,850 meters above sea level), it takes approximately 1.5 hours to hike up to the crater.
+
+Along the trail, you’ll be surrounded by stunning natural scenery and fresh mountain air. When you reach the Ijen Crater summit (about 2,386 meters above sea level), you’ll continue your journey to witness the famous natural phenomenon — the Blue Fire. This mesmerizing sight can be reached with a 30-minute descent from the crater rim.
+
+Important Note:
+The Blue Fire area is located within the sulfur mining zone, so you will likely encounter sulfur miners along the way. For your own safety, please follow your guide’s instructions carefully.
+
+Reaching the Blue Fire point can be challenging, as the path is steep and sometimes filled with sulfur smoke that smells like rotten eggs. Please make sure you are physically prepared and aware of the possible risks.
+
+After enjoying this extraordinary experience, we’ll hike back up to the crater rim viewpoint, which takes about one hour on foot. From here, you’ll be rewarded with a breathtaking view of Ijen’s turquoise-green sulfur lake, one of the largest acidic lakes in Asia with a pH level of 0.5.
+
+After admiring the view until around 6:00 AM, we’ll return to the car and drive back to the hotel for breakfast and rest.
+By 11:30 AM, we’ll depart for the ferry terminal to cross over to Bali — the ferry ride takes about one hour.
+
+Upon arrival at Gilimanuk Harbor in Bali, you’ll meet our driver, who will transfer you directly to your hotel in Bali, marking the end of your unforgettable Bromo–Ijen adventure. <br /><br />
                 <b>TOUR’S SERVICES FINISHED ✅</b>
             </div>
 

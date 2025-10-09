@@ -154,90 +154,81 @@
                 <hr />
 
                 <b>Day 1: BALI - ACOMMODATION IN MOUNT BROMO AREA </b><br />
-                Tour Bromo ijen dari Bali akan dimulai sekitar pukul 08.00 (zona
-                waktu Bali), staff kami akan menjemput anda dari hotel anda di area
-                Bali (Ubud,Canggu, Kuta, Denpasar, Jimbaran dan Lovina), dan
-                kemudian kami akan berkendara ke pelabuhan feri Gilimanuk.
-                Selanjutnya kita akan naik kapal feri sekitar satu jam untuk mencapai
-                Pelabuhan Penyeberangan Ketapang. Kemudian kami akan mengantar
-                Anda ke restoran lokal untuk makan siang dan kemudian melanjutkan
-                perjalanan ke Gunung Bromo untuk melihat gunung berapi aktif
-                Gunung Bromo. Dibutuhkan waktu sekitar 5-6 jam perjalanan menuju
-                kawasan Gunung Bromo.
-                Setibanya anda di Hotel, chek-in hotel dan acara bebas.
-                (kalian bisa mengeksplorasi disekitar hotel anda atau langsung ber
-                istirahat dan nikmati pengalaman menginap yang menyenangkan
-                sebelum anda melakukan tour gunung bromo.) <br /><br />
+                The Bromo–Ijen Tour from Bali will begin around 8:00 AM (Bali time).
+                Our staff will pick you up from your hotel in one of the following areas: Ubud, Canggu, Kuta, Denpasar,
+                Jimbaran, or Lovina.
+                We will then drive to Gilimanuk Ferry Port, located on the western tip of Bali.
+
+                Next, we’ll take a ferry ride of approximately one hour to reach Ketapang Harbor in East Java. Upon
+                arrival, we’ll take you to a local restaurant for lunch, and then continue the journey toward Mount
+                Bromo to see the magnificent active volcano.
+                The drive to the Bromo area takes about 5–6 hours.
+
+                Upon arrival, you’ll check in to your hotel and have free time to relax.
+                (You may explore the surroundings of your hotel or simply rest and enjoy a comfortable night’s stay
+                before beginning your Mount Bromo Tour the next day.) <br /><br />
 
                 <b>Day2: BROMO SUNRISE TOUR - ACOMMODATION IN IJEN
                     CRATER AREA </b><br />
-                Tour Sunrise Gunung Bromo akan dimulai sekitar pukul 03.00 dari
-                hotel anda, jeep akan membawa anda ke viewpoint paling terkenal di
-                kawasan Gunung Bromo. Itulah Penanjakan/Bukit King Kong, dari
-                bukit tersebut kamu bisa melihat matahari terbit terbaik di Jawa Timur
-                dengan latar belakang pegunungan dan gunung berapi.
-                (Opsional: bila anda datang ke Gunung Bromo di akhir pekan, tour
-                harus dimulai lebih awal atau mengambil opsi menikmati sunrise dari
-                kawah bromo untuk menghindari keramaian)
-                Setelah kalian cukup menikmati indahnya pemandangan gunung
-                bromo lalu kita kembali ke jeep dan akan melanjutkan petualangan
-                Anda hingga mencapai lautan pasir di kawasan Gunung Bromo.
-                Kita akan berhenti di area parkir kemudian anda akan melintasi lautan
-                pasir dengan menunggang kuda atau berjalan kaki hingga mencapai
-                tangga di lereng Gunung Bromo yang akan mengantarkan anda
-                mencapai puncak Gunung Bromo.
-                Setelah menikmati aktivitas vulkanik di puncak Gunung Bromo anda
-                harus kembali ke jeep anda kemudian jeep akan mengantarkan anda
-                kembali ke hotel untuk sarapan pagi, mandi, packing dan
-                memasukkan tas ke dalam mobil kita.
-                setelah itu kita akan melanjutkan perjalanan menuju ke Hotel
-                selanjutnya di kawasan Kawah Ijen sekitar 5-6 jam. Pada jalur ini kita
-                akan melewati pemandangan pedesaan, kota kecil, persawahan,
-                perkebunan, dan pantai.
-                Untuk Makan siang kita bisa antar kalian menuju restoran lokal.
-                sore hari, kami akan sampai di hotel anda di kawasan Kawah Ijen
-                yang hanya berjarak satu jam perjalanan dari Kawah Ijen. Anda akan
-                bermalam di sini sebelum menikmati trekking Kawah Ijen keesokan
-                paginya
-                Setibanya anda di Hotel, chek-in hotel dan acara bebas. <br /><br />
+                The Mount Bromo Sunrise Tour will begin around 3:00 AM from your hotel.
+                A 4WD Jeep will take you to the most famous viewpoint in the Bromo area — Penanjakan Hill (King Kong
+                Hill) — where you can witness the best sunrise in East Java, with breathtaking views of mountains and
+                volcanoes in the background.
+
+                (Optional: If you visit Mount Bromo on a weekend, the tour will start earlier, or you may choose to
+                enjoy the sunrise directly from the Bromo Crater to avoid the crowd.)
+
+                After enjoying the beautiful sunrise over Mount Bromo, we’ll return to the jeep and continue the
+                adventure across the Sea of Sand.
+                We’ll stop at the parking area, and from there, you can ride a horse or walk across the sand plain to
+                reach the stairway leading to the crater rim of Mount Bromo.
+
+                Once you’ve experienced the volcanic activity at the top, we’ll head back to the jeep, which will then
+                take you back to your hotel for breakfast, a refreshing shower, and packing before we continue our
+                journey to the next destination — the Ijen Crater area.
+
+                The drive to the Ijen area takes about 5–6 hours, passing through charming countryside, small towns,
+                rice fields, plantations, and coastal scenery along the way.
+                For lunch, we’ll stop at a local restaurant.
+
+                By late afternoon, you’ll arrive at your hotel near the Ijen Crater, located about an hour from the
+                trekking area.
+                You’ll check in and have free time to relax and rest before starting your Ijen Crater hike the following
+                morning. <br /><br />
 
                 <b>Day 3: IJEN CRATER BLUE FIRE TOUR - BACK TO BALI </b><br />
-                Tour Kawah Ijen akan dimulai sekitar pukul 01.00 WIB, mobil kita
-                akan membawa kita menuju paltuding (start point), perjalanan ini
-                memakan waktu kurang lebih satu jam dari hotel. Sesampainya di area
-                parkir Kawah Ijen (1850m), dibutuhkan waktu sekitar 1,5 jam untuk
-                mendaki Kawah Ijen. Sepanjang jalur berjalan kaki , Anda akan
-                menikmati pemandangan alam yang menakjubkan dengan udara
-                segar . Setibanya anda di puncak Kawah Ijen dengan ketinggian
-                sekitar 2386 masl. Lalu kita akan melihat fenomena alam api biru
-                yang terkenal. Jadi, ini akan sangat menakjubkan.
-                Dibutuhkan waktu satu jam perjalanan dari hotel Anda ke titik awal
-                trekking dan akan memakan waktu sekitar 2 jam sampai Anda
-                mencapai titik api biru. Trek yang berjarak 1,5 jam dari start point
-                cukup baik dengan jalur trekking namun jika turun ke titik api biru
-                akan sangat berbatu dan licin (membutuhkan waktu 30 menit dari
-                puncak untuk ke titik api biru).
-                Sekadar informasi: Titik api biru terletak di area pertambangan,
-                sehingga ada penambang belerang yang akan melewatinya, jadi harap
-                ikuti panduan kami demi keselamatan Anda.
-                Untuk mencapai titik api biru tidaklah mudah, anda juga bisa
-                mendapatkan asap belerang yang menuju ke arah kita, sangat buruk
-                seperti bau telur busuk. Jadi, pastikan Anda siap menghadapi risiko
-                apa pun.
-                Setelah menikmati blue fire point, kami akan mengajak anda untuk
-                naik ke View Point yang terletak di puncak bibir kawah, sehingga
-                anda harus berjalan kaki sekitar satu jam. Pemandangan di puncak
-                bibir kawah begitu indah, sehingga akan terbayar dengan perjalanan
-                Anda.
-                Kawah Ijen memiliki salah satu danau belerang terbesar di Asia,
-                warnanya juga biru kehijauan dengan keasaman tinggi (0,5 Ph.)
-                Setelah menikmati pemandangan disini sekitar jam 6 pagi, kita akan
-                kembali ke mobil dan kembali ke hotel untuk sarapan dan istirahat.
-                Pada pukul 11:30, kami akan siap mengantar Anda menuju pelabuhan
-                penyeberangan untuk naik kapal ferry. Ferry akan memakan waktu
-                sekitar satu jam. Setibanya Anda di pelabuhan Bali, Anda akan
-                bertemu dengan sopir kami yang siap mengantar Anda ke hotel di
-                Bali. <br /><br />
+                The Ijen Crater Tour will begin around 1:00 AM (local time).
+                Our car will take you to Paltuding, the starting point of the trek, which is about one hour’s drive from
+                your hotel. Upon arrival at the Ijen Crater parking area (1,850 meters above sea level), it will take
+                approximately 1.5 hours to hike up to the crater.
+
+                Along the trekking path, you’ll enjoy stunning natural scenery and fresh mountain air. Once you reach
+                the summit of Mount Ijen (2,386 meters above sea level), you’ll witness the famous natural phenomenon —
+                the Blue Fire. It’s truly an unforgettable experience.
+
+                It takes around two hours in total to reach the Blue Fire point from your hotel. The trekking trail is
+                quite good up to the crater rim, but the path down to the Blue Fire area is rocky and slippery,
+                requiring about 30 minutes of descent.
+
+                Please note: The Blue Fire area is located within the sulfur mining zone, so you may encounter local
+                miners carrying heavy loads of sulfur. For your safety, please follow your guide’s instructions
+                carefully.
+
+                Reaching the Blue Fire point can be challenging, as sulfur gas may occasionally blow toward you,
+                producing a strong odor similar to rotten eggs — so please be prepared for the conditions.
+
+                After enjoying the mesmerizing Blue Fire, we’ll continue to the viewpoint on the crater rim, which takes
+                about one hour of hiking uphill. From there, you’ll be rewarded with a breathtaking panoramic view —
+                it’s absolutely worth the effort.
+
+                The Ijen Crater Lake is one of the largest sulfur lakes in Asia, with striking turquoise-green water and
+                a high level of acidity (pH around 0.5).
+                After admiring the view around 6:00 AM, we’ll return to the parking area and drive back to your hotel
+                for breakfast and a short rest.
+
+                At around 11:30 AM, we’ll drive you to the harbor to take the ferry to Bali, which takes about one hour.
+                Upon arrival at the Bali Port, our local driver will be waiting to transfer you comfortably to your
+                hotel in Bali. <br /><br />
                 <b>TOUR’S SERVICES FINISHED </b>
             </div>
 
@@ -306,20 +297,20 @@
     </div> --}}
 
             <div class="thanks">
-      <img src="" />
-      <p></p>
-    </div>
-  </div>
-
-            <div class="contentContainer">
-                <p class="contentHeader">Content</p>
-                <ol>
-                    <li><a href="#itinerary">Itinerary Bromo Ijen Tour</a></li>
-                    <li><a href="#penginapan">Dimana Menginap</a></li>
-                    <li><a href="#aktivitas">Aktivitas Utama</a></li>
-                    <li><a href="#kesimpulan">Kesimpulan</a></li>
-                </ol>
+                <img src="" />
+                <p></p>
             </div>
+        </div>
+
+        <div class="contentContainer">
+            <p class="contentHeader">Content</p>
+            <ol>
+                <li><a href="#itinerary">Itinerary Bromo Ijen Tour</a></li>
+                <li><a href="#penginapan">Dimana Menginap</a></li>
+                <li><a href="#aktivitas">Aktivitas Utama</a></li>
+                <li><a href="#kesimpulan">Kesimpulan</a></li>
+            </ol>
+        </div>
     </section>
 
 

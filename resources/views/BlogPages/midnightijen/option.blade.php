@@ -91,7 +91,7 @@
                 <div class="content">
                     <div class="details">
                         <h2>
-                            Midnight Ijen from Bali (Bali – Ijen – Bali)
+                           Mid night ijen from bali
                         </h2>
                         <p class="text">
                             Experience a midnight adventure from Bali to witness the rare Blue Fire
