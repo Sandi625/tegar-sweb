@@ -91,17 +91,17 @@
                     Discover, we bet you'll love it.
                 </div>
 
-                <a href="#places">
+                <a href="#reviews">
                     <button class="headerButton">
-                        Discover New
+                        What People
                         <span class="buttonHighlight">
                             <img src="/Images/icon.svg" alt="location icon" class="cocoIcon" />
-                            Locations
+                            Say
                         </span>
                     </button>
                 </a>
 
-                <div class="quote">
+                {{-- <div class="quote">
                     <h4 class="quoteText">
                         <i>
                             “I am not the same, having seen the moon shine on the other side
@@ -109,28 +109,28 @@
                         </i>
                     </h4>
                     <h4 class="author">– Mary Anne Radmacher</h4>
-                </div>
+                </div> --}}
             </div>
 
             <!-- Grid Gambar -->
             <div class="images">
-                <div class="image wide" style="background-image: url('{{ asset('Images/IMG_6711.jpg') }}');"></div>
-                <div class="image" style="background-image: url('{{ asset('Images/13.jpg') }}');"></div>
-                <div class="image tall" style="background-image: url('{{ asset('Images/IMG_1976.jpg') }}');"></div>
-                <div class="image" style="background-image: url('{{ asset('Images/IMG_0095.jpg') }}');"></div>
-                <div class="image" style="background-image: url('{{ asset('Images/47.jpg') }}');"></div>
-                <div class="image wide" style="background-image: url('{{ asset('Images/IMG_7671.jpg') }}');"></div>
+                <div class="image wide" style="background-image: url('{{ asset('Images/IMG_4603.jpg') }}');"></div>
+                <div class="image" style="background-image: url('{{ asset('Images/IMG_4123.jpg') }}');"></div>
+                <div class="image tall" style="background-image: url('{{ asset('Images/i6.jpg') }}');"></div>
+                <div class="image" style="background-image: url('{{ asset('Images/i5.jpg') }}');"></div>
+                <div class="image" style="background-image: url('{{ asset('Images/IMG_4585.jpg') }}');"></div>
+                <div class="image wide" style="background-image: url('{{ asset('Images/IMG_3343.jpg') }}');"></div>
             </div>
 
             <!-- Slider (pakai gambar yang sama) -->
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" style="background-image: url('{{ asset('Images/7.jpg') }}');"></div>
-                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/IMG_4123.jpg') }}');"></div>
+                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/i8.jpg') }}');"></div>
                     <div class="swiper-slide" style="background-image: url('{{ asset('Images/IMG_8779.jpg') }}');"></div>
                     <div class="swiper-slide" style="background-image: url('{{ asset('Images/i5.jpg') }}');"></div>
-                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/47.jpg') }}');"></div>
-                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/44.jpg') }}');"></div>
+                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/IMG_3303.jpg') }}');"></div>
+                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/IMG_4120.jpg') }}');"></div>
                 </div>
 
                 <!-- navigation -->

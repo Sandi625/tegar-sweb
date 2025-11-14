@@ -50,7 +50,7 @@
             <div class="title">
                 <h1>Custom Trip</h1>
             </div>
-            <div class="otherDetails">
+            {{-- <div class="otherDetails">
                 <p class="date">
                     <span><img src="https://img.icons8.com/material-rounded/24/ffffff/calendar--v1.png" /></span>
                     01 AUG 2021
@@ -62,7 +62,7 @@
                 <p class="author">
                     <span><img src="https://img.icons8.com/ios-glyphs/30/ffffff/book.png" /></span>BY Alyse
                 </p>
-            </div>
+            </div> --}}
         </div>
         <a href="#para">
             <img src="https://img.icons8.com/external-those-icons-fill-those-icons/24/ffffff/external-down-arrows-those-icons-fill-those-icons-7.png"
@@ -94,16 +94,46 @@
              style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc; font-size:1rem;">
 
       <label for="tripPackage" style="font-weight:bold;">Trip Package</label>
-      <select id="tripPackage"
-        style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc; font-size:1rem; background:#e9ecef; color:#555;">
-        <option value="Custom Trip" selected>Custom Trip</option>
-        <option value="Bromo Ijen Tour (4D 3N)">Bromo Ijen Tour (4D 3N)</option>
-        <option value="Bromo Ijen Tour from Surabaya (4D 3N)">Bromo Ijen Tour from Surabaya (4D 3N)</option>
-        <option value="Bromo Ijen Tour from Bali (4D 3N)">Bromo Ijen Tour from Bali (4D 3N)</option>
-        <option value="Midnight Ijen from Banyuwangi">Midnight Ijen from Banyuwangi</option>
-        <option value="Midnight Ijen from Bali">Midnight Ijen from Bali</option>
-        <option value="Others">Others</option>
-      </select>
+    <select id="tripPackage"
+    style="width:100%; padding:10px; border-radius:6px; border:1px solid #ccc; font-size:1rem; background:#e9ecef; color:#555;">
+    <option value="Custom Trip" selected>Custom Trip</option>
+
+    <!-- Bromo Ijen Tours -->
+    <option value="Bromo Ijen Tour Start from Surabaya (Finish at Bali)">
+        Bromo Ijen Tour Start from Surabaya (Finish at Bali)
+    </option>
+    <option value="Bromo Ijen Tour Start from Surabaya (Finish at Surabaya)">
+        Bromo Ijen Tour Start from Surabaya (Finish at Surabaya)
+    </option>
+    <option value="Bromo Ijen Tour Start from Bali (Finish at Surabaya)">
+        Bromo Ijen Tour Start from Bali (Finish at Surabaya)
+    </option>
+    <option value="Bromo Ijen Tour Start from Bali (Finish at Bali)">
+        Bromo Ijen Tour Start from Bali (Finish at Bali)
+    </option>
+
+    <!-- Tumpaksewu–Bromo–Ijen Tours -->
+    <option value="Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Bali (Finish at Surabaya)">
+        Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Bali (Finish at Surabaya)
+    </option>
+    <option value="Tumpaksewu–Ijen–Bromo Tour (4D3N) Start from Bali (Finish at Bali)">
+        Tumpaksewu–Ijen–Bromo Tour (4D3N) Start from Bali (Finish at Bali)
+    </option>
+    <option value="Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya (Finish at Bali)">
+        Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya (Finish at Bali)
+    </option>
+    <option value="Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya (Finish at Surabaya)">
+        Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya (Finish at Surabaya)
+    </option>
+
+    <!-- Midnight Tours -->
+    <option value="Midnight Ijen from Bali">Midnight Ijen from Bali</option>
+    <option value="Midnight Ijen from Banyuwangi">Midnight Ijen from Banyuwangi</option>
+
+    <!-- Generic Options -->
+    <option value="Others">Others</option>
+</select>
+
 
       <label for="tripPeople" style="font-weight:bold;">Number of Participants</label>
       <input type="number" id="tripPeople" placeholder="Number of Participants" required
@@ -155,21 +185,35 @@
 
 
 
-    <section class="anotherTour">
-        <div class="container">
-            <h2>Another Tour Packages</h2>
+<section class="anotherTour">
+  <div class="container">
+    <h2>Another Tour Packages</h2>
 
-            <div class="tourCard">
-                <h3>Pilihan Tour Lainnya</h3>
+     <div class="tourCard">
+                <h3>Another Tour</h3>
                 <ul>
-                    <li><a href="#">Bali Full Day Tour</a></li>
-                    <li><a href="#">Yogyakarta Heritage Tour</a></li>
-                    <li><a href="#">Bali to Ijen Crater Tour</a></li>
-                    <li><a href="#">Komodo Island Adventure</a></li>
+                    <li><a href="{{ route('bromoijen.bali') }}">Bromo Ijen Tour Start from Surabaya (Finish at
+                            Bali)</a></li>
+                    <li><a href="{{ route('bromoijen.surabaya') }}">Bromo Ijen Tour Start from Surabaya (Finish at
+                            Surabaya)</a></li>
+                    <li><a href="{{ route('pesanfrombali2.page') }}">Bromo Ijen Tour Start from Bali (Finish at
+                            Surabaya)</a></li>
+                    <li><a href="{{ route('pesanfrombali1.page') }}">Bromo Ijen Tour Start from Bali (Finish at
+                            Bali)</a></li>
+                    <li><a href="{{ route('tumpak3.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Bali
+                            (Finish at Surabaya)</a></li>
+                    <li><a href="{{ route('tumpak4.page') }}">Tumpaksewu–Ijen–Bromo Tour (4D3N) Start from Bali
+                            (Finish at Bali)</a></li>
+                    <li><a href="{{ route('tumpak1.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya
+                            (Finish at Bali)</a></li>
+                    <li><a href="{{ route('tumpak2.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya
+                            (Finish at Surabaya)</a></li>
+                    <li><a href="{{ route('finishbali.page') }}">Midnight Ijen from Bali</a></li>
+                    <li><a href="{{ route('finishbanyuwangi.page') }}">Midnight Ijen from Banyuwangi</a></li>
                 </ul>
             </div>
-        </div>
-    </section>
+  </div>
+</section>
 
 
 

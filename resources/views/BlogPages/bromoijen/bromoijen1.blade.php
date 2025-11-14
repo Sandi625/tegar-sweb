@@ -378,10 +378,17 @@
         <div class="contentContainer">
             <p class="contentHeader">Content</p>
             <ol>
-                <li><a href="#itinerary">Itinerary Bromo Ijen Tour</a></li>
-                <li><a href="#penginapan">Where to Stay</a></li>
-                <li><a href="#aktivitas">Things to Do</a></li>
-                <li><a href="#kesimpulan">Conclusion</a></li>
+                 <li><a href="{{ route('bromoijen.bali') }}">Bromo Ijen Tour Start from Surabaya (Finish at Bali)</a></li>
+                <li><a href="{{ route('bromoijen.surabaya') }}">Bromo Ijen Tour Start from Surabaya (Finish at Surabaya)</a></li>
+                <li><a href="{{ route('pesanfrombali2.page') }}">Bromo Ijen Tour Start from Bali (Finish at Surabaya)</a></li>
+                <li><a href="{{ route('pesanfrombali1.page') }}">Bromo Ijen Tour Start from Bali (Finish at Bali)</a></li>
+                <li><a href="{{ route('tumpak3.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Bali (Finish at Surabaya)</a></li>
+                <li><a href="{{ route('tumpak4.page') }}">Tumpaksewu–Ijen–Bromo Tour (4D3N) Start from Bali (Finish at Bali)</a></li>
+                <li><a href="{{ route('tumpak1.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya (Finish at Bali)</a></li>
+                <li><a href="{{ route('tumpak2.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya (Finish at Surabaya)</a></li>
+                <li><a href="{{ route('finishbali.page') }}">Midnight Ijen from Bali</a></li>
+                <li><a href="{{ route('finishbanyuwangi.page') }}">Midnight Ijen from Banyuwangi</a></li>
+            </ol>
             </ol>
         </div>
     </section>
@@ -402,14 +409,29 @@
             <h2>Another Tour Packages</h2>
 
             <div class="tourCard">
-                <h3>Pilihan Tour Lainnya</h3>
+                <h3>Another Tour</h3>
                 <ul>
-                    <li><a href="#">Bali Full Day Tour</a></li>
-                    <li><a href="#">Yogyakarta Heritage Tour</a></li>
-                    <li><a href="#">Bali to Ijen Crater Tour</a></li>
-                    <li><a href="#">Komodo Island Adventure</a></li>
+                    <li><a href="{{ route('bromoijen.bali') }}">Bromo Ijen Tour Start from Surabaya (Finish at
+                            Bali)</a></li>
+                    <li><a href="{{ route('bromoijen.surabaya') }}">Bromo Ijen Tour Start from Surabaya (Finish at
+                            Surabaya)</a></li>
+                    <li><a href="{{ route('pesanfrombali2.page') }}">Bromo Ijen Tour Start from Bali (Finish at
+                            Surabaya)</a></li>
+                    <li><a href="{{ route('pesanfrombali1.page') }}">Bromo Ijen Tour Start from Bali (Finish at
+                            Bali)</a></li>
+                    <li><a href="{{ route('tumpak3.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Bali
+                            (Finish at Surabaya)</a></li>
+                    <li><a href="{{ route('tumpak4.page') }}">Tumpaksewu–Ijen–Bromo Tour (4D3N) Start from Bali
+                            (Finish at Bali)</a></li>
+                    <li><a href="{{ route('tumpak1.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya
+                            (Finish at Bali)</a></li>
+                    <li><a href="{{ route('tumpak2.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya
+                            (Finish at Surabaya)</a></li>
+                    <li><a href="{{ route('finishbali.page') }}">Midnight Ijen from Bali</a></li>
+                    <li><a href="{{ route('finishbanyuwangi.page') }}">Midnight Ijen from Banyuwangi</a></li>
                 </ul>
             </div>
+
         </div>
     </section>
 
