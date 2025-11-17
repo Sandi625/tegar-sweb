@@ -1,0 +1,102 @@
+@extends('layout.dashboard')
+@section('title', 'Review')
+
+@section('content')
+
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="page-header row no-gutters py-2">
+        <div class="col-12 col-sm-4 text-sm-left mb-0">
+            <span class="text-uppercase page-subtitle">Data Master</span>
+            <h3 class="page-title">Review</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 order-1 order-lg-2 mb-4 mb-lg-0">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <h3 class="card-title mb-0">Data Review</h3>
+
+                    <a href="{{ route('review.create') }}" class="btn btn-sm btn-primary">
+                        <i class="fas fa-plus"></i>&nbsp; Tambah Review
+                    </a>
+                </div>
+
+                <div class="card-datatable table-responsive table-main">
+                    <table class="table border-top nowrap">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Foto</th>
+                                <th>Rating</th>
+                                <th>Review</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach ($reviews as $key => $review)
+                                <tr>
+                                    <td>{{ $key + 1 }}</td>
+                                    <td>{{ $review->name }}</td>
+
+                                    <td>
+                                        @if ($review->photo)
+                                            <img src="{{ asset('uploads/reviews/' . $review->photo) }}" width="60"
+                                                class="rounded">
+                                        @else
+                                            <span class="text-muted">Tidak ada</span>
+                                        @endif
+                                    </td>
+
+                                    <td>
+                                        ⭐ {{ $review->rating }}/5
+                                    </td>
+
+                                    <td style="max-width: 300px;">
+                                        <div style="white-space: normal;">
+                                            {{ Str::limit($review->review_text, 80) }}
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        @if ($review->status)
+                                            <span class="badge bg-success">Aktif</span>
+                                        @else
+                                            <span class="badge bg-danger">Nonaktif</span>
+                                        @endif
+                                    </td>
+
+                                    <td>
+                                        <a href="{{ route('review.edit', $review->id) }}" class="btn btn-sm btn-warning">
+                                            Edit
+                                        </a>
+
+                                        <form action="{{ route('review.destroy', $review->id) }}" method="POST"
+                                            class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-sm btn-danger"
+                                                onclick="return confirm('Hapus review ini?')">
+                                                Hapus
+                                            </button>
+                                        </form>
+                                    </td>
+
+                                </tr>
+                            @endforeach
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@endsection

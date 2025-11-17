@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\TourController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/allpackage', function () {
     return view('blog'); // resources/views/page/blog.blade.php
@@ -218,3 +222,20 @@ Route::get('/tumpakpesan4', function () {
     return view('BlogPages.tumpaksewu.pesan4');
 })->name('tumpakpesan4.page');
 
+
+#####################################################################################################################################################
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+})->name('dashboard.index');
+
+
+
+Route::resource('tour', TourController::class);
+
+Route::resource('blogs', BlogController::class);
+
+Route::resource('review', ReviewController::class);
+
+Route::resource('categories', CategoryController::class);
