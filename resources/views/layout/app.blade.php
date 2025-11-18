@@ -10,9 +10,9 @@
   </head>
   <body>
   <nav>
-    <a href="{{ route('home.page') }}" class="brand-logo">Tegar</a>
+    <a href="#" class="brand-logo">Tegar</a>
     <ul class="links">
-        <li class="link"><a href="{{ route('home.page') }}">Home</a></li>
+        <li class="link"><a href="#">Home</a></li>
         <li class="link"><a href="{{ route('places.page') }}">Places</a></li>
         <li class="link">
             <b><a href="{{ route('blog.page') }}" style="color: #f2870c">Tour Package</a></b>

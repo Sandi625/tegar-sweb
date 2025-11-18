@@ -33,10 +33,10 @@
     </div>
 
     <nav>
-        <a href="{{ route('home.page') }}" class="brand-logo">Travel</a>
+        <a href="#" class="brand-logo">Travel</a>
         <ul class="links">
             <li class="link">
-                <b><a href="{{ route('home.page') }}">Home</a></b>
+                <b><a href="#">Home</a></b>
             </li>
             {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
             <li class="link"><a href="{{ route('allpackage.page') }}"style="color: #f2870c">Tour Package</a></li>

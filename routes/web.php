@@ -2,9 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TourDetailController;
+use App\Http\Controllers\UserBlogController;
+
+// routes/web.php
+
 
 Route::get('/allpackage', function () {
     return view('blog'); // resources/views/page/blog.blade.php
@@ -230,12 +237,35 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 })->name('dashboard.index');
 
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+// Resource untuk CRUD Tour (tanpa show)
 Route::resource('tour', TourController::class);
 
+// Route khusus untuk detail tour berdasarkan slug, ubah URL supaya tidak tabrakan
+Route::get('/tour-detail/{slug}', [TourDetailController::class, 'show'])->name('tour.detail');
+
+
+
+
+
+
+
 Route::resource('blogs', BlogController::class);
+
 
 Route::resource('review', ReviewController::class);
 
 Route::resource('categories', CategoryController::class);
+
+
+
+// Route::get('/tour/{tour}/booking', [BookingController::class, 'create'])->name('tour.booking');
+// Menampilkan form booking
+Route::get('/tour/{tour}/booking', [BookingController::class, 'create'])->name('tour.booking');
+Route::post('/tour/{tour}/booking', [BookingController::class, 'store'])->name('tour.booking.store');
+
+
+
+Route::get('/userblog', [UserBlogController::class, 'index'])->name('user.blog.index');
+Route::get('/userblog/{slug}', [UserBlogController::class, 'show'])->name('user.blog.show');

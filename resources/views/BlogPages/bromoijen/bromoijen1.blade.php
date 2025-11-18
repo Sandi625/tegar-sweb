@@ -14,10 +14,10 @@
 
 <body>
     <nav>
-        <a href="{{ route('home.page') }}" class="brand-logo">Travel</a>
+        <a href="#" class="brand-logo">Travel</a>
         <ul class="links">
             <li class="link">
-                <b><a href="{{ route('home.page') }}">Home</a></b>
+                <b><a href="#">Home</a></b>
             </li>
             {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
             <li class="link"><a href="{{ route('allpackage.page') }}"style="color: #f2870c">Tour Package</a></li>
@@ -143,229 +143,22 @@
             </p>
 
             <div class="para two" id="itinerary">
-                <h2>Itinerary Bromo Ijen Tour 3 Days 2 Nights</h2>
+                <h2>#</h2>
                 <hr />
 
-                <b>Day 1: SURABAYA - ACOMMODATION IN TUMPAKSEWU
-                    WATERFALL AREA </b><br />
-                The Bromo Ijen tour will start from the Surabaya area. We will pick you up at your hotel, the airport,
-                or the train station. From Surabaya, we will drive to your accommodation near Mount Bromo, which takes
-                approximately three hours.
-                Upon arrival at the hotel, you will check in and have free time.
-                (You may explore the area around your accommodation or simply relax and enjoy a pleasant stay before
-                beginning your Mount Bromo tour.) <br /><br />
+                <b>Day 1: # </b><br />
+               ##<br /><br />
 
 
 
-                <b>PROGRAM OPSIONAL:</b> If you can depart in the morning and the weather is good, you’ll have the
-                opportunity to visit Madakaripura Waterfall on the way from Surabaya to your hotel near Mount Bromo.
-                (<a href="#" id="openPopup"> Air Terjun Madakaripura Image. </a>)<br /><br />
+                <b>Day2 # </b><br />
+              # <br /><br />
 
-                <!-- Modal / Popup Slider -->
-                <div id="popup" class="popup">
-                    <div class="popup-content">
-                        <span id="closePopup" class="close">&times;</span>
-
-                        <!-- Slider Container -->
-                        <div class="slider">
-                            <div class="slides">
-                                <img src="{{ asset('Images/6.jpg') }}" alt="Jodipan rainbow village">
-                                <img src="{{ asset('Images/mada1.jpg') }}" alt="Jodipan rainbow village">
-                                <img src="{{ asset('Images/mada2.jpg') }}" alt="Jodipan rainbow village">
-                            </div>
-
-                            <!-- Navigation Arrows -->
-                            <a class="prev">&#10094;</a>
-                            <a class="next">&#10095;</a>
-                        </div>
-
-                        <p>Air Terjun Madakaripura</p>
-                    </div>
-                </div>
-
-                <style>
-                    .popup {
-                        display: none;
-                        position: fixed;
-                        z-index: 9999;
-                        padding-top: 60px;
-                        left: 0;
-                        top: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: rgba(0, 0, 0, 0.8);
-                    }
-
-                    .popup-content {
-                        margin: auto;
-                        background: #fff;
-                        border-radius: 10px;
-                        padding: 15px;
-                        width: 80%;
-                        max-width: 700px;
-                        position: relative;
-                        text-align: center;
-                    }
-
-                    .close {
-                        position: absolute;
-                        top: 10px;
-                        right: 15px;
-                        font-size: 28px;
-                        font-weight: bold;
-                        color: #aaa;
-                        cursor: pointer;
-                    }
-
-                    .close:hover {
-                        color: #000;
-                    }
-
-                    /* Slider */
-                    .slider {
-                        position: relative;
-                        max-width: 100%;
-                        overflow: hidden;
-                    }
-
-                    .slides img {
-                        width: 100%;
-                        display: none;
-                        border-radius: 10px;
-                    }
-
-                    .slides img.active {
-                        display: block;
-                    }
-
-                    .prev,
-                    .next {
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        font-size: 30px;
-                        font-weight: bold;
-                        color: #333;
-                        background: rgba(255, 255, 255, 0.7);
-                        padding: 8px 12px;
-                        border-radius: 50%;
-                        cursor: pointer;
-                        user-select: none;
-                    }
-
-                    .prev {
-                        left: 10px;
-                    }
-
-                    .next {
-                        right: 10px;
-                    }
-                </style>
-
-                <script>
-                    // Popup open/close
-                    const popup = document.getElementById("popup");
-                    const openPopup = document.getElementById("openPopup");
-                    const closePopup = document.getElementById("closePopup");
-
-                    openPopup.onclick = function(e) {
-                        e.preventDefault();
-                        popup.style.display = "block";
-                        showSlide(slideIndex);
-                    };
-                    closePopup.onclick = function() {
-                        popup.style.display = "none";
-                    };
-                    window.onclick = function(e) {
-                        if (e.target === popup) popup.style.display = "none";
-                    };
-
-                    // Slider functionality
-                    let slideIndex = 0;
-                    const slides = document.querySelectorAll(".slides img");
-                    const prev = document.querySelector(".prev");
-                    const next = document.querySelector(".next");
-
-                    function showSlide(n) {
-                        slides.forEach((img, i) => {
-                            img.classList.remove("active");
-                            if (i === n) img.classList.add("active");
-                        });
-                    }
-
-                    prev.onclick = function() {
-                        slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-                        showSlide(slideIndex);
-                    };
-                    next.onclick = function() {
-                        slideIndex = (slideIndex + 1) % slides.length;
-                        showSlide(slideIndex);
-                    };
-
-                    // Default show first slide
-                    showSlide(slideIndex);
-                </script>
-
-
-
-                <b>Day2 (BROMO SUNRISE TOUR - HOTEL IN IJEN CRATER
-                    AREA) </b><br />
-                The Mount Bromo Sunrise Tour will start around 3:00 AM from your hotel. A jeep will take you to the most
-                famous viewpoint in the Bromo area — Penanjakan Hill (also known as King Kong Hill). From this hill, you
-                can witness one of the most spectacular sunrises in East Java, with a breathtaking backdrop of mountains
-                and volcanoes. <br /><br />
-
-                <b>Opsional: </b>If you visit Mount Bromo on a weekend, the tour should start earlier, or you may choose
-                the option to enjoy the sunrise from the Bromo Crater to avoid the crowds.
-
-                After you have fully enjoyed the magnificent view of Mount Bromo, we will return to the jeep and
-                continue your adventure toward the Sea of Sand in the Bromo area.
-                We’ll stop at the parking area, where you can cross the sea of sand either on horseback or on foot until
-                you reach the staircase on the slope of Mount Bromo, which will lead you to the crater’s rim.
-
-                After experiencing the volcanic activity at the top of Mount Bromo, you’ll return to your jeep. The jeep
-                will then take you back to the hotel for breakfast, a refreshing shower, packing, and loading your bags
-                into our car.
-
-                Next, we’ll continue the journey to your next hotel near Mount Ijen, which takes about 5–6 hours. Along
-                the way, you’ll enjoy scenic views of villages, small towns, rice fields, plantations, and coastal
-                landscapes.
-
-                For lunch, we can stop at a local restaurant.
-                By the afternoon, we’ll arrive at your hotel in the Ijen area, located just about an hour from the
-                crater. You’ll stay overnight here before beginning your Ijen Crater trekking the following morning.
+                <b>Opsional: </b>#
                 <br /><br />
 
-                <b>Day 3 (IJEN BLUE FIRE TOUR - BALI) </b><br />
-                The Ijen Crater Tour will start around 1:00 AM. Our car will take you to Paltuding, the starting point
-                of the hike, which is about an hour’s drive from your hotel.
-                Upon arriving at the Kawah Ijen parking area (1,850 meters above sea level), it takes approximately 1.5
-                hours to hike up to the crater. Along the trail, you’ll enjoy breathtaking natural scenery and
-                refreshing mountain air.
-
-                Once you reach the top of Ijen Crater at around 2,386 meters above sea level, you’ll witness the
-                world-famous blue fire phenomenon — a truly mesmerizing sight.
-                It takes about one hour to reach the starting point from your hotel and around two hours to arrive at
-                the blue fire point. The 1.5-hour trek from Paltuding is fairly manageable, but descending to the blue
-                fire area can be challenging as the path is rocky and slippery (approximately a 30-minute descent from
-                the crater rim).
-
-                Please note: the blue fire area is located within an active sulfur mining site, so you’ll likely
-                encounter local miners along the way. For your safety, please follow our guide’s instructions at all
-                times.
-
-                Reaching the blue fire point is not easy — you may also experience exposure to sulfur smoke, which
-                smells strongly like rotten eggs. Make sure you are well-prepared and ready for any conditions.
-
-                After enjoying the blue fire, we will hike back up to the viewpoint on the crater rim, which takes about
-                one hour on foot. From here, you can admire the stunning panorama of Ijen’s turquoise sulfur lake, one
-                of the largest acidic lakes in Asia, with a pH level of around 0.5.
-
-                After spending time enjoying the magnificent view (around 6:00 AM), we’ll return to the car and head
-                back to your hotel for breakfast and some rest.
-                At 11:30 AM, we’ll drive you to the harbor, where you’ll take a ferry to Bali — the crossing takes about
-                one hour. Upon arrival at Bali Port, our local driver will meet you and transfer you directly to your
-                hotel in Bali.<br /><br />
+                <b>Day 3 #</b><br />
+             #<br /><br />
 
                 <b>Tour Services Finished</b>
             </div>

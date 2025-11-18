@@ -55,10 +55,10 @@
         </div>
     </div>
     <nav>
-        <a href="{{ route('home.page') }}" class="brand-logo">Vamos</a>
+        <a href="#" class="brand-logo">Vamos</a>
         <ul class="links">
             <li class="link">
-                <b><a href="{{ route('home.page') }}"style="color: #f2870c">Home</a></b>
+                <b><a href="#"style="color: #f2870c">Home</a></b>
             </li>
             {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
             <li class="link"><a href="{{ route('allpackage.page') }}">Tour Package</a></li>
@@ -127,10 +127,13 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" style="background-image: url('{{ asset('Images/7.jpg') }}');"></div>
                     <div class="swiper-slide" style="background-image: url('{{ asset('Images/i8.jpg') }}');"></div>
-                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/IMG_8779.jpg') }}');"></div>
+                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/IMG_8779.jpg') }}');">
+                    </div>
                     <div class="swiper-slide" style="background-image: url('{{ asset('Images/i5.jpg') }}');"></div>
-                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/IMG_3303.jpg') }}');"></div>
-                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/IMG_4120.jpg') }}');"></div>
+                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/IMG_3303.jpg') }}');">
+                    </div>
+                    <div class="swiper-slide" style="background-image: url('{{ asset('Images/IMG_4120.jpg') }}');">
+                    </div>
                 </div>
 
                 <!-- navigation -->
@@ -142,17 +145,25 @@
             </div>
         </div>
 
-       <div class="aboutInfo">
-  <h2 class="aboutTitle">
-    <i class="fas fa-route aboutIcon"></i> <!-- 🔹 icon hiasan -->
-    About <span>Us</span>
-  </h2>
-  <p class="aboutDescription">
- At Vamos Adventure, we believe that a journey is more than just a holiday it is an unforgettable adventure filled with discovery and wonder. With us, you can witness the breathtaking sunrise over Mount Bromo, explore the natural beauty of the Ijen Crater with its world-famous blue flames, be amazed by the majestic Tumpak Sewu Waterfall, and enjoy many other fascinating destinations we have to offer. But the experience doesn’t end there. Java is home to countless hidden treasures, and through our carefully designed tour packages, you will uncover destinations that are just as captivating. At Vamos Adventure, we not only provide a wide selection of ready made tour packages but also offer the flexibility to customize your journey according to your preferences and needs. Get ready for an extraordinary adventure where every step creates cherished moments and memories that will last a lifetime.  </p>
-  <a href="#contact">
-    <button class="aboutButton">Learn More</button>
-  </a>
-</div>
+        <div class="aboutInfo">
+            <h2 class="aboutTitle">
+                <i class="fas fa-route aboutIcon"></i> <!-- 🔹 icon hiasan -->
+                About <span>Us</span>
+            </h2>
+            <p class="aboutDescription">
+                At Vamos Adventure, we believe that a journey is more than just a holiday it is an unforgettable
+                adventure filled with discovery and wonder. With us, you can witness the breathtaking sunrise over Mount
+                Bromo, explore the natural beauty of the Ijen Crater with its world-famous blue flames, be amazed by the
+                majestic Tumpak Sewu Waterfall, and enjoy many other fascinating destinations we have to offer. But the
+                experience doesn’t end there. Java is home to countless hidden treasures, and through our carefully
+                designed tour packages, you will uncover destinations that are just as captivating. At Vamos Adventure,
+                we not only provide a wide selection of ready made tour packages but also offer the flexibility to
+                customize your journey according to your preferences and needs. Get ready for an extraordinary adventure
+                where every step creates cherished moments and memories that will last a lifetime. </p>
+            <a href="#contact">
+                <button class="aboutButton">Learn More</button>
+            </a>
+        </div>
 
 
         <!-- Shape bawah -->
@@ -201,7 +212,7 @@
 
     {{-- Tour Paket --}}
 
-    <section class="blogs">
+    {{-- <section class="blogs">
         <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
             Bromo - Ijen <span class="buttonHighlight">Tour Packages</span>
         </h1>
@@ -237,27 +248,99 @@
                 </div>
 
 
-                {{-- <div class="blog">
-                    <img src="{{ asset('Images/bromo3.jpg') }}" alt="Bromo Ijen Tour from Bali" />
-                    <h3 class="blogTitle">
-                        Bromo Ijen Tour from Bali (4D 3N)
-                    </h3>
-
-                    <p class="blogPrice">
-                        Start from <span class="highlightText">$400 / person</span>
-                    </p>
-                    <a href="{{ route('bromoijen.bali') }}">
-                        <button class="readBlog">Details</button>
-                    </a>
-                </div> --}}
 
             </div>
         </div>
-    </section>
+    </section> --}}
+  <div class="searchContainer" style="text-align:center; margin-top:40px;">
+    <form action="{{ route('home') }}" method="GET">
+        <input
+            type="text"
+            id="searchInput"
+            name="search"
+            placeholder="Search tour packages..."
+            value="{{ request('search') }}"
+            class="searchInput"
+        >
+        <button type="submit" class="searchBtn">Search</button>
+    </form>
+</div>
 
+<script>
 
+</script>
+
+<style>
+
+</style>
+
+  @foreach ($categories as $category)
+    @php
+        $firstThree = $category->tours->take(3);
+        $others = $category->tours->skip(3);
+    @endphp
 
     <section class="blogs">
+        <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
+            {{ $category->name }} <span class="buttonHighlight">Tour Packages</span>
+        </h1>
+
+        <div class="blogsContainer">
+
+            {{-- BARIS PERTAMA → Hanya 3 Card --}}
+            <div class="blogsTopRow">
+                @foreach ($firstThree as $tour)
+                    <div class="blog">
+
+                        <img src="{{ asset('uploads/tours/' . ($tour->images[0] ?? 'default.jpg')) }}"
+                            alt="{{ $tour->title }}">
+
+                        <h3 class="blogTitle">{{ $tour->title }}</h3>
+
+                        <p class="blogPrice">
+                            Start from <span class="highlightText">${{ $tour->price }} / person</span>
+                        </p>
+
+                        <a href="{{ route('tour.detail', $tour->slug) }}">
+                            <button class="readBlog">Details</button>
+                        </a>
+
+                    </div>
+                @endforeach
+            </div>
+
+            {{-- BARIS KEDUA → Sisa card --}}
+            <div class="blogsContent">
+                @foreach ($others as $tour)
+                    <div class="blog">
+
+                        <img src="{{ asset('uploads/tours/' . ($tour->images[0] ?? 'default.jpg')) }}"
+                            alt="{{ $tour->title }}">
+
+                        <h3 class="blogTitle">{{ $tour->title }}</h3>
+
+                        <p class="blogPrice">
+                            Start from <span class="highlightText">${{ $tour->price }} / person</span>
+                        </p>
+
+                        <a href="{{ route('tour.detail', $tour->slug) }}">
+                            <button class="readBlog">Details</button>
+                        </a>
+
+                    </div>
+                @endforeach
+            </div>
+
+        </div>
+    </section>
+@endforeach
+
+
+
+
+
+
+    {{-- <section class="blogs">
         <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
             Tumpak Sewu - Bromo - Ijen <span class="buttonHighlight">Tour Packages</span>
         </h1>
@@ -292,27 +375,14 @@
                     </a>
                 </div>
 
-                {{-- <div class="blog">
-                    <img src="{{ asset('Images/bromo3.jpg') }}" alt="Bromo Ijen Tour from Bali" />
-                    <h3 class="blogTitle">
-                        Bromo Ijen Tour from Bali (4D 3N)
-                    </h3>
-
-                    <p class="blogPrice">
-                        Start from <span class="highlightText">$400 / person</span>
-                    </p>
-                    <a href="{{ route('bromoijen.bali') }}">
-                        <button class="readBlog">Details</button>
-                    </a>
-                </div> --}}
 
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
 
-    <section class="blogs">
+    {{-- <section class="blogs">
         <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
             Midnight Ijen Crater <span class="buttonHighlight">Tour Packages</span>
         </h1>
@@ -333,32 +403,7 @@
                 </div>
 
 
-                {{-- <div class="blog">
-                    <img src="{{ asset('Images/ijen4.jpg') }}" alt="Bromo Ijen Tour from Surabaya" />
-                    <h3 class="blogTitle">
-                        Bromo Ijen Tour from Surabaya (4D 3N)
-                    </h3>
 
-                    <p class="blogPrice">
-                        Start from <span class="highlightText">$370 / person</span>
-                    </p>
-                    <a href="{{ route('blog.italy') }}">
-                        <button class="readBlog">Details</button>
-                    </a>
-                </div>
-
-                <div class="blog">
-                    <img src="{{ asset('Images/bromo3.jpg') }}" alt="Bromo Ijen Tour from Bali" />
-                    <h3 class="blogTitle">
-                        Bromo Ijen Tour from Bali (4D 3N)
-                    </h3>
-                    <p class="blogPrice">
-                        Start from <span class="highlightText">$400 / person</span>
-                    </p>
-                    <a href="{{ route('bromoijen.bali') }}">
-                        <button class="readBlog">Details</button>
-                    </a>
-                </div> --}}
 
             </div>
         </div>
@@ -370,7 +415,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     <section class="blogs">

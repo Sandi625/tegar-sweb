@@ -95,6 +95,13 @@
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text" data-i18n="Tours">Tours</span>
                     </li>
+
+                    <li class="menu-item {{ request()->segment(1) == 'categories' ? 'active' : '' }}">
+                        <a href="{{ route('categories.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-folder"></i>
+                            <div class="text-truncate" data-i18n="Categories">Categories</div>
+                        </a>
+                    </li>
                     <li class="menu-item {{ request()->segment(1) == 'tour' ? 'active' : '' }}">
                         <a href="{{ route('tour.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-smart-home"></i>
@@ -102,12 +109,13 @@
                         </a>
                     </li>
 
-                    <li class="menu-item {{ request()->segment(1) == 'blog' ? 'active' : '' }}">
+                    <li class="menu-item {{ request()->segment(2) == 'blogs' ? 'active' : '' }}">
                         <a href="{{ route('blogs.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-smart-home"></i>
                             <div class="text-truncate" data-i18n="Blog">Blog</div>
                         </a>
                     </li>
+
                     <li class="menu-item {{ request()->segment(1) == 'review' ? 'active' : '' }}">
                         <a href="{{ route('review.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-star"></i>
@@ -115,12 +123,7 @@
                         </a>
                     </li>
 
-                    <li class="menu-item {{ request()->segment(1) == 'categories' ? 'active' : '' }}">
-    <a href="{{ route('categories.index') }}" class="menu-link">
-        <i class="menu-icon tf-icons ti ti-folder"></i>
-        <div class="text-truncate" data-i18n="Categories">Categories</div>
-    </a>
-</li>
+
 
 
                     {{-- <li class="menu-header small text-uppercase">

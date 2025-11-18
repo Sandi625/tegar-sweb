@@ -473,6 +473,7 @@ nav.active {
 }
 
 .date {
+    margin-left: 700px;
   font-size: 0.9rem;
 }
 
@@ -724,3 +725,17 @@ footer {
 .swal2-confirm{
   background-color: #142361 !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

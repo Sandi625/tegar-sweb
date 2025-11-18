@@ -226,3 +226,26 @@ btn.onmouseout = function() {
 // Jalankan saat load & resize
 responsiveCard();
 window.addEventListener('resize', responsiveCard);
+
+
+document.getElementById("searchInput").addEventListener("keyup", function () {
+
+    let keyword = this.value.toLowerCase().trim();
+    let cards = document.querySelectorAll(".blog");
+
+    // jika input kosong → munculkan semua
+    if (keyword === "") {
+        cards.forEach(c => c.style.display = "block");
+        return;
+    }
+
+    cards.forEach(card => {
+        let title = card.querySelector(".blogTitle").innerText.toLowerCase();
+
+        if (title.includes(keyword)) {
+            card.style.display = "block";   // tampilkan yang cocok
+        } else {
+            card.style.display = "none";    // hide yang tidak cocok
+        }
+    });
+});

@@ -1903,4 +1903,139 @@ footer {
 
 
 
+.searchContainer {
+    width: 100%;
+    text-align: center;
+}
 
+.searchInput {
+    width: 60%;
+    padding: 12px 15px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: .3s;
+}
+
+.searchInput:focus {
+    border-color: #142361;
+    outline: none;
+}
+
+.searchBtn {
+    padding: 12px 25px;
+    margin-left: 10px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 0;
+    background: #142361;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.searchBtn:hover {
+    background: #0b1743;
+}
+
+
+/* ============================= */
+/* RESPONSIVE SEARCH BAR         */
+/* ============================= */
+
+@media (max-width: 1024px) {
+    .searchInput {
+        width: 70%;
+        font-size: 1rem;
+    }
+    .searchBtn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .searchInput {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    .searchBtn {
+        width: 80%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .searchInput {
+        width: 90%;
+        font-size: .95rem;
+    }
+    .searchBtn {
+        width: 90%;
+        padding: 10px 0;
+        font-size: .95rem;
+    }
+}
+
+
+.blogsTopRow {
+    margin: 100px auto 30px auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(240px, 320px));
+    grid-column-gap: 25px;
+    grid-row-gap: 35px;
+    justify-content: center;
+}
+
+/* Center bila cuma 1 card */
+.blogsTopRow:has(> .blog:only-child) {
+    grid-template-columns: 1fr;
+}
+
+.blogsTopRow:has(> .blog:only-child) .blog {
+    justify-self: center;
+    max-width: 320px;
+}
+
+
+/* ============================= */
+/* RESPONSIVE GRID               */
+/* ============================= */
+
+@media (max-width: 1024px) {
+    .blogsTopRow {
+        grid-template-columns: repeat(2, minmax(240px, 320px));
+    }
+}
+
+@media (max-width: 768px) {
+    .blogsTopRow {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .blogsTopRow {
+        grid-template-columns: 1fr;
+        grid-gap: 25px;
+    }
+}
+
+
+.blogsContent {
+    margin: 80px auto 50px auto;
+    padding-bottom: 60px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 320px));
+    justify-content: center;
+    grid-gap: 25px;
+    transition: 0.3s ease;
+}
+
+/* Pastikan 1 hasil search tetap center */
+.blogsContent .blog:only-child {
+    margin-left: auto;
+    margin-right: auto;
+}

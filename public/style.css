@@ -1091,3 +1091,100 @@ form#bookingForm button + button {
   height: auto;
 }
 
+
+
+   .popup {
+                        display: none;
+                        position: fixed;
+                        z-index: 9999;
+                        padding-top: 60px;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.8);
+                    }
+
+                    .popup-content {
+                        margin: auto;
+                        background: #fff;
+                        border-radius: 10px;
+                        padding: 15px;
+                        width: 80%;
+                        max-width: 700px;
+                        position: relative;
+                        text-align: center;
+                    }
+
+                    .close {
+                        position: absolute;
+                        top: 10px;
+                        right: 15px;
+                        font-size: 28px;
+                        font-weight: bold;
+                        color: #aaa;
+                        cursor: pointer;
+                    }
+
+                    .close:hover {
+                        color: #000;
+                    }
+
+                    /* Slider */
+                    .slider {
+                        position: relative;
+                        max-width: 100%;
+                        overflow: hidden;
+                    }
+
+                    .slides img {
+                        width: 100%;
+                        display: none;
+                        border-radius: 10px;
+                    }
+
+                    .slides img.active {
+                        display: block;
+                    }
+
+                    .prev,
+                    .next {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: 30px;
+                        font-weight: bold;
+                        color: #333;
+                        background: rgba(255, 255, 255, 0.7);
+                        padding: 8px 12px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        user-select: none;
+                    }
+
+                    .prev {
+                        left: 10px;
+                    }
+
+                    .next {
+                        right: 10px;
+                    }
+
+
+                      .swiper {
+            width: 100%;
+            height: 100vh;
+            /* full layar */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* supaya konten tetap di atas */
+        }
+
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+        }
+
+
