@@ -1,43 +1,51 @@
-@include('base.header')
+@include('base2.header')
 
-<div class="container" style="margin-top: 120px;">
+<section class="blog" style="margin-top: 120px; display:flex; gap:30px;">
 
-    {{-- Parent Blog --}}
-    <h1 class="blogsTitle">{{ $blog->title }}</h1>
+    {{-- Main Blog Content --}}
+    <div class="blogWrapper" style="flex:3;">
 
-    @if($blog->image)
-        <img
-            src="{{ asset('uploads/blogs/' . $blog->image) }}"
-            alt="{{ $blog->title }}"
-            style="width:100%;max-width:800px;margin:auto;display:block;border-radius:12px"
-        >
-    @endif
+        {{-- Blog description --}}
+        <p class="para one" id="para">
+            {!! $blog->description !!}
+        </p>
 
-    <div style="margin-top: 30px; font-size: 1.1rem;">
-        {!! $blog->description !!}
+        {{-- Loop each child day / itinerary --}}
+        @foreach($blog->days as $index => $day)
+            <div class="para two">
+                <h2>{{ $index + 1 }}. {{ $day->title }}</h2>
+                <hr />
+                {!! $day->description !!}
+            </div>
+
+            @if($day->image)
+            <div class="imageContainer">
+                <img src="{{ asset('uploads/blog_days/' . $day->image) }}" alt="{{ $day->title }}" />
+                <div class="imgDescription">
+                    <h4 class="imageTitle">{{ $day->title }}</h4>
+                    <p class="imageDescription">{{ Str::limit(strip_tags($day->description), 120) }}</p>
+                </div>
+            </div>
+            @endif
+        @endforeach
+
+        {{-- Closing thank you section --}}
+        <div class="para two">
+            <hr />
+            Thank you for reading!
+        </div>
     </div>
 
-    {{-- Child Table: Days / Itinerary --}}
-    @if($blog->days->count() > 0)
-        <h2 style="margin-top: 50px;">Itinerary / Hari</h2>
-        <div class="blog-days">
+    {{-- Sidebar Content --}}
+    <div class="contentContainer" style="flex:1;">
+        <p class="contentHeader">Content</p>
+        <ol>
             @foreach($blog->days as $index => $day)
-                <div class="blog-day mb-4 p-3 border rounded">
-                    <h4>Hari {{ $index + 1 }}: {{ $day->title }}</h4>
-                    <p>{{ $day->description }}</p>
-
-                    @if($day->image)
-                        <img
-                            src="{{ asset('uploads/blog_days/' . $day->image) }}"
-                            alt="{{ $day->title }}"
-                            style="width:100%;max-width:600px;margin-top:10px;border-radius:8px;"
-                        >
-                    @endif
-                </div>
+                <li>{{ $day->title }}</li>
             @endforeach
-        </div>
-    @endif
+        </ol>
+    </div>
 
-</div>
+</section>
 
-@include('base.footer')
+@include('base2.footer')

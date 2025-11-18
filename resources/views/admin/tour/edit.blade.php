@@ -20,8 +20,7 @@
                 <select name="category_id" class="form-control" required>
                     <option value="">-- Pilih Kategori --</option>
                     @foreach($categories as $cat)
-                        <option value="{{ $cat->id }}"
-                            {{ $tour->category_id == $cat->id ? 'selected' : '' }}>
+                        <option value="{{ $cat->id }}" {{ $tour->category_id == $cat->id ? 'selected' : '' }}>
                             {{ $cat->name }}
                         </option>
                     @endforeach
@@ -55,12 +54,9 @@
                 @if ($tour->images && count($tour->images) > 0)
                     <div class="d-flex flex-wrap gap-2">
                         @foreach ($tour->images as $img)
-                            @php
-                                $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
-                            @endphp
+                            @php $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION)); @endphp
                             @if(in_array($ext, ['jpg','jpeg','png','webp']))
-                                <img src="{{ asset('uploads/tours/' . $img) }}"
-                                     width="120" class="rounded border mb-2">
+                                <img src="{{ asset('uploads/tours/' . $img) }}" width="120" class="rounded border mb-2">
                             @elseif(in_array($ext, ['heic','heif']))
                                 <span class="badge bg-secondary mb-2 me-2">{{ strtoupper($ext) }}</span>
                             @endif
@@ -81,19 +77,17 @@
             <div class="mb-3">
                 <label class="form-label">Itinerary / Hari</label>
                 <div id="tour-days-container">
-                    @php
-                        $days = $tour->days()->orderBy('order')->get();
-                    @endphp
+                    @php $days = $tour->days()->orderBy('order')->get(); @endphp
                     @if($days->count() > 0)
                         @foreach($days as $index => $day)
                         <div class="tour-day mb-3 p-2 border rounded">
+                            <input type="hidden" name="days[{{ $index }}][id]" value="{{ $day->id }}">
+                            <input type="hidden" name="days[{{ $index }}][_destroy]" value="0">
                             <label>Judul Hari</label>
                             <input type="text" name="days[{{ $index }}][title]" class="form-control mb-2"
                                    value="{{ old("days.$index.title", $day->title) }}" required>
-
                             <label>Deskripsi Hari</label>
                             <textarea name="days[{{ $index }}][description]" class="form-control" rows="3" required>{{ old("days.$index.description", $day->description) }}</textarea>
-
                             <button type="button" class="btn btn-sm btn-danger mt-2 remove-day-btn">Hapus Hari</button>
                         </div>
                         @endforeach
@@ -101,10 +95,8 @@
                         <div class="tour-day mb-3 p-2 border rounded">
                             <label>Judul Hari</label>
                             <input type="text" name="days[0][title]" class="form-control mb-2" placeholder="Day 1 Title" required>
-
                             <label>Deskripsi Hari</label>
                             <textarea name="days[0][description]" class="form-control" rows="3" placeholder="Deskripsi Day 1" required></textarea>
-
                             <button type="button" class="btn btn-sm btn-danger mt-2 remove-day-btn">Hapus Hari</button>
                         </div>
                     @endif
@@ -131,6 +123,8 @@
 @endsection
 
 @push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // AUTO SLUG
@@ -154,10 +148,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="tour-day mb-3 p-2 border rounded">
             <label>Judul Hari</label>
             <input type="text" name="days[${dayIndex}][title]" class="form-control mb-2" placeholder="Day ${dayIndex + 1} Title" required>
-
             <label>Deskripsi Hari</label>
             <textarea name="days[${dayIndex}][description]" class="form-control" rows="3" placeholder="Deskripsi Day ${dayIndex + 1}" required></textarea>
-
             <button type="button" class="btn btn-sm btn-danger mt-2 remove-day-btn">Hapus Hari</button>
         </div>`;
         container.insertAdjacentHTML('beforeend', html);
@@ -166,9 +158,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
     container.addEventListener("click", function(e) {
         if(e.target && e.target.classList.contains("remove-day-btn")) {
-            e.target.closest(".tour-day").remove();
+            const tourDayDiv = e.target.closest(".tour-day");
+            const destroyInput = tourDayDiv.querySelector('input[name*="[_destroy]"]');
+
+            Swal.fire({
+                title: 'Yakin ingin menghapus hari ini?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Hapus',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if(result.isConfirmed){
+                    if(destroyInput){
+                        // Tandai untuk dihapus backend
+                        destroyInput.value = 1;
+                        tourDayDiv.style.display = 'none';
+                    } else {
+                        tourDayDiv.remove();
+                    }
+                }
+            });
         }
     });
+
+    // SWEETALERT2 SESSION ALERT
+    @if(session('success'))
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil',
+            text: '{{ session('success') }}',
+            timer: 3000,
+            timerProgressBar: true,
+            showConfirmButton: false
+        });
+    @endif
+
+    @if(session('error'))
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal',
+            text: '{{ session('error') }}'
+        });
+    @endif
 });
 </script>
 @endpush

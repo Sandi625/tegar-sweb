@@ -56,12 +56,11 @@
             {{-- ITINERARY / HARI --}}
             <div class="mb-3">
                 <label class="form-label">Itinerary / Hari</label>
-
                 <div id="blog-days-container">
 
                     @foreach ($blog->days as $index => $day)
-
-                    <div class="blog-day mb-3 p-3 border rounded">
+                    <div class="blog-day mb-3 p-3 border rounded border-primary bg-light">
+                        <input type="hidden" name="days[{{ $index }}][id]" value="{{ $day->id }}">
 
                         <label>Judul Hari</label>
                         <input type="text"
@@ -91,14 +90,12 @@
                                 class="btn btn-sm btn-danger remove-day-btn">
                             Hapus Hari
                         </button>
-
                     </div>
-
                     @endforeach
 
                 </div>
 
-                <button type="button" id="add-day-btn" class="btn btn-sm btn-secondary mt-2">
+                <button type="button" id="add-day-btn" class="btn btn-sm btn-success mt-2">
                     Tambah Hari
                 </button>
             </div>
@@ -141,12 +138,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let dayIndex = {{ count($blog->days) }};
 
-    // Tambah Hari
+    // Tambah Hari Baru
     addBtn.addEventListener("click", function() {
-
         let html = `
-        <div class="blog-day mb-3 p-3 border rounded">
-
+        <div class="blog-day mb-3 p-3 border rounded border-success bg-light">
             <label>Judul Hari</label>
             <input type="text"
                    name="days[${dayIndex}][title]"
@@ -169,10 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <button type="button" class="btn btn-sm btn-danger mt-2 remove-day-btn">
                 Hapus Hari
             </button>
-
-        </div>
-        `;
-
+        </div>`;
         container.insertAdjacentHTML('beforeend', html);
         dayIndex++;
     });
