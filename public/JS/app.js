@@ -229,23 +229,41 @@ window.addEventListener('resize', responsiveCard);
 
 
 document.getElementById("searchInput").addEventListener("keyup", function () {
-
     let keyword = this.value.toLowerCase().trim();
-    let cards = document.querySelectorAll(".blog");
 
-    // jika input kosong → munculkan semua
-    if (keyword === "") {
-        cards.forEach(c => c.style.display = "block");
-        return;
-    }
+    // ambil semua container per kategori
+    let containers = document.querySelectorAll(".blogsContainer");
 
-    cards.forEach(card => {
-        let title = card.querySelector(".blogTitle").innerText.toLowerCase();
+    containers.forEach(container => {
+        let cards = container.querySelectorAll(".blog");
+        let hasMatch = false;
 
-        if (title.includes(keyword)) {
-            card.style.display = "block";   // tampilkan yang cocok
-        } else {
-            card.style.display = "none";    // hide yang tidak cocok
+        // cek setiap card
+        cards.forEach(card => {
+            let title = card.querySelector(".blogTitle").innerText.toLowerCase();
+
+            if (keyword === "" || title.includes(keyword)) {
+                card.style.display = "block";
+                hasMatch = true;
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        // cek apakah sudah ada element pesan di container
+        let noResult = container.querySelector(".noResult");
+        if (!noResult) {
+            noResult = document.createElement("p");
+            noResult.className = "noResult";
+            noResult.innerText = "Tour not available yet";
+            noResult.style.textAlign = "center";
+            noResult.style.marginTop = "20px";
+            noResult.style.fontSize = "18px";
+            noResult.style.color = "#555";
+            container.appendChild(noResult);
         }
+
+        // tampilkan atau sembunyikan pesan
+        noResult.style.display = hasMatch ? "none" : "block";
     });
 });

@@ -9,11 +9,13 @@ class Tour extends Model
 {
     use HasFactory;
 
+    protected $table = 'tours'; // ⬅️ Ganti sesuai nama tabel
+
     protected $fillable = [
-        'category_id',   // <= ditambahkan
+        'category_id',
         'title',
         'slug',
-        'thumbnail',     // <= ditambahkan
+        'thumbnail',
         'images',
         'price',
         'description',
@@ -25,13 +27,11 @@ class Tour extends Model
         'status' => 'boolean',
     ];
 
-    // Relasi ke kategori
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
-    // Relasi ke tour days
     public function days()
     {
         return $this->hasMany(TourDay::class)->orderBy('order');

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\BlogDay;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class BlogController extends Controller
 {
@@ -26,54 +28,51 @@ class BlogController extends Controller
         return view('admin.blog.create');
     }
 
-  public function store(Request $request)
+public function store(Request $request)
 {
-    $request->validate([
+    // ================= VALIDASI =================
+    $validator = Validator::make($request->all(), [
         'title' => 'required|string|max:255',
         'description' => 'required',
         'route_name' => 'nullable|string',
         'status' => 'nullable|boolean',
-
-        // Single Blog Image
         'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
 
-        // Itinerary Validation
-        'days.*.title' => 'required|string|max:255',
-        'days.*.description' => 'required',
+        // Itinerary / Days
+        'days.*.title' => 'nullable|string|max:255', // bisa required kalau mau
+        'days.*.description' => 'nullable',
         'days.*.image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        'days.*.image_title' => 'nullable|string|max:255',
+        'days.*.image_description' => 'nullable|string',
     ]);
 
+    // jika gagal, kirim JSON berisi field error
+    if ($validator->fails()) {
+        return response()->json([
+            'errors' => $validator->errors()
+        ], 422); // 422 = Unprocessable Entity
+    }
 
-    /* =====================================================
-     * UPLOAD MAIN BLOG IMAGE
-     * ===================================================== */
+    // ================= UPLOAD GAMBAR UTAMA =================
     $imageName = null;
     if ($request->hasFile('image')) {
         $imageName = time() . '_' . uniqid() . '.' . $request->image->extension();
         $request->image->move(public_path('uploads/blogs'), $imageName);
     }
 
-
-    /* =====================================================
-     * INSERT BLOG
-     * ===================================================== */
+    // ================= INSERT BLOG =================
     $blog = Blog::create([
-        'title'       => $request->title,
-        'slug'        => Str::slug($request->title),
+        'title' => $request->title,
+        'slug' => Str::slug($request->title),
         'description' => $request->description,
-        'route_name'  => $request->route_name,
-        'image'       => $imageName,
-        'status'      => $request->status ?? 1,
+        'route_name' => $request->route_name,
+        'image' => $imageName,
+        'status' => $request->status ?? 1,
     ]);
 
-
-    /* =====================================================
-     * INSERT BLOG DAYS / ITINERARY
-     * ===================================================== */
+    // ================= INSERT BLOG DAYS =================
     if ($request->days) {
         foreach ($request->days as $day) {
-
-            // Upload image for day
             $dayImage = null;
             if (isset($day['image']) && $day['image']) {
                 $dayImage = time() . '_' . uniqid() . '.' . $day['image']->extension();
@@ -81,18 +80,19 @@ class BlogController extends Controller
             }
 
             BlogDay::create([
-                'blog_id'     => $blog->id,
-                'title'       => $day['title'],
+                'blog_id' => $blog->id,
+                'title' => $day['title'],
                 'description' => $day['description'],
-                'image'       => $dayImage,
+                'image' => $dayImage,
+                'image_title' => $day['image_title'] ?? null,
+                'image_description' => $day['image_description'] ?? null,
             ]);
         }
     }
 
-
-    return redirect()
-        ->route('blogs.index')
-        ->with('success', 'Blog berhasil dibuat!');
+    return response()->json([
+        'success' => 'Blog berhasil dibuat!'
+    ]);
 }
 
     public function edit($id)
@@ -115,6 +115,8 @@ public function update(Request $request, $id)
         'days.*.title' => 'required|string|max:255',
         'days.*.description' => 'required',
         'days.*.image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        'days.*.image_title' => 'nullable|string|max:255',
+        'days.*.image_description' => 'nullable|string',
     ]);
 
     // Update main blog image
@@ -172,6 +174,8 @@ public function update(Request $request, $id)
                     'title' => $day['title'],
                     'description' => $day['description'],
                     'image' => $dayImage,
+                    'image_title' => $day['image_title'] ?? null,
+                    'image_description' => $day['image_description'] ?? null,
                 ]);
 
             } else {
@@ -186,6 +190,8 @@ public function update(Request $request, $id)
                     'title' => $day['title'],
                     'description' => $day['description'],
                     'image' => $dayImage,
+                    'image_title' => $day['image_title'] ?? null,
+                    'image_description' => $day['image_description'] ?? null,
                 ]);
             }
         }

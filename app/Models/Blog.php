@@ -9,6 +9,8 @@ class Blog extends Model
 {
     use HasFactory;
 
+    protected $table = 'blogs'; // ⬅️ GANTI sesuai nama tabel kamu
+
     protected $fillable = [
         'title',
         'slug',

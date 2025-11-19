@@ -10,7 +10,8 @@
     </div>
 
     <div class="card-body">
-        <form action="{{ route('tour.store') }}" method="POST" enctype="multipart/form-data">
+<form id="tourForm" action="{{ route('tour.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
             @csrf
 
             {{-- KATEGORI --}}
@@ -84,9 +85,11 @@
 @endsection
 
 @push('scripts')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // AUTO SLUG
+
+    // ========== AUTO SLUG ==========
     const titleInput = document.getElementById("titleInput");
     const slugInput   = document.getElementById("slugInput");
 
@@ -97,10 +100,9 @@ document.addEventListener('DOMContentLoaded', function() {
         slugInput.value = slug;
     });
 
-    // TAMBAH / HAPUS HARI DINAMIS
+    // ========== ITINERARY DINAMIS ==========
     let container = document.getElementById("tour-days-container");
     let addBtn = document.getElementById("add-day-btn");
-
     let dayIndex = 1;
 
     addBtn.addEventListener("click", function() {
@@ -123,6 +125,66 @@ document.addEventListener('DOMContentLoaded', function() {
             e.target.closest(".tour-day").remove();
         }
     });
+
+
+    // ======================================================
+    //  AJAX SUBMIT WITH SWEETALERT (CREATE TOUR)
+    // ======================================================
+    const form = document.getElementById("tourForm");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let formData = new FormData(this);
+
+        fetch("{{ route('tour.store') }}", {
+            method: "POST",
+            headers: {
+                "X-CSRF-TOKEN": "{{ csrf_token() }}"
+            },
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+
+            if (data.errors) {
+                let errorText = "";
+                for (const key in data.errors) {
+                    data.errors[key].forEach(msg => {
+                        errorText += `• ${msg}\n`;
+                    });
+                }
+
+                Swal.fire({
+                    icon: "error",
+                    title: "Terjadi Kesalahan!",
+                    html: `<pre style="text-align:left;">${errorText}</pre>`
+                });
+            }
+
+            if (data.success) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Berhasil!",
+                    text: data.success,
+                    timer: 1800,
+                    showConfirmButton: false
+                }).then(() => {
+                    window.location.href = "{{ route('tour.index') }}";
+                });
+            }
+
+        })
+        .catch(() => {
+            Swal.fire({
+                icon: "error",
+                title: "Server Error",
+                text: "Terjadi kesalahan pada server."
+            });
+        });
+
+    });
+
 });
 </script>
 @endpush

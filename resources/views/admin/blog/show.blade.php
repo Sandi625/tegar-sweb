@@ -65,8 +65,10 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Judul Hari</th>
-                                        <th>Deskripsi</th>
+                                        <th>Deskripsi Hari</th>
                                         <th>Gambar</th>
+                                        <th>Judul Gambar</th>
+                                        <th>Deskripsi Gambar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -84,6 +86,8 @@
                                                     <span class="text-muted">-</span>
                                                 @endif
                                             </td>
+                                            <td>{{ $day->image_title ?? '-' }}</td>
+                                            <td>{{ $day->image_description ?? '-' }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

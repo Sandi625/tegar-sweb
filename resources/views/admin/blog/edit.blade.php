@@ -86,6 +86,19 @@
                                  class="img-thumbnail mb-2">
                         @endif
 
+                        <label>Judul Gambar</label>
+                        <input type="text"
+                               name="days[{{ $index }}][image_title]"
+                               class="form-control mb-2"
+                               value="{{ $day->image_title ?? '' }}"
+                               placeholder="Judul Gambar Hari {{ $index + 1 }}">
+
+                        <label>Deskripsi Gambar</label>
+                        <textarea name="days[{{ $index }}][image_description]"
+                                  class="form-control mb-2"
+                                  rows="2"
+                                  placeholder="Deskripsi Gambar Hari {{ $index + 1 }}">{{ $day->image_description ?? '' }}</textarea>
+
                         <button type="button"
                                 class="btn btn-sm btn-danger remove-day-btn">
                             Hapus Hari
@@ -160,6 +173,18 @@ document.addEventListener('DOMContentLoaded', function() {
             <input type="file"
                    name="days[${dayIndex}][image]"
                    class="form-control mb-2">
+
+            <label>Judul Gambar</label>
+            <input type="text"
+                   name="days[${dayIndex}][image_title]"
+                   class="form-control mb-2"
+                   placeholder="Judul Gambar Hari ${dayIndex + 1}">
+
+            <label>Deskripsi Gambar</label>
+            <textarea name="days[${dayIndex}][image_description]"
+                      class="form-control mb-2"
+                      rows="2"
+                      placeholder="Deskripsi Gambar Hari ${dayIndex + 1}"></textarea>
 
             <button type="button" class="btn btn-sm btn-danger mt-2 remove-day-btn">
                 Hapus Hari

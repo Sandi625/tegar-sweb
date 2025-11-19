@@ -9,8 +9,9 @@
 
     <title>Vamos Adventure - @yield('title')</title>
 
-    <meta name="description" content="Sistem Informasi ERP UD. Sejati" />
-    <meta name="keywords" content="dashboard, bootstrap 5, ERP, UD. Sejati">
+    <meta name="description" content="Sistem Informasi  Vamos Adventure" />
+    <meta name="keywords" content="dashboard, bootstrap 5, Vamos Adventure">
+
 
     <link rel="icon" type="image/x-icon" href="{{ url('assets/img/favicon/favicon.ico') }}" />
 
@@ -30,8 +31,8 @@
     <link rel="stylesheet" href="{{ url('assets/vendor/css/rtl/theme-default.css') }}"
         class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{{ url('assets/css/demo.css') }}" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{ url('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
@@ -71,7 +72,7 @@
                             <img src="{{ url('assets/img/favicon/icon.png') }}" alt="Logo" width="32"
                                 height="32">
                         </span>
-                        <span class="app-brand-text demo menu-text fw-bold">UD. Sejati</span>
+                        <span class="app-brand-text demo menu-text fw-bold">Admin Vamos</span>
                     </a>
 
                     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -87,8 +88,7 @@
                     <li class="menu-header small text-uppercase">
                         <span class="menu-header-text" data-i18n="Dashboards">Dashboards</span>
                     </li>
-                    <li
-                        class="menu-item {{ empty(request()->segment(1)) || request()->segment(1) == 'index' ? 'active' : '' }}">
+                    <li class="menu-item {{ request()->is('dashboard') ? 'active' : '' }}">
                         <a href="{{ route('dashboard.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-smart-home"></i>
                             <div class="text-truncate" data-i18n="Dashboard">Dashboard</div>
@@ -669,7 +669,7 @@
                                     <script>
                                         document.write(new Date().getFullYear());
                                     </script>
-                                    UD Sejati. Powered By <a href="https://mascitra.com">Mascitra.com</a>
+                                    Powered By <a href="">Tegar Firmansyah And Sandi Permadi</a>
                                     {{-- <a href="https://github.com/you-ink" target="_blank"
                                         class="footer-link text-primary fw-medium">You-Ink</a> --}}
                                 </div>

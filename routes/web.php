@@ -7,8 +7,9 @@ use App\Http\Controllers\TourController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\TourDetailController;
 use App\Http\Controllers\UserBlogController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TourDetailController;
 
 // routes/web.php
 
@@ -269,3 +270,6 @@ Route::post('/tour/{tour}/booking', [BookingController::class, 'store'])->name('
 
 Route::get('/userblog', [UserBlogController::class, 'index'])->name('user.blog.index');
 Route::get('/userblog/{slug}', [UserBlogController::class, 'show'])->name('user.blog.show');
+
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');

@@ -266,13 +266,7 @@
     </form>
 </div>
 
-<script>
 
-</script>
-
-<style>
-
-</style>
 
   @foreach ($categories as $category)
     @php

@@ -13,7 +13,9 @@ class BlogDay extends Model
         'blog_id',
         'title',
         'description',
-        'image', // <-- tambah ini
+        'image',             // path image
+        'image_title',       // judul image
+        'image_description', // deskripsi image
     ];
 
     public function blog()

@@ -9,6 +9,8 @@ class Review extends Model
 {
     use HasFactory;
 
+    protected $table = 'reviews'; // ⬅️ Sesuaikan nama tabelnya
+
     protected $fillable = [
         'name',
         'photo',

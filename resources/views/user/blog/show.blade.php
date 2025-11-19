@@ -12,18 +12,20 @@
 
         {{-- Loop each child day / itinerary --}}
         @foreach($blog->days as $index => $day)
+            {{-- Day Title & Description --}}
             <div class="para two">
                 <h2>{{ $index + 1 }}. {{ $day->title }}</h2>
                 <hr />
                 {!! $day->description !!}
             </div>
 
+            {{-- Day Image --}}
             @if($day->image)
             <div class="imageContainer">
-                <img src="{{ asset('uploads/blog_days/' . $day->image) }}" alt="{{ $day->title }}" />
+                <img src="{{ asset('uploads/blog_days/' . $day->image) }}" alt="{{ $day->image_title ?? $day->title }}" />
                 <div class="imgDescription">
-                    <h4 class="imageTitle">{{ $day->title }}</h4>
-                    <p class="imageDescription">{{ Str::limit(strip_tags($day->description), 120) }}</p>
+                    <h4 class="imageTitle">{{ $day->image_title ?? $day->title }}</h4>
+                    <p class="imageDescription">{{ $day->image_description ?? Str::limit(strip_tags($day->description), 120) }}</p>
                 </div>
             </div>
             @endif
