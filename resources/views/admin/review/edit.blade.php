@@ -21,6 +21,13 @@
                        value="{{ $review->name }}" required>
             </div>
 
+            {{-- EMAIL --}}
+            <div class="mb-3">
+                <label class="form-label">Email (Opsional)</label>
+                <input type="email" name="email" class="form-control"
+                       value="{{ $review->email }}">
+            </div>
+
             {{-- FOTO LAMA --}}
             <div class="mb-3">
                 <label class="form-label">Foto Saat Ini</label><br>

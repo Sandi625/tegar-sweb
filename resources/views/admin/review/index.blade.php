@@ -29,6 +29,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
+                                <th>Email</th> {{-- Tambahan kolom email --}}
                                 <th>Foto</th>
                                 <th>Rating</th>
                                 <th>Review</th>
@@ -42,6 +43,7 @@
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $review->name }}</td>
+                                    <td>{{ $review->email ?? '-' }}</td> {{-- Tampilkan email, default '-' jika null --}}
 
                                     <td>
                                         @if ($review->photo)

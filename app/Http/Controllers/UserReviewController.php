@@ -12,7 +12,6 @@ class UserReviewController extends Controller
      */
     public function index()
     {
-        // Hanya tampilkan review yang status = 1 (aktif)
         $reviews = Review::where('status', 1)
             ->latest()
             ->get();
@@ -21,7 +20,54 @@ class UserReviewController extends Controller
     }
 
     /**
-     * Menampilkan detail review tertentu (opsional).
+     * Form untuk user membuat review baru
+     */
+    public function create()
+    {
+        return view('user.reviews.create');
+    }
+
+    /**
+     * Simpan review dari user
+     */
+public function store(Request $request)
+{
+    $request->validate([
+        'name'        => 'required|string|max:100',
+        'email'       => 'nullable|email|max:100', // boleh kosong
+        'rating'      => 'required|integer|min:1|max:5',
+        'review_text' => 'required|string',
+        'photo'       => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+    ]);
+
+    try {
+        $review = new Review();
+        $review->name        = $request->name;
+        $review->email       = $request->email; // bisa null
+        $review->rating      = $request->rating;
+        $review->review_text = $request->review_text;
+        $review->status      = 0; // default pending
+
+        // Handle photo upload
+        if ($request->hasFile('photo')) {
+            $file = $request->file('photo');
+            $filename = time().'_'.$file->getClientOriginalName();
+            $file->move(public_path('uploads/reviews'), $filename);
+            $review->photo = $filename;
+        }
+
+        $review->save();
+
+        return redirect()->back()->with('success', 'Review submitted successfully!');
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Failed to submit review: '.$e->getMessage());
+    }
+}
+
+
+
+    /**
+     * Menampilkan detail review tertentu (opsional)
      */
     public function show($id)
     {

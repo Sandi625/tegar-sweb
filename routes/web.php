@@ -10,6 +10,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserBlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TourDetailController;
+use App\Http\Controllers\UserReviewController;
 
 // routes/web.php
 
@@ -273,3 +274,14 @@ Route::get('/userblog/{slug}', [UserBlogController::class, 'show'])->name('user.
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+
+
+
+
+// USER REVIEWS
+Route::prefix('reviews')->name('user.review.')->group(function () {
+    Route::get('/', [UserReviewController::class, 'index'])->name('index');
+    Route::get('/create', [UserReviewController::class, 'create'])->name('create');
+    Route::post('/store', [UserReviewController::class, 'store'])->name('store');
+    Route::get('/{id}', [UserReviewController::class, 'show'])->name('show');
+});

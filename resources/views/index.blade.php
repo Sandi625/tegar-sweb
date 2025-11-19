@@ -450,141 +450,69 @@
 
 
 
-    {{-- <section class="customTourForm" style="max-width:600px;margin:50px auto;padding:20px;border:1px solid #ccc;border-radius:8px;">
-  <h2 style="text-align:center;margin-bottom:20px;">Customize Your Tour Package</h2>
-
-  <form id="tourForm">
-    <div style="margin-bottom:15px;">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
-    </div>
-
-    <div style="margin-bottom:15px;">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
-    </div>
-
-    <div style="margin-bottom:15px;">
-      <label for="destination">Destination:</label>
-      <input type="text" id="destination" name="destination" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
-    </div>
-
-    <div style="margin-bottom:15px;">
-      <label for="date">Preferred Date:</label>
-      <input type="date" id="date" name="date" required style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;">
-    </div>
-
-    <div style="margin-bottom:15px;">
-      <label for="notes">Additional Notes:</label>
-      <textarea id="notes" name="notes" rows="4" style="width:100%;padding:8px;border-radius:4px;border:1px solid #ccc;"></textarea>
-    </div>
-
-    <!-- Tombol WA -->
-    <button type="button" onclick="sendWhatsApp()"
-      style="width:100%;padding:12px;background-color:#25d366;color:white;border:none;border-radius:6px;font-size:16px;cursor:pointer;margin-bottom:10px;">
-      Send via WhatsApp
-    </button>
-
-    <!-- Tombol Email -->
-    <button type="button" onclick="sendEmail()"
-      style="width:100%;padding:12px;background-color:#f2870c;color:white;border:none;border-radius:6px;font-size:16px;cursor:pointer;">
-      Send via Email
-    </button>
-  </form>
-</section> --}}
 
 
-    <section class="reviews">
-        <h1 class="reviewsTitle" data-aos="fade-up" data-aos-duration="2000">
-            What People <span class="highlight">Say</span>
-        </h1>
+<section class="reviews">
+    <h1 class="reviewsTitle" data-aos="fade-up" data-aos-duration="2000">
+        What People <span class="highlight">Say</span>
+    </h1>
 
-        <div class="marquee">
-            <div class="marquee-inner">
-                <!-- Review Cards (set 1) -->
-                <div class="reviewCard">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="reviewImg">
-                    <h3 class="reviewName">Sarah Johnson</h3>
-                    <p class="reviewText">“The Ijen Crater tour was absolutely breathtaking! The team was professional
-                        and made sure everything went smoothly.”</p>
-                    <div class="reviewRating">⭐⭐⭐⭐⭐</div>
+    <div class="marquee">
+        <div class="marquee-inner" style="display:flex; align-items:center;">
+
+            {{-- Looping reviews --}}
+            @foreach ($reviews as $review)
+                <div class="reviewCard" style="flex:0 0 auto; margin:0 15px; width:200px; box-sizing:border-box;">
+                    {{-- FOTO --}}
+                    @if ($review->photo)
+                        <img src="{{ asset('uploads/reviews/' . $review->photo) }}" class="reviewImg">
+                    @else
+                        <img src="https://ui-avatars.com/api/?name={{ urlencode($review->name) }}&background=random" class="reviewImg">
+                    @endif
+
+                    {{-- NAMA --}}
+                    <h3 class="reviewName">{{ $review->name }}</h3>
+
+                    {{-- REVIEW TEXT --}}
+                    <p class="reviewText">“{{ Str::limit($review->review_text, 150) }}”</p>
+
+                    {{-- RATING --}}
+                    <div class="reviewRating">
+                        {{ str_repeat('⭐', $review->rating) }}
+                    </div>
                 </div>
+            @endforeach
 
-                <div class="reviewCard">
-                    <img src="https://randomuser.me/api/portraits/men/36.jpg" class="reviewImg">
-                    <h3 class="reviewName">Michael Lee</h3>
-                    <p class="reviewText">“Amazing experience! Blue fire is something I will never forget. Highly
-                        recommended tour service.”</p>
-                    <div class="reviewRating">⭐⭐⭐⭐⭐</div>
+            {{-- SET 2 (untuk looping animasi) --}}
+            @foreach ($reviews as $review)
+                <div class="reviewCard" style="flex:0 0 auto; margin:0 15px; width:200px; box-sizing:border-box;">
+                    @if ($review->photo)
+                        <img src="{{ asset('uploads/reviews/' . $review->photo) }}" class="reviewImg">
+                    @else
+                        <img src="https://ui-avatars.com/api/?name={{ urlencode($review->name) }}&background=random" class="reviewImg">
+                    @endif
+                    <h3 class="reviewName">{{ $review->name }}</h3>
+                    <p class="reviewText">“{{ Str::limit($review->review_text, 150) }}”</p>
+                    <div class="reviewRating">
+                        {{ str_repeat('⭐', $review->rating) }}
+                    </div>
                 </div>
+            @endforeach
 
-                <div class="reviewCard">
-                    <img src="https://randomuser.me/api/portraits/women/65.jpg" class="reviewImg">
-                    <h3 class="reviewName">Emily Davis</h3>
-                    <p class="reviewText">“Everything was well-organized from Bali pickup to the hike itself. Tour
-                        guide was friendly and helpful.”</p>
-                    <div class="reviewRating">⭐⭐⭐⭐⭐</div>
-                </div>
-
-                <div class="reviewCard">
-                    <img src="https://randomuser.me/api/portraits/men/22.jpg" class="reviewImg">
-                    <h3 class="reviewName">David Kim</h3>
-                    <p class="reviewText">“One of the best tours I’ve ever joined! Worth every penny. I’ll recommend
-                        this to all my friends.”</p>
-                    <div class="reviewRating">⭐⭐⭐⭐⭐</div>
-                </div>
-
-                <div class="reviewCard">
-                    <img src="https://randomuser.me/api/portraits/women/12.jpg" class="reviewImg">
-                    <h3 class="reviewName">Sophia Martinez</h3>
-                    <p class="reviewText">“The guides were super friendly and the hike was magical. Thank you for the
-                        unforgettable experience.”</p>
-                    <div class="reviewRating">⭐⭐⭐⭐⭐</div>
-                </div>
-
-                <!-- Copy kedua supaya looping mulus -->
-                <div class="reviewCard">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="reviewImg">
-                    <h3 class="reviewName">Sarah Johnson</h3>
-                    <p class="reviewText">“The Ijen Crater tour was absolutely breathtaking! The team was professional
-                        and made sure everything went smoothly.”</p>
-                    <div class="reviewRating">⭐⭐⭐⭐⭐</div>
-                </div>
-
-                <div class="reviewCard">
-                    <img src="https://randomuser.me/api/portraits/men/36.jpg" class="reviewImg">
-                    <h3 class="reviewName">Michael Lee</h3>
-                    <p class="reviewText">“Amazing experience! Blue fire is something I will never forget. Highly
-                        recommended tour service.”</p>
-                    <div class="reviewRating">⭐⭐⭐⭐⭐</div>
-                </div>
-
-                <div class="reviewCard">
-                    <img src="https://randomuser.me/api/portraits/women/65.jpg" class="reviewImg">
-                    <h3 class="reviewName">Emily Davis</h3>
-                    <p class="reviewText">“Everything was well-organized from Bali pickup to the hike itself. Tour
-                        guide was friendly and helpful.”</p>
-                    <div class="reviewRating">⭐⭐⭐⭐⭐</div>
-                </div>
-
-                <div class="reviewCard">
-                    <img src="https://randomuser.me/api/portraits/men/22.jpg" class="reviewImg">
-                    <h3 class="reviewName">David Kim</h3>
-                    <p class="reviewText">“One of the best tours I’ve ever joined! Worth every penny. I’ll recommend
-                        this to all my friends.”</p>
-                    <div class="reviewRating">⭐⭐⭐⭐⭐</div>
-                </div>
-
-                <div class="reviewCard">
-                    <img src="https://randomuser.me/api/portraits/women/12.jpg" class="reviewImg">
-                    <h3 class="reviewName">Sophia Martinez</h3>
-                    <p class="reviewText">“The guides were super friendly and the hike was magical. Thank you for the
-                        unforgettable experience.”</p>
-                    <div class="reviewRating">⭐⭐⭐⭐⭐</div>
-                </div>
-            </div>
         </div>
-    </section>
+    </div>
+
+    {{-- Button Create Review --}}
+    <div style="text-align:center; margin-top:25px;">
+        <button onclick="window.location.href='{{ route('user.review.create') }}'"
+            style="padding:12px 25px; font-size:1rem; border:none; border-radius:6px; background-color:#f2870c; color:white; cursor:pointer; transition:all 0.3s;">
+            Create Your Review
+        </button>
+    </div>
+</section>
+
+
+
 
 
 

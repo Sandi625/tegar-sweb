@@ -19,6 +19,12 @@
                 <input type="text" name="name" class="form-control" required>
             </div>
 
+            {{-- EMAIL --}}
+            <div class="mb-3">
+                <label class="form-label">Email (Opsional)</label>
+                <input type="email" name="email" class="form-control">
+            </div>
+
             {{-- FOTO --}}
             <div class="mb-3">
                 <label class="form-label">Foto (Opsional)</label>

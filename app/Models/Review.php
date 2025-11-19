@@ -14,6 +14,7 @@ class Review extends Model
     protected $fillable = [
         'name',
         'photo',
+        'email',        // ⬅️ tambahkan email
         'review_text',
         'rating',
         'status',

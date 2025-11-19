@@ -11,6 +11,7 @@ return new class extends Migration {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->string('name', 100);
+            $table->string('email', 100)->nullable(); // <--- kolom email sekarang opsional
             $table->string('photo', 255)->nullable();
             $table->text('review_text');
             $table->tinyInteger('rating')->unsigned(); // 1-5
