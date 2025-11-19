@@ -20,8 +20,9 @@
                 <div class="card-header d-flex justify-content-between">
                     <h3 class="card-title mb-0">Data Categories</h3>
 
-                    <a href="{{ route('categories.create') }}" class="btn btn-sm btn-primary">
-                        <i class="fas fa-plus"></i>&nbsp; Tambah Category
+                    <a href="{{ route('categories.create') }}"
+                       class="btn btn-sm btn-primary">
+                        <i class="ti ti-plus"></i>&nbsp; Tambah Category
                     </a>
                 </div>
 
@@ -45,15 +46,17 @@
 
                                     <td>
                                         <a href="{{ route('categories.edit', $category->id) }}"
-                                            class="btn btn-sm btn-warning">Edit</a>
+                                           class="btn btn-sm btn-warning mb-1">
+                                            <i class="ti ti-pencil"></i>
+                                        </a>
 
                                         <form action="{{ route('categories.destroy', $category->id) }}"
                                               method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-sm btn-danger"
+                                            <button class="btn btn-sm btn-danger mb-1"
                                                     onclick="return confirm('Hapus kategori ini?')">
-                                                Hapus
+                                                <i class="ti ti-trash"></i>
                                             </button>
                                         </form>
                                     </td>

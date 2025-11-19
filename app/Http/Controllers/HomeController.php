@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Tour;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -13,14 +14,21 @@ public function index(Request $request)
 {
     $search = $request->search;
 
-    // Ambil semua kategori + tours
+    // Ambil kategori + tour aktif
     $categories = Category::with(['tours' => function($query) use ($search) {
+
+        $query->where('status', 1);
+
         if ($search) {
             $query->where('title', 'like', "%{$search}%");
         }
+
     }])->get();
 
-    return view('index', compact('categories', 'search'));
+    // ⬅ Tambahan: Ambil blog aktif
+    $blogs = Blog::where('status', 1)->latest()->get();
+
+    return view('index', compact('categories', 'search', 'blogs'));
 }
 
 

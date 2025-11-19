@@ -62,7 +62,7 @@
             </li>
             {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
             <li class="link"><a href="{{ route('allpackage.page') }}">Tour Package</a></li>
-            <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li> <!-- Tambahan -->
+            <li class="link"><a href="{{ route('user.blog.index') }}">Blog</a></li> <!-- Tambahan -->
             <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
         </ul>
 
@@ -589,106 +589,64 @@
 
 
 
-    <section class="trending" id="places">
-        <div class="trendingWrapper">
-            <img src="{{ asset('assets/leaf.svg') }}" class="trendingSVG1" />
+ <section class="trending" id="places">
+    <div class="trendingWrapper">
+        <img src="{{ asset('assets/leaf.svg') }}" class="trendingSVG1" />
 
-            <h1 class="trendingTitle" data-aos="fade-up" data-aos-duration="2000">
-                Read The <span class="buttonHighlight">Blogs</span>
-            </h1>
+        <h1 class="trendingTitle" data-aos="fade-up" data-aos-duration="2000">
+            Read The <span class="buttonHighlight">Blogs</span>
+        </h1>
 
-            <div class="menu-wrapper">
-                <div class="menu">
+        <div class="menu-wrapper">
+            <div class="menu">
 
-                    <!-- Bromo -->
+                @foreach ($blogs as $blog)
                     <div class="item">
                         <div class="item-content">
+
+                            <!-- IMAGE -->
                             <div class="item-image"
-                                style="background: url('{{ asset('Images/bromo3.jpg') }}'); background-position: center; background-size: cover; background-repeat: no-repeat;">
-                                <a href="{{ route('bromo.page') }}" class="location">
-                                    <img src="{{ asset('Images/bromo3.jpg') }}" />
-                                    <p class="place">Mount Bromo</p>
+                                style="
+                                    background: url('{{ asset('uploads/blogs/' . $blog->image) }}');
+                                    background-position: center;
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                ">
+
+                                <a href="{{ route('user.blog.show', $blog->slug) }}" class="location">
+                                    <img src="{{ asset('uploads/blogs/' . $blog->image) }}" alt="{{ $blog->title }}" />
+                                    <p class="place">{{ $blog->title }}</p>
                                 </a>
                             </div>
-                            <div class="placeTitle">Mount Bromo <span></span></div>
+
+                            <!-- TITLE -->
+                            <div class="placeTitle">
+                                {{ $blog->title }}
+                            </div>
+
+                            <!-- DESCRIPTION -->
                             <div class="placeDescription">
-                                Mount Bromo is one of the most famous volcanoes in Indonesia...
+                                {{ Str::limit(strip_tags($blog->description), 120) }}
                             </div>
+
+                            <!-- BUTTON -->
                             <div class="button-wrapper">
-                                <button onclick="window.location.href='{{ route('bromo.page') }}'"
-                                    class="viewButton">View Blog</button>
+                                <button
+                                    onclick="window.location.href='{{ route('user.blog.show', $blog->slug) }}'"
+                                    class="viewButton">
+                                    View Blog
+                                </button>
                             </div>
+
                         </div>
                     </div>
+                @endforeach
 
-
-                    <!-- Ijen -->
-                    <div class="item">
-                        <div class="item-content">
-                            <div class="item-image"
-                                style="background: url('{{ asset('Images/ijen1.jpg') }}'); background-position: center; background-size: cover; background-repeat: no-repeat;">
-                                <a href="{{ route('ijen.page') }}" class="location">
-                                    <img src="{{ asset('Images/ijen1.jpg') }}" />
-                                    <p class="place">Ijen</p>
-                                </a>
-                            </div>
-                            <div class="placeTitle">Ijen <span></span></div>
-                            <div class="placeDescription">
-                                Ijen is a famous volcanic complex in East Java, Indonesia...
-                            </div>
-                            <div class="button-wrapper">
-                                <button onclick="window.location.href='{{ route('ijen.page') }}'"
-                                    class="viewButton">View Blog</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tumpak Sewu -->
-                    <div class="item">
-                        <div class="item-content">
-                            <div class="item-image"
-                                style="background: url('{{ asset('Images/tumpak-sewu.jpg') }}'); background-position: center; background-size: cover; background-repeat: no-repeat;">
-                                <a href="{{ route('tumpaksewu.page') }}" class="location">
-                                    <img src="{{ asset('Images/tumpak-sewu.jpg') }}" />
-                                    <p class="place">Tumpak Sewu</p>
-                                </a>
-                            </div>
-                            <div class="placeTitle">Tumpak Sewu <span></span></div>
-                            <div class="placeDescription">
-                                Tumpak Sewu is often called the Niagara of Java, a stunning waterfall in East Java...
-                            </div>
-                            <div class="button-wrapper">
-                                <button onclick="window.location.href='{{ route('tumpaksewu.page') }}'"
-                                    class="viewButton">View Blog</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Bali -->
-                    <div class="item">
-                        <div class="item-content">
-                            <div class="item-image"
-                                style="background: url('{{ asset('Images/bali2.jpg') }}'); background-position: center; background-size: cover; background-repeat: no-repeat;">
-                                <a href="{{ route('bali.page') }}" class="location">
-                                    <img src="{{ asset('Images/bali2.jpg') }}" />
-                                    <p class="place">Bali</p>
-                                </a>
-                            </div>
-                            <div class="placeTitle">Bali <span></span></div>
-                            <div class="placeDescription">
-                                Bali, the Island of Gods, famous for its beaches, temples, and cultural richness...
-                            </div>
-                            <div class="button-wrapper">
-                                <button onclick="window.location.href='{{ route('bali.page') }}'"
-                                    class="viewButton">View Blog</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
 
 

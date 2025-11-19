@@ -3,117 +3,119 @@
 
 @section('content')
 
-<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="container-xxl flex-grow-1 container-p-y">
 
-    <div class="page-header row no-gutters py-2">
-        <div class="col-12 col-sm-4 text-sm-left mb-0">
-            <span class="text-uppercase page-subtitle">Data Master</span>
-            <h3 class="page-title">Tours</h3>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 order-1 order-lg-2 mb-4 mb-lg-0">
-            <div class="card">
-                <div class="card-header d-flex justify-content-between">
-                    <h3 class="card-title mb-0">Data Tours</h3>
-
-                    <a href="{{ route('tour.create') }}"
-                        class="btn btn-sm btn-primary">
-                        <i class="fas fa-plus"></i>&nbsp; Tambah Tour
-                    </a>
-                </div>
-
-                <div class="card-datatable table-responsive table-main">
-                    <table class="table border-top nowrap">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Judul</th>
-                                <th>Kategori</th>
-                                <th>Slug</th>
-                                <th>Harga</th>
-                                <th>Gambar</th>
-                                <th>Status</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                        @foreach ($tours as $key => $tour)
-                            <tr>
-                                <td>{{ $key + 1 }}</td>
-                                <td>{{ $tour->title }}</td>
-
-                                {{-- Tambahan Category --}}
-                                <td>
-                                    {{ $tour->category ? $tour->category->name : '-' }}
-                                </td>
-
-                                <td>{{ $tour->slug }}</td>
-                                <td>Rp {{ number_format($tour->price, 0, ',', '.') }}</td>
-
-                                <td>
-                                    @if (!empty($tour->images))
-                                        @foreach ($tour->images as $img)
-                                            @php
-                                                $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
-                                            @endphp
-
-                                            @if(in_array($ext, ['jpg','jpeg','png','webp']))
-                                                <img src="{{ asset('uploads/tours/' . $img) }}"
-                                                     width="60" class="rounded mb-1 me-1">
-                                            @elseif(in_array($ext, ['heic','heif']))
-                                                <span class="badge bg-secondary mb-1 me-1">{{ strtoupper($ext) }}</span>
-                                            @endif
-                                        @endforeach
-                                    @else
-                                        <span class="text-muted">Tidak ada</span>
-                                    @endif
-                                </td>
-
-                                <td>
-                                    @if ($tour->status)
-                                        <span class="badge bg-success">Aktif</span>
-                                    @else
-                                        <span class="badge bg-danger">Nonaktif</span>
-                                    @endif
-                                </td>
-
-                                <td>
-                                    <a href="{{ route('tour.show', $tour->id) }}"
-                                        class="btn btn-sm btn-info">
-                                        Show
-                                    </a>
-
-                                    <a href="{{ route('tour.edit', $tour->id) }}"
-                                        class="btn btn-sm btn-warning">
-                                        Edit
-                                    </a>
-
-                                    <form action="{{ route('tour.destroy', $tour->id) }}"
-                                        method="POST"
-                                        class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-sm btn-danger"
-                                            onclick="return confirm('Hapus tour ini?')">
-                                            Hapus
-                                        </button>
-                                    </form>
-                                </td>
-
-                            </tr>
-                        @endforeach
-                        </tbody>
-
-                    </table>
-                </div>
-
+        <div class="page-header row no-gutters py-2">
+            <div class="col-12 col-sm-4 text-sm-left mb-0">
+                <span class="text-uppercase page-subtitle">Data Master</span>
+                <h3 class="page-title">Tours</h3>
             </div>
         </div>
-    </div>
 
-</div>
+        <div class="row">
+            <div class="col-12 order-1 order-lg-2 mb-4 mb-lg-0">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <h3 class="card-title mb-0">Data Tours</h3>
+
+                        <a href="{{ route('tour.create') }}" class="btn btn-sm btn-primary">
+                            <i class="fas fa-plus"></i>&nbsp; Tambah Tour
+                        </a>
+                    </div>
+
+                    <div class="card-datatable table-responsive table-main">
+                        <table class="table border-top nowrap">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Judul</th>
+                                    <th>Kategori</th>
+                                    <th>Slug</th>
+                                    <th>Harga</th>
+                                    <th>Gambar</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach ($tours as $key => $tour)
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $tour->title }}</td>
+
+                                        {{-- Tambahan Category --}}
+                                        <td>
+                                            {{ $tour->category ? $tour->category->name : '-' }}
+                                        </td>
+
+                                        <td>{{ $tour->slug }}</td>
+                                        <td>Rp {{ number_format($tour->price, 0, ',', '.') }}</td>
+
+                                        <td>
+                                            @if (!empty($tour->images))
+                                                @foreach ($tour->images as $img)
+                                                    @php
+                                                        $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
+                                                    @endphp
+
+                                                    @if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp']))
+                                                        <img src="{{ asset('uploads/tours/' . $img) }}" width="60"
+                                                            class="rounded mb-1 me-1">
+                                                    @elseif(in_array($ext, ['heic', 'heif']))
+                                                        <span
+                                                            class="badge bg-secondary mb-1 me-1">{{ strtoupper($ext) }}</span>
+                                                    @endif
+                                                @endforeach
+                                            @else
+                                                <span class="text-muted">Tidak ada</span>
+                                            @endif
+                                        </td>
+
+                                        <td>
+                                            @if ($tour->status)
+                                                <span class="badge bg-success">Aktif</span>
+                                            @else
+                                                <span class="badge bg-danger">Nonaktif</span>
+                                            @endif
+                                        </td>
+
+                                      <td>
+    <a href="{{ route('tour.show', $tour->id) }}"
+       class="btn btn-sm btn-info mb-1">
+        <i class="ti ti-eye"></i>
+    </a>
+
+    <a href="{{ route('tour.edit', $tour->id) }}"
+       class="btn btn-sm btn-warning mb-1">
+        <i class="ti ti-pencil"></i>
+    </a>
+
+    <form action="{{ route('tour.destroy', $tour->id) }}"
+          method="POST" class="d-inline">
+        @csrf
+        @method('DELETE')
+
+        <button class="btn btn-sm btn-danger mb-1"
+            onclick="return confirm('Hapus tour ini?')">
+            <i class="ti ti-trash"></i>
+        </button>
+    </form>
+</td>
+
+
+
+                                    </tr>
+                                @endforeach
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 @endsection

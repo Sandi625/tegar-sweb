@@ -19,7 +19,7 @@
                     <h3 class="card-title mb-0">Data Review</h3>
 
                     <a href="{{ route('review.create') }}" class="btn btn-sm btn-primary">
-                        <i class="fas fa-plus"></i>&nbsp; Tambah Review
+                        <i class="ti ti-plus"></i>&nbsp; Tambah Review
                     </a>
                 </div>
 
@@ -45,16 +45,14 @@
 
                                     <td>
                                         @if ($review->photo)
-                                            <img src="{{ asset('uploads/reviews/' . $review->photo) }}" width="60"
-                                                class="rounded">
+                                            <img src="{{ asset('uploads/reviews/' . $review->photo) }}"
+                                                 width="60" class="rounded">
                                         @else
                                             <span class="text-muted">Tidak ada</span>
                                         @endif
                                     </td>
 
-                                    <td>
-                                        ⭐ {{ $review->rating }}/5
-                                    </td>
+                                    <td>⭐ {{ $review->rating }}/5</td>
 
                                     <td style="max-width: 300px;">
                                         <div style="white-space: normal;">
@@ -71,17 +69,18 @@
                                     </td>
 
                                     <td>
-                                        <a href="{{ route('review.edit', $review->id) }}" class="btn btn-sm btn-warning">
-                                            Edit
+                                        <a href="{{ route('review.edit', $review->id) }}"
+                                           class="btn btn-sm btn-warning mb-1">
+                                            <i class="ti ti-pencil"></i>
                                         </a>
 
-                                        <form action="{{ route('review.destroy', $review->id) }}" method="POST"
-                                            class="d-inline">
+                                        <form action="{{ route('review.destroy', $review->id) }}"
+                                              method="POST" class="d-inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-sm btn-danger"
-                                                onclick="return confirm('Hapus review ini?')">
-                                                Hapus
+                                            <button class="btn btn-sm btn-danger mb-1"
+                                                    onclick="return confirm('Hapus review ini?')">
+                                                <i class="ti ti-trash"></i>
                                             </button>
                                         </form>
                                     </td>
