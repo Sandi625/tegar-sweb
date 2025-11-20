@@ -501,8 +501,7 @@
 
         </div>
     </div>
-
-    {{-- Button Create Review --}}
+      {{-- Button Create Review --}}
     <div style="text-align:center; margin-top:25px;">
         <button onclick="window.location.href='{{ route('user.review.create') }}'"
             style="padding:12px 25px; font-size:1rem; border:none; border-radius:6px; background-color:#f2870c; color:white; cursor:pointer; transition:all 0.3s;">
@@ -510,7 +509,6 @@
         </button>
     </div>
 </section>
-
 
 
 

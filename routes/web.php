@@ -5,6 +5,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\AllTourController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserBlogController;
@@ -15,9 +16,9 @@ use App\Http\Controllers\UserReviewController;
 // routes/web.php
 
 
-Route::get('/allpackage', function () {
-    return view('blog'); // resources/views/page/blog.blade.php
-})->name('allpackage.page');
+// Route::get('/allpackage', function () {
+//     return view('blog'); // resources/views/page/blog.blade.php
+// })->name('allpackage.page');
 
 Route::get('/pesanfinsihbali', function () {
     return view('BlogPages.bromoijen.pesanfinishbali');
@@ -285,3 +286,7 @@ Route::prefix('reviews')->name('user.review.')->group(function () {
     Route::post('/store', [UserReviewController::class, 'store'])->name('store');
     Route::get('/{id}', [UserReviewController::class, 'show'])->name('show');
 });
+
+
+Route::get('/allpackage', [AllTourController::class, 'index'])->name('allpackage.page');
+
