@@ -64,7 +64,7 @@
         {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
         <li class="link"><a href="{{ route('allpackage.page') }}">Tour</a></li>
         <li class="link"><a href="{{ route('user.blog.index') }}">Blog</a></li>
-        <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
+        <li class="link"><a href="{{ route('user.gallery.images') }}">Gallery</a></li>
 
         <!-- 🔥 Tambahkan Login di sini -->
         <li class="link"><a href="{{ route('login') }}">Login</a></li>

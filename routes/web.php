@@ -14,6 +14,7 @@ use App\Http\Controllers\UserBlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TourDetailController;
 use App\Http\Controllers\UserReviewController;
+use App\Http\Controllers\UserGalleryController;
 
 // routes/web.php
 
@@ -40,7 +41,7 @@ Route::get('/places', function () {
 
 
 // Gallery
-Route::get('/gallery', function () {
+Route::get('/gallery1', function () {
     return view('gallery'); // resources/views/page/gallery.blade.php
 })->name('gallery.page');
 
@@ -299,3 +300,22 @@ Route::post('/login-dashboard', [LoginController::class, 'login'])->name('login.
 
 
 Route::resource('gallery', GalleryController::class);
+
+
+// ROUTE GALLERY UNTUK USER (AMAN, TIDAK TABRAKAN DENGAN ADMIN)
+Route::prefix('galleries')->name('user.gallery.')->group(function () {
+
+    // halaman list gabungan (opsional bila masih dipakai)
+    Route::get('/', [UserGalleryController::class, 'index'])->name('index');
+
+    // halaman gambar
+    Route::get('/images', [UserGalleryController::class, 'images'])->name('images');
+
+    // halaman video
+    Route::get('/videos', [UserGalleryController::class, 'videos'])->name('videos');
+
+    // detail item
+    Route::get('/detail/{id}', [UserGalleryController::class, 'show'])->name('show');
+
+});
+

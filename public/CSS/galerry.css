@@ -368,14 +368,32 @@ nav.active {
   display: flex;
   cursor: pointer;
 }
-
 .scrollContainer {
-  position: absolute;
-  justify-self: center;
-  bottom: 100px;
-  display: flex;
-  align-items: center;
+  display: flex;           /* buat container fleksibel */
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  gap: 20px;               /* jarak antar tombol */
   text-decoration: none;
+  position: relative;      /* hilangkan absolute supaya responsive */
+  flex-wrap: wrap;         /* biar tombol pindah baris di HP */
+  margin-top: 20px;        /* jarak dari atas section */
+}
+
+.scrollButton {
+  background: linear-gradient(
+    90deg,
+    rgba(27, 51, 111, 1) 0%,
+    rgba(15, 29, 87, 1) 100%
+  );
+  padding: 0.5rem 1rem;
+  color: white;
+  font-size: 1.2rem;       /* bisa sesuaikan untuk HP */
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  align-items: center;      /* biar img & text sejajar */
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
 .scrollButton img {
@@ -383,6 +401,24 @@ nav.active {
   margin-right: 10px;
   width: 25px;
 }
+
+.scrollButton:hover {
+  transform: scale(1.05);   /* efek hover */
+}
+
+/* Responsive kecil (HP) */
+@media (max-width: 480px) {
+  .scrollButton {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .scrollButton img {
+    width: 20px;
+    margin-right: 5px;
+  }
+}
+
 
 .image {
   position: relative;
@@ -772,3 +808,5 @@ footer {
 .swal2-confirm{
   background-color: #142361 !important;
 }
+
+
