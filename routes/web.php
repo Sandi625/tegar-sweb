@@ -4,9 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TourController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AllTourController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserBlogController;
 use App\Http\Controllers\DashboardController;
@@ -290,3 +292,10 @@ Route::prefix('reviews')->name('user.review.')->group(function () {
 
 Route::get('/allpackage', [AllTourController::class, 'index'])->name('allpackage.page');
 
+
+Route::get('/login-page', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login-dashboard', [LoginController::class, 'login'])->name('login.process');
+
+
+
+Route::resource('gallery', GalleryController::class);

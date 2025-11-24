@@ -54,24 +54,29 @@
             </div>
         </div>
     </div>
-    <nav>
-        <a href="#" class="brand-logo">Vamos</a>
-        <ul class="links">
-            <li class="link">
-                <b><a href="#"style="color: #f2870c">Home</a></b>
-            </li>
-            {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
-            <li class="link"><a href="{{ route('allpackage.page') }}">Tour Package</a></li>
-            <li class="link"><a href="{{ route('user.blog.index') }}">Blog</a></li> <!-- Tambahan -->
-            <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
-        </ul>
+  <nav>
+    <a href="#" class="brand-logo">Vamos</a>
 
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </nav>
+    <ul class="links">
+        <li class="link">
+            <b><a href="#" style="color: #f2870c">Home</a></b>
+        </li>
+        {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
+        <li class="link"><a href="{{ route('allpackage.page') }}">Tour</a></li>
+        <li class="link"><a href="{{ route('user.blog.index') }}">Blog</a></li>
+        <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
+
+        <!-- 🔥 Tambahkan Login di sini -->
+        <li class="link"><a href="{{ route('login') }}">Login</a></li>
+    </ul>
+
+    <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</nav>
+
 
 
 
@@ -91,15 +96,14 @@
                     Discover, we bet you'll love it.
                 </div>
 
-                <a href="#reviews">
-                    <button class="headerButton">
-                        What People
-                        <span class="buttonHighlight">
-                            <img src="/Images/icon.svg" alt="location icon" class="cocoIcon" />
-                            Say
-                        </span>
-                    </button>
-                </a>
+       <button class="headerButton" onclick="location.href='#reviews'">
+    What People
+    <span class="buttonHighlight">
+        <img src="/Images/icon.svg" alt="location icon" class="cocoIcon" />
+        Say About Us
+    </span>
+</button>
+
 
                 {{-- <div class="quote">
                     <h4 class="quoteText">
@@ -160,9 +164,7 @@
                 we not only provide a wide selection of ready made tour packages but also offer the flexibility to
                 customize your journey according to your preferences and needs. Get ready for an extraordinary adventure
                 where every step creates cherished moments and memories that will last a lifetime. </p>
-            <a href="#contact">
-                <button class="aboutButton">Learn More</button>
-            </a>
+
         </div>
 
 
@@ -452,7 +454,7 @@
 
 
 
-<section class="reviews">
+<section id="reviews" class="reviews">
     <h1 class="reviewsTitle" data-aos="fade-up" data-aos-duration="2000">
         What People <span class="highlight">Say</span>
     </h1>
@@ -463,27 +465,21 @@
             {{-- Looping reviews --}}
             @foreach ($reviews as $review)
                 <div class="reviewCard" style="flex:0 0 auto; margin:0 15px; width:200px; box-sizing:border-box;">
-                    {{-- FOTO --}}
                     @if ($review->photo)
                         <img src="{{ asset('uploads/reviews/' . $review->photo) }}" class="reviewImg">
                     @else
                         <img src="https://ui-avatars.com/api/?name={{ urlencode($review->name) }}&background=random" class="reviewImg">
                     @endif
 
-                    {{-- NAMA --}}
                     <h3 class="reviewName">{{ $review->name }}</h3>
-
-                    {{-- REVIEW TEXT --}}
                     <p class="reviewText">“{{ Str::limit($review->review_text, 150) }}”</p>
-
-                    {{-- RATING --}}
                     <div class="reviewRating">
                         {{ str_repeat('⭐', $review->rating) }}
                     </div>
                 </div>
             @endforeach
 
-            {{-- SET 2 (untuk looping animasi) --}}
+            {{-- SET 2 --}}
             @foreach ($reviews as $review)
                 <div class="reviewCard" style="flex:0 0 auto; margin:0 15px; width:200px; box-sizing:border-box;">
                     @if ($review->photo)
@@ -491,6 +487,7 @@
                     @else
                         <img src="https://ui-avatars.com/api/?name={{ urlencode($review->name) }}&background=random" class="reviewImg">
                     @endif
+
                     <h3 class="reviewName">{{ $review->name }}</h3>
                     <p class="reviewText">“{{ Str::limit($review->review_text, 150) }}”</p>
                     <div class="reviewRating">
@@ -501,7 +498,7 @@
 
         </div>
     </div>
-      {{-- Button Create Review --}}
+
     <div style="text-align:center; margin-top:25px;">
         <button onclick="window.location.href='{{ route('user.review.create') }}'"
             style="padding:12px 25px; font-size:1rem; border:none; border-radius:6px; background-color:#f2870c; color:white; cursor:pointer; transition:all 0.3s;">
@@ -509,6 +506,7 @@
         </button>
     </div>
 </section>
+
 
 
 

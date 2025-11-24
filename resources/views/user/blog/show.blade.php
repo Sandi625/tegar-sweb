@@ -34,19 +34,21 @@
         {{-- Closing thank you section --}}
         <div class="para two">
             <hr />
-            Thank you for reading!
+            Thank you for reading!kkks
         </div>
     </div>
+<div class="contentContainer" style="flex:1;">
+    <p class="contentHeader">Content</p>
 
-    {{-- Sidebar Content --}}
-    <div class="contentContainer" style="flex:1;">
-        <p class="contentHeader">Content</p>
+    @if($blog->days->count() > 0)
         <ol>
-            @foreach($blog->days as $index => $day)
+            @foreach($blog->days as $day)
                 <li>{{ $day->title }}</li>
             @endforeach
         </ol>
-    </div>
+    @endif
+</div>
+
 
 </section>
 

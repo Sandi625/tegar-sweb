@@ -124,65 +124,65 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
-<!-- Total Kategori Tour -->
-<div class="col-md-4 mb-4">
-    <div class="card h-100">
-        <div class="card-header">
-            <div class="card-title mb-0">
-                <h5 class="mb-0">Data</h5>
-                <small class="text-muted">Total Kategori Tour</small>
+            <!-- Total Kategori Tour -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <div class="card-title mb-0">
+                            <h5 class="mb-0">Data</h5>
+                            <small class="text-muted">Total Kategori Tour</small>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h1 class="fw-bold">{{ $categoryCount ?? 0 }}</h1>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="card-body text-center">
-            <h1 class="fw-bold">{{ $categoryCount ?? 0 }}</h1>
-        </div>
-    </div>
-</div>
 
-<!-- Total Tour -->
-<div class="col-md-4 mb-4">
-    <div class="card h-100">
-        <div class="card-header">
-            <div class="card-title mb-0">
-                <h5 class="mb-0">Data</h5>
-                <small class="text-muted">Total Tour</small>
+            <!-- Total Tour -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <div class="card-title mb-0">
+                            <h5 class="mb-0">Data</h5>
+                            <small class="text-muted">Total Tour</small>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h1 class="fw-bold">{{ $tourCount ?? 0 }}</h1>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="card-body text-center">
-            <h1 class="fw-bold">{{ $tourCount ?? 0 }}</h1>
-        </div>
-    </div>
-</div>
 
-<!-- Total Blog -->
-<div class="col-md-4 mb-4">
-    <div class="card h-100">
-        <div class="card-header">
-            <div class="card-title mb-0">
-                <h5 class="mb-0">Data</h5>
-                <small class="text-muted">Total Blog</small>
+            <!-- Total Blog -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <div class="card-title mb-0">
+                            <h5 class="mb-0">Data</h5>
+                            <small class="text-muted">Total Blog</small>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h1 class="fw-bold">{{ $blogCount ?? 0 }}</h1>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="card-body text-center">
-            <h1 class="fw-bold">{{ $blogCount ?? 0 }}</h1>
-        </div>
-    </div>
-</div>
 
-<!-- Total Review -->
-<div class="col-md-12 mb-4">
-    <div class="card h-100">
-        <div class="card-header">
-            <div class="card-title mb-0">
-                <h5 class="mb-0">Data</h5>
-                <small class="text-muted">Total Review Masuk</small>
+            <!-- Total Review -->
+            <div class="col-md-12 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <div class="card-title mb-0">
+                            <h5 class="mb-0">Data</h5>
+                            <small class="text-muted">Total Review Masuk</small>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h1 class="fw-bold">{{ $reviewCount ?? 0 }}</h1>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="card-body text-center">
-            <h1 class="fw-bold">{{ $reviewCount ?? 0 }}</h1>
-        </div>
-    </div>
-</div>
 
 
 

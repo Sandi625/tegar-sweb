@@ -84,119 +84,62 @@
                 <div class="menu-inner-shadow"></div>
 
                 <ul class="menu-inner py-1 pb-4">
-                    <!-- Dashboards -->
+
+                    <!-- Dashboard -->
                     <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text" data-i18n="Dashboards">Dashboards</span>
+                        <span class="menu-header-text">Dashboards</span>
                     </li>
+
                     <li class="menu-item {{ request()->is('dashboard') ? 'active' : '' }}">
                         <a href="{{ route('dashboard.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                            <div class="text-truncate" data-i18n="Dashboard">Dashboard</div>
+                            <div class="text-truncate">Dashboard</div>
                         </a>
                     </li>
+
+                    <!-- Tours Section -->
                     <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text" data-i18n="Tours">Tours</span>
+                        <span class="menu-header-text">Tours</span>
                     </li>
 
                     <li class="menu-item {{ request()->segment(1) == 'categories' ? 'active' : '' }}">
                         <a href="{{ route('categories.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-folder"></i>
-                            <div class="text-truncate" data-i18n="Categories">Categories</div>
+                            <div class="text-truncate">Categories</div>
                         </a>
                     </li>
+
                     <li class="menu-item {{ request()->segment(1) == 'tour' ? 'active' : '' }}">
                         <a href="{{ route('tour.index') }}" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                            <div class="text-truncate" data-i18n="Tours">Tours</div>
+                            <i class="menu-icon tf-icons ti ti-map"></i>
+                            <div class="text-truncate">Tours</div>
                         </a>
                     </li>
 
                     <li class="menu-item {{ request()->segment(2) == 'blogs' ? 'active' : '' }}">
                         <a href="{{ route('blogs.index') }}" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                            <div class="text-truncate" data-i18n="Blog">Blog</div>
+                            <i class="menu-icon tf-icons ti ti-news"></i>
+                            <div class="text-truncate">Blog</div>
                         </a>
                     </li>
 
                     <li class="menu-item {{ request()->segment(1) == 'review' ? 'active' : '' }}">
                         <a href="{{ route('review.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-star"></i>
-                            <div class="text-truncate" data-i18n="Reviews">Reviews</div>
+                            <div class="text-truncate">Reviews</div>
                         </a>
                     </li>
 
+                    <li class="menu-item {{ request()->segment(1) == 'gallery' ? 'active' : '' }}">
+                        <a href="{{ route('gallery.index') }}" class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-photo"></i>
+                            <div class="text-truncate">Gallery</div>
+                        </a>
+                    </li>
 
-
-
-                    {{-- <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text" data-i18n="Transaksi">Transaksi</span>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                            <div data-i18n="Transaksi">Transaksi</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="" class="menu-link">
-                                    <div data-i18n="Penjualan">Penjualan</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="" class="menu-link">
-                                    <div data-i18n="Pembelian">Pembelian</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="" class="menu-link">
-                                    <div data-i18n="Marketing">Marketing</div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li> --}}
-                    {{-- <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text" data-i18n="Data Master">Data Master</span>
-                    </li>
-                    <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                            <div class="text-truncate" data-i18n="Master Bahan">Master Bahan</div>
-                        </a>
-                    </li>
-                    <li class="menu-item {{ (request()->segment(2) == 'produk')?'active':'' }}">
-                        <a href="#" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                            <div class="text-truncate" data-i18n="Master Produk">Master Produk</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                            <div class="text-truncate" data-i18n="Supplier">Supplier</div>
-                        </a>
-                    </li>
-                    <li class="menu-item {{ (request()->segment(2) == 'pelanggan')?'active':'' }}">
-                        <a href="#" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                            <div class="text-truncate" data-i18n="Pelanggan">Pelanggan</div>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                            <div class="text-truncate" data-i18n="Sales">Sales</div>
-                        </a>
-                    </li>
-                    <li class="menu-header small text-uppercase">
-                        <span class="menu-header-text" data-i18n="Laporan">Laporan</span>
-                    </li>
-                    <li class="menu-item">
-                        <a href="" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-smart-home"></i>
-                            <div class="text-truncate" data-i18n="Laporan Penjualan">Laporan Penjualan</div>
-                        </a>
-                    </li> --}}
                 </ul>
+
+
             </aside>
             <!-- / Menu -->
 

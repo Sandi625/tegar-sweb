@@ -39,18 +39,17 @@ public function store(Request $request)
         'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
 
         // Itinerary / Days
-        'days.*.title' => 'nullable|string|max:255', // bisa required kalau mau
+        'days.*.title' => 'nullable|string|max:255',
         'days.*.description' => 'nullable',
         'days.*.image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         'days.*.image_title' => 'nullable|string|max:255',
         'days.*.image_description' => 'nullable|string',
     ]);
 
-    // jika gagal, kirim JSON berisi field error
     if ($validator->fails()) {
         return response()->json([
             'errors' => $validator->errors()
-        ], 422); // 422 = Unprocessable Entity
+        ], 422);
     }
 
     // ================= UPLOAD GAMBAR UTAMA =================
@@ -73,6 +72,17 @@ public function store(Request $request)
     // ================= INSERT BLOG DAYS =================
     if ($request->days) {
         foreach ($request->days as $day) {
+
+            // Abaikan day kosong (tidak ada title, desc, image)
+            if (
+                empty($day['title']) &&
+                empty($day['description']) &&
+                empty($day['image'])
+            ) {
+                continue;
+            }
+
+            // Upload image untuk day jika ada
             $dayImage = null;
             if (isset($day['image']) && $day['image']) {
                 $dayImage = time() . '_' . uniqid() . '.' . $day['image']->extension();
@@ -94,6 +104,7 @@ public function store(Request $request)
         'success' => 'Blog berhasil dibuat!'
     ]);
 }
+
 
     public function edit($id)
     {
