@@ -12,13 +12,18 @@
     <!-- Navbar -->
     <nav>
       <a href="#" class="brand-logo">Travel</a>
-      <ul class="links">
-        <li class="link"><b><a href="#">Home</a></b></li>
-        {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
-        <li class="link"><a href="{{ route('allpackage.page') }}">Tour Package</a></li>
-        <li class="link"><a href="{{ route('blog.page') }}" style="color: #f2870c">Blog</a></li>
-        <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
-      </ul>
+     <ul class="links">
+            <li class="link">
+                <b><a href="{{ route('home') }}" >Home</a></b>
+            </li>
+            {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
+            <li class="link"><a href="{{ route('allpackage.page') }}">Tour</a></li>
+            <li class="link"><a href="{{ route('user.blog.index') }}"style="color: #f2870c">Blog</a></li>
+            <li class="link"><a href="{{ route('user.gallery.images') }}">Gallery</a></li>
+
+            <!-- 🔥 Tambahkan Login di sini -->
+            <li class="link"><a href="{{ route('login') }}">Login</a></li>
+        </ul>
 
       <div class="hamburger">
         <div></div><div></div><div></div>

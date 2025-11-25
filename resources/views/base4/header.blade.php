@@ -37,14 +37,17 @@
 
     <nav>
         <a href="#" class="brand-logo">Travel</a>
-        <ul class="links">
+      <ul class="links">
             <li class="link">
-                <b><a href="#">Home</a></b>
+                <b><a href="{{ route('home') }}" >Home</a></b>
             </li>
             {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
-            <li class="link"><a href="{{ route('allpackage.page') }}">Tour Package</a></li>
-            <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li> <!-- Tambahan -->
-            <li class="link"><a href="{{ route('gallery.page') }}"style="color: #f2870c">Gallery</a></li>
+            <li class="link"><a href="{{ route('allpackage.page') }}">Tour</a></li>
+            <li class="link"><a href="{{ route('user.blog.index') }}">Blog</a></li>
+            <li class="link"><a href="{{ route('user.gallery.images') }}"style="color: #f2870c">Gallery</a></li>
+
+            <!-- 🔥 Tambahkan Login di sini -->
+            <li class="link"><a href="{{ route('login') }}">Login</a></li>
         </ul>
 
         <div class="hamburger">

@@ -13,14 +13,17 @@
 <body>
     <nav>
         <a href="#" class="brand-logo">Travel</a>
-        <ul class="links">
+         <ul class="links">
             <li class="link">
-                <b><a href="#">Home</a></b>
+                <b><a href="{{ route('home') }}" >Home</a></b>
             </li>
             {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
-            <li class="link"><a href="{{ route('allpackage.page') }}"style="color: #f2870c">Tour Package</a></li>
-            <li class="link"><a href="{{ route('blog.page') }}">Blog</a></li> <!-- Tambahan -->
-            <li class="link"><a href="{{ route('gallery.page') }}">Gallery</a></li>
+            <li class="link"><a href="{{ route('allpackage.page') }}">Tour</a></li>
+            <li class="link"><a href="{{ route('user.blog.index') }}">Blog</a></li>
+            <li class="link"><a href="{{ route('user.gallery.images') }}">Gallery</a></li>
+
+            <!-- 🔥 Tambahkan Login di sini -->
+            <li class="link"><a href="{{ route('login') }}">Login</a></li>
         </ul>
 
         <div class="hamburger">
@@ -189,31 +192,25 @@
   <div class="container">
     <h2>Another Tour Packages</h2>
 
-     <div class="tourCard">
-                <h3>Another Tour</h3>
-                <ul>
-                    <li><a href="{{ route('bromoijen.bali') }}">Bromo Ijen Tour Start from Surabaya (Finish at
-                            Bali)</a></li>
-                    <li><a href="{{ route('bromoijen.surabaya') }}">Bromo Ijen Tour Start from Surabaya (Finish at
-                            Surabaya)</a></li>
-                    <li><a href="{{ route('pesanfrombali2.page') }}">Bromo Ijen Tour Start from Bali (Finish at
-                            Surabaya)</a></li>
-                    <li><a href="{{ route('pesanfrombali1.page') }}">Bromo Ijen Tour Start from Bali (Finish at
-                            Bali)</a></li>
-                    <li><a href="{{ route('tumpak3.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Bali
-                            (Finish at Surabaya)</a></li>
-                    <li><a href="{{ route('tumpak4.page') }}">Tumpaksewu–Ijen–Bromo Tour (4D3N) Start from Bali
-                            (Finish at Bali)</a></li>
-                    <li><a href="{{ route('tumpak1.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya
-                            (Finish at Bali)</a></li>
-                    <li><a href="{{ route('tumpak2.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya
-                            (Finish at Surabaya)</a></li>
-                    <li><a href="{{ route('finishbali.page') }}">Midnight Ijen from Bali</a></li>
-                    <li><a href="{{ route('finishbanyuwangi.page') }}">Midnight Ijen from Banyuwangi</a></li>
-                </ul>
-            </div>
+    <div class="tourCard">
+      <h3>Another Tour</h3>
+      @if($allTours && count($allTours) > 0)
+      <ul>
+        @foreach ($allTours as $item)
+          <li>
+            <a href="{{ route('tour.detail', $item->slug) }}">
+              {{ $item->title }}
+            </a>
+          </li>
+        @endforeach
+      </ul>
+      @else
+        <p>No other tours available.</p>
+      @endif
+    </div>
   </div>
 </section>
+
 
 
 

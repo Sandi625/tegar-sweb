@@ -54,28 +54,28 @@
             </div>
         </div>
     </div>
-  <nav>
-    <a href="#" class="brand-logo">Vamos</a>
+    <nav>
+        <a href="#" class="brand-logo">Vamos</a>
 
-    <ul class="links">
-        <li class="link">
-            <b><a href="#" style="color: #f2870c">Home</a></b>
-        </li>
-        {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
-        <li class="link"><a href="{{ route('allpackage.page') }}">Tour</a></li>
-        <li class="link"><a href="{{ route('user.blog.index') }}">Blog</a></li>
-        <li class="link"><a href="{{ route('user.gallery.images') }}">Gallery</a></li>
+        <ul class="links">
+            <li class="link">
+                <b><a href="{{ route('home') }}" style="color: #f2870c">Home</a></b>
+            </li>
+            {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
+            <li class="link"><a href="{{ route('allpackage.page') }}">Tour</a></li>
+            <li class="link"><a href="{{ route('user.blog.index') }}">Blog</a></li>
+            <li class="link"><a href="{{ route('user.gallery.images') }}">Gallery</a></li>
 
-        <!-- 🔥 Tambahkan Login di sini -->
-        <li class="link"><a href="{{ route('login') }}">Login</a></li>
-    </ul>
+            <!-- 🔥 Tambahkan Login di sini -->
+            <li class="link"><a href="{{ route('login') }}">Login</a></li>
+        </ul>
 
-    <div class="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</nav>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
 
 
 
@@ -88,21 +88,21 @@
         <div class="headerWrapper">
             <!-- Bagian Teks -->
             <div class="headerInfo">
-                <h1 class="headerTitle">Discover New <span>Destinations</span></h1>
-
+                <h1 class="headerTitle">Vamos <span>Adventure</span></h1>
                 <div class="headerDescription">
-                    <b>Want memories for yourself, try TRAVELLING.</b><br>
-                    <b>A Big World is waiting for you!!</b><br>
-                    Discover, we bet you'll love it.
+                    <b>We provide unforgettable travel experiences for you.</b><br>
+                    <b>Custom tours designed to match your dream adventures!</b><br>
+                    Explore, enjoy, and create experiences you'll never forget.
                 </div>
 
-       <button class="headerButton" onclick="location.href='#reviews'">
-    What People
-    <span class="buttonHighlight">
-        <img src="/Images/icon.svg" alt="location icon" class="cocoIcon" />
-        Say About Us
-    </span>
-</button>
+
+                <button class="headerButton" onclick="location.href='#reviews'">
+                    What People
+                    <span class="buttonHighlight">
+                        <img src="/Images/icon.svg" alt="location icon" class="cocoIcon" />
+                        Say About Us
+                    </span>
+                </button>
 
 
                 {{-- <div class="quote">
@@ -254,82 +254,76 @@
             </div>
         </div>
     </section> --}}
-  <div class="searchContainer" style="text-align:center; margin-top:40px;">
-    <form action="{{ route('home') }}" method="GET">
-        <input
-            type="text"
-            id="searchInput"
-            name="search"
-            placeholder="Search tour packages..."
-            value="{{ request('search') }}"
-            class="searchInput"
-        >
-        <button type="submit" class="searchBtn">Search</button>
-    </form>
-</div>
+    <div class="searchContainer" style="text-align:center; margin-top:40px;">
+        <form action="{{ route('home') }}" method="GET">
+            <input type="text" id="searchInput" name="search" placeholder="Search tour packages..."
+                value="{{ request('search') }}" class="searchInput">
+            <button type="submit" class="searchBtn">Search</button>
+        </form>
+    </div>
 
 
 
-  @foreach ($categories as $category)
-    @php
-        $firstThree = $category->tours->take(3);
-        $others = $category->tours->skip(3);
-    @endphp
+    @foreach ($categories as $category)
+        @php
+            $firstThree = $category->tours->take(3);
+            $others = $category->tours->skip(3);
+        @endphp
 
-    <section class="blogs">
-        <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
-            {{ $category->name }} <span class="buttonHighlight">Tour Packages</span>
-        </h1>
+        <section class="blogs">
+            <h1 class="blogsTitle" data-aos="fade-up" data-aos-duration="3000">
+                {{ $category->name }} <span class="buttonHighlight">Tour Packages</span>
+            </h1>
 
-        <div class="blogsContainer">
+            <div class="blogsContainer">
 
-            {{-- BARIS PERTAMA → Hanya 3 Card --}}
-            <div class="blogsTopRow">
-                @foreach ($firstThree as $tour)
-                    <div class="blog">
+                {{-- BARIS PERTAMA → Hanya 3 Card --}}
+                <div class="blogsTopRow">
+                    @foreach ($firstThree as $tour)
+                        <div class="blog">
 
-                        <img src="{{ asset('uploads/tours/' . ($tour->images[0] ?? 'default.jpg')) }}"
-                            alt="{{ $tour->title }}">
+                            <img src="{{ asset('uploads/tours/' . ($tour->images[0] ?? 'default.jpg')) }}"
+                                alt="{{ $tour->title }}">
 
-                        <h3 class="blogTitle">{{ $tour->title }}</h3>
+                            <h3 class="blogTitle">{{ $tour->title }}</h3>
 
-                        <p class="blogPrice">
-                            Start from <span class="highlightText">${{ $tour->price }} / person</span>
-                        </p>
+                            <p class="blogPrice">
+                                Start from <span class="highlightText">${{ $tour->price }} / person</span>
+                            </p>
 
-                        <a href="{{ route('tour.detail', $tour->slug) }}">
-                            <button class="readBlog">Details</button>
-                        </a>
+                            <a href="{{ route('tour.detail', $tour->slug) }}">
+                                <button class="readBlog">Details</button>
+                            </a>
 
-                    </div>
-                @endforeach
+                        </div>
+                    @endforeach
+                </div>
+
+                {{-- BARIS KEDUA → Sisa card --}}
+                <div class="blogsContent">
+                    @foreach ($others as $tour)
+                        <div class="blog">
+
+                            <img src="{{ asset('uploads/tours/' . ($tour->images[0] ?? 'default.jpg')) }}"
+                                alt="{{ $tour->title }}">
+
+                            <h3 class="blogTitle">{{ $tour->title }}</h3>
+
+                            <p class="blogPrice">
+                                Start from <span class="highlightText">${{ $tour->price }} / person</span>
+                            </p>
+
+                            <a href="{{ route('tour.detail', $tour->slug) }}">
+                                <button class="readBlog">Details</button>
+                            </a>
+
+                        </div>
+                    @endforeach
+                </div>
+
             </div>
-
-            {{-- BARIS KEDUA → Sisa card --}}
-            <div class="blogsContent">
-                @foreach ($others as $tour)
-                    <div class="blog">
-
-                        <img src="{{ asset('uploads/tours/' . ($tour->images[0] ?? 'default.jpg')) }}"
-                            alt="{{ $tour->title }}">
-
-                        <h3 class="blogTitle">{{ $tour->title }}</h3>
-
-                        <p class="blogPrice">
-                            Start from <span class="highlightText">${{ $tour->price }} / person</span>
-                        </p>
-
-                        <a href="{{ route('tour.detail', $tour->slug) }}">
-                            <button class="readBlog">Details</button>
-                        </a>
-
-                    </div>
-                @endforeach
-            </div>
-
-        </div>
-    </section>
-@endforeach
+        </section>
+    @endforeach
 
 
 
@@ -454,122 +448,125 @@
 
 
 
-<section id="reviews" class="reviews">
-    <h1 class="reviewsTitle" data-aos="fade-up" data-aos-duration="2000">
-        What People <span class="highlight">Say</span>
-    </h1>
-
-    <div class="marquee">
-        <div class="marquee-inner" style="display:flex; align-items:center;">
-
-            {{-- Looping reviews --}}
-            @foreach ($reviews as $review)
-                <div class="reviewCard" style="flex:0 0 auto; margin:0 15px; width:200px; box-sizing:border-box;">
-                    @if ($review->photo)
-                        <img src="{{ asset('uploads/reviews/' . $review->photo) }}" class="reviewImg">
-                    @else
-                        <img src="https://ui-avatars.com/api/?name={{ urlencode($review->name) }}&background=random" class="reviewImg">
-                    @endif
-
-                    <h3 class="reviewName">{{ $review->name }}</h3>
-                    <p class="reviewText">“{{ Str::limit($review->review_text, 150) }}”</p>
-                    <div class="reviewRating">
-                        {{ str_repeat('⭐', $review->rating) }}
-                    </div>
-                </div>
-            @endforeach
-
-            {{-- SET 2 --}}
-            @foreach ($reviews as $review)
-                <div class="reviewCard" style="flex:0 0 auto; margin:0 15px; width:200px; box-sizing:border-box;">
-                    @if ($review->photo)
-                        <img src="{{ asset('uploads/reviews/' . $review->photo) }}" class="reviewImg">
-                    @else
-                        <img src="https://ui-avatars.com/api/?name={{ urlencode($review->name) }}&background=random" class="reviewImg">
-                    @endif
-
-                    <h3 class="reviewName">{{ $review->name }}</h3>
-                    <p class="reviewText">“{{ Str::limit($review->review_text, 150) }}”</p>
-                    <div class="reviewRating">
-                        {{ str_repeat('⭐', $review->rating) }}
-                    </div>
-                </div>
-            @endforeach
-
-        </div>
-    </div>
-
-    <div style="text-align:center; margin-top:25px;">
-        <button onclick="window.location.href='{{ route('user.review.create') }}'"
-            style="padding:12px 25px; font-size:1rem; border:none; border-radius:6px; background-color:#f2870c; color:white; cursor:pointer; transition:all 0.3s;">
-            Create Your Review
-        </button>
-    </div>
-</section>
-
-
-
-
-
-
-
- <section class="trending" id="places">
-    <div class="trendingWrapper">
-        <img src="{{ asset('assets/leaf.svg') }}" class="trendingSVG1" />
-
-        <h1 class="trendingTitle" data-aos="fade-up" data-aos-duration="2000">
-            Read The <span class="buttonHighlight">Blogs</span>
+    <section id="reviews" class="reviews">
+        <h1 class="reviewsTitle" data-aos="fade-up" data-aos-duration="2000">
+            What People <span class="highlight">Say</span>
         </h1>
 
-        <div class="menu-wrapper">
-            <div class="menu">
+        <div class="marquee">
+            <div class="marquee-inner" style="display:flex; align-items:center;">
 
-                @foreach ($blogs as $blog)
-                    <div class="item">
-                        <div class="item-content">
+                {{-- Looping reviews --}}
+                @foreach ($reviews as $review)
+                    <div class="reviewCard" style="flex:0 0 auto; margin:0 15px; width:200px; box-sizing:border-box;">
+                        @if ($review->photo)
+                            <img src="{{ asset('uploads/reviews/' . $review->photo) }}" class="reviewImg">
+                        @else
+                            <img src="https://ui-avatars.com/api/?name={{ urlencode($review->name) }}&background=random"
+                                class="reviewImg">
+                        @endif
 
-                            <!-- IMAGE -->
-                            <div class="item-image"
-                                style="
-                                    background: url('{{ asset('uploads/blogs/' . $blog->image) }}');
-                                    background-position: center;
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                ">
+                        <h3 class="reviewName">{{ $review->name }}</h3>
+                        <p class="reviewText">“{{ Str::limit($review->review_text, 150) }}”</p>
+                        <div class="reviewRating">
+                            {{ str_repeat('⭐', $review->rating) }}
+                        </div>
+                    </div>
+                @endforeach
 
-                                <a href="{{ route('user.blog.show', $blog->slug) }}" class="location">
-                                    <img src="{{ asset('uploads/blogs/' . $blog->image) }}" alt="{{ $blog->title }}" />
-                                    <p class="place">{{ $blog->title }}</p>
-                                </a>
-                            </div>
+                {{-- SET 2 --}}
+                @foreach ($reviews as $review)
+                    <div class="reviewCard" style="flex:0 0 auto; margin:0 15px; width:200px; box-sizing:border-box;">
+                        @if ($review->photo)
+                            <img src="{{ asset('uploads/reviews/' . $review->photo) }}" class="reviewImg">
+                        @else
+                            <img src="https://ui-avatars.com/api/?name={{ urlencode($review->name) }}&background=random"
+                                class="reviewImg">
+                        @endif
 
-                            <!-- TITLE -->
-                            <div class="placeTitle">
-                                {{ $blog->title }}
-                            </div>
-
-                            <!-- DESCRIPTION -->
-                            <div class="placeDescription">
-                                {{ Str::limit(strip_tags($blog->description), 120) }}
-                            </div>
-
-                            <!-- BUTTON -->
-                            <div class="button-wrapper">
-                                <button
-                                    onclick="window.location.href='{{ route('user.blog.show', $blog->slug) }}'"
-                                    class="viewButton">
-                                    View Blog
-                                </button>
-                            </div>
-
+                        <h3 class="reviewName">{{ $review->name }}</h3>
+                        <p class="reviewText">“{{ Str::limit($review->review_text, 150) }}”</p>
+                        <div class="reviewRating">
+                            {{ str_repeat('⭐', $review->rating) }}
                         </div>
                     </div>
                 @endforeach
 
             </div>
         </div>
-    </div>
-</section>
+
+        <div style="text-align:center; margin-top:25px;">
+            <button onclick="window.location.href='{{ route('user.review.create') }}'"
+                style="padding:12px 25px; font-size:1rem; border:none; border-radius:6px; background-color:#f2870c; color:white; cursor:pointer; transition:all 0.3s;">
+                Create Your Review
+            </button>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="trending" id="places">
+        <div class="trendingWrapper">
+            <img src="{{ asset('assets/leaf.svg') }}" class="trendingSVG1" />
+
+            <h1 class="trendingTitle" data-aos="fade-up" data-aos-duration="2000">
+                Read The <span class="buttonHighlight">Blogs</span>
+            </h1>
+
+            <div class="menu-wrapper">
+                <div class="menu">
+
+                    @foreach ($blogs as $blog)
+                        <div class="item">
+                            <div class="item-content">
+
+                                <!-- IMAGE -->
+                                <div class="item-image"
+                                    style="
+                                    background: url('{{ asset('uploads/blogs/' . $blog->image) }}');
+                                    background-position: center;
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                ">
+
+                                    <a href="{{ route('user.blog.show', $blog->slug) }}" class="location">
+                                        <img src="{{ asset('uploads/blogs/' . $blog->image) }}"
+                                            alt="{{ $blog->title }}" />
+                                        <p class="place">{{ $blog->title }}</p>
+                                    </a>
+                                </div>
+
+                                <!-- TITLE -->
+                                <div class="placeTitle">
+                                    {{ $blog->title }}
+                                </div>
+
+                                <!-- DESCRIPTION -->
+                                <div class="placeDescription">
+                                    {{ Str::limit(strip_tags($blog->description), 120) }}
+                                </div>
+
+                                <!-- BUTTON -->
+                                <div class="button-wrapper">
+                                    <button
+                                        onclick="window.location.href='{{ route('user.blog.show', $blog->slug) }}'"
+                                        class="viewButton">
+                                        View Blog
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
