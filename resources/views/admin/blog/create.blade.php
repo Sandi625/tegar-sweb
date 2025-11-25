@@ -23,12 +23,11 @@
                 <label class="form-label">Slug (otomatis)</label>
                 <input type="text" name="slug" class="form-control" id="slugInput" readonly>
             </div>
-
-            {{-- ROUTE NAME --}}
-            <div class="mb-3">
-                <label class="form-label">Route Name</label>
-                <input type="text" name="route_name" class="form-control" placeholder="contoh: blog.detail">
-            </div>
+<div class="mb-3">
+    <label class="form-label">Route Name (Otomatis)</label>
+    <input type="text" class="form-control" id="routeNameInputDisplay" readonly>
+    <input type="hidden" name="route_name" id="routeNameInput">
+</div>
 
             {{-- GAMBAR --}}
             <div class="mb-3">
@@ -85,15 +84,22 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ========== AUTO SLUG ==========
+    // ========== AUTO SLUG & AUTO ROUTE NAME ==========
     const titleInput = document.getElementById("titleInput");
     const slugInput = document.getElementById("slugInput");
+    const routeNameInput = document.getElementById("routeNameInput");       // hidden
+    const routeNameDisplay = document.getElementById("routeNameInputDisplay"); // optional visible
 
     titleInput.addEventListener("keyup", function () {
         let slug = this.value.toLowerCase()
             .replace(/[^a-z0-9]+/g, '-')
             .replace(/(^-|-$)+/g, '');
         slugInput.value = slug;
+
+        // otomatis route_name seperti slug
+        let routeName = "blog." + slug;
+        routeNameInput.value = routeName;
+        if(routeNameDisplay) routeNameDisplay.value = routeName;
     });
 
     // ========== ITINERARY DINAMIS ==========
@@ -101,25 +107,32 @@ document.addEventListener('DOMContentLoaded', function() {
     let addBtn = document.getElementById("add-day-btn");
     let dayIndex = 1;
 
+    // Tambah Hari Baru
     addBtn.addEventListener("click", function() {
         let html = `
         <div class="blog-day mb-3 p-3 border rounded border-success bg-light">
             <label>Judul Hari</label>
             <input type="text" name="days[${dayIndex}][title]" class="form-control mb-2" placeholder="Day ${dayIndex + 1} Title">
+
             <label>Deskripsi Hari</label>
             <textarea name="days[${dayIndex}][description]" class="form-control mb-2" rows="3" placeholder="Deskripsi Day ${dayIndex + 1}"></textarea>
+
             <label>Gambar Hari</label>
             <input type="file" name="days[${dayIndex}][image]" class="form-control mb-2">
+
             <label>Judul Gambar</label>
             <input type="text" name="days[${dayIndex}][image_title]" class="form-control mb-2" placeholder="Judul Gambar Day ${dayIndex + 1}">
+
             <label>Deskripsi Gambar</label>
             <textarea name="days[${dayIndex}][image_description]" class="form-control mb-2" rows="2" placeholder="Deskripsi Gambar Day ${dayIndex + 1}"></textarea>
+
             <button type="button" class="btn btn-sm btn-danger mt-2 remove-day-btn">Hapus Hari</button>
         </div>`;
         container.insertAdjacentHTML('beforeend', html);
         dayIndex++;
     });
 
+    // Hapus Hari
     container.addEventListener("click", function(e) {
         if (e.target && e.target.classList.contains("remove-day-btn")) {
             e.target.closest(".blog-day").remove();
@@ -129,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========== AJAX SUBMIT ==========
     const form = document.getElementById('blogForm');
     form.addEventListener('submit', function(e) {
-        e.preventDefault(); // hentikan submit default
+        e.preventDefault();
 
         // reset border merah
         form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
@@ -150,7 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 for (const key in data.errors) {
                     data.errors[key].forEach(msg => {
                         errorMessages += `• ${msg}\n`;
-                        // sorot field bermasalah jika ada
                         const input = form.querySelector(`[name="${key}"]`);
                         if (input) input.classList.add('is-invalid');
                     });
@@ -185,3 +197,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 @endpush
+

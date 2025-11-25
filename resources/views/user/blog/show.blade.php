@@ -34,7 +34,7 @@
         {{-- Closing thank you section --}}
         <div class="para two">
             <hr />
-            Thank you for reading!kkks
+            Thank you for reading!
         </div>
     </div>
 <div class="contentContainer" style="flex:1;">

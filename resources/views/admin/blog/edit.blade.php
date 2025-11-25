@@ -10,7 +10,7 @@
     </div>
 
     <div class="card-body">
-        <form action="{{ route('blogs.update', $blog->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('blogs.update', $blog->id) }}" method="POST" enctype="multipart/form-data" id="blogForm">
             @csrf
             @method('PUT')
 
@@ -28,11 +28,12 @@
                        value="{{ $blog->slug }}" readonly>
             </div>
 
-            {{-- ROUTE NAME --}}
+            {{-- ROUTE NAME OTOMATIS --}}
             <div class="mb-3">
                 <label class="form-label">Route Name</label>
-                <input type="text" name="route_name" class="form-control"
-                       value="{{ $blog->route_name }}">
+                <input type="text" class="form-control" id="routeNameInputDisplay"
+                       value="{{ $blog->route_name }}" readonly>
+                <input type="hidden" name="route_name" id="routeNameInput" value="{{ $blog->route_name }}">
             </div>
 
             {{-- GAMBAR --}}
@@ -134,24 +135,28 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
-    // AUTO SLUG
+    // ========== AUTO SLUG & AUTO ROUTE NAME ==========
     const titleInput = document.getElementById("titleInput");
     const slugInput = document.getElementById("slugInput");
+    const routeNameInput = document.getElementById("routeNameInput");
+    const routeNameDisplay = document.getElementById("routeNameInputDisplay");
 
     titleInput.addEventListener("keyup", function () {
         let slug = this.value.toLowerCase()
             .replace(/[^a-z0-9]+/g, '-')
             .replace(/(^-|-$)+/g, '');
         slugInput.value = slug;
+
+        let routeName = "blog." + slug;
+        routeNameInput.value = routeName;
+        if(routeNameDisplay) routeNameDisplay.value = routeName;
     });
 
-    // ITINERARY DINAMIS
+    // ========== ITINERARY DINAMIS ==========
     let container = document.getElementById("blog-days-container");
     let addBtn = document.getElementById("add-day-btn");
-
     let dayIndex = {{ count($blog->days) }};
 
-    // Tambah Hari Baru
     addBtn.addEventListener("click", function() {
         let html = `
         <div class="blog-day mb-3 p-3 border rounded border-success bg-light">
