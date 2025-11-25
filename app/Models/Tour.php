@@ -19,6 +19,7 @@ class Tour extends Model
         'images',
         'price',
         'description',
+        'route_name', // ⬅️ tambahkan ini
         'status'
     ];
 

@@ -575,10 +575,19 @@
                                         <div class="dropdown-divider"></div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="">
+                                        <!-- Link logout -->
+                                        <a class="dropdown-item" href="#"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             <i class="ti ti-logout me-2 ti-sm"></i>
                                             <span class="align-middle">Log Out</span>
                                         </a>
+
+                                        <!-- Form logout tersembunyi -->
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            style="display: none;">
+                                            @csrf
+                                        </form>
+
                                     </li>
                                 </ul>
                             </li>

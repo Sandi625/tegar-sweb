@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Tour;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TourController;
@@ -248,11 +250,28 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 // Resource untuk CRUD Tour (tanpa show)
 Route::resource('tour', TourController::class);
 
-// Route khusus untuk detail tour berdasarkan slug, ubah URL supaya tidak tabrakan
-Route::get('/tour-detail/{slug}', [TourDetailController::class, 'show'])->name('tour.detail');
+// Route utama detail tour
+Route::get('/tour-detail/{slug}', [TourDetailController::class, 'show'])
+    ->name('tour.detail');
 
+// ROUTE DINAMIS — HANYA KALAU TABLE ADA
+if (!app()->runningInConsole() && Schema::hasTable('tours')) {
 
+    $tours = \App\Models\Tour::select('slug', 'route_name')
+                ->whereNotNull('route_name')
+                ->where('status', 1)
+                ->get();
 
+    foreach ($tours as $tour) {
+        if (!empty($tour->slug) && !empty($tour->route_name)) {
+
+            // Route statis tapi tetap mengirim slug ke controller
+            Route::get("/{$tour->slug}", function() use ($tour) {
+                return app(TourDetailController::class)->show($tour->slug);
+            })->name($tour->route_name);
+        }
+    }
+}
 
 
 
@@ -296,6 +315,7 @@ Route::get('/allpackage', [AllTourController::class, 'index'])->name('allpackage
 
 Route::get('/login-page', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login-dashboard', [LoginController::class, 'login'])->name('login.process');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 

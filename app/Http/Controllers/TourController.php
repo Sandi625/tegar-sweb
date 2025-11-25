@@ -48,6 +48,7 @@ class TourController extends Controller
         $validator = Validator::make($request->all(), [
             'category_id' => 'required|exists:categories,id',
             'title'       => 'required|string|max:255',
+            'route_name'  => 'nullable|string|max:255',
             'images.*'    => 'nullable|mimes:jpg,png,jpeg,webp,heic,heif|max:102400',
             'price'       => 'required|numeric',
             'status'      => 'nullable|boolean',
@@ -84,40 +85,42 @@ class TourController extends Controller
             }
         }
 
+        // AUTO GENERATE ROUTE NAME JIKA KOSONG
+        $routeName = $request->route_name ?: Str::slug($request->title);
+
         // CREATE TOUR
         $tour = Tour::create([
             'category_id' => $request->category_id,
             'title'       => $request->title,
             'slug'        => Str::slug($request->title),
+            'route_name'  => $routeName,
             'images'      => $imageNames,
             'price'       => $request->price,
             'description' => $request->description,
-            'status'      => $request->status ?? 0
+            'status'      => $request->status ?? 0, // default 0 kalau tidak diisi
         ]);
 
-        // HANDLE DAYS
-        foreach ($request->days as $index => $day) {
-            TourDay::create([
-                'tour_id'     => $tour->id,
+        // CREATE DAYS
+        foreach ($request->days as $day) {
+            $tour->days()->create([
                 'title'       => $day['title'],
                 'description' => $day['description'],
-                'order'       => $index + 1
             ]);
         }
 
-        // SUCCESS → JSON RESPONSE
         return response()->json([
-            'success' => 'Tour berhasil ditambahkan!'
+            'message' => 'Tour berhasil dibuat!',
+            'data'    => $tour
         ], 200);
 
     } catch (\Exception $e) {
-        Log::error('Gagal menyimpan tour: ' . $e->getMessage());
 
         return response()->json([
-            'errors' => ['server' => ['Terjadi kesalahan pada server.']]
+            'errors' => ['server' => [$e->getMessage()]]
         ], 500);
     }
 }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -138,26 +141,34 @@ public function update(Request $request, Tour $tour)
         'price'       => 'required|numeric',
         'status'      => 'nullable|boolean',
         'description' => 'nullable|string',
-        'days'        => 'required|array|min:1',
-        'days.*.id'   => 'nullable|exists:tour_days,id',
-        'days.*.title'       => 'required|string|max:255',
-        'days.*.description' => 'required|string',
-        'days.*._destroy'    => 'nullable|boolean',
+
+        // days
+        'days'                 => 'required|array|min:1',
+        'days.*.id'            => 'nullable|exists:tour_days,id',
+        'days.*.title'         => 'required|string|max:255',
+        'days.*.description'   => 'required|string',
+        'days.*._destroy'      => 'nullable|boolean',
     ]);
 
     DB::beginTransaction();
 
     try {
-        // Handle gambar utama tour
+        // ============================================================
+        // 1. HANDLE GAMBAR
+        // ============================================================
         $imageNames = $tour->images ?? [];
+
         if ($request->hasFile('images')) {
+
+            // Hapus gambar lama
             if ($imageNames) {
                 foreach ($imageNames as $oldImg) {
-                    $oldPath = public_path('uploads/tours/' . $oldImg);
-                    if (file_exists($oldPath)) unlink($oldPath);
+                    $path = public_path('uploads/tours/' . $oldImg);
+                    if (file_exists($path)) unlink($path);
                 }
             }
 
+            // Upload baru
             $imageNames = [];
             foreach ($request->file('images') as $img) {
                 $ext = strtolower($img->getClientOriginalExtension());
@@ -167,59 +178,70 @@ public function update(Request $request, Tour $tour)
             }
         }
 
-        // Update tour
+        // ============================================================
+        // 2. GENERATE SLUG OTOMATIS
+        // ============================================================
+        $slug = Str::slug($request->title);
+
+        // ============================================================
+        // 3. ROUTE NAME OTOMATIS (TANPA INPUT USER)
+        // ============================================================
+        $routeName = "tour." . $slug;
+
+        // ============================================================
+        // 4. UPDATE TOUR
+        // ============================================================
         $tour->update([
             'category_id' => $request->category_id,
             'title'       => $request->title,
-            'slug'        => Str::slug($request->title),
+            'slug'        => $slug,
+            'route_name'  => $routeName,   // ← AUTOMATIS
             'images'      => $imageNames,
             'price'       => $request->price,
             'description' => $request->description,
-            'status'      => $request->status ?? $tour->status
+            'status'      => $request->status ? 1 : 0,
         ]);
 
-        // Update atau create hari
-        foreach ($request->days as $index => $day) {
 
-            // Hapus hari jika ditandai _destroy
-            if (isset($day['_destroy']) && $day['_destroy'] == 1 && isset($day['id'])) {
-                $tourDay = TourDay::find($day['id']);
-                if ($tourDay && $tourDay->image && file_exists(public_path('uploads/tour_days/' . $tourDay->image))) {
-                    unlink(public_path('uploads/tour_days/' . $tourDay->image));
+        // ============================================================
+        // 5. UPDATE DAYS (ITINERARY)
+        // ============================================================
+        foreach ($request->days as $day) {
+
+            // HAPUS DAY
+            if (isset($day['_destroy']) && $day['_destroy'] == "1") {
+                if (!empty($day['id'])) {
+                    TourDay::where('id', $day['id'])->delete();
                 }
-                TourDay::destroy($day['id']);
-                continue; // skip update/create
+                continue;
             }
 
-            if (isset($day['id']) && $day['id']) {
-                $tourDay = TourDay::find($day['id']);
-                if ($tourDay) {
-                    $tourDay->update([
-                        'title'       => $day['title'],
-                        'description' => $day['description'],
-                        'order'       => $index + 1
-                    ]);
-                }
-            } else {
+            // UPDATE EXISTING
+            if (!empty($day['id'])) {
+                TourDay::where('id', $day['id'])->update([
+                    'title'       => $day['title'],
+                    'description' => $day['description'],
+                ]);
+            }
+
+            // BUAT HARI BARU
+            else {
                 TourDay::create([
                     'tour_id'     => $tour->id,
                     'title'       => $day['title'],
                     'description' => $day['description'],
-                    'order'       => $index + 1
                 ]);
             }
         }
 
         DB::commit();
-        return redirect()->route('tour.index')->with('success', 'Tour berhasil diperbarui');
-    } catch (\Illuminate\Validation\ValidationException $e) {
-        DB::rollBack();
-        $errors = implode(' | ', collect($e->errors())->flatten()->toArray());
-        return back()->with('error', 'Validasi gagal: ' . $errors)->withInput();
+
+        return redirect()->route('tour.index')
+            ->with('success', 'Tour berhasil diperbarui.');
+
     } catch (\Exception $e) {
         DB::rollBack();
-        Log::error('Gagal update tour: ' . $e->getMessage());
-        return back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage())->withInput();
+        return back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
     }
 }
 

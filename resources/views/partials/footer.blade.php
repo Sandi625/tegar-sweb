@@ -2,21 +2,21 @@
     <div class="container">
         <h2>Another Tour Packages</h2>
 
-        <div class="tourCard">
-            <h3>Another Tour</h3>
-            <ul>
-                <li><a href="{{ route('bromoijen.bali') }}">Bromo Ijen Tour Start from Surabaya (Finish at Bali)</a></li>
-                <li><a href="{{ route('bromoijen.surabaya') }}">Bromo Ijen Tour Start from Surabaya (Finish at Surabaya)</a></li>
-                <li><a href="{{ route('pesanfrombali2.page') }}">Bromo Ijen Tour Start from Bali (Finish at Surabaya)</a></li>
-                <li><a href="{{ route('pesanfrombali1.page') }}">Bromo Ijen Tour Start from Bali (Finish at Bali)</a></li>
-                <li><a href="{{ route('tumpak3.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Bali (Finish at Surabaya)</a></li>
-                <li><a href="{{ route('tumpak4.page') }}">Tumpaksewu–Ijen–Bromo Tour (4D3N) Start from Bali (Finish at Bali)</a></li>
-                <li><a href="{{ route('tumpak1.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya (Finish at Bali)</a></li>
-                <li><a href="{{ route('tumpak2.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya (Finish at Surabaya)</a></li>
-                <li><a href="{{ route('finishbali.page') }}">Midnight Ijen from Bali</a></li>
-                <li><a href="{{ route('finishbanyuwangi.page') }}">Midnight Ijen from Banyuwangi</a></li>
-            </ul>
-        </div>
+      <div class="tourCard">
+    <h3>Another Tour</h3>
+    <ul>
+        @foreach ($allTours as $item)
+            @if ($item->route_name && Route::has($item->route_name))
+                <li>
+                    <a href="{{ route($item->route_name) }}">
+                        {{ $item->title }}
+                    </a>
+                </li>
+            @endif
+        @endforeach
+    </ul>
+</div>
+
 
     </div>
 </section>

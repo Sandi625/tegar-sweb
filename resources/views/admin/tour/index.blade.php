@@ -31,6 +31,7 @@
                                     <th>Judul</th>
                                     <th>Kategori</th>
                                     <th>Slug</th>
+                                    <th>Route Name</th>
                                     <th>Harga</th>
                                     <th>Gambar</th>
                                     <th>Status</th>
@@ -50,6 +51,7 @@
                                         </td>
 
                                         <td>{{ $tour->slug }}</td>
+                                        <td>{{ $tour->route_name ?? '-' }}</td> <!-- ⬅️ TAMBAHAN -->
                                         <td>Rp {{ number_format($tour->price, 0, ',', '.') }}</td>
 
                                         <td>
@@ -80,31 +82,27 @@
                                             @endif
                                         </td>
 
-                                      <td>
-    <a href="{{ route('tour.show', $tour->id) }}"
-       class="btn btn-sm btn-info mb-1">
-        <i class="ti ti-eye"></i>
-    </a>
+                                        <td>
+                                            <a href="{{ route('tour.show', $tour->id) }}" class="btn btn-sm btn-info mb-1">
+                                                <i class="ti ti-eye"></i>
+                                            </a>
 
-    <a href="{{ route('tour.edit', $tour->id) }}"
-       class="btn btn-sm btn-warning mb-1">
-        <i class="ti ti-pencil"></i>
-    </a>
+                                            <a href="{{ route('tour.edit', $tour->id) }}"
+                                                class="btn btn-sm btn-warning mb-1">
+                                                <i class="ti ti-pencil"></i>
+                                            </a>
 
-    <form action="{{ route('tour.destroy', $tour->id) }}"
-          method="POST" class="d-inline">
-        @csrf
-        @method('DELETE')
+                                            <form action="{{ route('tour.destroy', $tour->id) }}" method="POST"
+                                                class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
 
-        <button class="btn btn-sm btn-danger mb-1"
-            onclick="return confirm('Hapus tour ini?')">
-            <i class="ti ti-trash"></i>
-        </button>
-    </form>
-</td>
-
-
-
+                                                <button class="btn btn-sm btn-danger mb-1"
+                                                    onclick="return confirm('Hapus tour ini?')">
+                                                    <i class="ti ti-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

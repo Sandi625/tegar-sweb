@@ -85,21 +85,20 @@
     </div>
 
 
-    <div class="contentContainer">
-        <p class="contentHeader">Other Tour Packages</p>
-        <ol>
-            <li><a href="{{ route('bromoijen.bali') }}">Bromo Ijen Tour Start from Surabaya (Finish at Bali)</a></li>
-            <li><a href="{{ route('bromoijen.surabaya') }}">Bromo Ijen Tour Start from Surabaya (Finish at Surabaya)</a></li>
-            <li><a href="{{ route('pesanfrombali2.page') }}">Bromo Ijen Tour Start from Bali (Finish at Surabaya)</a></li>
-            <li><a href="{{ route('pesanfrombali1.page') }}">Bromo Ijen Tour Start from Bali (Finish at Bali)</a></li>
-            <li><a href="{{ route('tumpak3.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Bali (Finish at Surabaya)</a></li>
-            <li><a href="{{ route('tumpak4.page') }}">Tumpaksewu–Ijen–Bromo Tour (4D3N) Start from Bali (Finish at Bali)</a></li>
-            <li><a href="{{ route('tumpak1.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya (Finish at Bali)</a></li>
-            <li><a href="{{ route('tumpak2.page') }}">Tumpaksewu–Bromo–Ijen Tour (4D3N) Start from Surabaya (Finish at Surabaya)</a></li>
-            <li><a href="{{ route('finishbali.page') }}">Midnight Ijen from Bali</a></li>
-            <li><a href="{{ route('finishbanyuwangi.page') }}">Midnight Ijen from Banyuwangi</a></li>
-        </ol>
-    </div>
+<div class="contentContainer">
+    <p class="contentHeader">Other Tour Packages</p>
+    <ol>
+        @foreach ($allTours as $item)
+            <li>
+                <a href="{{ route('tour.detail', $item->slug) }}">
+                    {{ $item->title }}
+                </a>
+            </li>
+        @endforeach
+    </ol>
+</div>
+
+
 </section>
   {{-- BOOKING BUTTON BAWAH --}}
     <div style="text-align:center; margin:40px 0;">

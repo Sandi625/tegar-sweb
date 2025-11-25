@@ -29,6 +29,13 @@
                     <td>{{ $tour->slug }}</td>
                 </tr>
 
+                   <!-- 🔥 TAMBAHAN ROUTE NAME -->
+                <tr>
+                    <th>Route Name</th>
+                    <td>{{ $tour->route_name ?? '-' }}</td>
+                </tr>
+                <!-- 🔥 END -->
+
                 <tr>
                     <th>Harga</th>
                     <td>Rp {{ number_format($tour->price, 0, ',', '.') }}</td>
