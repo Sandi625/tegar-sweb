@@ -11,11 +11,12 @@ class GalleryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $gallery = Gallery::latest()->get();
-        return view('admin.gallery.index', compact('gallery'));
-    }
+   public function index()
+{
+    $gallery = Gallery::latest()->paginate(5);
+    return view('admin.gallery.index', compact('gallery'));
+}
+
 
     /**
      * Show the form for creating a new resource.

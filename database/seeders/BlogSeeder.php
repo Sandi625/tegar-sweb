@@ -105,28 +105,119 @@ class BlogSeeder extends Seeder
                     ],
                 ],
             ],
+            [
+    'title'       => 'Exploring Tumpak Sewu & Bromo',
+    'description' => 'Discover two of East Java’s most breathtaking natural wonders in one journey. Begin your adventure at Tumpak Sewu, often called the “Niagara of Indonesia,” where layers of waterfalls cascade majestically into a lush green valley. Trek through the canyon, feel the refreshing mist, and get up close to this dramatic natural masterpiece. Continue to the epic landscape of Mount Bromo, where the wide desert-like Sea of Sand and towering volcano create an unforgettable view, especially during sunrise. This journey blends thrilling exploration, photography opportunities, and deep appreciation for nature’s incredible power.',
+    'route_name'  => 'tumpak-sewu-bromo-exploration',
+    'status'      => 1,
+    'image'       => 'tumpak-sewu-bromo.jpg',
+    'days' => [
+        [
+            'title' => 'Day 1 - Tumpak Sewu Waterfall Trek',
+            'description' => 'Begin the hike early morning. Descend into the canyon, explore Goa Tetes, and capture stunning views of the waterfall cluster before heading to Malang for rest.'
+        ],
+        [
+            'title' => 'Day 2 - Bromo Sunrise Adventure',
+            'description' => 'Depart at midnight for Bromo, witness sunrise at Penanjakan, explore the Sea of Sand, visit Bromo crater, and return to Surabaya or Malang.'
+        ],
+    ]
+],
+[
+    'title'       => 'Ijen Blue Fire Midnight Trek',
+    'description' => 'Experience one of the rarest natural phenomena on Earth—the blue fire of Mount Ijen. This midnight trekking adventure takes you deep into the volcanic crater, where electric-blue flames dance mysteriously in the darkness. Catch the sunrise revealing the turquoise acid lake, meet sulfur miners carrying their loads, and capture breathtaking landscapes that make Ijen a globally loved destination.',
+    'route_name'  => 'ijen-blue-fire-trek',
+    'status'      => 1,
+    'image'       => 'ijen-blue-fire.jpg',
+    'days' => [
+        [
+            'title' => 'Day 1 - Midnight Pick-up',
+            'description' => 'Depart from Banyuwangi or Bali at midnight, begin trekking around 1:00 AM toward the crater rim.'
+        ],
+        [
+            'title' => 'Day 2 - Blue Fire & Sunrise',
+            'description' => 'Witness the blue fire phenomenon, explore the crater, photograph the turquoise lake, and return for breakfast before drop-off.'
+        ],
+    ]
+],
+[
+    'title'       => 'Banyuwangi Hidden Gems Tour',
+    'description' => 'Banyuwangi is home to some of Java’s most underrated natural attractions. Explore savannahs, pristine beaches, waterfalls, and cultural villages in this special tour designed for travelers seeking a deep and meaningful travel experience. Perfect for nature lovers and photographers.',
+    'route_name'  => 'banyuwangi-hidden-gems',
+    'status'      => 1,
+    'image'       => 'banyuwangi-gems.jpg',
+    'days' => [
+        [
+            'title' => 'Day 1 - De Djawatan Forest & Green Bay',
+            'description' => 'Visit the mystical forest of De Djawatan, then explore the stunning Green Bay beach known for its emerald-colored water.'
+        ],
+        [
+            'title' => 'Day 2 - Jagir Waterfall & Local Villages',
+            'description' => 'Discover the twin waterfall Jagir, visit Osing cultural village, and enjoy local culinary delights.'
+        ],
+    ]
+],
+[
+    'title'       => 'Mount Bromo Photography Journey',
+    'description' => 'A specially curated tour for photographers and content creators who want to capture Bromo’s most iconic and hidden angles. From sunrise views to wide savannah landscapes, this tour ensures you return home with exceptional shots.',
+    'route_name'  => 'bromo-photography-journey',
+    'status'      => 1,
+    'image'       => 'bromo-photo.jpg',
+    'days' => [
+        [
+            'title' => 'Day 1 - Kingkong Hill Sunset Session',
+            'description' => 'Arrive before sunset for a golden-hour photography session with dramatic views of the Bromo caldera.'
+        ],
+        [
+            'title' => 'Day 2 - Sunrise & Drone Spots',
+            'description' => 'Capture blue hour, sunrise, and visit special photography spots such as Whispering Sand and Teletubbies Hill.'
+        ],
+    ]
+],
+[
+    'title'       => 'East Java Volcano Expedition',
+    'description' => 'For adventure enthusiasts seeking a multi-volcano exploration, this expedition covers Bromo, Ijen, and Semeru viewpoints. Discover massive landscapes, volcanic activity, and challenging terrains in this unforgettable journey.',
+    'route_name'  => 'east-java-volcano-expedition',
+    'status'      => 1,
+    'image'       => 'java-volcano-expedition.jpg',
+    'days' => [
+        [
+            'title' => 'Day 1 - Bromo Volcano Exploration',
+            'description' => 'Explore the famous volcanic desert, walk to the crater rim, and enjoy sunset from the savannah.'
+        ],
+        [
+            'title' => 'Day 2 - Ijen Crater & Blue Lake',
+            'description' => 'Trek to Ijen crater, enjoy the morning view of the turquoise lake, and learn about local sulfur mining.'
+        ],
+        [
+            'title' => 'Day 3 - Semeru Viewpoint Trek',
+            'description' => 'Visit viewpoints with perfect visibility of Mount Semeru’s eruptions and enjoy panoramic highland scenery.'
+        ],
+    ]
+],
+
         ];
 
-        foreach ($blogs as $blogData) {
-            $blog = Blog::create([
-                'title'       => $blogData['title'],
-                'slug'        => Str::slug($blogData['title']),
-                'description' => $blogData['description'],
-                'route_name'  => $blogData['route_name'],
-                'image'       => $blogData['image'],
-                'status'      => $blogData['status'],
-            ]);
+    foreach ($blogs as $blogData) {
+    $blog = Blog::create([
+        'title'       => $blogData['title'],
+        'slug'        => Str::slug($blogData['title']),  // DITAMBAHKAN
+        'description' => $blogData['description'],
+        'route_name'  => $blogData['route_name'],
+        'status'      => $blogData['status'],
+        'image'       => $blogData['image'],
+    ]);
 
-            foreach ($blogData['days'] as $day) {
-                BlogDay::create([
-                    'blog_id'           => $blog->id,
-                    'title'             => $day['title'],
-                    'description'       => $day['description'],
-                    'image'             => $day['image'],
-                    'image_title'       => $day['image_title'],
-                    'image_description' => $day['image_description'],
-                ]);
-            }
-        }
+    // Insert days
+    foreach ($blogData['days'] as $day) {
+        BlogDay::create([
+            'blog_id'           => $blog->id,
+            'title'             => $day['title'],
+            'description'       => $day['description'],
+            'image'             => $day['image'] ?? null,
+            'image_title'       => $day['image_title'] ?? null,
+            'image_description' => $day['image_description'] ?? null,
+        ]);
+    }
+}
     }
 }

@@ -45,6 +45,47 @@ class ReviewSeeder extends Seeder
                 'photo' => 'maria.jpg',
                 'status' => 1,
             ],
+            [
+    'name' => 'Samuel Carter',
+    'email' => 'samuel@example.com',
+    'review_text' => 'One of the best travel experiences I’ve ever had. Professional team and stunning views!',
+    'rating' => 5,
+    'photo' => 'samuel.jpg',
+    'status' => 1,
+],
+[
+    'name' => 'Linda Nguyen',
+    'email' => null,
+    'review_text' => 'The trip was smooth and the guide explained everything clearly. Worth every penny.',
+    'rating' => 4,
+    'photo' => null,
+    'status' => 1,
+],
+[
+    'name' => 'Thomas Reed',
+    'email' => 'thomas@example.com',
+    'review_text' => 'Bromo sunrise was magical. I will definitely come back with my family!',
+    'rating' => 5,
+    'photo' => 'thomas.jpg',
+    'status' => 1,
+],
+[
+    'name' => 'Catherine Hall',
+    'email' => 'catherine@example.com',
+    'review_text' => 'Great service, comfortable transport, and very friendly guide. Recommended!',
+    'rating' => 4,
+    'photo' => 'catherine.jpg',
+    'status' => 1,
+],
+[
+    'name' => 'Michael Tan',
+    'email' => null,
+    'review_text' => 'Ijen blue fire is unbelievable! Thank you for making this journey memorable.',
+    'rating' => 5,
+    'photo' => null,
+    'status' => 1,
+],
+
         ];
 
         foreach ($reviews as $review) {

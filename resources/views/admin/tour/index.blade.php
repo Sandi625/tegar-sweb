@@ -1,5 +1,20 @@
 @extends('layout.dashboard')
 @section('title', 'Tours')
+<style>
+    .pagination .page-link {
+        padding: 0.75rem 1rem;
+        /* lebih tinggi dan lebar */
+        font-size: 1.125rem;
+        /* sedikit lebih besar */
+        border-radius: 0.5rem;
+        /* tombol sedikit membulat */
+    }
+
+    .pagination .page-item.disabled .page-link {
+        opacity: 0.5;
+    }
+</style>
+
 
 @section('content')
 
@@ -38,28 +53,23 @@
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
-
                             <tbody>
                                 @foreach ($tours as $key => $tour)
                                     <tr>
-                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $tours->firstItem() + $key }}</td> <!-- ⬅️ nomor urut per halaman -->
                                         <td>{{ $tour->title }}</td>
 
-                                        {{-- Tambahan Category --}}
-                                        <td>
-                                            {{ $tour->category ? $tour->category->name : '-' }}
-                                        </td>
+                                        {{-- Kategori --}}
+                                        <td>{{ $tour->category ? $tour->category->name : '-' }}</td>
 
                                         <td>{{ $tour->slug }}</td>
-                                        <td>{{ $tour->route_name ?? '-' }}</td> <!-- ⬅️ TAMBAHAN -->
+                                        <td>{{ $tour->route_name ?? '-' }}</td>
                                         <td>Rp {{ number_format($tour->price, 0, ',', '.') }}</td>
 
                                         <td>
                                             @if (!empty($tour->images))
                                                 @foreach ($tour->images as $img)
-                                                    @php
-                                                        $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
-                                                    @endphp
+                                                    @php $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION)); @endphp
 
                                                     @if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp']))
                                                         <img src="{{ asset('uploads/tours/' . $img) }}" width="60"
@@ -92,21 +102,28 @@
                                                 <i class="ti ti-pencil"></i>
                                             </a>
 
-                                           <form action="{{ route('tour.destroy', $tour->id) }}" method="POST" class="d-inline" id="delete-form-{{ $tour->id }}">
-    @csrf
-    @method('DELETE')
-
-    <button type="button" class="btn btn-sm btn-danger mb-1 btnDelete" data-id="{{ $tour->id }}">
-        <i class="ti ti-trash"></i>
-    </button>
-</form>
-
+                                            <form action="{{ route('tour.destroy', $tour->id) }}" method="POST"
+                                                class="d-inline" id="delete-form-{{ $tour->id }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="button" class="btn btn-sm btn-danger mb-1 btnDelete"
+                                                    data-id="{{ $tour->id }}">
+                                                    <i class="ti ti-trash"></i>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
 
+
                         </table>
+                        {{-- Pagination --}}
+                        {{-- Pagination --}}
+                        <div class="mt-3 px-3 d-flex justify-content-center">
+                            {{ $tours->links('pagination::bootstrap-5') }}
+                        </div>
+
                     </div>
 
                 </div>
@@ -118,53 +135,53 @@
 @endsection
 
 @push('scripts')
-@if(session('success'))
-<script>
-    Swal.fire({
-        icon: 'success',
-        title: 'Berhasil!',
-        text: @json(session('success')),
-        confirmButtonText: 'OK'
-    });
-</script>
-@endif
-
-@if(session('error'))
-<script>
-    Swal.fire({
-        icon: 'error',
-        title: 'Gagal!',
-        text: @json(session('error')),
-        confirmButtonText: 'OK'
-    });
-</script>
-@endif
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const deleteButtons = document.querySelectorAll('.btnDelete');
-
-    deleteButtons.forEach(btn => {
-        btn.addEventListener('click', function () {
-            let id = this.getAttribute('data-id');
-
+    @if (session('success'))
+        <script>
             Swal.fire({
-                title: "Hapus Tour?",
-                text: "Tour yang sudah dihapus tidak dapat dikembalikan!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#d33",
-                cancelButtonColor: "#3085d6",
-                confirmButtonText: "Ya, Hapus",
-                cancelButtonText: "Batal"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    document.getElementById('delete-form-' + id).submit();
-                }
+                icon: 'success',
+                title: 'Berhasil!',
+                text: @json(session('success')),
+                confirmButtonText: 'OK'
+            });
+        </script>
+    @endif
+
+    @if (session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal!',
+                text: @json(session('error')),
+                confirmButtonText: 'OK'
+            });
+        </script>
+    @endif
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteButtons = document.querySelectorAll('.btnDelete');
+
+            deleteButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    let id = this.getAttribute('data-id');
+
+                    Swal.fire({
+                        title: "Hapus Tour?",
+                        text: "Tour yang sudah dihapus tidak dapat dikembalikan!",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#d33",
+                        cancelButtonColor: "#3085d6",
+                        confirmButtonText: "Ya, Hapus",
+                        cancelButtonText: "Batal"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            document.getElementById('delete-form-' + id).submit();
+                        }
+                    });
+                });
             });
         });
-    });
-});
-</script>
+    </script>
 @endpush

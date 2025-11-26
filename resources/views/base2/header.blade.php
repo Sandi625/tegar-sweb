@@ -12,18 +12,15 @@
     <!-- Navbar -->
     <nav>
       <a href="#" class="brand-logo">Travel</a>
-     <ul class="links">
+      <ul class="links">
             <li class="link">
-                <b><a href="{{ route('home') }}" >Home</a></b>
+                <b><a href="{{ route('home') }}">Home</a></b>
             </li>
-            {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
             <li class="link"><a href="{{ route('allpackage.page') }}">Tour</a></li>
-            <li class="link"><a href="{{ route('user.blog.index') }}"style="color: #f2870c">Blog</a></li>
+            <li class="link"><a href="{{ route('user.blog.index') }}" style="color:#f2870c;">Blog</a></li>
             <li class="link"><a href="{{ route('user.gallery.images') }}">Gallery</a></li>
-
-            <!-- 🔥 Tambahkan Login di sini -->
             <li class="link"><a href="{{ route('login') }}">Login</a></li>
-        </ul>
+      </ul>
 
       <div class="hamburger">
         <div></div><div></div><div></div>
@@ -38,58 +35,39 @@
     </a>
 
     <!-- Header Section -->
-   <section
-    class="headerContainer"
-    id="header"
-    style="
-        background: url('{{ $blog->image ? asset('uploads/blogs/' . $blog->image) : asset('Images/default.jpg') }}');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    "
->
-    <div class="headerWrapper"></div>
+    <section
+      class="headerContainer"
+      id="header"
+      style="
+          background: url('{{ $blog->image ? asset('uploads/blogs/' . $blog->image) : asset('Images/default.jpg') }}');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+      "
+    >
+      <div class="headerWrapper"></div>
 
-    <div class="content">
+      <div class="content">
         <div class="title">
             <h1>{{ $blog->title }}</h1>
         </div>
 
         <div class="otherDetails">
-            {{-- Tanggal dibuat --}}
+
+            {{-- 🔥 Tanggal dibuat (TANPA menit/jam) --}}
             <p class="date">
-                <span>
-                    <img src="https://img.icons8.com/material-rounded/24/ffffff/calendar--v1.png"/>
-                </span>
-                {{ $blog->created_at->format('d M Y') }}
+                <span>{{ $blog->created_at->format('d M Y') }}</span>
             </p>
 
-            {{-- Estimasi waktu baca --}}
-            <p class="readTime">
-                <span>
-                    <img src="https://img.icons8.com/ios/50/ffffff/time--v1.png"/>
-                </span>
-                {{-- Bisa hitung berdasarkan jumlah kata / rata-rata 200 kata per menit --}}
-                {{ ceil(str_word_count(strip_tags($blog->description)) / 200) }} mins
-            </p>
-
-            {{-- Author --}}
+            {{-- Penulis --}}
             <p class="author">
-                <span>
-                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/book.png"/>
-                </span>
-                BY {{ $blog->author ?? 'Admin' }}
+                <span>By {{ $blog->author ?? 'Admin' }}</span>
             </p>
         </div>
-    </div>
 
-    <a href="#para">
-        <img
-            src="https://img.icons8.com/external-those-icons-fill-those-icons/24/ffffff/external-down-arrows-those-icons-fill-those-icons-7.png"
-            class="scrollButton"
-        />
-    </a>
-</section>
+      </div>
+    </section>
 
-    <div class="progress"></div>
+  </body>
+</html>

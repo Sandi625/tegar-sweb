@@ -1,5 +1,16 @@
 @extends('layout.dashboard')
 @section('title', 'Gallery')
+<style>
+    .pagination .page-link {
+        padding: 0.75rem 1rem;
+        font-size: 1.125rem;
+        border-radius: 0.5rem;
+    }
+
+    .pagination .page-item.disabled .page-link {
+        opacity: 0.5;
+    }
+</style>
 
 @section('content')
 
@@ -41,7 +52,8 @@
                             <tbody>
                                 @foreach ($gallery as $key => $item)
                                     <tr>
-                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ ($gallery->currentPage() - 1) * $gallery->perPage() + $loop->index + 1 }}
+                                        </td>
 
                                         <td>{{ $item->judul }}</td>
 
@@ -108,6 +120,13 @@
                             </tbody>
 
                         </table>
+                        <div class="mt-3 px-3 d-flex justify-content-center">
+                            {{ $gallery->links('pagination::bootstrap-5') }}
+                        </div>
+
+
+
+
                     </div>
 
                 </div>

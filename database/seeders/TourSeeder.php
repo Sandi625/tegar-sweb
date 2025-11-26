@@ -83,6 +83,89 @@ class TourSeeder extends Seeder
                     ],
                 ],
             ],
+
+            [
+    'category'    => $category1,
+    'title'       => 'Bromo Sunrise Tour – One Day Trip',
+    'price'       => 120,
+    'description' => 'A perfect one-day escape to witness the magical sunrise over Mount Bromo. Ideal for travelers who want a quick but unforgettable adventure.',
+    'status'      => 1,
+    'days' => [
+        [
+            'title' => 'Day 1 – Midnight Pick-up & Sunrise',
+            'description' => 'Pick-up at midnight from Surabaya or Malang, drive to Penanjakan viewpoint, witness sunrise, explore Sea of Sand, and visit Bromo Crater before returning.'
+        ]
+    ]
+],
+[
+    'category'    => $category2,
+    'title'       => 'Tumpak Sewu – Bromo Tour 2 Day 1 Night',
+    'price'       => 250,
+    'description' => 'A short adventure exploring the majestic Tumpak Sewu waterfall combined with the iconic Mount Bromo sunrise experience.',
+    'status'      => 1,
+    'days' => [
+        [
+            'title' => 'Day 1 – Tumpak Sewu Waterfall',
+            'description' => 'Explore one of Indonesia’s most beautiful waterfalls, trek down the canyon, visit Goa Tetes, and stay overnight in Malang.'
+        ],
+        [
+            'title' => 'Day 2 – Bromo Sunrise',
+            'description' => 'Head to Bromo for sunrise, visit the crater, Sea of Sand, and savannah before returning to Surabaya or Malang.'
+        ]
+    ]
+],
+[
+    'category'    => $category3,
+    'title'       => 'Ijen Blue Fire Tour – Midnight Trip',
+    'price'       => 95,
+    'description' => 'A thrilling midnight hike to witness the famous electric-blue flames of Ijen Crater, followed by a sunrise over the turquoise acid lake.',
+    'status'      => 1,
+    'days' => [
+        [
+            'title' => 'Day 1 – Midnight Start',
+            'description' => 'Pick-up from Banyuwangi or Bali at midnight, ferry crossing if needed, and arrival at Ijen base camp.'
+        ],
+        [
+            'title' => 'Day 2 – Blue Fire Hike & Sunrise',
+            'description' => 'Start hiking at 2 AM, witness blue fire, enjoy sunrise, and return to Banyuwangi/Bali.'
+        ]
+    ]
+],
+[
+    'category'    => $category1,
+    'title'       => 'Bromo – Madakaripura Tour One Day',
+    'price'       => 150,
+    'description' => 'Combine the magical sunrise of Bromo with a refreshing adventure at the mystical Madakaripura waterfall.',
+    'status'      => 1,
+    'days' => [
+        [
+            'title' => 'Day 1 – Sunrise & Waterfall',
+            'description' => 'Start early for sunrise in Bromo, explore the crater, then visit Madakaripura waterfall before heading back.'
+        ]
+    ]
+],
+[
+    'category'    => $category2,
+    'title'       => 'Tumpak Sewu – Ijen Tour 3 Day 2 Night',
+    'price'       => 380,
+    'description' => 'A complete volcano & waterfall adventure—discover the stunning Tumpak Sewu waterfall and the phenomenal blue fire of Ijen.',
+    'status'      => 1,
+    'days' => [
+        [
+            'title' => 'Day 1 – Tumpak Sewu Waterfall',
+            'description' => 'Drive to Lumajang, trek to Tumpak Sewu, explore the canyon, and stay overnight nearby.'
+        ],
+        [
+            'title' => 'Day 2 – Transfer to Ijen Area',
+            'description' => 'Relaxing travel day, enjoy local culture, and prepare for the midnight hike.'
+        ],
+        [
+            'title' => 'Day 3 – Ijen Blue Fire',
+            'description' => 'Midnight hike to Ijen crater, watch blue fire, sunrise, then return to Banyuwangi or Bali.'
+        ]
+    ]
+],
+
         ];
 
         foreach ($tours as $tourData) {

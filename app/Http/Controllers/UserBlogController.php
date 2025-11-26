@@ -10,7 +10,7 @@ class UserBlogController extends Controller
     // Menampilkan semua blog untuk User
     public function index()
     {
-        $blogs = Blog::latest()->paginate(6);
+        $blogs = Blog::latest()->paginate(50);
         return view('user.blog.index', compact('blogs'));
     }
 

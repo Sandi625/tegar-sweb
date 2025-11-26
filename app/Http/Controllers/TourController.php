@@ -17,11 +17,12 @@ class TourController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $tours = Tour::with('category')->get();
-        return view('admin.tour.index', compact('tours'));
-    }
+ public function index()
+{
+    $tours = Tour::with('category')->paginate(5);
+    return view('admin.tour.index', compact('tours'));
+}
+
 
     public function show(Tour $tour)
 {

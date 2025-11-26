@@ -11,11 +11,12 @@ use Illuminate\Support\Facades\Validator;
 
 class BlogController extends Controller
 {
-    public function index()
-    {
-        $blogs = Blog::with('days')->latest()->get();
-        return view('admin.blog.index', compact('blogs'));
-    }
+  public function index()
+{
+    $blogs = Blog::with('days')->latest()->paginate(5);
+    return view('admin.blog.index', compact('blogs'));
+}
+
     public function show($id)
 {
     $blog = Blog::with('days')->findOrFail($id);

@@ -1,5 +1,15 @@
 @extends('layout.dashboard')
 @section('title', 'Review')
+<style>
+.pagination .page-link {
+    padding: 0.75rem 1rem;
+    font-size: 1.125rem;
+    border-radius: 0.5rem;
+}
+.pagination .page-item.disabled .page-link {
+    opacity: 0.5;
+}
+</style>
 
 @section('content')
 
@@ -41,7 +51,7 @@
                         <tbody>
                             @foreach ($reviews as $key => $review)
                                 <tr>
-                                    <td>{{ $key + 1 }}</td>
+<td>{{ ($reviews->currentPage() - 1) * $reviews->perPage() + $loop->index + 1 }}</td>
                                     <td>{{ $review->name }}</td>
                                     <td>{{ $review->email ?? '-' }}</td> {{-- Tampilkan email, default '-' jika null --}}
 
@@ -94,6 +104,11 @@
                         </tbody>
 
                     </table>
+                    <div class="mt-3 px-3 d-flex justify-content-center">
+    {{ $reviews->links('pagination::bootstrap-5') }}
+</div>
+
+
                 </div>
 
             </div>
