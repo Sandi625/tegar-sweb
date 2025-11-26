@@ -1747,7 +1747,7 @@ footer {
 /* MOBILE KEYFRAME (scroll jauh = speed cepat) */
 @keyframes marqueeMobile {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-400%); } /* lebih jauh, jadi lebih cepat */
+  100% { transform: translateX(-300%); } /* lebih jauh, jadi lebih cepat */
 }
 
 /* MOBILE FIX */

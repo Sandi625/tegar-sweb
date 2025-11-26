@@ -15,7 +15,8 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
-            'password' => 'admin123', // otomatis di-hash oleh cast
+            'password' => 'admin123', // akan di-hash otomatis oleh cast di model
+            'role' => 'admin',        // ✅ tambahkan role admin
         ]);
     }
 }

@@ -1,6 +1,6 @@
 
 
-<section class="anotherTour">
+{{-- <section class="anotherTour">
   <div class="container">
     <h2>Another Tour Packages</h2>
 
@@ -28,7 +28,7 @@
                 </ul>
             </div>
   </div>
-</section>
+</section> --}}
 
 
 

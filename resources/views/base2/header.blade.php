@@ -11,7 +11,7 @@
   <body>
     <!-- Navbar -->
     <nav>
-      <a href="#" class="brand-logo">Travel</a>
+      <a href="#" class="brand-logo">Vamos</a>
       <ul class="links">
             <li class="link">
                 <b><a href="{{ route('home') }}">Home</a></b>

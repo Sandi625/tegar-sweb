@@ -12,7 +12,7 @@
 
 <body>
     <nav>
-        <a href="#" class="brand-logo">Travel</a>
+        <a href="#" class="brand-logo">Vamos</a>
        <ul class="links">
             <li class="link">
                 <b><a href="{{ route('home') }}" style="color: #f2870c">Home</a></b>

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TourController;
+use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AllTourController;
@@ -13,10 +14,12 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserBlogController;
+use Illuminate\Auth\Middleware\Authenticate;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TourDetailController;
 use App\Http\Controllers\UserReviewController;
 use App\Http\Controllers\UserGalleryController;
+use App\Http\Middleware\AuthDashboard; // jika pakai custom
 
 // routes/web.php
 
@@ -241,14 +244,10 @@ Route::get('/tumpakpesan4', function () {
 #####################################################################################################################################################
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-})->name('dashboard.index');
+
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Resource untuk CRUD Tour (tanpa show)
-Route::resource('tour', TourController::class);
 
 // Route utama detail tour
 Route::get('/tour-detail/{slug}', [TourDetailController::class, 'show'])
@@ -276,13 +275,6 @@ if (!app()->runningInConsole() && Schema::hasTable('tours')) {
 
 
 
-Route::resource('blogs', BlogController::class);
-
-
-Route::resource('review', ReviewController::class);
-
-Route::resource('categories', CategoryController::class);
-
 
 
 // Route::get('/tour/{tour}/booking', [BookingController::class, 'create'])->name('tour.booking');
@@ -296,7 +288,6 @@ Route::get('/userblog', [UserBlogController::class, 'index'])->name('user.blog.i
 Route::get('/userblog/{slug}', [UserBlogController::class, 'show'])->name('user.blog.show');
 
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 
 
@@ -319,7 +310,9 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 
-Route::resource('gallery', GalleryController::class);
+// Route::resource('gallery', GalleryController::class);
+
+
 
 
 // ROUTE GALLERY UNTUK USER (AMAN, TIDAK TABRAKAN DENGAN ADMIN)
@@ -339,3 +332,22 @@ Route::prefix('galleries')->name('user.gallery.')->group(function () {
 
 });
 
+
+
+
+// Semua route yang hanya boleh diakses admin
+Route::middleware([AdminMiddleware::class])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard.index');
+    })->name('dashboard.index');
+
+    Route::resource('review', ReviewController::class);
+});
+
+// Semua route yang hanya perlu login
+Route::middleware([Authenticate::class])->group(function () {
+    Route::resource('tour', TourController::class);
+    Route::resource('blogs', BlogController::class);
+    Route::resource('categories', CategoryController::class);
+    Route::resource('gallery', GalleryController::class);
+});
