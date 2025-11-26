@@ -114,6 +114,7 @@ public function store(Request $request)
 
 public function update(Request $request, $id)
 {
+    try{
     $blog = Blog::with('days')->findOrFail($id);
 
     $request->validate([
@@ -121,11 +122,11 @@ public function update(Request $request, $id)
         'description' => 'required',
         'route_name' => 'nullable|string',
         'status' => 'nullable|boolean',
-        'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:102400',
         'days.*.id' => 'nullable|exists:blog_days,id',
         'days.*.title' => 'required|string|max:255',
         'days.*.description' => 'required',
-        'days.*.image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        'days.*.image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:102400',
         'days.*.image_title' => 'nullable|string|max:255',
         'days.*.image_description' => 'nullable|string',
     ]);
@@ -208,7 +209,19 @@ public function update(Request $request, $id)
         }
     }
 
-    return redirect()->route('blogs.index')->with('success', 'Blog berhasil diperbarui!');
+   // =============================
+        // Redirect sukses dengan SweetAlert
+        // =============================
+return redirect()->route('blogs.index')->with('success', 'Blog berhasil diperbarui!');
+
+
+    } catch (\Exception $e) {
+        // =============================
+        // Redirect gagal dengan SweetAlert
+        // =============================
+        return redirect()->back()->with('error', 'Terjadi kesalahan saat memperbarui blog: ' . $e->getMessage());
+    }
+
 }
 
 

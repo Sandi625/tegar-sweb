@@ -75,6 +75,29 @@
 <script src="{{ asset('login/js/popper.js') }}"></script>
 <script src="{{ asset('login/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('login/js/main.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if(session('login_error'))
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Login Gagal',
+        text: '{{ session('login_error') }}',
+        confirmButtonText: 'OK'
+    });
+</script>
+@endif
+
+@if(session('login_success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Login Berhasil',
+        text: '{{ session('login_success') }}',
+        confirmButtonText: 'OK'
+    });
+</script>
+@endif
 
 </body>
 </html>

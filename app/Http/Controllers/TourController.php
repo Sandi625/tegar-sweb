@@ -234,15 +234,16 @@ public function update(Request $request, Tour $tour)
             }
         }
 
-        DB::commit();
+      DB::commit();
 
-        return redirect()->route('tour.index')
-            ->with('success', 'Tour berhasil diperbarui.');
+          return redirect()->route('tour.index', $tour->id)
+            ->with('success', 'Tour berhasil diperbarui.'); // ← SweetAlert muncul di halaman edit
 
-    } catch (\Exception $e) {
-        DB::rollBack();
-        return back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
-    }
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
 }
 
 

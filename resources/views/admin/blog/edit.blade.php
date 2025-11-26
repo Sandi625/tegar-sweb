@@ -135,7 +135,9 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ========== AUTO SLUG & AUTO ROUTE NAME ==========
+    // ==========================
+    // AUTO SLUG & ROUTE NAME
+    // ==========================
     const titleInput = document.getElementById("titleInput");
     const slugInput = document.getElementById("slugInput");
     const routeNameInput = document.getElementById("routeNameInput");
@@ -152,7 +154,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if(routeNameDisplay) routeNameDisplay.value = routeName;
     });
 
-    // ========== ITINERARY DINAMIS ==========
+    // ==========================
+    // ITINERARY DINAMIS
+    // ==========================
     let container = document.getElementById("blog-days-container");
     let addBtn = document.getElementById("add-day-btn");
     let dayIndex = {{ count($blog->days) }};
@@ -199,12 +203,57 @@ document.addEventListener('DOMContentLoaded', function() {
         dayIndex++;
     });
 
-    // Hapus Hari
+    // ==========================
+    // KONFIRMASI HAPUS HARI
+    // ==========================
     container.addEventListener("click", function(e) {
         if (e.target && e.target.classList.contains("remove-day-btn")) {
-            e.target.closest(".blog-day").remove();
+
+            let dayBox = e.target.closest(".blog-day");
+
+            Swal.fire({
+                title: 'Yakin ingin menghapus hari ini?',
+                text: 'Data hari akan dihapus!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Hapus',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    dayBox.remove();
+
+                    Swal.fire(
+                        'Terhapus!',
+                        'Hari berhasil dihapus.',
+                        'success'
+                    );
+                }
+            });
         }
     });
+
+    // ==========================
+    // SWEETALERT2 SESSION
+    // ==========================
+    @if(session('success'))
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: @json(session('success')),
+            confirmButtonText: 'OK'
+        });
+    @endif
+
+    @if(session('error'))
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            text: @json(session('error')),
+            confirmButtonText: 'OK'
+        });
+    @endif
 
 });
 </script>

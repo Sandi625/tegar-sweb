@@ -116,12 +116,13 @@
                         </a>
                     </li>
 
-                    <li class="menu-item {{ request()->segment(2) == 'blogs' ? 'active' : '' }}">
-                        <a href="{{ route('blogs.index') }}" class="menu-link">
-                            <i class="menu-icon tf-icons ti ti-news"></i>
-                            <div class="text-truncate">Blog</div>
-                        </a>
-                    </li>
+                    <li class="menu-item {{ request()->segment(1) == 'blogs' ? 'active' : '' }}">
+    <a href="{{ route('blogs.index') }}" class="menu-link">
+        <i class="menu-icon tf-icons ti ti-news"></i>
+        <div class="text-truncate">Blog</div>
+    </a>
+</li>
+
 
                     <li class="menu-item {{ request()->segment(1) == 'review' ? 'active' : '' }}">
                         <a href="{{ route('review.index') }}" class="menu-link">
@@ -682,7 +683,7 @@
         }
     </script>
     <script src="<?= url('assets/js/helper-api.js') ?>"></script>
-    @stack('script')
+
     @stack('scripts')
 
 </body>

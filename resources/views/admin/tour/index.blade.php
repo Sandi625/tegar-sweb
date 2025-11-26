@@ -92,16 +92,15 @@
                                                 <i class="ti ti-pencil"></i>
                                             </a>
 
-                                            <form action="{{ route('tour.destroy', $tour->id) }}" method="POST"
-                                                class="d-inline">
-                                                @csrf
-                                                @method('DELETE')
+                                           <form action="{{ route('tour.destroy', $tour->id) }}" method="POST" class="d-inline" id="delete-form-{{ $tour->id }}">
+    @csrf
+    @method('DELETE')
 
-                                                <button class="btn btn-sm btn-danger mb-1"
-                                                    onclick="return confirm('Hapus tour ini?')">
-                                                    <i class="ti ti-trash"></i>
-                                                </button>
-                                            </form>
+    <button type="button" class="btn btn-sm btn-danger mb-1 btnDelete" data-id="{{ $tour->id }}">
+        <i class="ti ti-trash"></i>
+    </button>
+</form>
+
                                         </td>
                                     </tr>
                                 @endforeach
@@ -117,3 +116,55 @@
     </div>
 
 @endsection
+
+@push('scripts')
+@if(session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Berhasil!',
+        text: @json(session('success')),
+        confirmButtonText: 'OK'
+    });
+</script>
+@endif
+
+@if(session('error'))
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Gagal!',
+        text: @json(session('error')),
+        confirmButtonText: 'OK'
+    });
+</script>
+@endif
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.btnDelete');
+
+    deleteButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+            let id = this.getAttribute('data-id');
+
+            Swal.fire({
+                title: "Hapus Tour?",
+                text: "Tour yang sudah dihapus tidak dapat dikembalikan!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Ya, Hapus",
+                cancelButtonText: "Batal"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('delete-form-' + id).submit();
+                }
+            });
+        });
+    });
+});
+</script>
+@endpush

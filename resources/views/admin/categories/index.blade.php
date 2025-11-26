@@ -50,15 +50,15 @@
                                             <i class="ti ti-pencil"></i>
                                         </a>
 
-                                        <form action="{{ route('categories.destroy', $category->id) }}"
-                                              method="POST" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-sm btn-danger mb-1"
-                                                    onclick="return confirm('Hapus kategori ini?')">
-                                                <i class="ti ti-trash"></i>
-                                            </button>
-                                        </form>
+                                     <form action="{{ route('categories.destroy', $category->id) }}" method="POST" class="d-inline delete-form">
+    @csrf
+    @method('DELETE')
+
+    <button type="button" class="btn btn-sm btn-danger btn-delete">
+        <i class="ti ti-trash"></i>
+    </button>
+</form>
+
                                     </td>
                                 </tr>
                             @endforeach
@@ -79,3 +79,54 @@
 </div>
 
 @endsection
+
+
+@push('scripts')
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // =============== DELETE CONFIRM SWEETALERT ===============
+    document.querySelectorAll('.btn-delete').forEach(button => {
+        button.addEventListener('click', function (e) {
+            let form = this.closest('.delete-form');
+
+            Swal.fire({
+                title: 'Yakin ingin menghapus kategori ini?',
+                text: "Data kategori akan dihapus permanen!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Hapus',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            });
+        });
+    });
+
+    // =============== SWEETALERT SUCCESS MESSAGE ===============
+    @if(session('success'))
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: @json(session('success')),
+            confirmButtonText: 'OK'
+        });
+    @endif
+
+    @if(session('error'))
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            text: @json(session('error')),
+            confirmButtonText: 'OK'
+        });
+    @endif
+
+});
+</script>
+@endpush
+

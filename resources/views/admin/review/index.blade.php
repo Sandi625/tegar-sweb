@@ -76,15 +76,17 @@
                                             <i class="ti ti-pencil"></i>
                                         </a>
 
-                                        <form action="{{ route('review.destroy', $review->id) }}"
-                                              method="POST" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-sm btn-danger mb-1"
-                                                    onclick="return confirm('Hapus review ini?')">
-                                                <i class="ti ti-trash"></i>
-                                            </button>
-                                        </form>
+                                       <form action="{{ route('review.destroy', $review->id) }}"
+      method="POST"
+      class="d-inline delete-form">
+    @csrf
+    @method('DELETE')
+
+    <button type="button" class="btn btn-sm btn-danger btn-delete">
+        <i class="ti ti-trash"></i>
+    </button>
+</form>
+
                                     </td>
 
                                 </tr>
@@ -101,3 +103,55 @@
 </div>
 
 @endsection
+
+
+@push('scripts')
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // =============== DELETE CONFIRMATION ===============
+    document.querySelectorAll('.btn-delete').forEach(button => {
+        button.addEventListener('click', function () {
+            let form = this.closest('.delete-form');
+
+            Swal.fire({
+                title: 'Hapus review ini?',
+                text: "Review akan dihapus permanen!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+            });
+        });
+    });
+
+    // =============== SUCCESS ALERT ===============
+    @if(session('success'))
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: @json(session('success')),
+            confirmButtonText: 'OK'
+        });
+    @endif
+
+    // =============== ERROR ALERT (jika ada) ===============
+    @if(session('error'))
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            text: @json(session('error')),
+            confirmButtonText: 'OK'
+        });
+    @endif
+
+});
+</script>
+@endpush
+

@@ -1696,7 +1696,10 @@ footer {
 .marquee-inner {
   display: flex;
   gap: 20px;
-  animation: marquee 40s linear infinite;
+  animation-name: marquee;
+  animation-duration: 40s; /* durasi panjang desktop */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 .reviewCard {
@@ -1735,11 +1738,39 @@ footer {
   color: #f2870c;
 }
 
-/* Animasi loop */
+/* DESKTOP KEYFRAME ( -50% ) */
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* MOBILE KEYFRAME (scroll jauh = speed cepat) */
+@keyframes marqueeMobile {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-400%); } /* lebih jauh, jadi lebih cepat */
+}
+
+/* MOBILE FIX */
+@media (max-width: 480px) {
+
+  .reviewCard {
+    flex: 0 0 180px;
+    padding: 15px;
+  }
+
+  .reviewsTitle {
+    font-size: 22px;
+  }
+
+  /* Durasi panjang, tapi speed tetap cepat berkat -200% */
+  .marquee-inner {
+    animation-name: marqueeMobile;
+    animation-duration: 30s;  /* lama → user sempat baca semua */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
 
 
 .maps {

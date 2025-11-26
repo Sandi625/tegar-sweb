@@ -154,20 +154,23 @@ class GalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
-    {
-        $gallery = Gallery::findOrFail($id);
+   public function destroy($id)
+{
+    $gallery = Gallery::findOrFail($id);
 
-        if ($gallery->gambar && Storage::disk('public')->exists($gallery->gambar)) {
-            Storage::disk('public')->delete($gallery->gambar);
-        }
-
-        if ($gallery->video && Storage::disk('public')->exists($gallery->video)) {
-            Storage::disk('public')->delete($gallery->video);
-        }
-
-        $gallery->delete();
-
-        return redirect()->route('gallery.index')->with('success', 'Gallery berhasil dihapus!');
+    // Hapus gambar
+    if ($gallery->gambar && Storage::disk('public')->exists($gallery->gambar)) {
+        Storage::disk('public')->delete($gallery->gambar);
     }
+
+    // Hapus video lokal
+    if ($gallery->video_local && Storage::disk('public')->exists($gallery->video_local)) {
+        Storage::disk('public')->delete($gallery->video_local);
+    }
+
+    $gallery->delete();
+
+    return redirect()->route('gallery.index')->with('success', 'Gallery berhasil dihapus!');
+}
+
 }
