@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="{{ asset('styleblog.css') }}">
     <link rel="shortcut icon" href="../Images/favicon.png" type="image/x-icon" />
-    <title>Hamburg Blog | Roadie</title>
+    <title>Blog | Vamos</title>
   </head>
   <body>
   <nav>
-    <a href="#" class="brand-logo">Travel</a>
+    <a href="#" class="brand-logo">Vamos</a>
     <ul class="links">
         <li class="link">
             <b><a href="#">Home</a></b>

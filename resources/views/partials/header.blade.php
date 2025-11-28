@@ -13,13 +13,13 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
-    <title>Ijen Bromo | Tegar</title>
+    <title>Vamos Tour</title>
 </head>
 
 <body>
 
     <nav>
-        <a href="#" class="brand-logo">Travel</a>
+        <a href="#" class="brand-logo">Vamos</a>
          <ul class="links">
             <li class="link">
                 <b><a href="{{ route('home') }}" >Home</a></b>

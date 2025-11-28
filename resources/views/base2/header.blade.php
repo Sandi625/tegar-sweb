@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('styleblog.css') }}">
     <link rel="shortcut icon" href="../Images/favicon.png" type="image/x-icon" />
-    <title>Bali Blog | Tegar</title>
+    <title>Blog | Vamos</title>
   </head>
   <body>
     <!-- Navbar -->

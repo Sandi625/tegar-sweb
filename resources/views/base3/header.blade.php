@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('stylecustom.css') }}">
     <link rel="shortcut icon" href="../Images/favicon.png" type="image/x-icon" />
-    <title>Ijen Bromo | Tegar</title>
+    <title>Review | Vamos</title>
 </head>
 
 <body>

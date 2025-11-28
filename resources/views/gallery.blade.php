@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon" />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
-    <title>Gallery | Tegar</title>
+    <title>Gallery | Vamos</title>
 </head>
 
 <body>
@@ -244,7 +244,7 @@
   <div class="footerDetails">
     <!-- Kolom 1 -->
     <div class="footerDescription">
-      <h1 class="footerTitle">Tegar</h1>
+      <h1 class="footerTitle">Vamos Adventure</h1>
       <p class="footerPara">
         Discover New Destinations. See breath-taking places and experience
         them from your device online.
@@ -315,7 +315,7 @@
   <div class="footerCopyright">
     <p>
       This website is designed and developed by
-      <span>Tegar Firmansyah And Sandi Permadi</span>
+      <span>Vamos Teams</span>
     </p>
   </div>
 </footer>

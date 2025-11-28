@@ -337,13 +337,11 @@ Route::prefix('galleries')->name('user.gallery.')->group(function () {
 
 // Semua route yang hanya boleh diakses admin
 Route::middleware([AdminMiddleware::class])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard.index');
-    })->name('dashboard.index');
+    Route::get('/dashboard', [DashboardController::class, 'index'])
+        ->name('dashboard.index');
 
     Route::resource('review', ReviewController::class);
 });
-
 // Semua route yang hanya perlu login
 Route::middleware([Authenticate::class])->group(function () {
     Route::resource('tour', TourController::class);

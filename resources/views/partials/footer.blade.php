@@ -47,7 +47,7 @@
     <div class="footerDetails">
 
         <div class="footerDescription">
-            <h1 class="footerTitle">Tegar</h1>
+            <h1 class="footerTitle">Vamos</h1>
             <p class="footerPara">
                 Discover New Destinations. See breath-taking places and experience them from your device online.
                 <br><br>
@@ -95,7 +95,7 @@
         <div class="footerCopyright">
             <p>
                 This website is designed and developed by
-                <span>Tegar Firmansyah & Sandi Permadi</span>
+                <span>Vamos Teams</span>
             </p>
         </div>
     </div>

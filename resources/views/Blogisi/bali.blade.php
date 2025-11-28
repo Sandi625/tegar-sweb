@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('styleblog.css') }}">
     <link rel="shortcut icon" href="../Images/favicon.png" type="image/x-icon" />
-    <title>Bali Blog | Tegar</title>
+    <title>Bali Blog | Vamos</title>
   </head>
   <body>
     <!-- Navbar -->
     <nav>
-      <a href="#" class="brand-logo">Travel</a>
+      <a href="#" class="brand-logo">Vamos</a>
       <ul class="links">
         <li class="link"><b><a href="#">Home</a></b></li>
         {{-- <li class="link"><a href="{{ route('places.page') }}">Places</a></li> --}}
