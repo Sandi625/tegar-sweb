@@ -267,3 +267,63 @@ document.getElementById("searchInput").addEventListener("keyup", function () {
         noResult.style.display = hasMatch ? "none" : "block";
     });
 });
+
+
+const reviewCards = document.querySelectorAll('.reviewCard');
+    const modal = document.getElementById('reviewModal');
+    const closeModal = document.getElementById('closeModal');
+    const modalPhoto = document.getElementById('modalPhoto');
+    const modalName = document.getElementById('modalName');
+    const modalRating = document.getElementById('modalRating');
+    const modalText = document.getElementById('modalText');
+    const prevPhoto = document.getElementById('prevPhoto');
+    const nextPhoto = document.getElementById('nextPhoto');
+
+    let currentPhotos = [];
+    let currentIndex = 0;
+    const defaultPhoto = 'https://randomuser.me/api/portraits/lego/1.jpg';
+
+    reviewCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const photos = JSON.parse(card.dataset.photos);
+            // jika tidak ada foto, gunakan default
+            currentPhotos = (photos && photos.length) ? photos : [defaultPhoto];
+            currentIndex = 0;
+
+            updateModal(card.dataset.name, card.dataset.rating, card.dataset.text, currentPhotos[currentIndex]);
+            modal.style.display = 'flex';
+        });
+    });
+
+    function updateModal(name, rating, text, photo) {
+        if (!photo || photo === '') {
+            modalPhoto.src = defaultPhoto;
+        } else {
+            modalPhoto.src = photo.startsWith('http') ? photo : `/uploads/reviews/${photo}`;
+        }
+        modalName.textContent = name;
+        modalRating.textContent = '⭐'.repeat(rating);
+        modalText.textContent = text;
+    }
+
+    prevPhoto.addEventListener('click', () => {
+        if (currentPhotos.length === 0) return;
+        currentIndex = (currentIndex - 1 + currentPhotos.length) % currentPhotos.length;
+        modalPhoto.src = currentPhotos[currentIndex] ? (currentPhotos[currentIndex].startsWith('http') ? currentPhotos[currentIndex] : `/uploads/reviews/${currentPhotos[currentIndex]}`) : defaultPhoto;
+    });
+
+    nextPhoto.addEventListener('click', () => {
+        if (currentPhotos.length === 0) return;
+        currentIndex = (currentIndex + 1) % currentPhotos.length;
+        modalPhoto.src = currentPhotos[currentIndex] ? (currentPhotos[currentIndex].startsWith('http') ? currentPhotos[currentIndex] : `/uploads/reviews/${currentPhotos[currentIndex]}`) : defaultPhoto;
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });

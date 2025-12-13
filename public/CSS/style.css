@@ -1670,12 +1670,10 @@ footer {
         padding: 10px;
     }
 }
-
 .reviews {
   padding: 60px 20px;
   background: #f9f9f9;
   text-align: center;
-  overflow: hidden;
 }
 
 .reviewsTitle {
@@ -1687,21 +1685,21 @@ footer {
   color: #f2870c;
 }
 
+/* Marquee Scrollable */
 .marquee {
-  position: relative;
-  overflow: hidden;
+  overflow-x: auto; /* scroll horizontal */
+  -webkit-overflow-scrolling: touch; /* smooth scroll di iOS */
+  scroll-behavior: smooth;
   width: 100%;
+  padding-bottom: 10px;
 }
 
 .marquee-inner {
   display: flex;
   gap: 20px;
-  animation-name: marquee;
-  animation-duration: 40s; /* durasi panjang desktop */
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
 }
 
+/* Review Card */
 .reviewCard {
   flex: 0 0 300px;
   background: #fff;
@@ -1709,6 +1707,11 @@ footer {
   padding: 20px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.reviewCard:hover {
+  transform: translateY(-5px); /* efek hover */
 }
 
 .reviewImg {
@@ -1738,21 +1741,27 @@ footer {
   color: #f2870c;
 }
 
-/* DESKTOP KEYFRAME ( -50% ) */
-@keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* Custom Scrollbar */
+.marquee::-webkit-scrollbar {
+  height: 8px; /* tinggi scroll horizontal */
 }
 
-/* MOBILE KEYFRAME (scroll jauh = speed cepat) */
-@keyframes marqueeMobile {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-300%); } /* lebih jauh, jadi lebih cepat */
+.marquee::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+
+.marquee::-webkit-scrollbar-thumb {
+  background: #f2870c;
+  border-radius: 10px;
+}
+
+.marquee::-webkit-scrollbar-thumb:hover {
+  background: #d17500;
 }
 
 /* MOBILE FIX */
 @media (max-width: 480px) {
-
   .reviewCard {
     flex: 0 0 180px;
     padding: 15px;
@@ -1761,15 +1770,8 @@ footer {
   .reviewsTitle {
     font-size: 22px;
   }
-
-  /* Durasi panjang, tapi speed tetap cepat berkat -200% */
-  .marquee-inner {
-    animation-name: marqueeMobile;
-    animation-duration: 30s;  /* lama → user sempat baca semua */
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
 }
+
 
 
 

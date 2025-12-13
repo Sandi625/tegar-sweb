@@ -448,52 +448,74 @@
 
 
 
-    <section id="reviews" class="reviews">
-        <h1 class="reviewsTitle" data-aos="fade-up" data-aos-duration="2000">
-            What People <span class="highlight">Say</span>
-        </h1>
+<section id="reviews" class="reviews">
+    <h1 class="reviewsTitle" data-aos="fade-up" data-aos-duration="2000">
+        What People <span class="highlight">Say</span>
+    </h1>
 
-        <div class="marquee">
-            <div class="marquee-inner" style="display:flex; align-items:center;">
+    <div class="marquee">
+        <div class="marquee-inner" style="display:flex; align-items:center;">
 
-                {{-- Looping reviews --}}
-                @foreach ($reviews as $review)
-                    <div class="reviewCard" style="flex:0 0 auto; margin:0 15px; width:200px; box-sizing:border-box;">
-                        @if ($review->photo)
-                            <img src="{{ asset('uploads/reviews/' . $review->photo) }}" class="reviewImg">
-                        @else
-                            <img src="https://ui-avatars.com/api/?name={{ urlencode($review->name) }}&background=random"
-                                class="reviewImg">
-                        @endif
+            @foreach ($reviews as $review)
+                @php
+                    $photos = [];
+                    if ($review->photo) {
+                        $decoded = json_decode($review->photo);
+                        if (is_array($decoded) && count($decoded) > 0) {
+                            $photos = $decoded;
+                        } else {
+                            $photos = [$review->photo];
+                        }
+                    }
+                    $firstPhoto = count($photos) ? $photos[0] : null;
+                @endphp
 
-                        <h3 class="reviewName">{{ $review->name }}</h3>
-                        <p class="reviewText">“{{ Str::limit($review->review_text, 150) }}”</p>
-                        <div class="reviewRating">
-                            {{ str_repeat('⭐', $review->rating) }}
-                        </div>
+                <div class="reviewCard"
+                     style="flex:0 0 auto; margin:0 15px; width:200px; box-sizing:border-box; cursor:pointer;"
+                     data-name="{{ $review->name }}"
+                     data-rating="{{ $review->rating }}"
+                     data-text="{{ $review->review_text }}"
+                     data-photos='@json($photos)'>
+
+                    <img src="{{ $firstPhoto ? asset('uploads/reviews/' . $firstPhoto) : 'https://ui-avatars.com/api/?name=' . urlencode($review->name) . '&background=random' }}" class="reviewImg">
+                    <h3 class="reviewName">{{ $review->name }}</h3>
+                    <p class="reviewText">“{{ Str::limit($review->review_text, 150) }}”</p>
+                    <div class="reviewRating">
+                        {{ str_repeat('⭐', $review->rating) }}
                     </div>
-                @endforeach
+                </div>
+            @endforeach
 
-                {{-- SET 2 --}}
-                @foreach ($reviews as $review)
-                    <div class="reviewCard" style="flex:0 0 auto; margin:0 15px; width:200px; box-sizing:border-box;">
-                        @if ($review->photo)
-                            <img src="{{ asset('uploads/reviews/' . $review->photo) }}" class="reviewImg">
-                        @else
-                            <img src="https://ui-avatars.com/api/?name={{ urlencode($review->name) }}&background=random"
-                                class="reviewImg">
-                        @endif
-
-                        <h3 class="reviewName">{{ $review->name }}</h3>
-                        <p class="reviewText">“{{ Str::limit($review->review_text, 150) }}”</p>
-                        <div class="reviewRating">
-                            {{ str_repeat('⭐', $review->rating) }}
-                        </div>
-                    </div>
-                @endforeach
-
-            </div>
         </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="reviewModal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:9999;">
+    <div class="modalContent" style="background:#fff; padding:20px; border-radius:10px; max-width:600px; width:90%; position:relative;">
+        <span id="closeModal" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;">&times;</span>
+
+        <img id="modalPhoto" src="" alt="Review Photo" style="width:100%; max-height:300px; object-fit:cover; border-radius:10px; margin-bottom:10px;">
+
+        <!-- Navigation for multiple photos -->
+        <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+            <button id="prevPhoto" style="padding:5px 10px; cursor:pointer;">&#8592; Prev</button>
+            <button id="nextPhoto" style="padding:5px 10px; cursor:pointer;">Next &#8594;</button>
+        </div>
+
+        <h3 id="modalName" style="margin-top:0;"></h3>
+        <div id="modalRating" style="margin:5px 0;"></div>
+        <p id="modalText"></p>
+    </div>
+</div>
+
+
+
+
+<!-- Vertically centered scrollable modal -->
+
+
 
         <div style="text-align:center; margin-top:25px;">
             <button onclick="window.location.href='{{ route('user.review.create') }}'"

@@ -19,35 +19,40 @@ class ReviewController extends Controller
         return view('admin.review.create');
     }
 
-    public function store(Request $request)
+   public function store(Request $request)
 {
     $request->validate([
         'name'        => 'required|string|max:100',
-        'email'       => 'nullable|email|max:100', // bisa kosong
+        'email'       => 'nullable|email|max:100',
         'review_text' => 'required|string',
         'rating'      => 'required|integer|min:1|max:5',
-        'photo'       => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        'photo.*'     => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048', // multiple
         'status'      => 'nullable|boolean',
     ]);
 
-    // Upload photo
-    $photoName = null;
+    $photoNames = [];
+
+    // Upload multiple photos
     if ($request->hasFile('photo')) {
-        $photoName = time() . '_' . uniqid() . '.' . $request->photo->extension();
-        $request->photo->move(public_path('uploads/reviews'), $photoName);
+        foreach ($request->file('photo') as $photo) {
+            $filename = time() . '_' . uniqid() . '.' . $photo->extension();
+            $photo->move(public_path('uploads/reviews'), $filename);
+            $photoNames[] = $filename;
+        }
     }
 
     Review::create([
         'name'        => $request->name,
-        'email'       => $request->email, // tambahkan email
+        'email'       => $request->email,
         'review_text' => $request->review_text,
         'rating'      => $request->rating,
-        'photo'       => $photoName,
+        'photo'       => count($photoNames) ? json_encode($photoNames) : null, // simpan sebagai JSON
         'status'      => $request->status ?? 1,
     ]);
 
     return redirect()->route('review.index')->with('success', 'Review berhasil ditambahkan!');
 }
+
 
 
     public function edit($id)

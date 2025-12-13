@@ -57,14 +57,25 @@
                                         <td>{{ $review->name }}</td>
                                         <td>{{ $review->email ?? '-' }}</td> {{-- Tampilkan email, default '-' jika null --}}
 
-                                        <td>
-                                            @if ($review->photo)
-                                                <img src="{{ asset('uploads/reviews/' . $review->photo) }}" width="60"
-                                                    class="rounded">
-                                            @else
-                                                <span class="text-muted">Tidak ada</span>
-                                            @endif
-                                        </td>
+                              <td>
+    @if ($review->photo)
+        @php
+            $decoded = json_decode($review->photo);
+            // pastikan menjadi array
+            $photos = is_array($decoded) ? $decoded : [$review->photo];
+        @endphp
+
+        <div style="display:flex; gap:5px; flex-wrap:wrap;">
+            @foreach ($photos as $photo)
+                <img src="{{ asset('uploads/reviews/' . $photo) }}" width="60" class="rounded">
+            @endforeach
+        </div>
+    @else
+        <span class="text-muted">Tidak ada</span>
+    @endif
+</td>
+
+
 
                                         <td>⭐ {{ $review->rating }}/5</td>
 

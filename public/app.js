@@ -113,3 +113,55 @@ Special Request: ${special || '-'}
     window.onclick = (event) => { if(event.target === popup) popup.style.display = "none"; };
   }
 });
+
+const reviewCards = document.querySelectorAll('.reviewCard');
+    const modal = document.getElementById('reviewModal');
+    const closeModal = document.getElementById('closeModal');
+    const modalPhoto = document.getElementById('modalPhoto');
+    const modalName = document.getElementById('modalName');
+    const modalRating = document.getElementById('modalRating');
+    const modalText = document.getElementById('modalText');
+    const prevPhoto = document.getElementById('prevPhoto');
+    const nextPhoto = document.getElementById('nextPhoto');
+
+    let currentPhotos = [];
+    let currentIndex = 0;
+
+    reviewCards.forEach(card => {
+        card.addEventListener('click', () => {
+            currentPhotos = JSON.parse(card.dataset.photos);
+            currentIndex = 0;
+
+            modal.style.display = 'flex';
+            updateModal(card.dataset.name, card.dataset.rating, card.dataset.text, currentPhotos[currentIndex]);
+        });
+    });
+
+    function updateModal(name, rating, text, photo) {
+        modalPhoto.src = photo ? photo.startsWith('http') ? photo : `/uploads/reviews/${photo}` : '';
+        modalName.textContent = name;
+        modalRating.textContent = '⭐'.repeat(rating);
+        modalText.textContent = text;
+    }
+
+    prevPhoto.addEventListener('click', () => {
+        if (currentPhotos.length === 0) return;
+        currentIndex = (currentIndex - 1 + currentPhotos.length) % currentPhotos.length;
+        modalPhoto.src = currentPhotos[currentIndex].startsWith('http') ? currentPhotos[currentIndex] : `/uploads/reviews/${currentPhotos[currentIndex]}`;
+    });
+
+    nextPhoto.addEventListener('click', () => {
+        if (currentPhotos.length === 0) return;
+        currentIndex = (currentIndex + 1) % currentPhotos.length;
+        modalPhoto.src = currentPhotos[currentIndex].startsWith('http') ? currentPhotos[currentIndex] : `/uploads/reviews/${currentPhotos[currentIndex]}`;
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });

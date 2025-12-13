@@ -19,6 +19,7 @@ class UserReviewController extends Controller
         return view('user.reviews.index', compact('reviews'));
     }
 
+
     /**
      * Form untuk user membuat review baru
      */
@@ -30,39 +31,45 @@ class UserReviewController extends Controller
     /**
      * Simpan review dari user
      */
-public function store(Request $request)
-{
-    $request->validate([
-        'name'        => 'required|string|max:100',
-        'email'       => 'nullable|email|max:100', // boleh kosong
-        'rating'      => 'required|integer|min:1|max:5',
-        'review_text' => 'required|string',
-        'photo'       => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-    ]);
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name'        => 'required|string|max:100',
+            'email'       => 'nullable|email|max:100',
+            'rating'      => 'required|integer|min:1|max:5',
+            'review_text' => 'required|string',
+            'photo.*'     => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048', // per foto
+        ]);
 
-    try {
-        $review = new Review();
-        $review->name        = $request->name;
-        $review->email       = $request->email; // bisa null
-        $review->rating      = $request->rating;
-        $review->review_text = $request->review_text;
-        $review->status      = 0; // default pending
+        try {
+            $review = new Review();
+            $review->name        = $request->name;
+            $review->email       = $request->email;
+            $review->rating      = $request->rating;
+            $review->review_text = $request->review_text;
+            $review->status      = 0; // pending
 
-        // Handle photo upload
-        if ($request->hasFile('photo')) {
-            $file = $request->file('photo');
-            $filename = time().'_'.$file->getClientOriginalName();
-            $file->move(public_path('uploads/reviews'), $filename);
-            $review->photo = $filename;
+            // Handle multiple photo upload
+            $photos = [];
+            if ($request->hasFile('photo')) {
+                foreach ($request->file('photo') as $file) {
+                    $filename = time() . '_' . uniqid() . '_' . $file->getClientOriginalName();
+                    $file->move(public_path('uploads/reviews'), $filename);
+                    $photos[] = $filename;
+                }
+            }
+
+            // Simpan array filename sebagai JSON di kolom photo
+            $review->photo = !empty($photos) ? json_encode($photos) : null;
+
+            $review->save();
+
+            return redirect()->back()->with('success', 'Review submitted successfully!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to submit review: ' . $e->getMessage());
         }
-
-        $review->save();
-
-        return redirect()->back()->with('success', 'Review submitted successfully!');
-    } catch (\Exception $e) {
-        return redirect()->back()->with('error', 'Failed to submit review: '.$e->getMessage());
     }
-}
+
 
 
 
