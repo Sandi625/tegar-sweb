@@ -61,44 +61,53 @@ class ReviewController extends Controller
         return view('admin.review.edit', compact('review'));
     }
 
-  public function update(Request $request, $id)
+public function update(Request $request, $id)
 {
     $review = Review::findOrFail($id);
 
     $request->validate([
         'name'        => 'required|string|max:100',
-        'email'       => 'nullable|email|max:100', // tambahkan email
+        'email'       => 'nullable|email|max:100',
         'review_text' => 'required|string',
         'rating'      => 'required|integer|min:1|max:5',
-        'photo'       => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        'photo.*'     => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048', // multiple
         'status'      => 'nullable|boolean',
     ]);
 
-    $photoName = $review->photo;
-
-    if ($request->hasFile('photo')) {
-
-        // Hapus foto lama
-        if ($photoName && file_exists(public_path('uploads/reviews/' . $photoName))) {
-            unlink(public_path('uploads/reviews/' . $photoName));
+    // Hapus semua foto lama
+    if ($review->photo) {
+        $oldPhotos = json_decode($review->photo) ?: [];
+        foreach ($oldPhotos as $old) {
+            $oldPath = public_path('uploads/reviews/' . $old);
+            if (file_exists($oldPath)) {
+                unlink($oldPath);
+            }
         }
+    }
 
-        // Upload foto baru
-        $photoName = time() . '_' . uniqid() . '.' . $request->photo->extension();
-        $request->photo->move(public_path('uploads/reviews'), $photoName);
+    $photoNames = [];
+
+    // Upload foto baru jika ada
+    if ($request->hasFile('photo')) {
+        foreach ($request->file('photo') as $photo) {
+            $filename = time() . '_' . uniqid() . '.' . $photo->extension();
+            $photo->move(public_path('uploads/reviews'), $filename);
+            $photoNames[] = $filename;
+        }
     }
 
     $review->update([
         'name'        => $request->name,
-        'email'       => $request->email, // tambahkan email
+        'email'       => $request->email,
         'review_text' => $request->review_text,
         'rating'      => $request->rating,
-        'photo'       => $photoName,
+        'photo'       => count($photoNames) ? json_encode($photoNames) : null,
         'status'      => $request->status ?? 1,
     ]);
 
     return redirect()->route('review.index')->with('success', 'Review berhasil diperbarui!');
 }
+
 
 
     public function destroy($id)
