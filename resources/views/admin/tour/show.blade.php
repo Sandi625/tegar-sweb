@@ -12,13 +12,11 @@
     <div class="card-body">
         <table class="table table-bordered">
             <tbody>
-
                 <tr>
                     <th width="200">Judul Tour</th>
                     <td>{{ $tour->title }}</td>
                 </tr>
 
-                {{-- CATEGORY --}}
                 <tr>
                     <th>Kategori</th>
                     <td>{{ $tour->category ? $tour->category->name : '-' }}</td>
@@ -29,12 +27,10 @@
                     <td>{{ $tour->slug }}</td>
                 </tr>
 
-                   <!-- 🔥 TAMBAHAN ROUTE NAME -->
                 <tr>
                     <th>Route Name</th>
                     <td>{{ $tour->route_name ?? '-' }}</td>
                 </tr>
-                <!-- 🔥 END -->
 
                 <tr>
                     <th>Harga</th>
@@ -54,22 +50,27 @@
 
                 <tr>
                     <th>Deskripsi</th>
-                    <td>{{ $tour->description }}</td>
+                    <td>{!! nl2br(e($tour->description)) !!}</td>
                 </tr>
 
                 <tr>
-                    <th>Gambar</th>
+                    <th>Gambar Utama</th>
                     <td>
-                        @if($tour->images && count($tour->images) > 0)
+                        @php
+                            // Pastikan images selalu array
+                            $images = is_array($tour->images) ? $tour->images : json_decode($tour->images, true);
+                        @endphp
+
+                        @if($images && count($images) > 0)
                             <div class="d-flex flex-wrap gap-2">
-                                @foreach($tour->images as $img)
+                                @foreach($images as $img)
                                     <img src="{{ asset('uploads/tours/' . $img) }}"
                                          width="150"
                                          class="rounded border mb-2">
                                 @endforeach
                             </div>
                         @else
-                            <span class="text-muted">Belum ada gambar</span>
+                            <span class="text-muted">Tidak ada gambar</span>
                         @endif
                     </td>
                 </tr>
@@ -77,25 +78,35 @@
                 <tr>
                     <th>Itinerary / Hari</th>
                     <td>
-                        @php
-                            $days = json_decode($tour->days, true) ?? [];
-                        @endphp
-
-                        @if(count($days) > 0)
+                        @if($tour->days && $tour->days->count() > 0)
                             <table class="table table-sm table-striped">
                                 <thead>
                                     <tr>
                                         <th>#</th>
                                         <th>Judul Hari</th>
-                                        <th>Deskripsi</th>
+                                        <th>Deskripsi Hari</th>
+                                        <th>Gambar</th>
+                                        <th>Judul Gambar</th>
+                                        <th>Deskripsi Gambar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($days as $index => $day)
+                                    @foreach($tour->days as $index => $day)
                                         <tr>
                                             <td>{{ $index + 1 }}</td>
-                                            <td>{{ $day['title'] ?? '-' }}</td>
-                                            <td>{{ $day['description'] ?? '-' }}</td>
+                                            <td>{{ $day->title ?? '-' }}</td>
+                                            <td>{!! nl2br(e($day->description)) !!}</td>
+                                            <td>
+                                                @if($day->image)
+                                                    <img src="{{ asset('uploads/tour_days/' . $day->image) }}"
+                                                         width="120"
+                                                         class="rounded border mb-2">
+                                                @else
+                                                    <span class="text-muted">-</span>
+                                                @endif
+                                            </td>
+                                            <td>{{ $day->image_title ?? '-' }}</td>
+                                            <td>{{ $day->image_description ?? '-' }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

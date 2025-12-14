@@ -37,19 +37,45 @@
             Thank you for reading!
         </div>
     </div>
-<div class="contentContainer" style="flex:1;">
-    <p class="contentHeader">Content</p>
-
-    @if($blog->days->count() > 0)
+ <div class="contentContainer">
+        <p class="contentHeader">Other Tour Packages</p>
         <ol>
-            @foreach($blog->days as $day)
-                <li>{{ $day->title }}</li>
-            @endforeach
+            @forelse ($allTours ?? [] as $item)
+                <li>
+                    <a href="{{ route('tour.detail', $item->slug) }}">
+                        {{ $item->title }}
+                    </a>
+                </li>
+            @empty
+                <li class="text-muted">Belum ada paket tour lain</li>
+            @endforelse
         </ol>
-    @endif
+    </div>
+
+
+</section>
+
+<section class="anotherTour">
+    <div class="container">
+        <h2>Our Tour Packages</h2>
+
+      <div class="tourCard">
+    <h3> Tour</h3>
+    <ul>
+        @foreach ($allTours as $item)
+            @if ($item->route_name && Route::has($item->route_name))
+                <li>
+                    <a href="{{ route($item->route_name) }}">
+                        {{ $item->title }}
+                    </a>
+                </li>
+            @endif
+        @endforeach
+    </ul>
 </div>
 
 
+    </div>
 </section>
 
 @include('base2.footer')

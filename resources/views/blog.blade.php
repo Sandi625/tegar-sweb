@@ -92,48 +92,49 @@
 <section class="blogs">
     <div class="blogsContainer">
 
-        @foreach($tours as $tour)
-            <div class="blog" id="blog-{{ $tour->id }}">
+       @foreach($tours as $tour)
+    <div class="blog" id="blog-{{ $tour->id }}">
+        @php
+            // Pastikan images selalu array
+            $images = [];
+            if (!empty($tour->images)) {
+                $images = is_array($tour->images) ? $tour->images : json_decode($tour->images, true);
+                if (!$images) { // fallback kalau bukan JSON
+                    $images = [$tour->images];
+                }
+            }
+            $firstImage = $images[0] ?? null;
+        @endphp
 
-                {{-- Tampilkan gambar pertama --}}
-                @php
-                    $firstImage = null;
+        @if ($firstImage)
+            <img src="{{ asset('uploads/tours/' . $firstImage) }}"
+                 alt="{{ $tour->title }}" class="image" />
+        @else
+            <img src="{{ asset('assets/no-image.jpg') }}" class="image" />
+        @endif
 
-                    if (!empty($tour->images) && count($tour->images) > 0) {
-                        $firstImage = $tour->images[0];
-                    }
-                @endphp
-
-                @if ($firstImage)
-                    <img src="{{ asset('uploads/tours/' . $firstImage) }}"
-                         alt="{{ $tour->title }}" class="image" />
-                @else
-                    <img src="{{ asset('assets/no-image.jpg') }}" class="image" />
-                @endif
-
-                <div class="content">
-                    <div class="details">
-                        <h2>{{ $tour->title }}</h2>
-
-                        <p class="text">
-                            {{ \Illuminate\Support\Str::limit(strip_tags($tour->description), 200) }}
-                        </p>
-
-                        <button class="readMoreBtn"
-                                onclick="window.location.href='{{ route('tour.detail', $tour->slug) }}'">
-                            Read more
-                        </button>
-                    </div>
-
-                    <div class="buttons">
-                        <a href="{{ route('tour.detail', $tour->slug) }}">
-                            <button class="viewButton">Details Trip</button>
-                        </a>
-                    </div>
-                </div>
-
+        <div class="content">
+            <div class="details">
+                <h2>{{ $tour->title }}</h2>
+                <p class="text">
+                    {{ \Illuminate\Support\Str::limit(strip_tags($tour->description), 200) }}
+                </p>
+                <button class="readMoreBtn"
+                        onclick="window.location.href='{{ route('tour.detail', $tour->slug) }}'">
+                    Read more
+                </button>
             </div>
-        @endforeach
+
+            <div class="buttons">
+                <a href="{{ route('tour.detail', $tour->slug) }}">
+                    <button class="viewButton">Details Trip</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+@endforeach
+
 
     </div>
 </section>

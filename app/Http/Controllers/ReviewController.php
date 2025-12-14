@@ -26,7 +26,7 @@ class ReviewController extends Controller
         'email'       => 'nullable|email|max:100',
         'review_text' => 'required|string',
         'rating'      => 'required|integer|min:1|max:5',
-        'photo.*'     => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048', // multiple
+        'photo.*'     => 'nullable|image|mimes:jpg,jpeg,png,webp|max:10240', // multiple
         'status'      => 'nullable|boolean',
     ]);
 
@@ -70,25 +70,26 @@ public function update(Request $request, $id)
         'email'       => 'nullable|email|max:100',
         'review_text' => 'required|string',
         'rating'      => 'required|integer|min:1|max:5',
-        'photo.*'     => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048', // multiple
+        'photo.*'     => 'nullable|image|mimes:jpg,jpeg,png,webp|max:10240',
         'status'      => 'nullable|boolean',
     ]);
 
-    // Hapus semua foto lama
-    if ($review->photo) {
-        $oldPhotos = json_decode($review->photo) ?: [];
-        foreach ($oldPhotos as $old) {
+    // Default: pakai foto lama
+    $photoNames = json_decode($review->photo, true) ?? [];
+
+    // JIKA ADA FOTO BARU → hapus lama & upload baru
+    if ($request->hasFile('photo')) {
+
+        // hapus foto lama
+        foreach ($photoNames as $old) {
             $oldPath = public_path('uploads/reviews/' . $old);
             if (file_exists($oldPath)) {
                 unlink($oldPath);
             }
         }
-    }
 
-    $photoNames = [];
-
-    // Upload foto baru jika ada
-    if ($request->hasFile('photo')) {
+        // upload foto baru
+        $photoNames = [];
         foreach ($request->file('photo') as $photo) {
             $filename = time() . '_' . uniqid() . '.' . $photo->extension();
             $photo->move(public_path('uploads/reviews'), $filename);
@@ -101,12 +102,14 @@ public function update(Request $request, $id)
         'email'       => $request->email,
         'review_text' => $request->review_text,
         'rating'      => $request->rating,
-        'photo'       => count($photoNames) ? json_encode($photoNames) : null,
-        'status'      => $request->status ?? 1,
+        'photo'       => count($photoNames) ? json_encode($photoNames) : $review->photo,
+        'status'      => $request->status ?? $review->status,
     ]);
 
-    return redirect()->route('review.index')->with('success', 'Review berhasil diperbarui!');
+    return redirect()->route('review.index')
+        ->with('success', 'Review berhasil diperbarui!');
 }
+
 
 
 

@@ -16,6 +16,9 @@ return new class extends Migration
     $table->foreignId('tour_id')->constrained()->onDelete('cascade'); // relasi ke tour
     $table->string('title'); // misal "Day 1: SURABAYA - ACOMMODATION..."
     $table->text('description'); // deskripsi panjang hari tersebut
+    $table->string('image')->nullable(); // path image hari
+    $table->string('image_title')->nullable(); // judul image
+    $table->text('image_description')->nullable(); // deskripsi image
     $table->integer('order')->default(1); // urutan hari
     $table->timestamps();
 });

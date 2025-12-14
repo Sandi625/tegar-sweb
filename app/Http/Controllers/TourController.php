@@ -42,85 +42,93 @@ class TourController extends Controller
         return view('admin.tour.create', compact('categories'));
     }
 
-  public function store(Request $request)
+ public function store(Request $request)
 {
     try {
-        // VALIDASI
+        // ================= VALIDASI =================
         $validator = Validator::make($request->all(), [
             'category_id' => 'required|exists:categories,id',
             'title'       => 'required|string|max:255',
             'route_name'  => 'nullable|string|max:255',
             'images.*'    => 'nullable|mimes:jpg,png,jpeg,webp,heic,heif|max:102400',
             'price'       => 'required|numeric',
+            'description' => 'nullable|string',
             'status'      => 'nullable|boolean',
 
             // Days
-            'days'        => 'required|array|min:1',
-            'days.*.title'       => 'required|string|max:255',
-            'days.*.description' => 'required|string'
+            'days'                     => 'required|array|min:1',
+            'days.*.title'             => 'required|string|max:255',
+            'days.*.description'       => 'required|string',
+            'days.*.image'             => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'days.*.image_title'       => 'nullable|string|max:255',
+            'days.*.image_description' => 'nullable|string',
         ]);
 
-        // Jika validasi gagal → return JSON
         if ($validator->fails()) {
             return response()->json([
                 'errors' => $validator->errors()
             ], 422);
         }
 
-        // HANDLE IMAGES
+        // ================= UPLOAD TOUR IMAGES =================
         $imageNames = [];
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $img) {
-
-                if (!$img->isValid()) {
-                    return response()->json([
-                        'errors' => ['images' => ['File upload tidak valid / rusak.']]
-                    ], 422);
+                if ($img->isValid()) {
+                    $filename = uniqid() . '-' . time() . '.' . $img->getClientOriginalExtension();
+                    $img->move(public_path('uploads/tours'), $filename);
+                    $imageNames[] = $filename;
                 }
-
-                $ext = strtolower($img->getClientOriginalExtension());
-                $filename = time() . '-' . uniqid() . '.' . $ext;
-
-                $img->move(public_path('uploads/tours'), $filename);
-                $imageNames[] = $filename;
             }
         }
 
-        // AUTO GENERATE ROUTE NAME JIKA KOSONG
+        // ================= AUTO ROUTE NAME =================
         $routeName = $request->route_name ?: Str::slug($request->title);
 
-        // CREATE TOUR
+        // ================= CREATE TOUR =================
         $tour = Tour::create([
             'category_id' => $request->category_id,
             'title'       => $request->title,
             'slug'        => Str::slug($request->title),
             'route_name'  => $routeName,
-            'images'      => $imageNames,
+            'images'      => $imageNames, // langsung array, model akan casting
             'price'       => $request->price,
-            'description' => $request->description,
-            'status'      => $request->status ?? 0, // default 0 kalau tidak diisi
+            'description' => $request->description ?? null,
+            'status'      => $request->status ?? 0,
         ]);
 
-        // CREATE DAYS
-        foreach ($request->days as $day) {
+        // ================= CREATE TOUR DAYS =================
+        foreach ($request->days as $index => $day) {
+            $dayImage = null;
+
+            if (!empty($day['image']) && $day['image']->isValid()) {
+                $dayImageName = uniqid() . '-' . time() . '.' . $day['image']->getClientOriginalExtension();
+                $day['image']->move(public_path('uploads/tour_days'), $dayImageName);
+                $dayImage = $dayImageName;
+            }
+
             $tour->days()->create([
-                'title'       => $day['title'],
-                'description' => $day['description'],
+                'title'             => $day['title'],
+                'description'       => $day['description'],
+                'image'             => $dayImage,
+                'image_title'       => $day['image_title'] ?? null,
+                'image_description' => $day['image_description'] ?? null,
+                'order'             => $index + 1,
             ]);
         }
 
         return response()->json([
             'message' => 'Tour berhasil dibuat!',
-            'data'    => $tour
+            'data'    => $tour->load('days', 'category') // biar langsung load relasi
         ], 200);
 
     } catch (\Exception $e) {
-
         return response()->json([
             'errors' => ['server' => [$e->getMessage()]]
         ], 500);
     }
 }
+
 
 
     /**
@@ -134,7 +142,6 @@ class TourController extends Controller
 
 public function update(Request $request, Tour $tour)
 {
-    // Validasi input
     $request->validate([
         'category_id' => 'required|exists:categories,id',
         'title'       => 'required|string|max:255',
@@ -142,110 +149,123 @@ public function update(Request $request, Tour $tour)
         'price'       => 'required|numeric',
         'status'      => 'nullable|boolean',
         'description' => 'nullable|string',
-
-        // days
-        'days'                 => 'required|array|min:1',
-        'days.*.id'            => 'nullable|exists:tour_days,id',
-        'days.*.title'         => 'required|string|max:255',
-        'days.*.description'   => 'required|string',
-        'days.*._destroy'      => 'nullable|boolean',
+        'days'                     => 'required|array|min:1',
+        'days.*.id'                => 'nullable|exists:tour_days,id',
+        'days.*.title'             => 'required|string|max:255',
+        'days.*.description'       => 'required|string',
+        'days.*.image'             => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        'days.*.image_title'       => 'nullable|string|max:255',
+        'days.*.image_description' => 'nullable|string',
+        'days.*._destroy'          => 'nullable|boolean',
     ]);
 
     DB::beginTransaction();
 
     try {
-        // ============================================================
-        // 1. HANDLE GAMBAR
-        // ============================================================
-        $imageNames = $tour->images ?? [];
+        // ==================== HANDLE TOUR IMAGES ====================
+        $imageNames = [];
+
+        if (!empty($tour->images)) {
+            // jika json string, decode
+            if (is_string($tour->images)) {
+                $decoded = json_decode($tour->images, true);
+                $imageNames = is_array($decoded) ? $decoded : [$tour->images];
+            } elseif (is_array($tour->images)) {
+                $imageNames = $tour->images;
+            }
+        }
 
         if ($request->hasFile('images')) {
-
             // Hapus gambar lama
-            if ($imageNames) {
-                foreach ($imageNames as $oldImg) {
-                    $path = public_path('uploads/tours/' . $oldImg);
-                    if (file_exists($path)) unlink($path);
-                }
+            foreach ($imageNames as $oldImg) {
+                $path = public_path('uploads/tours/' . $oldImg);
+                if (file_exists($path)) unlink($path);
             }
 
-            // Upload baru
+            // Upload gambar baru
             $imageNames = [];
             foreach ($request->file('images') as $img) {
-                $ext = strtolower($img->getClientOriginalExtension());
-                $filename = time() . '-' . uniqid() . '.' . $ext;
+                $filename = uniqid() . '-' . time() . '.' . $img->getClientOriginalExtension();
                 $img->move(public_path('uploads/tours'), $filename);
                 $imageNames[] = $filename;
             }
         }
 
-        // ============================================================
-        // 2. GENERATE SLUG OTOMATIS
-        // ============================================================
+        // ==================== GENERATE SLUG & ROUTE ====================
         $slug = Str::slug($request->title);
-
-        // ============================================================
-        // 3. ROUTE NAME OTOMATIS (TANPA INPUT USER)
-        // ============================================================
         $routeName = "tour." . $slug;
 
-        // ============================================================
-        // 4. UPDATE TOUR
-        // ============================================================
+        // ==================== UPDATE TOUR ====================
         $tour->update([
             'category_id' => $request->category_id,
             'title'       => $request->title,
             'slug'        => $slug,
-            'route_name'  => $routeName,   // ← AUTOMATIS
-            'images'      => $imageNames,
+            'route_name'  => $routeName,
+            'images'      => json_encode($imageNames), // simpan sebagai JSON
             'price'       => $request->price,
-            'description' => $request->description,
+            'description' => $request->description ?? null,
             'status'      => $request->status ? 1 : 0,
         ]);
 
-
-        // ============================================================
-        // 5. UPDATE DAYS (ITINERARY)
-        // ============================================================
-        foreach ($request->days as $day) {
-
+        // ==================== UPDATE TOUR DAYS ====================
+        foreach ($request->days as $index => $day) {
             // HAPUS DAY
-            if (isset($day['_destroy']) && $day['_destroy'] == "1") {
+            if (!empty($day['_destroy']) && $day['_destroy']) {
                 if (!empty($day['id'])) {
-                    TourDay::where('id', $day['id'])->delete();
+                    $oldDay = TourDay::find($day['id']);
+                    if ($oldDay && $oldDay->image) {
+                        $path = public_path('uploads/tour_days/' . $oldDay->image);
+                        if (file_exists($path)) unlink($path);
+                    }
+                    $oldDay->delete();
                 }
                 continue;
             }
 
-            // UPDATE EXISTING
+            // HANDLE IMAGE DAY
+            $dayImage = null;
+            if (!empty($day['image']) && $day['image']->isValid()) {
+                $dayImageName = uniqid() . '-' . time() . '.' . $day['image']->getClientOriginalExtension();
+                $day['image']->move(public_path('uploads/tour_days'), $dayImageName);
+                $dayImage = $dayImageName;
+            }
+
+            // UPDATE EXISTING DAY
             if (!empty($day['id'])) {
-                TourDay::where('id', $day['id'])->update([
-                    'title'       => $day['title'],
-                    'description' => $day['description'],
+                $dayModel = TourDay::find($day['id']);
+                $dayModel->update([
+                    'title'             => $day['title'],
+                    'description'       => $day['description'],
+                    'image'             => $dayImage ?? $dayModel->image,
+                    'image_title'       => $day['image_title'] ?? $dayModel->image_title,
+                    'image_description' => $day['image_description'] ?? $dayModel->image_description,
+                    'order'             => $index + 1,
                 ]);
             }
-
-            // BUAT HARI BARU
+            // CREATE NEW DAY
             else {
-                TourDay::create([
-                    'tour_id'     => $tour->id,
-                    'title'       => $day['title'],
-                    'description' => $day['description'],
+                $tour->days()->create([
+                    'title'             => $day['title'],
+                    'description'       => $day['description'],
+                    'image'             => $dayImage,
+                    'image_title'       => $day['image_title'] ?? null,
+                    'image_description' => $day['image_description'] ?? null,
+                    'order'             => $index + 1,
                 ]);
             }
         }
 
-      DB::commit();
+        DB::commit();
 
-          return redirect()->route('tour.index', $tour->id)
-            ->with('success', 'Tour berhasil diperbarui.'); // ← SweetAlert muncul di halaman edit
+        return redirect()->route('tour.index', $tour->id)
+                         ->with('success', 'Tour berhasil diperbarui.');
 
-
-        } catch (\Exception $e) {
-            DB::rollBack();
-            return back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
-        }
+    } catch (\Exception $e) {
+        DB::rollBack();
+        return back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+    }
 }
+
 
 
 

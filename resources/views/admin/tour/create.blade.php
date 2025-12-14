@@ -55,23 +55,31 @@
                     <input type="file" name="images[]" class="form-control" multiple>
                 </div>
 
-                {{-- ITINERARY / HARI --}}
-                <div class="mb-3">
-                    <label class="form-label">Itinerary / Hari</label>
-                    <div id="tour-days-container">
-                        <div class="tour-day mb-3 p-2 border rounded">
-                            <label>Judul Hari</label>
-                            <input type="text" name="days[0][title]" class="form-control mb-2" placeholder="Day 1 Title"
-                                required>
+             <div class="mb-3">
+    <label class="form-label">Itinerary / Hari</label>
+    <div id="tour-days-container">
+        <div class="tour-day mb-3 p-3 border rounded border-success bg-light">
+            <label>Judul Hari</label>
+            <input type="text" name="days[0][title]" class="form-control mb-2" placeholder="Day 1 Title">
 
-                            <label>Deskripsi Hari</label>
-                            <textarea name="days[0][description]" class="form-control" rows="3" placeholder="Deskripsi Day 1" required></textarea>
+            <label>Deskripsi Hari</label>
+            <textarea name="days[0][description]" class="form-control mb-2" rows="3" placeholder="Deskripsi Day 1"></textarea>
 
-                            <button type="button" class="btn btn-sm btn-danger mt-2 remove-day-btn">Hapus Hari</button>
-                        </div>
-                    </div>
-                    <button type="button" id="add-day-btn" class="btn btn-sm btn-secondary mt-2">Tambah Hari</button>
-                </div>
+            <label>Gambar Hari</label>
+            <input type="file" name="days[0][image]" class="form-control mb-2">
+
+            <label>Judul Gambar</label>
+            <input type="text" name="days[0][image_title]" class="form-control mb-2" placeholder="Judul Gambar Day 1">
+
+            <label>Deskripsi Gambar</label>
+            <textarea name="days[0][image_description]" class="form-control mb-2" rows="2" placeholder="Deskripsi Gambar Day 1"></textarea>
+
+            <button type="button" class="btn btn-sm btn-danger mt-2 remove-day-btn">Hapus Hari</button>
+        </div>
+    </div>
+    <button type="button" id="add-day-btn" class="btn btn-sm btn-success mt-2">Tambah Hari</button>
+</div>
+
 
                 {{-- STATUS --}}
                 <div class="mb-3">
@@ -130,9 +138,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-
     // ======================================================
-    // ITINERARY DINAMIS
+    // ITINERARY / HARI DINAMIS
     // ======================================================
     let container = document.getElementById("tour-days-container");
     let addBtn = document.getElementById("add-day-btn");
@@ -140,15 +147,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     addBtn.addEventListener("click", function() {
         let html = `
-        <div class="tour-day mb-3 p-2 border rounded">
+        <div class="tour-day mb-3 p-3 border rounded border-success bg-light">
             <label>Judul Hari</label>
             <input type="text" name="days[${dayIndex}][title]"
                 class="form-control mb-2" placeholder="Day ${dayIndex + 1} Title" required>
 
             <label>Deskripsi Hari</label>
             <textarea name="days[${dayIndex}][description]"
-                class="form-control" rows="3"
+                class="form-control mb-2" rows="3"
                 placeholder="Deskripsi Day ${dayIndex + 1}" required></textarea>
+
+            <label>Gambar Hari</label>
+            <input type="file" name="days[${dayIndex}][image]" class="form-control mb-2">
+
+            <label>Judul Gambar</label>
+            <input type="text" name="days[${dayIndex}][image_title]" class="form-control mb-2" placeholder="Judul Gambar Day ${dayIndex + 1}">
+
+            <label>Deskripsi Gambar</label>
+            <textarea name="days[${dayIndex}][image_description]" class="form-control mb-2" rows="2" placeholder="Deskripsi Gambar Day ${dayIndex + 1}"></textarea>
 
             <button type="button" class="btn btn-sm btn-danger mt-2 remove-day-btn">Hapus Hari</button>
         </div>`;
@@ -179,12 +195,18 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(res => res.json())
         .then(data => {
-
             if (data.errors) {
+                let errorHtml = '';
+                Object.values(data.errors).forEach(errArr => {
+                    errArr.forEach(err => {
+                        errorHtml += `• ${err}<br>`;
+                    });
+                });
+
                 Swal.fire({
                     icon: 'error',
                     title: 'Gagal Menyimpan!',
-                    html: Object.values(data.errors).join('<br>')
+                    html: errorHtml
                 });
                 return;
             }
@@ -209,4 +231,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 @endpush
+
 

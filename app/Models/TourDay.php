@@ -13,6 +13,9 @@ class TourDay extends Model
         'tour_id',
         'title',
         'description',
+        'image',           // path gambar hari
+        'image_title',     // judul gambar
+        'image_description', // deskripsi gambar
         'order' // urutan hari
     ];
 

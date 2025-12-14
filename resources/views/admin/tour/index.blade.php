@@ -66,23 +66,25 @@
                                         <td>{{ $tour->route_name ?? '-' }}</td>
                                         <td>Rp {{ number_format($tour->price, 0, ',', '.') }}</td>
 
-                                        <td>
-                                            @if (!empty($tour->images))
-                                                @foreach ($tour->images as $img)
-                                                    @php $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION)); @endphp
+                                       <td>
+    @php
+        $images = is_array($tour->images) ? $tour->images : json_decode($tour->images, true);
+    @endphp
 
-                                                    @if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp']))
-                                                        <img src="{{ asset('uploads/tours/' . $img) }}" width="60"
-                                                            class="rounded mb-1 me-1">
-                                                    @elseif(in_array($ext, ['heic', 'heif']))
-                                                        <span
-                                                            class="badge bg-secondary mb-1 me-1">{{ strtoupper($ext) }}</span>
-                                                    @endif
-                                                @endforeach
-                                            @else
-                                                <span class="text-muted">Tidak ada</span>
-                                            @endif
-                                        </td>
+    @if (!empty($images))
+        @foreach ($images as $img)
+            @php $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION)); @endphp
+            @if (in_array($ext, ['jpg', 'jpeg', 'png', 'webp']))
+                <img src="{{ asset('uploads/tours/' . $img) }}" width="60" class="rounded mb-1 me-1">
+            @elseif(in_array($ext, ['heic', 'heif']))
+                <span class="badge bg-secondary mb-1 me-1">{{ strtoupper($ext) }}</span>
+            @endif
+        @endforeach
+    @else
+        <span class="text-muted">Tidak ada</span>
+    @endif
+</td>
+
 
                                         <td>
                                             @if ($tour->status)
