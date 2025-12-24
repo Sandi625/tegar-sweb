@@ -38,7 +38,7 @@ class UserReviewController extends Controller
             'email'       => 'nullable|email|max:100',
             'rating'      => 'required|integer|min:1|max:5',
             'review_text' => 'required|string',
-            'photo.*'     => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048', // per foto
+            'photo.*'     => 'nullable|image|mimes:jpg,jpeg,png,webp|max:102400', // per foto
         ]);
 
         try {

@@ -271,17 +271,28 @@ public function update(Request $request, Tour $tour)
 
 
 
-    public function destroy(Tour $tour)
-    {
-        if ($tour->images) {
-            foreach ($tour->images as $img) {
+   public function destroy(Tour $tour)
+{
+    if ($tour->images) {
+
+        $images = is_array($tour->images)
+            ? $tour->images
+            : json_decode($tour->images, true);
+
+        if (is_array($images)) {
+            foreach ($images as $img) {
                 $path = public_path('uploads/tours/' . $img);
-                if (file_exists($path)) unlink($path);
+                if (file_exists($path)) {
+                    unlink($path);
+                }
             }
         }
-
-        $tour->delete();
-
-        return redirect()->route('tour.index')->with('success', 'Tour berhasil dihapus');
     }
+
+    $tour->delete();
+
+    return redirect()->route('tour.index')
+        ->with('success', 'Tour berhasil dihapus');
+}
+
 }
