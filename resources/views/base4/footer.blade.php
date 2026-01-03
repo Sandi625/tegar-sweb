@@ -29,40 +29,86 @@
     </div>
 
     <!-- Kolom 2 -->
-    <div class="footerContact">
-      <h1 class="contactTitle">Contact Me</h1>
-      <p class="contactPara">
+   <div class="footerContact">
+    <h1 class="contactTitle">Contact Me Click The icon</h1>
+
+    <p class="contactPara">
         If you want to make any inquiries about the website, you can contact
         me through below options
-      </p>
-      <div class="contactOptions">
-        <a href="https://github.com/chamindujs" target="_blank" class="contactOption">
-          <abbr title="GitHub">
-            <img src="https://img.icons8.com/ios-glyphs/60/ca7717/github.png" />
-          </abbr>
+    </p>
+
+    <div class="contactOptions">
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/vamosadventure.idn/"
+           target="_blank"
+           rel="noopener"
+           class="contactOption"
+           aria-label="Visit our Instagram">
+            <abbr title="Instagram">
+                <img src="https://img.icons8.com/ios-glyphs/60/ca7717/instagram-new.png" alt="Instagram Icon">
+            </abbr>
         </a>
-        <a href="https://wa.link/1yweij" target="_blank" class="contactOption">
-          <abbr title="WhatsApp">
-            <img src="https://img.icons8.com/material-outlined/48/ca7717/whatsapp--v1.png" />
-          </abbr>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/628133088586"
+           target="_blank"
+           rel="noopener"
+           class="contactOption"
+           aria-label="Chat via WhatsApp">
+            <abbr title="WhatsApp">
+                <img src="https://img.icons8.com/material-outlined/48/ca7717/whatsapp--v1.png" alt="WhatsApp Icon">
+            </abbr>
         </a>
-        <div class="contactOption call">
-          <abbr title="Call">
-            <img src="https://img.icons8.com/ios/48/ca7717/phone.png" />
-          </abbr>
+
+        <!-- Phone -->
+        <div class="contactOption call" aria-label="Call us">
+            <abbr title="Call">
+                <img src="https://img.icons8.com/ios/48/ca7717/phone.png" alt="Phone Icon">
+            </abbr>
         </div>
-        <a href="mailto:chamindujs@gmail.com" target="_blank" class="contactOption">
-          <abbr title="Gmail">
-            <img src="https://img.icons8.com/ios/50/ca7717/gmail-new.png" />
-          </abbr>
+
+        <!-- Email -->
+        <a href="mailto:vamosadventure.idn@gmail.com"
+           class="contactOption"
+           aria-label="Send Email">
+            <abbr title="Email">
+                <img src="https://img.icons8.com/ios/50/ca7717/gmail-new.png" alt="Email Icon">
+            </abbr>
         </a>
-        <div class="contactOption discord">
-          <abbr title="Discord">
-            <img src="https://img.icons8.com/ios/50/ca7717/discord-logo--v1.png" />
-          </abbr>
-        </div>
-      </div>
+
+        <div class="contactOption discord"></div>
     </div>
+
+    <!-- ⬇️ LIST TAMBAHAN (ICON TIDAK DISENTUH) -->
+ <ul class="contactInfo">
+  <li>
+    <span>Instagram :</span>
+    <a href="https://www.instagram.com/vamosadventure.idn/" target="_blank" rel="noopener">
+      @vamosadventure.idn
+    </a>
+  </li>
+
+  <li>
+    <span>Phone :</span>
+    <a href="https://wa.me/628133088586" target="_blank" rel="noopener">
+      +62 813-3088-8586
+    </a>
+  </li>
+
+
+
+  <li>
+    <span>Email :</span>
+    <a href="mailto:vamosadventure.idn@gmail.com">
+      vamosadventure.idn@gmail.com
+    </a>
+  </li>
+</ul>
+
+
+
+</div>
 
     <!-- Kolom 3 -->
   <div class="footerPayment">

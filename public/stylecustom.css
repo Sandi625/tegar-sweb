@@ -990,3 +990,51 @@ form#bookingForm button + button {
 
 
 
+.contactInfo {
+  list-style: none;
+  padding: 0;
+  margin: 15px auto 0;
+  max-width: 360px;
+}
+
+/* baris */
+.contactInfo li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* label kiri */
+.contactInfo span {
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+/* value kanan */
+.contactInfo a {
+  color: #ca7717;
+  text-decoration: none;
+  text-align: right;
+  word-break: break-word;
+}
+
+.contactInfo a:hover {
+  text-decoration: underline;
+}
+
+/* 📱 mobile */
+@media (max-width: 480px) {
+  .contactInfo li {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+
+  .contactInfo a {
+    text-align: center;
+  }
+}

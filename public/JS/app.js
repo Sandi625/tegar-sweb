@@ -46,7 +46,7 @@ call.addEventListener("click", () => {
     imageUrl: 'https://i.ibb.co/d04JBmC/image.png',
     imageWidth: 75,
     imageHeight: 75,
-    html:  `My phone number is <b><a href="tel:+94711436311">071-1436311</a></b>`,
+    html:  `My phone number is <b><a href="tel:+628133088586">628133088586</a></b>`,
   })
 });
 
@@ -80,7 +80,7 @@ window.onscroll = function () {
 
 function redirectToWhatsApp() {
     // Ganti nomor di bawah dengan nomor WhatsApp Anda (format internasional, tanpa +)
-    const phoneNumber = "6281330920809";
+    const phoneNumber = "628133088586";
     const message = encodeURIComponent("Hello, I'd like to ask!");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
 }
@@ -107,7 +107,7 @@ Preferred Date: ${data.date}%0A
 Notes: ${data.notes}`;
 
   // Nomor WhatsApp tujuan
-  let phone = "6281330920809";
+  let phone = "628133088586";
 
   let url = `https://wa.me/${phone}?text=${message}`;
   window.open(url, "_blank");
