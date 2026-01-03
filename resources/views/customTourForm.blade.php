@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{ asset('stylecustom.css') }}">
-    <link rel="shortcut icon" href="../Images/favicon.png" type="image/x-icon" />
-    <title>Custom tour | Vamos </title>
+   <link rel="shortcut icon" href="{{ asset('Images/icon.png') }}" type="image/x-icon" />    <title>Custom tour | Vamos </title>
 </head>
 
 <body>

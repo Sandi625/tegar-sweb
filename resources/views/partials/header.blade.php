@@ -8,8 +8,7 @@
 
     <link rel="stylesheet" href="{{ asset('style.css') }}">
      <link rel="stylesheet" href="{{ asset('styleblog.css') }}">
-    <link rel="shortcut icon" href="{{ asset('Images/favicon.png') }}" type="image/x-icon" />
-
+   <link rel="shortcut icon" href="{{ asset('Images/icon.png') }}" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

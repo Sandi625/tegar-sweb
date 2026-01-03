@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,height=device-height,  initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/galerry.css') }}">
-    <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon" />
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
+   <link rel="shortcut icon" href="{{ asset('Images/icon.png') }}" type="image/x-icon" />    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
     <title>Gallery | Vamos</title>
 </head>

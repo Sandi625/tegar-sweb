@@ -20,7 +20,7 @@
 
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('Images/favicon.png') }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('Images/icon.png') }}" type="image/x-icon" />
 
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />

@@ -71,7 +71,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
         return;
     }
 
-    let waNumber = "6281330920809";
+    let waNumber = "628133088586";
 
     let text =
 `Hello, I would like to book a tour.
@@ -106,7 +106,7 @@ document.getElementById('emailButton').addEventListener('click', function() {
         return;
     }
 
-    let adminEmail = "sandipermadi625@gmail.com";
+    let adminEmail = "vamosadventure.idn@gmail.com";
 
     let subject = encodeURIComponent(`Tour Booking Request: {{ $tour->title }} - ${name}`);
 

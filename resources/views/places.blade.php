@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Places | Vamos</title>
     <link rel="stylesheet" href="./CSS/places.css">
-    <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
+   <link rel="shortcut icon" href="{{ asset('Images/icon.png') }}" type="image/x-icon" />    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.7/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
 
