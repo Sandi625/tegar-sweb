@@ -17,4 +17,9 @@ require __DIR__.'/vendor/autoload.php';
 /** @var Application $app */
 $app = require_once __DIR__.'/bootstrap/app.php';
 
+// 🔧 FIX GLOBAL ASSET PATH
+$app->bind('path.public', function() {
+    return __DIR__ . '/public';
+});
+
 $app->handleRequest(Request::capture());
